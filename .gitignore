@@ -63,3 +63,9 @@ _ReSharper*/
 
 packages/
 node_modules/
+
+**/tools/Addins/**
+**/Published/**
+**/tools/Cake/**
+connectionStrings.config
+/Websites/WebApps/*/tools/*
