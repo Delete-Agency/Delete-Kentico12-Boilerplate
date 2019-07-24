@@ -111,6 +111,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ProjectsController.cs" />
     <Compile Include="DI\CompositionRoot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -126,8 +127,17 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Shared\DeleteBoilerplate.Domain\DeleteBoilerplate.Domain.csproj">
+      <Project>{2A0E9BD2-90F5-466A-A742-D27C9302B1CA}</Project>
+      <Name>DeleteBoilerplate.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Infrastructure\DeleteBoilerplate.DynamicRouting\DeleteBoilerplate.DynamicRouting.csproj">
+      <Project>{a165b815-191b-4831-9491-7010d7bec88f}</Project>
+      <Name>DeleteBoilerplate.DynamicRouting</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

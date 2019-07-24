@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using DeleteBoilerplate.Domain.Repositories;
 using LightInject;
 
 namespace DeleteBoilerplate.Projects.DI
@@ -10,7 +7,7 @@ namespace DeleteBoilerplate.Projects.DI
     {
         public void Compose(IServiceRegistry serviceRegistry)
         {
-
+            serviceRegistry.RegisterScoped<IProjectRepository, ProjectRepository>();
         }
     }
 }
