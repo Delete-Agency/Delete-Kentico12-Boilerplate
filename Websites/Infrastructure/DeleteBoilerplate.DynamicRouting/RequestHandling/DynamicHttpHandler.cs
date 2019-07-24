@@ -40,7 +40,8 @@ namespace DeleteBoilerplate.DynamicRouting.RequestHandling
             var instanceGuid = ValidationHelper.GetGuid(URLHelper.GetQueryValue(HttpContext.Current.Request.Url.AbsoluteUri, "instance"), Guid.Empty);
             if (instanceGuid != Guid.Empty)
             {
-                var table = ConnectionHelper.ExecuteQuery(string.Format("select PageBuilderTemplateConfiguration from Temp_PageBuilderWidgets where PageBuilderWidgetsGuid = '{0}'", instanceGuid.ToString()), null, QueryTypeEnum.SQLQuery).Tables[0];
+                var table = ConnectionHelper.ExecuteQuery(
+                    $"select PageBuilderTemplateConfiguration from Temp_PageBuilderWidgets where PageBuilderWidgetsGuid = '{instanceGuid.ToString()}'", null, QueryTypeEnum.SQLQuery).Tables[0];
                 if (table.Rows.Count > 0)
                 {
                     templateConfiguration = ValidationHelper.GetString(table.Rows[0]["PageBuilderTemplateConfiguration"], "");

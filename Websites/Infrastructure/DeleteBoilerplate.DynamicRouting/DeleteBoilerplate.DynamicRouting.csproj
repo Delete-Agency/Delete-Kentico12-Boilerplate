@@ -558,6 +558,12 @@
   <ItemGroup>
     <Analyzer Include="..\..\WebApps\DeleteBoilerplate\packages\AWSSDK.S3.3.3.0\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\DeleteBoilerplate.Domain\DeleteBoilerplate.Domain.csproj">
+      <Project>{2A0E9BD2-90F5-466A-A742-D27C9302B1CA}</Project>
+      <Name>DeleteBoilerplate.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

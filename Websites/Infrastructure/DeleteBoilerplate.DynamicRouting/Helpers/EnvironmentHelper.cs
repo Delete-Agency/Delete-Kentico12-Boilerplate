@@ -109,7 +109,7 @@ namespace DeleteBoilerplate.DynamicRouting.Helpers
         public static string GetUrl(string relativeUrl, string applicationPath)
         {
             // Remove Application Path from Relative Url if it exists at the beginning
-            if (applicationPath != "/" && string.IsNullOrWhiteSpace(applicationPath) && relativeUrl.ToLower().IndexOf(applicationPath.ToLower()) == 0)
+            if (applicationPath != "/" && !string.IsNullOrWhiteSpace(applicationPath) && relativeUrl.ToLower().IndexOf(applicationPath.ToLower(), StringComparison.OrdinalIgnoreCase) == 0)
             {
                 relativeUrl = relativeUrl.Substring(applicationPath.Length);
             }
