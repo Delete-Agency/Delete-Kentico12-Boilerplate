@@ -16,7 +16,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{25B3DC14-1D18-4110-8416-2372716B7505}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{2971F724-2145-4CB1-9464-1A379C67E410}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteBoilerplate.DynamicRouting", "..\..\Infrastructure\DeleteBoilerplate.DynamicRouting\DeleteBoilerplate.DynamicRouting.csproj", "{A165B815-191B-4831-9491-7010D7BEC88F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteBoilerplate.Domain", "..\..\..\Shared\DeleteBoilerplate.Domain\DeleteBoilerplate.Domain.csproj", "{2A0E9BD2-90F5-466A-A742-D27C9302B1CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,6 +40,10 @@ Global
 		{A165B815-191B-4831-9491-7010D7BEC88F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A165B815-191B-4831-9491-7010D7BEC88F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A165B815-191B-4831-9491-7010D7BEC88F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A0E9BD2-90F5-466A-A742-D27C9302B1CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A0E9BD2-90F5-466A-A742-D27C9302B1CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A0E9BD2-90F5-466A-A742-D27C9302B1CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A0E9BD2-90F5-466A-A742-D27C9302B1CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,6 +51,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{BFBBAF91-2904-4D5C-9AC5-365AEAEE98EF} = {60D6784B-12CB-4ACD-B26B-545FC97DC901}
 		{A165B815-191B-4831-9491-7010D7BEC88F} = {25B3DC14-1D18-4110-8416-2372716B7505}
+		{2A0E9BD2-90F5-466A-A742-D27C9302B1CA} = {2971F724-2145-4CB1-9464-1A379C67E410}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C6500213-6CF9-462C-B95D-DCF91FC64889}
