@@ -67,7 +67,9 @@ Task("MakePackage")
         var folders = new [] {"dist"};
         foreach(var f in folders)
         {
-          CopyFast(web.Combine(f).ToString(), packageDir.Combine(f).ToString());
+            if (DirectoryExists(web.Combine(f).ToString())) {
+                CopyFast(web.Combine(f).ToString(), packageDir.Combine(f).ToString());
+            }
 	    };
 
         CopyFast(MakeAbsolute(Directory($"./{webProject}")).ToString(), packageDir.ToString(), false, $"Web.config Web.{configuration}.config Global.asax connectionStrings.config");
