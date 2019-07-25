@@ -23,242 +23,275 @@ using CMS.DocumentEngine;
 
 namespace CMS.DocumentEngine.Types.DeleteBoilerplate
 {
-	/// <summary>
-	/// Represents a content item of type Project.
-	/// </summary>
-	public partial class Project : TreeNode
-	{
-		#region "Constants and variables"
+    /// <summary>
+    /// Represents a content item of type Project.
+    /// </summary>
+    public partial class Project : TreeNode
+    {
+        #region "Constants and variables"
 
-		/// <summary>
-		/// The name of the data class.
-		/// </summary>
-		public const string CLASS_NAME = "DeleteBoilerplate.Project";
-
-
-		/// <summary>
-		/// The instance of the class that provides extended API for working with Project fields.
-		/// </summary>
-		private readonly ProjectFields mFields;
-
-		#endregion
+        /// <summary>
+        /// The name of the data class.
+        /// </summary>
+        public const string CLASS_NAME = "DeleteBoilerplate.Project";
 
 
-		#region "Properties"
+        /// <summary>
+        /// The instance of the class that provides extended API for working with Project fields.
+        /// </summary>
+        private readonly ProjectFields mFields;
 
-		/// <summary>
-		/// ProjectID.
-		/// </summary>
-		[DatabaseIDField]
-		public int ProjectID
-		{
-			get
-			{
-				return ValidationHelper.GetInteger(GetValue("ProjectID"), 0);
-			}
-			set
-			{
-				SetValue("ProjectID", value);
-			}
-		}
+        #endregion
 
 
-		/// <summary>
-		/// Seo Url.
-		/// </summary>
-		[DatabaseField]
-		public string SeoUrl
-		{
-			get
-			{
-				return ValidationHelper.GetString(GetValue("SeoUrl"), @"");
-			}
-			set
-			{
-				SetValue("SeoUrl", value);
-			}
-		}
+        #region "Properties"
+
+        /// <summary>
+        /// ProjectID.
+        /// </summary>
+        [DatabaseIDField]
+        public int ProjectID
+        {
+            get
+            {
+                return ValidationHelper.GetInteger(GetValue("ProjectID"), 0);
+            }
+            set
+            {
+                SetValue("ProjectID", value);
+            }
+        }
 
 
-		/// <summary>
-		/// Title.
-		/// </summary>
-		[DatabaseField]
-		public string Title
-		{
-			get
-			{
-				return ValidationHelper.GetString(GetValue("Title"), @"");
-			}
-			set
-			{
-				SetValue("Title", value);
-			}
-		}
+        /// <summary>
+        /// Year.
+        /// </summary>
+        [DatabaseField]
+        public int Year
+        {
+            get
+            {
+                return ValidationHelper.GetInteger(GetValue("Year"), 0);
+            }
+            set
+            {
+                SetValue("Year", value);
+            }
+        }
 
 
-		/// <summary>
-		/// Description.
-		/// </summary>
-		[DatabaseField]
-		public string Description
-		{
-			get
-			{
-				return ValidationHelper.GetString(GetValue("Description"), @"");
-			}
-			set
-			{
-				SetValue("Description", value);
-			}
-		}
+        /// <summary>
+        /// Seo Url.
+        /// </summary>
+        [DatabaseField]
+        public string SeoUrl
+        {
+            get
+            {
+                return ValidationHelper.GetString(GetValue("SeoUrl"), @"");
+            }
+            set
+            {
+                SetValue("SeoUrl", value);
+            }
+        }
 
 
-		/// <summary>
-		/// Image.
-		/// </summary>
-		[DatabaseField]
-		public string Image
-		{
-			get
-			{
-				return ValidationHelper.GetString(GetValue("Image"), @"");
-			}
-			set
-			{
-				SetValue("Image", value);
-			}
-		}
+        /// <summary>
+        /// Title.
+        /// </summary>
+        [DatabaseField]
+        public string Title
+        {
+            get
+            {
+                return ValidationHelper.GetString(GetValue("Title"), @"");
+            }
+            set
+            {
+                SetValue("Title", value);
+            }
+        }
 
 
-		/// <summary>
-		/// Gets an object that provides extended API for working with Project fields.
-		/// </summary>
-		[RegisterProperty]
-		public ProjectFields Fields
-		{
-			get
-			{
-				return mFields;
-			}
-		}
+        /// <summary>
+        /// Description.
+        /// </summary>
+        [DatabaseField]
+        public string Description
+        {
+            get
+            {
+                return ValidationHelper.GetString(GetValue("Description"), @"");
+            }
+            set
+            {
+                SetValue("Description", value);
+            }
+        }
 
 
-		/// <summary>
-		/// Provides extended API for working with Project fields.
-		/// </summary>
-		[RegisterAllProperties]
-		public partial class ProjectFields : AbstractHierarchicalObject<ProjectFields>
-		{
-			/// <summary>
-			/// The content item of type Project that is a target of the extended API.
-			/// </summary>
-			private readonly Project mInstance;
+        /// <summary>
+        /// Image.
+        /// </summary>
+        [DatabaseField]
+        public string Image
+        {
+            get
+            {
+                return ValidationHelper.GetString(GetValue("Image"), @"");
+            }
+            set
+            {
+                SetValue("Image", value);
+            }
+        }
 
 
-			/// <summary>
-			/// Initializes a new instance of the <see cref="ProjectFields" /> class with the specified content item of type Project.
-			/// </summary>
-			/// <param name="instance">The content item of type Project that is a target of the extended API.</param>
-			public ProjectFields(Project instance)
-			{
-				mInstance = instance;
-			}
+        /// <summary>
+        /// Gets an object that provides extended API for working with Project fields.
+        /// </summary>
+        [RegisterProperty]
+        public ProjectFields Fields
+        {
+            get
+            {
+                return mFields;
+            }
+        }
 
 
-			/// <summary>
-			/// ProjectID.
-			/// </summary>
-			public int ID
-			{
-				get
-				{
-					return mInstance.ProjectID;
-				}
-				set
-				{
-					mInstance.ProjectID = value;
-				}
-			}
+        /// <summary>
+        /// Provides extended API for working with Project fields.
+        /// </summary>
+        [RegisterAllProperties]
+        public partial class ProjectFields : AbstractHierarchicalObject<ProjectFields>
+        {
+            /// <summary>
+            /// The content item of type Project that is a target of the extended API.
+            /// </summary>
+            private readonly Project mInstance;
 
 
-			/// <summary>
-			/// Seo Url.
-			/// </summary>
-			public string SeoUrl
-			{
-				get
-				{
-					return mInstance.SeoUrl;
-				}
-				set
-				{
-					mInstance.SeoUrl = value;
-				}
-			}
+            /// <summary>
+            /// Initializes a new instance of the <see cref="ProjectFields" /> class with the specified content item of type Project.
+            /// </summary>
+            /// <param name="instance">The content item of type Project that is a target of the extended API.</param>
+            public ProjectFields(Project instance)
+            {
+                mInstance = instance;
+            }
 
 
-			/// <summary>
-			/// Title.
-			/// </summary>
-			public string Title
-			{
-				get
-				{
-					return mInstance.Title;
-				}
-				set
-				{
-					mInstance.Title = value;
-				}
-			}
+            /// <summary>
+            /// ProjectID.
+            /// </summary>
+            public int ID
+            {
+                get
+                {
+                    return mInstance.ProjectID;
+                }
+                set
+                {
+                    mInstance.ProjectID = value;
+                }
+            }
 
 
-			/// <summary>
-			/// Description.
-			/// </summary>
-			public string Description
-			{
-				get
-				{
-					return mInstance.Description;
-				}
-				set
-				{
-					mInstance.Description = value;
-				}
-			}
+            /// <summary>
+            /// Year.
+            /// </summary>
+            public int Year
+            {
+                get
+                {
+                    return mInstance.Year;
+                }
+                set
+                {
+                    mInstance.Year = value;
+                }
+            }
 
 
-			/// <summary>
-			/// Image.
-			/// </summary>
-			public string Image
-			{
-				get
-				{
-					return mInstance.Image;
-				}
-				set
-				{
-					mInstance.Image = value;
-				}
-			}
-		}
-
-		#endregion
+            /// <summary>
+            /// Seo Url.
+            /// </summary>
+            public string SeoUrl
+            {
+                get
+                {
+                    return mInstance.SeoUrl;
+                }
+                set
+                {
+                    mInstance.SeoUrl = value;
+                }
+            }
 
 
-		#region "Constructors"
+            /// <summary>
+            /// Title.
+            /// </summary>
+            public string Title
+            {
+                get
+                {
+                    return mInstance.Title;
+                }
+                set
+                {
+                    mInstance.Title = value;
+                }
+            }
 
-		/// <summary>
-		/// Initializes a new instance of the <see cref="Project" /> class.
-		/// </summary>
-		public Project() : base(CLASS_NAME)
-		{
-			mFields = new ProjectFields(this);
-		}
 
-		#endregion
-	}
+            /// <summary>
+            /// Description.
+            /// </summary>
+            public string Description
+            {
+                get
+                {
+                    return mInstance.Description;
+                }
+                set
+                {
+                    mInstance.Description = value;
+                }
+            }
+
+
+            /// <summary>
+            /// Image.
+            /// </summary>
+            public string Image
+            {
+                get
+                {
+                    return mInstance.Image;
+                }
+                set
+                {
+                    mInstance.Image = value;
+                }
+            }
+        }
+
+        #endregion
+
+
+        #region "Constructors"
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Project" /> class.
+        /// </summary>
+        public Project() : base(CLASS_NAME)
+        {
+            mFields = new ProjectFields(this);
+        }
+
+        #endregion
+    }
 }

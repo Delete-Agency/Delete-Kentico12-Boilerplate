@@ -538,6 +538,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="CustomRoutesAttribute.cs" />
     <Compile Include="Controllers\DynamicPageTemplateController.cs" />
     <Compile Include="Controllers\EmptyPageTemplateFilter.cs" />
     <Compile Include="Controllers\EmptyPageTemplate.cs" />

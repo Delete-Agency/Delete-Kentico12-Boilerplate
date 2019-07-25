@@ -1,0 +1,10 @@
+﻿@model IEnumerable<string>
+    
+<h1>List of projects: </h1>
+
+<ul>
+    @foreach (var str in Model)
+    {
+        <li>@str</li>
+    }
+</ul>

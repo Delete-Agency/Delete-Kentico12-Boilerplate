@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using DeleteBoilerplate.DynamicRouting;
 using DeleteBoilerplate.Projects.DI;
 using LightInject;
 
@@ -38,3 +39,5 @@ using LightInject;
 
 // assembly level attribute that simply helps LightInject to locate the compostion root
 [assembly: CompositionRootType(typeof(CompositionRoot))]
+
+[assembly: CustomRoutes]
