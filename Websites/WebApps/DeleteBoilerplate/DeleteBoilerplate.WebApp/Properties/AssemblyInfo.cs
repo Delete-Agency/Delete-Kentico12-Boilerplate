@@ -1,5 +1,7 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
+using DeleteBoilerplate.Projects.DI;
+using LightInject;
 
 [assembly: AssemblyTitle("DeleteBoilerplate.WebApp")]
 [assembly: AssemblyDescription("")]
@@ -15,3 +17,5 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyVersion("12.0.0.0")]
 [assembly: AssemblyFileVersion("12.0.7139.13923")]
 [assembly: AssemblyInformationalVersion("12.0.31")]
+
+[assembly: CompositionRootType(typeof(CompositionRoot))]
