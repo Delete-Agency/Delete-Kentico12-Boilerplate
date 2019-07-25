@@ -3,6 +3,7 @@ using System.Linq;
 using System.Web.Mvc;
 using System.Web.Routing;
 using DeleteBoilerplate.DynamicRouting;
+using DeleteBoilerplate.DynamicRouting.Attributes;
 using Kentico.Web.Mvc;
 
 namespace DeleteBoilerplate.WebApp
@@ -17,7 +18,7 @@ namespace DeleteBoilerplate.WebApp
             // Always map the Kentico routes before adding other routes. Issues may occur if Kentico URLs are matched by a general route, for example images might not be displayed on pages
             routes.Kentico().MapRoutes();
 
-            DynamicRouting.RouteConfig.RegisterRoutes(routes);
+            DynamicRouting.RouteConfig.RegisterRoutes(routes, PageTypeRoutingConfig.RoutingDictionary);
 
             RegisterFeaturesRoutes(routes);
 
@@ -27,8 +28,7 @@ namespace DeleteBoilerplate.WebApp
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
         }
-
-
+        
         private static void RegisterFeaturesRoutes(RouteCollection routes)
         {
             var assemblies = AppDomain.CurrentDomain.GetAssemblies().Where(x =>

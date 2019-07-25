@@ -2,6 +2,7 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using DeleteBoilerplate.DynamicRouting;
+using DeleteBoilerplate.DynamicRouting.Attributes;
 using DeleteBoilerplate.Projects.DI;
 using LightInject;
 
@@ -41,3 +42,4 @@ using LightInject;
 [assembly: CompositionRootType(typeof(CompositionRoot))]
 
 [assembly: CustomRoutes]
+[assembly: PageTypeRoutingAssembly]

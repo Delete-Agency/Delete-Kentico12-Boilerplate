@@ -281,13 +281,13 @@
       <HintPath>..\..\Websites\WebApps\DeleteBoilerplate\packages\Microsoft.Azure.Search.9.0.0\lib\net461\Microsoft.Azure.Search.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Azure.Search.Common, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\Websites\WebApps\DeleteBoilerplate\packages\Microsoft.Azure.Search.Common.9.0.1\lib\net461\Microsoft.Azure.Search.Common.dll</HintPath>
+      <HintPath>..\..\Websites\WebApps\DeleteBoilerplate\packages\Microsoft.Azure.Search.Common.9.0.0\lib\net461\Microsoft.Azure.Search.Common.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Azure.Search.Data, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\Websites\WebApps\DeleteBoilerplate\packages\Microsoft.Azure.Search.Data.9.0.1\lib\net461\Microsoft.Azure.Search.Data.dll</HintPath>
+      <HintPath>..\..\Websites\WebApps\DeleteBoilerplate\packages\Microsoft.Azure.Search.Data.9.0.0\lib\net461\Microsoft.Azure.Search.Data.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Azure.Search.Service, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\Websites\WebApps\DeleteBoilerplate\packages\Microsoft.Azure.Search.Service.9.0.1\lib\net461\Microsoft.Azure.Search.Service.dll</HintPath>
+      <HintPath>..\..\Websites\WebApps\DeleteBoilerplate\packages\Microsoft.Azure.Search.Service.9.0.0\lib\net461\Microsoft.Azure.Search.Service.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Data.Edm, Version=5.8.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\Websites\WebApps\DeleteBoilerplate\packages\Microsoft.Data.Edm.5.8.4\lib\net40\Microsoft.Data.Edm.dll</HintPath>

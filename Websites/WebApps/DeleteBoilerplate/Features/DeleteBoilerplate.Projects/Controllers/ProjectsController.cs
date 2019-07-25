@@ -3,6 +3,8 @@ using System.Net;
 using System.Web.Mvc;
 using DeleteBoilerplate.Domain.Repositories;
 using LightInject;
+using CMS.DocumentEngine.Types.DeleteBoilerplate;
+using DeleteBoilerplate.DynamicRouting.Attributes;
 
 namespace DeleteBoilerplate.Projects.Controllers
 {
@@ -12,9 +14,10 @@ namespace DeleteBoilerplate.Projects.Controllers
         public IProjectRepository ProjectRepository { get; set; }
 
 
+        [PageTypeRouting(Project.CLASS_NAME)]
         public ActionResult Index()
         {
-            return new HttpStatusCodeResult(HttpStatusCode.OK);
+            return View();
         }
 
         public ActionResult Search(int year)

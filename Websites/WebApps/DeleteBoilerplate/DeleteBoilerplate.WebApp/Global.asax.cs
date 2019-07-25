@@ -11,6 +11,8 @@ namespace DeleteBoilerplate.WebApp
             // Enables and configures selected Kentico ASP.NET MVC integration features
             ApplicationConfig.RegisterFeatures(ApplicationBuilder.Current);
 
+            PageTypeRoutingConfig.CollectRoutingDefinitions();
+
             // Registers routes including system routes for enabled features
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 

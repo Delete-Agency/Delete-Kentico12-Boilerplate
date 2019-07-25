@@ -313,13 +313,13 @@
       <HintPath>..\..\WebApps\DeleteBoilerplate\packages\Microsoft.Azure.Search.9.0.0\lib\net461\Microsoft.Azure.Search.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Azure.Search.Common, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\WebApps\DeleteBoilerplate\packages\Microsoft.Azure.Search.Common.9.0.1\lib\net461\Microsoft.Azure.Search.Common.dll</HintPath>
+      <HintPath>..\..\WebApps\DeleteBoilerplate\packages\Microsoft.Azure.Search.Common.9.0.0\lib\net461\Microsoft.Azure.Search.Common.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Azure.Search.Data, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\WebApps\DeleteBoilerplate\packages\Microsoft.Azure.Search.Data.9.0.1\lib\net461\Microsoft.Azure.Search.Data.dll</HintPath>
+      <HintPath>..\..\WebApps\DeleteBoilerplate\packages\Microsoft.Azure.Search.Data.9.0.0\lib\net461\Microsoft.Azure.Search.Data.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Azure.Search.Service, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\WebApps\DeleteBoilerplate\packages\Microsoft.Azure.Search.Service.9.0.1\lib\net461\Microsoft.Azure.Search.Service.dll</HintPath>
+      <HintPath>..\..\WebApps\DeleteBoilerplate\packages\Microsoft.Azure.Search.Service.9.0.0\lib\net461\Microsoft.Azure.Search.Service.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Data.Edm, Version=5.8.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -538,11 +538,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="CustomRoutesAttribute.cs" />
-    <Compile Include="Controllers\DynamicPageTemplateController.cs" />
-    <Compile Include="Controllers\EmptyPageTemplateFilter.cs" />
-    <Compile Include="Controllers\EmptyPageTemplate.cs" />
-    <Compile Include="Helpers\CacheableDocumentQuery.cs" />
+    <Compile Include="Attributes\CustomRoutesAttribute.cs" />
+    <Compile Include="Attributes\PageTypeRoutingAssemblyAttribute.cs" />
+    <Compile Include="Attributes\PageTypeRoutingAttribute.cs" />
     <Compile Include="Helpers\DocumentQueryHelper.cs" />
     <Compile Include="Helpers\EnvironmentHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -554,7 +552,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <Content Include="Views\DynamicPageTemplate\UnregisteredTemplate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\..\WebApps\DeleteBoilerplate\packages\AWSSDK.S3.3.3.0\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />

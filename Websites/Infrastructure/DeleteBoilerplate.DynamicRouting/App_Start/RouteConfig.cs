@@ -1,4 +1,6 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Reflection;
+using System.Web.Mvc;
 using System.Web.Routing;
 using DeleteBoilerplate.DynamicRouting.RequestHandling;
 
@@ -6,7 +8,7 @@ namespace DeleteBoilerplate.DynamicRouting
 {
     public class RouteConfig
     {
-        public static void RegisterRoutes(RouteCollection routes)
+        public static void RegisterRoutes(RouteCollection routes, Dictionary<string, MethodInfo> routingDictionary)
         {
             // If a normal MVC Route is found and it has priority, it will take it, otherwise it will bypass.
             var route = routes.MapRoute(
@@ -24,7 +26,7 @@ namespace DeleteBoilerplate.DynamicRouting
                 defaults: new { defaultcontroller = "HttpErrors", defaultaction = "Index" },
                 constraints: new { PageFound = new PageFoundConstraint(true) }
             );
-            route.RouteHandler = new DynamicRouteHandler();
+            route.RouteHandler = new DynamicRouteHandler(routingDictionary);
         }
     }
 }
