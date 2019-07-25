@@ -23,7 +23,9 @@ namespace DeleteBoilerplate.Infrastructure
 
                     foreach (var profile in profiles.Select(t => t.AsType()))
                     {
-                        cfg.AddProfile(profile);
+                        serviceContainer.Register(profile);
+                        var resolvedProfile = serviceContainer.GetInstance(profile) as Profile;
+                        cfg.AddProfile(resolvedProfile);
                     }
                 }
             });
