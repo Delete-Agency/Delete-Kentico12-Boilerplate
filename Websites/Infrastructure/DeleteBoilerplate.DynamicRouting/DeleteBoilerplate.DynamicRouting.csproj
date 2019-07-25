@@ -538,7 +538,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Attributes\CustomRoutesAttribute.cs" />
     <Compile Include="Attributes\PageTypeRoutingAssemblyAttribute.cs" />
     <Compile Include="Attributes\PageTypeRoutingAttribute.cs" />
     <Compile Include="Helpers\DocumentQueryHelper.cs" />

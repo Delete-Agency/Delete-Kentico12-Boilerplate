@@ -1,9 +1,8 @@
-﻿using System;
-using System.Linq;
-using System.Reflection;
+﻿using AutoMapper;
+using DeleteBoilerplate.Infrastructure.Helpers;
 using LightInject;
 
-namespace DeleteBoilerplate.WebApp
+namespace DeleteBoilerplate.Infrastructure
 {
     public class DIConfig
     {
@@ -11,7 +10,7 @@ namespace DeleteBoilerplate.WebApp
         {
             var container = new ServiceContainer();
 
-            var assemblies = GetAssemblies();
+            var assemblies = AssemblyHelper.GetDiscoverableAsseblyAssemblies();
             foreach (var assembly in assemblies)
             {
                 container.RegisterAssembly(assembly);
@@ -20,10 +19,10 @@ namespace DeleteBoilerplate.WebApp
 
             container.EnableMvc();
             container.EnableAnnotatedPropertyInjection();
-        }
 
-        private static Assembly[] GetAssemblies() => AppDomain.CurrentDomain.GetAssemblies().Where(x => 
-                x.CustomAttributes.Any(ca => ca.AttributeType == typeof(CompositionRootTypeAttribute))).ToArray();
+            container.RegisterInstance<MapperConfiguration>(AutoMapperConfig.BuildMapperConfiguration(container));
+            container.Register<IMapper>(c => new Mapper(c.GetInstance<MapperConfiguration>(),c.GetInstance));
+        }
 
     }
 }

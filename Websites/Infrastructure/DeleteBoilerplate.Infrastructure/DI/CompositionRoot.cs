@@ -2,7 +2,7 @@
 using System.Web.Hosting;
 using LightInject;
 
-namespace DeleteBoilerplate.WebApp.DI
+namespace DeleteBoilerplate.Infrastructure
 {
     public class CompositionRoot : ICompositionRoot
     {

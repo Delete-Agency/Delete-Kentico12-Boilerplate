@@ -1,8 +1,6 @@
-﻿using System;
-using System.Linq;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
-using DeleteBoilerplate.DynamicRouting;
+using DeleteBoilerplate.Infrastructure.Routing;
 using DeleteBoilerplate.DynamicRouting.Attributes;
 using Kentico.Web.Mvc;
 
@@ -20,7 +18,7 @@ namespace DeleteBoilerplate.WebApp
 
             DynamicRouting.RouteConfig.RegisterRoutes(routes, PageTypeRoutingConfig.RoutingDictionary);
 
-            RegisterFeaturesRoutes(routes);
+            CustomRoutesHelper.RegisterFeaturesRoutes(routes);
 
             routes.MapRoute(
                 name: "Default",
@@ -29,18 +27,5 @@ namespace DeleteBoilerplate.WebApp
             );
         }
         
-        private static void RegisterFeaturesRoutes(RouteCollection routes)
-        {
-            var assemblies = AppDomain.CurrentDomain.GetAssemblies().Where(x =>
-                x.CustomAttributes.Any(ca => ca.AttributeType == typeof(CustomRoutesAttribute)));
-            foreach (var assembly in assemblies)
-            {
-                var rcType = assembly.GetType($"{assembly.GetName().Name}.RouteConfig");
-                if (rcType==null) continue;
-                var registerRoutesMethod = rcType.GetMethod("RegisterRoutes");
-                if (registerRoutesMethod == null) continue;
-                registerRoutesMethod.Invoke(null, new object[] {routes});
-            }
-        }
     }
 }

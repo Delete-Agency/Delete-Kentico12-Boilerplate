@@ -1,10 +1,11 @@
-﻿@model IEnumerable<string>
+﻿@using DeleteBoilerplate.Projects.Models;
+@model IEnumerable<ProjectViewModel>
     
 <h1>List of projects: </h1>
 
 <ul>
-    @foreach (var str in Model)
+    @foreach (var project in Model)
     {
-        <li>@str</li>
+        <li>@project.Description</li>
     }
 </ul>

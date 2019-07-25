@@ -1,5 +1,6 @@
 ﻿using System.Web.Optimization;
 using System.Web.Routing;
+using DeleteBoilerplate.Infrastructure;
 using Kentico.Web.Mvc;
 
 namespace DeleteBoilerplate.WebApp

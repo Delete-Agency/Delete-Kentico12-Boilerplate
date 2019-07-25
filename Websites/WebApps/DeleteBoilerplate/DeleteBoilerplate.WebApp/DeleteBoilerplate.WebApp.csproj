@@ -54,6 +54,9 @@
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="AutoMapper, Version=8.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.8.1.1\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="AWSSDK.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
       <HintPath>..\packages\AWSSDK.Core.3.3.0\lib\net45\AWSSDK.Core.dll</HintPath>
     </Reference>
@@ -683,10 +686,8 @@
     <Compile Include="App_Start\ApplicationConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\PageTypeRoutingConfig.cs" />
-    <Compile Include="App_Start\DIConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="DI\CompositionRoot.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -708,6 +709,10 @@
     <ProjectReference Include="..\..\..\Infrastructure\DeleteBoilerplate.DynamicRouting\DeleteBoilerplate.DynamicRouting.csproj">
       <Project>{a165b815-191b-4831-9491-7010d7bec88f}</Project>
       <Name>DeleteBoilerplate.DynamicRouting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Infrastructure\DeleteBoilerplate.Infrastructure\DeleteBoilerplate.Infrastructure.csproj">
+      <Project>{a7b10389-141e-41d6-84fb-50d2282b1f4c}</Project>
+      <Name>DeleteBoilerplate.Infrastructure</Name>
     </ProjectReference>
     <ProjectReference Include="..\Features\DeleteBoilerplate.Projects\DeleteBoilerplate.Projects.csproj">
       <Project>{bfbbaf91-2904-4d5c-9ac5-365aeaee98ef}</Project>
