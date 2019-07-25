@@ -1,6 +1,4 @@
-﻿using Kentico.Content.Web.Mvc;
-using Kentico.PageBuilder.Web.Mvc;
-using Kentico.Web.Mvc;
+﻿using Kentico.Web.Mvc;
 
 namespace DeleteBoilerplate.WebApp
 {

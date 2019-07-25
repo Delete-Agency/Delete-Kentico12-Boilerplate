@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using CMS.DataEngine;
 using CMS.DocumentEngine;
 using CMS.DocumentEngine.Types.DeleteBoilerplate;

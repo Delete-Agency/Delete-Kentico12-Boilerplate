@@ -1,7 +1,6 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
 using DeleteBoilerplate.Infrastructure.Routing;
-using DeleteBoilerplate.DynamicRouting.Attributes;
 using Kentico.Web.Mvc;
 
 namespace DeleteBoilerplate.WebApp

@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Web.Mvc;
-using AutoMapper;
 using DeleteBoilerplate.Domain.Repositories;
 using DeleteBoilerplate.Projects.Models;
 using LightInject;
