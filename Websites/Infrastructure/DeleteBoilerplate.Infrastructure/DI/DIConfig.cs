@@ -1,4 +1,5 @@
-﻿using DeleteBoilerplate.Infrastructure.Helpers;
+﻿using AutoMapper;
+using DeleteBoilerplate.Infrastructure.Helpers;
 using LightInject;
 
 namespace DeleteBoilerplate.Infrastructure
