@@ -1,4 +1,5 @@
-﻿using Kentico.Web.Mvc;
+﻿using Kentico.Content.Web.Mvc;
+using Kentico.Web.Mvc;
 
 namespace DeleteBoilerplate.WebApp
 {
@@ -6,6 +7,8 @@ namespace DeleteBoilerplate.WebApp
     {
         public static void RegisterFeatures(IApplicationBuilder builder)
         {
+            builder.UsePreview();
+
             // Enable required Kentico features
 
             // Uncomment the following to use the Page builder feature

@@ -7,10 +7,11 @@ using DeleteBoilerplate.Projects.Models;
 using LightInject;
 using CMS.DocumentEngine.Types.DeleteBoilerplate;
 using DeleteBoilerplate.DynamicRouting.Attributes;
+using DeleteBoilerplate.DynamicRouting.Controllers;
 
 namespace DeleteBoilerplate.Projects.Controllers
 {
-    public class ProjectsController : Controller
+    public class ProjectsController : BaseController
     {
         [Inject]
         public IProjectRepository ProjectRepository { get; set; }
@@ -18,11 +19,13 @@ namespace DeleteBoilerplate.Projects.Controllers
         [Inject]
         public IMapper Mapper { get; set; }
 
-
         [PageTypeRouting(Project.CLASS_NAME)]
         public ActionResult Index()
         {
-            return View();
+            var contextItem = this.GetContextItem<Project>();
+            var viewModel = Mapper.Map<Project, ProjectViewModel>(contextItem);
+
+            return View(viewModel);
         }
 
         public ActionResult Search(int year)

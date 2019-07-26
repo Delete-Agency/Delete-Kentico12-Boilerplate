@@ -5,13 +5,14 @@ using System.Reflection;
 using System.Web.Mvc;
 using DeleteBoilerplate.DynamicRouting.Attributes;
 
-namespace DeleteBoilerplate.WebApp
+namespace DeleteBoilerplate.DynamicRouting.Config
 {
     public static class PageTypeRoutingConfig
     {
-        public static Dictionary<string, MethodInfo> RoutingDictionary = new Dictionary<string, MethodInfo>();
+        // ReSharper disable once FieldCanBeMadeReadOnly.Local
+        private static Dictionary<string, MethodInfo> _routingDictionary = new Dictionary<string, MethodInfo>();
 
-        public static void CollectRoutingDefinitions()
+        public static void Initialize()
         {
             var assemblies = AppDomain.CurrentDomain.GetAssemblies()
                 .Where(assembly => assembly.CustomAttributes
@@ -36,10 +37,17 @@ namespace DeleteBoilerplate.WebApp
 
                     foreach (var pageTypeClassName in pageTypeClassNames)
                     {
-                        RoutingDictionary.Add(pageTypeClassName, method);
+                        _routingDictionary.Add(pageTypeClassName, method);
                     }
                 }
             }
+        }
+
+        public static MethodInfo GetTargetControllerMethod(string className)
+        {
+            _routingDictionary.TryGetValue(className, out var result);
+
+            return result;
         }
     }
 }

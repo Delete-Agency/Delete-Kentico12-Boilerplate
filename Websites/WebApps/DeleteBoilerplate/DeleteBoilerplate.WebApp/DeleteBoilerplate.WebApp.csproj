@@ -314,8 +314,8 @@
     <Reference Include="Kentico.Web.Mvc, Version=12.0.0.0, Culture=neutral, PublicKeyToken=834b12a258f213f9, processorArchitecture=MSIL">
       <HintPath>..\packages\Kentico.AspNet.Mvc.Libraries.12.0.31\lib\net461\Kentico.Web.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="LightInject, Version=5.1.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\LightInject.5.1.8\lib\net46\LightInject.dll</HintPath>
+    <Reference Include="LightInject, Version=5.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightInject.5.5.0\lib\net46\LightInject.dll</HintPath>
     </Reference>
     <Reference Include="LightInject.Annotation, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\LightInject.Annotation.1.1.0\lib\net46\LightInject.Annotation.dll</HintPath>
@@ -601,6 +601,39 @@
   <ItemGroup>
     <Content Include="Content\site.css" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\site.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Infrastructure\DeleteBoilerplate.DynamicRouting\DeleteBoilerplate.DynamicRouting.csproj">
+      <Project>{a165b815-191b-4831-9491-7010d7bec88f}</Project>
+      <Name>DeleteBoilerplate.DynamicRouting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Infrastructure\DeleteBoilerplate.Infrastructure\DeleteBoilerplate.Infrastructure.csproj">
+      <Project>{a7b10389-141e-41d6-84fb-50d2282b1f4c}</Project>
+      <Name>DeleteBoilerplate.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Features\DeleteBoilerplate.Projects\DeleteBoilerplate.Projects.csproj">
+      <Project>{bfbbaf91-2904-4d5c-9ac5-365aeaee98ef}</Project>
+      <Name>DeleteBoilerplate.Projects</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Kentico\Content\FormComponents\FileUploader\file-uploader.js" />
     <Content Include="Kentico\Content\FormComponents\USPhone\dependencyLibs\inputmask.dependencyLib.js" />
     <Content Include="Kentico\Content\FormComponents\USPhone\inputmask.js" />
@@ -714,13 +747,9 @@
   <ItemGroup>
     <Compile Include="App_Start\ApplicationConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\PageTypeRoutingConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\WebAssemblyInfo.cs" />
   </ItemGroup>
@@ -751,7 +780,6 @@
     <Content Include="Kentico\Scripts\builders\Core-icons.ttf" />
     <Content Include="Kentico\Scripts\builders\Core-icons.eot" />
     <Content Include="connectionStrings.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\AWSSDK.S3.3.3.0.1\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />

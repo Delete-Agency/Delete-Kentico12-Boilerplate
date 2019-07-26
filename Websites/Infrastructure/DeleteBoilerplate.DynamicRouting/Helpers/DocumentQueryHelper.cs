@@ -12,7 +12,7 @@ namespace DeleteBoilerplate.DynamicRouting.Helpers
         /// </summary>
         /// <param name="url"></param>
         /// <returns></returns>
-        public static TreeNode GetNodeByAliasPathOrSeoUrl(string url)
+        public static MultiDocumentQuery GetNodeByAliasPathOrSeoUrlQuery(string url)
         {
             // All page types
             var allPageTypes = DataClassInfoProvider.GetClasses()
@@ -29,16 +29,15 @@ namespace DeleteBoilerplate.DynamicRouting.Helpers
                 .ToArray();
 
             // How to get value for specific page
-            var treeNode = DocumentHelper.GetDocuments()
+            var query = DocumentHelper.GetDocuments()
                 .Types(pageTypesWithSeoUrlClassNames)
                 .Columns("NodeAliasPath", "SeoUrl", "DocumentID")
                 .WhereEquals("SeoUrl", url)
                 .Or()
                 .WhereEquals("NodeAliasPath", url)
-                .TopN(1)
-                .FirstOrDefault();
+                .TopN(1);
 
-            return treeNode;
+            return query;
         }
     }
 }

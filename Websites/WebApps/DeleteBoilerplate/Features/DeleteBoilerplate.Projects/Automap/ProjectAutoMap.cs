@@ -14,7 +14,8 @@ namespace DeleteBoilerplate.Projects
         {
             CreateMap<Project, ProjectViewModel>()
                 .ForMember(dst => dst.Id, opt => opt.MapFrom(src => src.NodeGUID))
-                .ForMember(dst => dst.Description, opt => opt.MapFrom(src => ProjectDescriber.GetDescribe(src)));
+                .ForMember(dst => dst.Description, opt => opt.MapFrom(src => ProjectDescriber.GetDescribe(src)))
+                .ForMember(dst => dst.Year, opt => opt.MapFrom(src => src.Year));
         }
     }
 }

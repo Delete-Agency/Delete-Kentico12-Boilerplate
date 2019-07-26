@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using System.Linq;
+using System.Web;
 using System.Web.Routing;
 using DeleteBoilerplate.DynamicRouting.Helpers;
 
@@ -17,7 +18,7 @@ namespace DeleteBoilerplate.DynamicRouting.RequestHandling
         {
             var url = EnvironmentHelper.GetUrl(httpContext.Request);
 
-            var foundDoc = DocumentQueryHelper.GetNodeByAliasPathOrSeoUrl(url);
+            var foundDoc = DocumentQueryHelper.GetNodeByAliasPathOrSeoUrlQuery(url).FirstOrDefault();
 
             return (foundDoc != null && (foundDoc.NodeAliasPath != "/" || !IgnoreRootPage));
         }

@@ -76,11 +76,5 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DeleteBoilerplate.DynamicRouting\DeleteBoilerplate.DynamicRouting.csproj">
-      <Project>{a165b815-191b-4831-9491-7010d7bec88f}</Project>
-      <Name>DeleteBoilerplate.DynamicRouting</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

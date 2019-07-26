@@ -1,5 +1,6 @@
 ﻿using System.Web.Optimization;
 using System.Web.Routing;
+using DeleteBoilerplate.DynamicRouting.Config;
 using DeleteBoilerplate.Infrastructure;
 using Kentico.Web.Mvc;
 
@@ -12,7 +13,9 @@ namespace DeleteBoilerplate.WebApp
             // Enables and configures selected Kentico ASP.NET MVC integration features
             ApplicationConfig.RegisterFeatures(ApplicationBuilder.Current);
 
-            PageTypeRoutingConfig.CollectRoutingDefinitions();
+            DIConfig.Bootstrap();
+
+            PageTypeRoutingConfig.Initialize();
 
             // Registers routes including system routes for enabled features
             RouteConfig.RegisterRoutes(RouteTable.Routes);
@@ -20,8 +23,6 @@ namespace DeleteBoilerplate.WebApp
             //ToDo: will we really use bundles?
             // Registers enabled bundles
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-
-            DIConfig.Bootstrap();
         }
     }
 }

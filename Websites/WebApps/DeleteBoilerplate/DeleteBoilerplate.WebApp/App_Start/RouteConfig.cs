@@ -15,8 +15,6 @@ namespace DeleteBoilerplate.WebApp
             // Always map the Kentico routes before adding other routes. Issues may occur if Kentico URLs are matched by a general route, for example images might not be displayed on pages
             routes.Kentico().MapRoutes();
 
-            DynamicRouting.RouteConfig.RegisterRoutes(routes, PageTypeRoutingConfig.RoutingDictionary);
-
             CustomRoutesHelper.RegisterFeaturesRoutes(routes);
 
             routes.MapRoute(

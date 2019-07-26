@@ -1,38 +1,42 @@
-﻿using System.Collections.Generic;
-using System.Reflection;
+﻿using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using DeleteBoilerplate.DynamicRouting.Config;
+using DeleteBoilerplate.DynamicRouting.Extensions;
 using DeleteBoilerplate.DynamicRouting.Helpers;
+using Kentico.Content.Web.Mvc;
+using Kentico.Web.Mvc;
 using RequestContext = System.Web.Routing.RequestContext;
 
 namespace DeleteBoilerplate.DynamicRouting.RequestHandling
 {
     public class DynamicHttpHandler : IHttpHandler
     {
-        public DynamicHttpHandler(RequestContext requestContext, Dictionary<string, MethodInfo> routingDictionary)
+        public DynamicHttpHandler(RequestContext httpRequestContext)
         {
-            this.RequestContext = requestContext;
-            this._routingDictionary = routingDictionary;
+            this.HttpRequestContext = httpRequestContext;
         }
 
-        public RequestContext RequestContext { get; set; }
-
-        private readonly Dictionary<string, MethodInfo> _routingDictionary;
-
+        public RequestContext HttpRequestContext { get; set; }
+        
         public bool IsReusable => false;
 
         public void ProcessRequest(HttpContext context)
         {
             var factory = ControllerBuilder.Current.GetControllerFactory();
 
-            var defaultController = RequestContext.RouteData.Values.ContainsKey("controller") ? RequestContext.RouteData.Values["controller"].ToString() : "";
-            var defaultAction = RequestContext.RouteData.Values.ContainsKey("action") ? RequestContext.RouteData.Values["action"].ToString() : "";
+            var defaultController = this.HttpRequestContext.RouteData.Values.ContainsKey("controller") ? this.HttpRequestContext.RouteData.Values["controller"].ToString() : "";
+            var defaultAction = this.HttpRequestContext.RouteData.Values.ContainsKey("action") ? this.HttpRequestContext.RouteData.Values["action"].ToString() : "";
 
             // Get the classname based on the URL
-            var foundNode = DocumentQueryHelper.GetNodeByAliasPathOrSeoUrl(EnvironmentHelper.GetUrl(context.Request));
-            var className = foundNode.ClassName;
+            var foundNode = DocumentQueryHelper
+                .GetNodeByAliasPathOrSeoUrlQuery(EnvironmentHelper.GetUrl(context.Request))
+                .AddVersionsParameters(context.Kentico().Preview().Enabled)
+                .FirstOrDefault();
 
-            _routingDictionary.TryGetValue(className, out var controllerMethod);
+            var className = foundNode?.ClassName;
+
+            var controllerMethod = PageTypeRoutingConfig.GetTargetControllerMethod(className);
 
             var controllerName = controllerMethod?.ReflectedType?.Name;
             var controllerAction = controllerMethod?.Name;
@@ -45,12 +49,16 @@ namespace DeleteBoilerplate.DynamicRouting.RequestHandling
 
             controllerName = controllerName.Replace("Controller", string.Empty);
 
-            this.RequestContext.RouteData.Values["Controller"] = controllerName;
-            this.RequestContext.RouteData.Values["Action"] = controllerAction;
+            this.HttpRequestContext.RouteData.Values["Controller"] = controllerName;
+            this.HttpRequestContext.RouteData.Values["Action"] = controllerAction;
 
-            var controller = factory.CreateController(this.RequestContext, controllerName);
+            context.Items.Add("ContextItemDocumentId", foundNode?.DocumentID);
 
-            controller.Execute(this.RequestContext);
+            this.HttpRequestContext.HttpContext = new HttpContextWrapper(context);
+
+            var controller = factory.CreateController(this.HttpRequestContext, controllerName);
+
+            controller.Execute(this.HttpRequestContext);
             
             factory.ReleaseController(controller);
         }
