@@ -3,6 +3,7 @@ using System.Web.Mvc;
 using CMS.DocumentEngine;
 using DeleteBoilerplate.DynamicRouting.Extensions;
 using Kentico.Content.Web.Mvc;
+using Kentico.PageBuilder.Web.Mvc;
 using Kentico.Web.Mvc;
 using LightInject;
 using IRequestContext = DeleteBoilerplate.DynamicRouting.Contexts.IRequestContext;
@@ -14,10 +15,20 @@ namespace DeleteBoilerplate.DynamicRouting.Controllers
         [Inject]
         public IRequestContext RequestContext { get; set; }
 
+        protected override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            this.ResolveContext();
+
+            if (this.RequestContext.IsPreview && this.RequestContext.ContextItemId.HasValue)
+                HttpContext.Kentico().PageBuilder().Initialize(this.RequestContext.ContextItemId.Value);
+
+            base.OnActionExecuting(filterContext);
+        }
+
         protected virtual T GetContextItem<T>() where T: TreeNode, new()
         {
-            if (!this.RequestContext.ContextResolved)
-                ResolveContext<T>();
+            if (!this.RequestContext.ContextItemResolved)
+                ResolveContextItem<T>();
 
             if (this.RequestContext.ContextItem is T typedContextItem)
                 return typedContextItem;
@@ -25,19 +36,24 @@ namespace DeleteBoilerplate.DynamicRouting.Controllers
             return null;
         }
 
-        private void ResolveContext<T>() where T: TreeNode, new()
+        private void ResolveContext()
         {
+            this.RequestContext.ContextItemId = this.HttpContext.Items["ContextItemDocumentId"] as int?;
             this.RequestContext.IsPreview = this.HttpContext.Kentico().Preview().Enabled;
+        }
 
-            var contextItemDocumentId = (int)this.HttpContext.Items["ContextItemDocumentId"];
+        private void ResolveContextItem<T>() where T: TreeNode, new()
+        {
+            if (this.RequestContext.ContextItemId.HasValue)
+            {
+                var query = DocumentHelper.GetDocuments<T>()
+                    .WithID(this.RequestContext.ContextItemId.Value)
+                    .TopN(1)
+                    .AddVersionsParameters(this.RequestContext.IsPreview);
 
-            var query = DocumentHelper.GetDocuments<T>()
-                .WithID(contextItemDocumentId)
-                .TopN(1)
-                .AddVersionsParameters(this.RequestContext.IsPreview);
-
-            this.RequestContext.ContextItem = query.FirstOrDefault();
-            this.RequestContext.ContextResolved = true;
+                this.RequestContext.ContextItem = query.FirstOrDefault();
+                this.RequestContext.ContextItemResolved = true;
+            }
         }
     }
 }
