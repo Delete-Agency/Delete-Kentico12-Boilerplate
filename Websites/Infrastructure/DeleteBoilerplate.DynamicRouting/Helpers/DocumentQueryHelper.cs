@@ -8,7 +8,7 @@ namespace DeleteBoilerplate.DynamicRouting.Helpers
     public class DocumentQueryHelper
     {
         /// <summary>
-        /// Gets the TreeNode for the corresponding path, can be either the NodeAliasPath or a URL Alias
+        /// Gets the query to get TreeNode for the corresponding path
         /// </summary>
         /// <param name="url"></param>
         /// <returns></returns>
@@ -28,7 +28,7 @@ namespace DeleteBoilerplate.DynamicRouting.Helpers
                 .Select(x => x.ClassName)
                 .ToArray();
 
-            // How to get value for specific page
+            // Specific page query
             var query = DocumentHelper.GetDocuments()
                 .Types(pageTypesWithSeoUrlClassNames)
                 .Columns("NodeAliasPath", "SeoUrl", "DocumentID")
