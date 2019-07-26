@@ -22193,8 +22193,10 @@
     <Analyzer Include="..\packages\AWSSDK.S3.3.1.9.0\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />
   </ItemGroup>
   <ItemGroup>
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\DeleteBoilerplate.Modules\DeleteBoilerplate.Modules.csproj">
+      <Project>{fe669204-182e-4dec-a75c-d91780a15d32}</Project>
+      <Name>DeleteBoilerplate.Modules</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
