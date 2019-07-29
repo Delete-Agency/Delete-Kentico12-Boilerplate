@@ -1,4 +1,4 @@
-﻿using CMS.DocumentEngine.Types.DeleteBoilerplate;
+﻿using CMS.DocumentEngine;
 using DeleteBoilerplate.Infrastructure.Extensions;
 using DeleteBoilerplate.Metadata.Models;
 
@@ -8,9 +8,9 @@ namespace DeleteBoilerplate.Metadata.Automap
     {
         public MetadataAutoMap()
         {
-            CreateMap<IBasePage, MetadataModel>()
+            CreateMap<TreeNode, IMetadata>()
                 .ForMember(dst => dst.Title, opt => opt.MapFrom(src => src.GetValue("NodeName")))
-                .ForMember(dst => dst.CanonicalUrl, opt => opt.MapFrom(src => src.SeoUrl.GetAbsoluteAppUrl()));
+                .ForMember(dst => dst.CanonicalUrl, opt => opt.MapFrom(src => src.NodeAlias.GetAbsoluteAppUrl()));
         }
     }
 }

@@ -29,7 +29,7 @@ namespace DeleteBoilerplate.DynamicRouting.Controllers
         protected virtual T GetContextItem<T>() where T: TreeNode, new()
         {
             if (!this.RequestContext.ContextItemResolved)
-                ResolveContextItem<T>();
+                this.ResolveContextItem<T>();
 
             if (this.RequestContext.ContextItem is T typedContextItem)
                 return typedContextItem;

@@ -17,11 +17,8 @@ namespace DeleteBoilerplate.Metadata.Controllers
         {
             var contextItem = this.GetContextItem<TreeNode>();
 
-            MetadataModel model = null;
-
-            if (contextItem is IBasePage basePage)
-                model = this.Mapper.Map<IBasePage, MetadataModel>(basePage);
-
+            var model = this.Mapper.Map<TreeNode, IMetadata>(contextItem);
+            
             return this.PartialView("_Meta", model);
         }
     }

@@ -513,7 +513,7 @@
   <ItemGroup>
     <Compile Include="Automap\MetadataAutoMap.cs" />
     <Compile Include="Controllers\MetadataController.cs" />
-    <Compile Include="Models\MetadataModel.cs" />
+    <Compile Include="Models\IMetadata.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
