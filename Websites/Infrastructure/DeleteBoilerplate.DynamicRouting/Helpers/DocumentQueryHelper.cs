@@ -14,6 +14,7 @@ namespace DeleteBoilerplate.DynamicRouting.Helpers
         /// <returns></returns>
         public static MultiDocumentQuery GetNodeByAliasPathOrSeoUrlQuery(string url)
         {
+            //todo: add caching from here
             // All page types
             var allPageTypes = DataClassInfoProvider.GetClasses()
                 .Where(dataClass => dataClass.ClassIsDocumentType)
@@ -27,6 +28,7 @@ namespace DeleteBoilerplate.DynamicRouting.Helpers
                 .Where(x => x.ClassInheritsFromClassID == basePageType?.ClassID)
                 .Select(x => x.ClassName)
                 .ToArray();
+            //todo: add caching to here
 
             // Specific page query
             var query = DocumentHelper.GetDocuments()

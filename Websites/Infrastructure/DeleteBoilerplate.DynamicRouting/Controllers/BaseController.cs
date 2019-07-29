@@ -20,7 +20,7 @@ namespace DeleteBoilerplate.DynamicRouting.Controllers
             if (!this.RequestContext.ContextResolved)
                 this.ResolveContext();
 
-            if (this.RequestContext.IsPreview && this.RequestContext.ContextItemId.HasValue)
+            if (this.RequestContext.ContextItemId.HasValue)
                 HttpContext.Kentico().PageBuilder().Initialize(this.RequestContext.ContextItemId.Value);
 
             base.OnActionExecuting(filterContext);
