@@ -1,4 +1,9 @@
-﻿@model CMS.DocumentEngine.TreeNode
+﻿@model DeleteBoilerplate.Metadata.Models.MetadataModel
 
-<title>@(Model?.NodeName)</title>
-<meta name="title" content="@(Model?.NodeName)" />
+<title>@(Model?.Title)</title>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="title" content="@(Model?.Title)" />
+<meta name="canonical" content="@(Model?.CanonicalUrl)" />
