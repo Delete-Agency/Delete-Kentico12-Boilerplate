@@ -13,11 +13,12 @@ namespace DeleteBoilerplate.DynamicRouting.Controllers
     public class BaseController : Controller
     {
         [Inject]
-        public IRequestContext RequestContext { get; set; }
+        protected IRequestContext RequestContext { get; set; }
 
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            this.ResolveContext();
+            if (!this.RequestContext.ContextResolved)
+                this.ResolveContext();
 
             if (this.RequestContext.IsPreview && this.RequestContext.ContextItemId.HasValue)
                 HttpContext.Kentico().PageBuilder().Initialize(this.RequestContext.ContextItemId.Value);

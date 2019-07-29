@@ -601,7 +601,6 @@
   <ItemGroup>
     <Content Include="Content\site.css" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\site.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -615,9 +614,9 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Infrastructure\DeleteBoilerplate.DynamicRouting\DeleteBoilerplate.DynamicRouting.csproj">
@@ -627,6 +626,10 @@
     <ProjectReference Include="..\..\..\Infrastructure\DeleteBoilerplate.Infrastructure\DeleteBoilerplate.Infrastructure.csproj">
       <Project>{a7b10389-141e-41d6-84fb-50d2282b1f4c}</Project>
       <Name>DeleteBoilerplate.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DeleteBoilerplate.Metadata\DeleteBoilerplate.Metadata.csproj">
+      <Project>{3dc6646a-a5bc-4c2b-9a4c-42cd157406ac}</Project>
+      <Name>DeleteBoilerplate.Metadata</Name>
     </ProjectReference>
     <ProjectReference Include="..\Features\DeleteBoilerplate.Projects\DeleteBoilerplate.Projects.csproj">
       <Project>{bfbbaf91-2904-4d5c-9ac5-365aeaee98ef}</Project>
@@ -752,14 +755,6 @@
     <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\WebAssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\web.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Infrastructure\DeleteBoilerplate.DynamicRouting\DeleteBoilerplate.DynamicRouting.csproj">

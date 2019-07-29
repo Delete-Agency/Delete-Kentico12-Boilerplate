@@ -7,7 +7,7 @@ namespace DeleteBoilerplate.Infrastructure.Routing
     {
         public static void RegisterFeaturesRoutes(RouteCollection routes)
         {
-            var assemblies = AssemblyHelper.GetDiscoverableAsseblyAssemblies();
+            var assemblies = AssemblyHelper.GetDiscoverableAssemblyAssemblies();
             foreach (var assembly in assemblies)
             {
                 var rcType = assembly.GetType($"{assembly.GetName().Name}.RouteConfig");

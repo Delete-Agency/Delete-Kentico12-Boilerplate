@@ -10,6 +10,8 @@ namespace DeleteBoilerplate.DynamicRouting.Contexts
 
         bool ContextItemResolved { get; set; }
 
+        bool ContextResolved { get; set; }
+
         bool IsPreview { get; set; }
     }
 }

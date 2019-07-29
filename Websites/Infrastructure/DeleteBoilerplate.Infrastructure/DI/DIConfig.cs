@@ -10,7 +10,7 @@ namespace DeleteBoilerplate.Infrastructure
         {
             var container = new ServiceContainer();
 
-            var assemblies = AssemblyHelper.GetDiscoverableAsseblyAssemblies();
+            var assemblies = AssemblyHelper.GetDiscoverableAssemblyAssemblies();
             foreach (var assembly in assemblies)
             {
                 container.RegisterAssembly(assembly);

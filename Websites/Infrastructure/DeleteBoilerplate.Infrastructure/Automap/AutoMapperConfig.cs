@@ -13,7 +13,7 @@ namespace DeleteBoilerplate.Infrastructure
             var config = new MapperConfiguration(cfg =>
             {
                 cfg.ConstructServicesUsing(serviceContainer.GetInstance);
-                var assemblies = AssemblyHelper.GetDiscoverableAsseblyAssemblies();
+                var assemblies = AssemblyHelper.GetDiscoverableAssemblyAssemblies();
                 foreach (var assembly in assemblies)
                 {
                     var definedTypes = assembly.DefinedTypes;
