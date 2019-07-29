@@ -1,7 +1,6 @@
 ﻿using System.Web.Mvc;
 using AutoMapper;
 using CMS.DocumentEngine;
-using CMS.DocumentEngine.Types.DeleteBoilerplate;
 using DeleteBoilerplate.DynamicRouting.Controllers;
 using DeleteBoilerplate.Metadata.Models;
 using LightInject;
