@@ -1,19 +1,70 @@
-﻿<!DOCTYPE html>
+﻿@using System.Globalization
+@using DeleteBoilerplate.Infrastructure.Extensions
+@using HtmlHelperExtensions = DeleteBoilerplate.Infrastructure.Extensions.HtmlHelperExtensions
+
+@Html.RegisterStyle("app.css")
+@Html.RegisterScript("commons.js")
+@Html.RegisterScript("vendors.app.js")
+@Html.RegisterScript("app.js")
+
+@Html.RegisterSvg("app.svg")
+
+@{
+    var styles = Html.GetRegisteredComponents(ContentType.CSS);
+    var scripts = Html.GetRegisteredComponents(ContentType.JS);
+    var scriptsModern = Html.GetRegisteredComponents(ContentType.ModernJS);
+    var svgFiles = Html.GetRegisteredComponents(ContentType.Svg);
+
+    var isStyleLoaded = HtmlHelperExtensions.IsSameAssetsCacheCookie();
+}
+@functions {
+    private bool isLocal(string path)
+    {
+        if (string.IsNullOrEmpty(path)) return false;
+        return path.StartsWith("/dist", true, CultureInfo.CurrentCulture);
+    }
+}
+<!DOCTYPE html>
 <html>
 <head>
     @{ Html.RenderAction("RenderMeta", "Metadata"); }
 
+
     @Styles.Render("~/Content/css")
 
-    @* See ~/App_Start/ApplicationConfig.cs, ~/Controllers/HomeController.cs and ~/Views/Home/Index.cshtml
-       Uncomment the following line to add <link> tag referencing the Page builder style bundle. *@
-    @*@Html.Kentico().PageBuilderStyles()*@
-
+    <!-- Styles Begin -->
+    @if (isStyleLoaded)
+    {
+        foreach (var style in styles)
+        {
+            <link rel="stylesheet" href="@style.Path">
+        }
+    }
+    else
+    {
+        @Html.InlineCSS(styles.Select(x => x.Name).ToArray())
+        @Html.SetAssetsCacheCookie()
+    }
+    <!-- Styles End -->
+    <!-- Scripts Preload Begin -->
+    @foreach (var script in scriptsModern)
+    {
+        if (isLocal(script.Path))
+        {
+            <link rel="modulepreload" href="@script.Path">
+        }
+    }
+    <link rel="modulepreload" href="@Html.GetWebPath("init.mjs")">
+    <!-- Scripts Preload End -->
+    @RenderSection("styles", required: false)
 </head>
 <body>
+    @foreach (var svgFile in svgFiles)
+    {
+        <text>@Html.InlineSVG(svgFile.Name)</text>
+    }
     <div class="container body-content">
         @RenderBody()
-
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
@@ -22,10 +73,75 @@
 
     @Scripts.Render("~/bundles/scripts")
 
-    @* See ~/App_Start/ApplicationConfig.cs, ~/Controllers/HomeController.cs and ~/Views/Home/Index.cshtml
-       Uncomment the following line to add <script> tag referencing the Page builder script bundle. *@
-    @*@Html.Kentico().PageBuilderScripts()*@
+    <!-- Scripts load Begin -->
+    @if (Html.NoCache())
+    {
+        foreach (var script in scripts)
+        {
+            <script defer src="@script.Path"></script>
+        }
+    }
+    else
+    {
+        <!-- Modern scripts load Begin -->
+        foreach (var script in scriptsModern)
+        {
+            <script type="module" src="@script.Path"></script>
+        }
+        <!-- Regular scripts load Begin -->
+        <script>
+            !function () {
+                var t = document.createElement("script");
+                if (!("noModule" in t) && "onbeforeload" in t) {
+                    var n = !1;
+                    document.addEventListener("beforeload",
+                        function (e) {
+                            if (e.target === t) n = !0;
+                            else if (!e.target.hasAttribute("nomodule") ||
+                                !n) return;
+                            e.preventDefault();
+                        },
+                        !0), t.type = "module", t.src = ".", document.head.appendChild(t), t.remove();
+                }
+            }()
+        </script>
+        foreach (var script in scripts)
+        {
+            <script defer @(script.IsLocal ? "nomodule" : "") src="@script.Path"></script>
+        }
+        <!-- Regular scripts load End -->
+    }
+    <!-- Scripts load End -->
 
-    @RenderSection("scripts", required: false)
+    @if (!isStyleLoaded)
+    {
+        <script>
+        var cachedStyles = [@Html.Raw(string.Join(",", styles.Select(x => $"\"{x.Path}\"")))];
+        var loadStyle = function(file) {
+            var _sl = document.createElement("link");
+            _sl.rel = "stylesheet";
+            _sl.media = "print";
+            _sl.href = file;
+            document.head.appendChild(_sl);
+        };
+
+        setTimeout(function() {
+                for (var i = 0; i < cachedStyles.length; i++) {
+                    loadStyle(cachedStyles[i]);
+                }
+            },
+            10000);
+        </script>
+    }
+
+    @if (Html.NoCache())
+    {
+        <script defer src="@Html.GetWebPath("init.js")"></script>
+    }
+    else
+    {
+        <script type="module" src="@Html.GetWebPath("init.mjs")"></script>
+        <script defer nomodule src="@Html.GetWebPath("init.js")"></script>
+    }
 </body>
 </html>

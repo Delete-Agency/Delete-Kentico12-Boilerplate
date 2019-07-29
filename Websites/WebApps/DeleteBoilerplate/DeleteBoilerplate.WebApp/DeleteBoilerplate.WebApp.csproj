@@ -611,7 +611,6 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -738,7 +737,6 @@
     <Content Include="Kentico\Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Kentico\Scripts\modal-dialog.js" />
     <Content Include="Kentico\Scripts\shim.min.js" />
-    <Content Include="Scripts\site.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
