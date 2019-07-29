@@ -20,5 +20,15 @@ namespace DeleteBoilerplate.Infrastructure.Extensions
 
             return source.StartsWith(pattern, StringComparison.OrdinalIgnoreCase) ? source : $"{pattern}{source}";
         }
+
+        public static bool IsEmpty(this string value)
+        {
+            return string.IsNullOrEmpty(value);
+        }
+
+        public static string OrDefault(this string value, string defaultValue)
+        {
+            return !IsEmpty(value) ? value : defaultValue;
+        }
     }
 }
