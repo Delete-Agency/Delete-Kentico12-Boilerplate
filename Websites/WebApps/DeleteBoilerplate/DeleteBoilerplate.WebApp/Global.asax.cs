@@ -1,6 +1,4 @@
-﻿using System.Web;
-using System.Web.Optimization;
-using System.Web.Routing;
+﻿using System.Web.Routing;
 using DeleteBoilerplate.DynamicRouting.Config;
 using DeleteBoilerplate.Infrastructure;
 using Kentico.Web.Mvc;
@@ -21,14 +19,7 @@ namespace DeleteBoilerplate.WebApp
             // Registers routes including system routes for enabled features
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
-            //ToDo: will we really use bundles?
-            // Registers enabled bundles
-            BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
 
-        public override string GetVaryByCustomString(HttpContext context, string arg)
-        {
-            return "";
-        }
     }
 }

@@ -31,8 +31,6 @@
     @{ Html.RenderAction("RenderMeta", "Metadata"); }
 
 
-    @Styles.Render("~/Content/css")
-
     <!-- Styles Begin -->
     @if (isStyleLoaded)
     {
@@ -71,8 +69,6 @@
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
-
-    @Scripts.Render("~/bundles/scripts")
 
     <!-- Scripts load Begin -->
     @if (Html.NoCache())
