@@ -23,7 +23,7 @@ namespace DeleteBoilerplate.Metadata.Automap
                 .ForPath(dst => dst.OpenGraphMetadata.ImageAlt,
                     opt => opt.MapFrom(src => SiteSettingsHelper.GetSettingValue(SiteSetting.DefaultImageAlt)))
                 .ForPath(dst => dst.OpenGraphMetadata.SiteName, opt => opt.MapFrom(src => SiteContext.CurrentSiteName))
-                .ForPath(dst => dst.OpenGraphMetadata.Url, opt => opt.MapFrom(src => src.SeoUrl))
+                .ForPath(dst => dst.OpenGraphMetadata.Url, opt => opt.MapFrom(src => src.SeoUrl.GetAbsoluteAppUrl()))
                 .ForPath(dst => dst.OpenGraphMetadata.Title, opt => opt.MapFrom(src => src.MetadataTitle))
                 .ForPath(dst => dst.OpenGraphMetadata.Description, opt => opt.MapFrom(src => src.MetadataDescription));
         }
