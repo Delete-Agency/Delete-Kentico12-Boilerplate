@@ -470,6 +470,10 @@
     <Compile Include="Models\PageTypes\Project\Project.cs" />
     <Compile Include="Models\PageTypes\Project\Project.generated.cs" />
     <Compile Include="Models\PageTypes\Project\ProjectProvider.generated.cs" />
+    <Compile Include="Models\PageTypes\TaxonomyItem\TaxonomyItemProvider.generated.cs" />
+    <Compile Include="Models\PageTypes\TaxonomyItem\TaxonomyItem.generated.cs" />
+    <Compile Include="Models\PageTypes\TaxonomyType\TaxonomyTypeProvider.generated.cs" />
+    <Compile Include="Models\PageTypes\TaxonomyType\TaxonomyType.generated.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ProjectRepository.cs" />
   </ItemGroup>

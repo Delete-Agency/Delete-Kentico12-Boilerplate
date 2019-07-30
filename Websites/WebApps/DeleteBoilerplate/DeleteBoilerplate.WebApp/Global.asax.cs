@@ -1,4 +1,5 @@
-﻿using System.Web.Optimization;
+﻿using System.Web;
+using System.Web.Optimization;
 using System.Web.Routing;
 using DeleteBoilerplate.DynamicRouting.Config;
 using DeleteBoilerplate.Infrastructure;
@@ -23,6 +24,11 @@ namespace DeleteBoilerplate.WebApp
             //ToDo: will we really use bundles?
             // Registers enabled bundles
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+        }
+
+        public override string GetVaryByCustomString(HttpContext context, string arg)
+        {
+            return "";
         }
     }
 }
