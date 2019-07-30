@@ -1,7 +1,6 @@
 ﻿using System.Web.Mvc;
 using AutoMapper;
 using CMS.DocumentEngine;
-using CMS.DocumentEngine.Types.DeleteBoilerplate;
 using DeleteBoilerplate.DynamicRouting.Controllers;
 using DeleteBoilerplate.Metadata.Models;
 using LightInject;
@@ -17,14 +16,9 @@ namespace DeleteBoilerplate.Metadata.Controllers
         {
             var contextItem = this.GetContextItem<TreeNode>();
 
-            if (contextItem is IBasePage basePage)
-            {
-                var model = this.Mapper.Map<IMetadata>(basePage);
+            var model = this.Mapper.Map<IMetadata>(contextItem);
 
-                return this.PartialView("_Meta", model);
-            }
-            
-            return new EmptyResult();
+            return this.PartialView("_Meta", model);
         }
     }
 }

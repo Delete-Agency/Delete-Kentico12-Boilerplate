@@ -81,40 +81,6 @@ namespace CMS.DocumentEngine.Types.DeleteBoilerplate
 
 
 		/// <summary>
-		/// Title.
-		/// </summary>
-		[DatabaseField]
-		public string MetadataTitle
-		{
-			get
-			{
-				return ValidationHelper.GetString(GetValue("MetadataTitle"), @"");
-			}
-			set
-			{
-				SetValue("MetadataTitle", value);
-			}
-		}
-
-
-		/// <summary>
-		/// Description.
-		/// </summary>
-		[DatabaseField]
-		public string MetadataDescription
-		{
-			get
-			{
-				return ValidationHelper.GetString(GetValue("MetadataDescription"), @"");
-			}
-			set
-			{
-				SetValue("MetadataDescription", value);
-			}
-		}
-
-
-		/// <summary>
 		/// Gets an object that provides extended API for working with BasePage fields.
 		/// </summary>
 		[RegisterProperty]
@@ -177,38 +143,6 @@ namespace CMS.DocumentEngine.Types.DeleteBoilerplate
 				set
 				{
 					mInstance.SeoUrl = value;
-				}
-			}
-
-
-			/// <summary>
-			/// Title.
-			/// </summary>
-			public string MetadataTitle
-			{
-				get
-				{
-					return mInstance.MetadataTitle;
-				}
-				set
-				{
-					mInstance.MetadataTitle = value;
-				}
-			}
-
-
-			/// <summary>
-			/// Description.
-			/// </summary>
-			public string MetadataDescription
-			{
-				get
-				{
-					return mInstance.MetadataDescription;
-				}
-				set
-				{
-					mInstance.MetadataDescription = value;
 				}
 			}
 		}

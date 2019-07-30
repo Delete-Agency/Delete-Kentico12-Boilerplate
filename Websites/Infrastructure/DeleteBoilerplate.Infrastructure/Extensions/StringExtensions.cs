@@ -1,25 +1,16 @@
-﻿using System;
-using CMS.Helpers;
+﻿using CMS.Helpers;
+using CMS.SiteProvider;
 
 namespace DeleteBoilerplate.Infrastructure.Extensions
 {
     public static class StringExtensions
     {
-        public static string GetAbsoluteAppUrl(this string relativeUrl)
+        public static string GetAbsoluteUrl(this string relativeUrl)
         {
-            var appUrl = URLHelper.GetApplicationUrl();
+            var domain = SiteContext.CurrentSite.DomainName;
+            var absoluteUrl = URLHelper.GetAbsoluteUrl(relativeUrl, domain);
 
-            relativeUrl = relativeUrl.TrimStart('~');
-            relativeUrl = relativeUrl.EnsureStringStartsWith("/");
-
-            return $"{appUrl}{relativeUrl}";
-        }
-
-        public static string EnsureStringStartsWith(this string source, string pattern)
-        {
-            if (string.IsNullOrEmpty(source)) return string.Empty;
-
-            return source.StartsWith(pattern, StringComparison.OrdinalIgnoreCase) ? source : $"{pattern}{source}";
+            return URLHelper.RemovePortFromURL(absoluteUrl);
         }
 
         public static bool IsEmpty(this string value)

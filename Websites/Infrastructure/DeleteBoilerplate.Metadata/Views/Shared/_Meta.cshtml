@@ -6,7 +6,8 @@
 
 @if (Model != null)
 {
-    <meta name="title" content="@Model.Title" />
+    <title>@Model.Title</title>
+
     <meta name="description" content="@Model.Description" />
     <meta name="canonical" content="@Model.CanonicalUrl" />
 
@@ -17,6 +18,7 @@
         <meta property="og:image" content="@Model.OpenGraphMetadata.Image" />
         <meta property="og:image:alt" content="@Model.OpenGraphMetadata.ImageAlt" />
         <meta property="og:site_name" content="@Model.OpenGraphMetadata.SiteName" />
+        <meta property="og:locale" content="@Model.OpenGraphMetadata.Locale" />
         <meta property="og:url" content="@Model.OpenGraphMetadata.Url" />
         <meta property="og:title" content="@Model.OpenGraphMetadata.Title" />
         <meta property="og:description" content="@Model.OpenGraphMetadata.Description" />

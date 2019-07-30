@@ -554,10 +554,10 @@
   <ItemGroup>
     <Compile Include="Attributes\StringValueAttribute.cs" />
     <Compile Include="Automap\AutoMapperConfig.cs" />
+    <Compile Include="Constants\Settings.cs" />
     <Compile Include="DeleteBoilerplateAssemblyAttribute.cs" />
     <Compile Include="DI\CompositionRoot.cs" />
     <Compile Include="DI\DIConfig.cs" />
-    <Compile Include="Enums\SiteSetting.cs" />
     <Compile Include="Enums\OpenGraphType.cs" />
     <Compile Include="Extensions\DictionaryExtensions.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
@@ -565,6 +565,7 @@
     <Compile Include="Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Extensions\HtmlHelperExtensions.Manifest.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Extensions\TreeNodeExtensions.cs" />
     <Compile Include="Helpers\AssemblyHelper.cs" />
     <Compile Include="Helpers\SiteSettingsHelper.cs" />
     <Compile Include="Models\StaticAsset.cs" />

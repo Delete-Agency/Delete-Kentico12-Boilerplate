@@ -463,11 +463,8 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\PageTypes\BasePage\BasePage.cs" />
     <Compile Include="Models\PageTypes\BasePage\BasePage.generated.cs" />
     <Compile Include="Models\PageTypes\BasePage\BasePageProvider.generated.cs" />
-    <Compile Include="Models\PageTypes\BasePage\IBasePage.cs" />
-    <Compile Include="Models\PageTypes\Project\Project.cs" />
     <Compile Include="Models\PageTypes\Project\Project.generated.cs" />
     <Compile Include="Models\PageTypes\Project\ProjectProvider.generated.cs" />
     <Compile Include="Models\PageTypes\TaxonomyItem\TaxonomyItemProvider.generated.cs" />

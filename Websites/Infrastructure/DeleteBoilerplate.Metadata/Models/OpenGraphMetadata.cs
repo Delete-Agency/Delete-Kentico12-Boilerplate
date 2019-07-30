@@ -12,6 +12,8 @@ namespace DeleteBoilerplate.Metadata.Models
 
         public string SiteName { get; set; }
 
+        public string Locale { get; set; }
+
         public string Url { get; set; }
 
         public string Title { get; set; }

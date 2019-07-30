@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
-using CMS.DocumentEngine.Types.DeleteBoilerplate;
+using CMS.DocumentEngine;
+using CMS.Localization;
 using CMS.SiteProvider;
+using DeleteBoilerplate.Infrastructure.Constants;
 using DeleteBoilerplate.Infrastructure.Enums;
 using DeleteBoilerplate.Infrastructure.Extensions;
 using DeleteBoilerplate.Infrastructure.Helpers;
@@ -12,20 +14,23 @@ namespace DeleteBoilerplate.Metadata.Automap
     {
         public MetadataAutoMap()
         {
-            CreateMap<IBasePage, IMetadata>(MemberList.None)
-                .ForMember(dst => dst.Title, opt => opt.MapFrom(src => src.MetadataTitle))
-                .ForMember(dst => dst.Description, opt => opt.MapFrom(src => src.MetadataDescription))
-                .ForMember(dst => dst.CanonicalUrl, opt => opt.MapFrom(src => src.SeoUrl.GetAbsoluteAppUrl()))
-
+            CreateMap<TreeNode, IMetadata>(MemberList.None)
+                //Metadata mapping
+                .ForMember(dst => dst.Title, opt => opt.MapFrom(src => src.DocumentPageTitle))
+                .ForMember(dst => dst.Description, opt => opt.MapFrom(src => src.DocumentPageDescription))
+                .ForMember(dst => dst.CanonicalUrl, opt => opt.MapFrom(src => src.GetAbsoluteUrl()))
+                //Open Graph metadata mapping
                 .ForPath(dst => dst.OpenGraphMetadata.Type, opt => opt.MapFrom(src => OpenGraphType.Website))
                 .ForPath(dst => dst.OpenGraphMetadata.Image,
-                    opt => opt.MapFrom(src => SiteSettingsHelper.GetSettingValue(SiteSetting.DefaultImage).GetAbsoluteAppUrl()))
+                    opt => opt.MapFrom(src => SiteSettingsHelper.GetSettingValue(Settings.Global.DefaultImage).GetAbsoluteUrl()))
                 .ForPath(dst => dst.OpenGraphMetadata.ImageAlt,
-                    opt => opt.MapFrom(src => SiteSettingsHelper.GetSettingValue(SiteSetting.DefaultImageAlt)))
+                    opt => opt.MapFrom(src => SiteSettingsHelper.GetSettingValue(Settings.Global.DefaultImageAlt)))
                 .ForPath(dst => dst.OpenGraphMetadata.SiteName, opt => opt.MapFrom(src => SiteContext.CurrentSiteName))
-                .ForPath(dst => dst.OpenGraphMetadata.Url, opt => opt.MapFrom(src => src.SeoUrl.GetAbsoluteAppUrl()))
-                .ForPath(dst => dst.OpenGraphMetadata.Title, opt => opt.MapFrom(src => src.MetadataTitle))
-                .ForPath(dst => dst.OpenGraphMetadata.Description, opt => opt.MapFrom(src => src.MetadataDescription));
+                .ForPath(dst => dst.OpenGraphMetadata.Locale,
+                    opt => opt.MapFrom(src => LocalizationContext.GetCurrentUICulture().CultureCode.Replace("-", "_")))
+                .ForPath(dst => dst.OpenGraphMetadata.Url, opt => opt.MapFrom(src => src.GetAbsoluteUrl()))
+                .ForPath(dst => dst.OpenGraphMetadata.Title, opt => opt.MapFrom(src => src.DocumentPageTitle))
+                .ForPath(dst => dst.OpenGraphMetadata.Description, opt => opt.MapFrom(src => src.DocumentPageDescription));
         }
     }
 }
