@@ -1,7 +1,4 @@
-﻿using System;
-using System.Web.Mvc;
-using Kentico.Content.Web.Mvc;
-using Kentico.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace DeleteBoilerplate.Infrastructure.Extensions
 {

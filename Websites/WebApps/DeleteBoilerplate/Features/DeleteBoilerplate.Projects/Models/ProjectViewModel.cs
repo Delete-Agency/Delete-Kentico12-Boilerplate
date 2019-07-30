@@ -9,5 +9,7 @@ namespace DeleteBoilerplate.Projects.Models
         public string Description { get; set; }
 
         public int Year { get; set; }
+
+        public string ImageUrl { get; set; }
     }
 }

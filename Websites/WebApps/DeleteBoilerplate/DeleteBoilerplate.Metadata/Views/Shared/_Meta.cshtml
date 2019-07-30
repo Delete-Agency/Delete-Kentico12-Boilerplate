@@ -1,9 +1,24 @@
-﻿@model DeleteBoilerplate.Metadata.Models.IMetadata
+﻿@using DeleteBoilerplate.Infrastructure.Extensions
+@model DeleteBoilerplate.Metadata.Models.IMetadata
 
-<title>@(Model?.Title)</title>
-
-<meta charset="utf-8"/>
+<meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="title" content="@(Model?.Title)" />
-<meta name="canonical" content="@(Model?.CanonicalUrl)" />
+@if (Model != null)
+{
+    <meta name="title" content="@Model.Title" />
+    <meta name="description" content="@Model.Description" />
+    <meta name="canonical" content="@Model.CanonicalUrl" />
+
+    if (Model.OpenGraphMetadata != null)
+    {
+        <!--Open graph -->
+        <meta property="og:type" content="@Model.OpenGraphMetadata.Type.GetStringValue()" />
+        <meta property="og:image" content="@Model.OpenGraphMetadata.Image" />
+        <meta property="og:image:alt" content="@Model.OpenGraphMetadata.ImageAlt" />
+        <meta property="og:site_name" content="@Model.OpenGraphMetadata.SiteName" />
+        <meta property="og:url" content="@Model.OpenGraphMetadata.Url" />
+        <meta property="og:title" content="@Model.OpenGraphMetadata.Title" />
+        <meta property="og:description" content="@Model.OpenGraphMetadata.Description" />
+    }
+}

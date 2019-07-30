@@ -9,6 +9,7 @@ namespace DeleteBoilerplate.Infrastructure.Extensions
         {
             var appUrl = URLHelper.GetApplicationUrl();
 
+            relativeUrl = relativeUrl.TrimStart('~');
             relativeUrl = relativeUrl.EnsureStringStartsWith("/");
 
             return $"{appUrl}{relativeUrl}";
