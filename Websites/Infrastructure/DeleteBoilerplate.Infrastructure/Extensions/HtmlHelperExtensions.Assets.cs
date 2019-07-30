@@ -123,7 +123,6 @@ namespace DeleteBoilerplate.Infrastructure.Extensions
             return asset;
         }
 
-        //ToDo: cache
         public static MvcHtmlString InlineCSS(this HtmlHelper htmlHelper, params string[] assets) =>
             Inline(htmlHelper, ContentType.CSS, assets);
         public static MvcHtmlString InlineSVG(this HtmlHelper htmlHelper, params string[] assets) =>

@@ -5,7 +5,9 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
+using CMS.Helpers;
 using CMS.IO;
+using CMS.SiteProvider;
 using Newtonsoft.Json;
 using Directory = System.IO.Directory;
 
@@ -13,7 +15,7 @@ namespace DeleteBoilerplate.Infrastructure.Extensions
 {
     public static partial class HtmlHelperExtensions
     {
-        public const string DistPath = "~/dist";
+        public const string DistPath = "/dist";
         public const string ManifestJsonPath = DistPath + "/manifest.json";
         public const string MonolithManifestJsonPath = DistPath + "/monolith.manifest.json";
 
@@ -92,26 +94,34 @@ namespace DeleteBoilerplate.Infrastructure.Extensions
         }
 
 
-        //ToDo: cache
         public static string GetContent(string manifestKey, string prefix = "")
         {
-
             var distServerPath = HttpContext.Current.Server.MapPath(DistPath);
             if (string.IsNullOrEmpty(distServerPath) || !Directory.Exists(distServerPath))
                 return null;
-
-            var fullPath = GetFullPathFromManifest(manifestKey);
-            if (!string.IsNullOrEmpty(fullPath))
+            var result = string.Empty;
+            
+            using (var cs = new CachedSection<string>(ref result, CacheHelper.CacheMinutes(SiteContext.CurrentSiteName), true,
+                $"AssetsCache_{manifestKey}_{ManifestHash}"))
             {
-                var processedValue = fullPath.Replace($"{DistPath}/", string.Empty);
-                var fullFilePath = distServerPath + "\\" + prefix + processedValue;
-                if (System.IO.File.Exists(fullFilePath))
+                if (cs.LoadData)
                 {
-                    return System.IO.File.ReadAllText(fullFilePath);
+                    var fullPath = GetFullPathFromManifest(manifestKey);
+                    if (!string.IsNullOrEmpty(fullPath))
+                    {
+                        var processedValue = fullPath.Replace($"{DistPath}/", string.Empty);
+                        var fullFilePath = distServerPath + "\\" + prefix + processedValue;
+                        if (System.IO.File.Exists(fullFilePath))
+                        {
+                            result = System.IO.File.ReadAllText(fullFilePath);
+                        }
+
+                        cs.Data = result;
+                    }
                 }
             }
 
-            return string.Empty;
+            return result;
         }
 
     }
