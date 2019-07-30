@@ -28,6 +28,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteBoilerplate.Metadata"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteBoilerplate.OutputCache", "..\..\Infrastructure\DeleteBoilerplate.OutputCache\DeleteBoilerplate.OutputCache.csproj", "{7042E8DA-1C9A-413C-9154-CFA7F30D3C68}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteBoilerplate.GenericComponents", "Features\DeleteBoilerplate.GenericComponents\DeleteBoilerplate.GenericComponents.csproj", "{A4435C07-D74E-4883-B31B-7466D08DDD07}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -62,6 +64,10 @@ Global
 		{7042E8DA-1C9A-413C-9154-CFA7F30D3C68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7042E8DA-1C9A-413C-9154-CFA7F30D3C68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7042E8DA-1C9A-413C-9154-CFA7F30D3C68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4435C07-D74E-4883-B31B-7466D08DDD07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4435C07-D74E-4883-B31B-7466D08DDD07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4435C07-D74E-4883-B31B-7466D08DDD07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4435C07-D74E-4883-B31B-7466D08DDD07}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,6 +79,7 @@ Global
 		{A7B10389-141E-41D6-84FB-50D2282B1F4C} = {25B3DC14-1D18-4110-8416-2372716B7505}
 		{3DC6646A-A5BC-4C2B-9A4C-42CD157406AC} = {25B3DC14-1D18-4110-8416-2372716B7505}
 		{7042E8DA-1C9A-413C-9154-CFA7F30D3C68} = {25B3DC14-1D18-4110-8416-2372716B7505}
+		{A4435C07-D74E-4883-B31B-7466D08DDD07} = {60D6784B-12CB-4ACD-B26B-545FC97DC901}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C6500213-6CF9-462C-B95D-DCF91FC64889}

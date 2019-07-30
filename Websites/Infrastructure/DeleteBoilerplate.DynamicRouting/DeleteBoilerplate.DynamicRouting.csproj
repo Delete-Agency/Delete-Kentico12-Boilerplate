@@ -566,6 +566,7 @@
     <Compile Include="Contexts\Implementation\RequestContext.cs" />
     <Compile Include="Contexts\IRequestContext.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\BaseWidgetController.cs" />
     <Compile Include="DI\CompositionRoot.cs" />
     <Compile Include="Extensions\DocumentQueryExtensions.cs" />
     <Compile Include="Helpers\DocumentQueryHelper.cs" />
