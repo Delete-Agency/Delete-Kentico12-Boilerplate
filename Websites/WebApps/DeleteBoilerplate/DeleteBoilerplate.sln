@@ -24,7 +24,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteBoilerplate.Domain", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteBoilerplate.Infrastructure", "..\..\Infrastructure\DeleteBoilerplate.Infrastructure\DeleteBoilerplate.Infrastructure.csproj", "{A7B10389-141E-41D6-84FB-50D2282B1F4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteBoilerplate.Metadata", "DeleteBoilerplate.Metadata\DeleteBoilerplate.Metadata.csproj", "{3DC6646A-A5BC-4C2B-9A4C-42CD157406AC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteBoilerplate.Metadata", "..\..\Infrastructure\DeleteBoilerplate.Metadata\DeleteBoilerplate.Metadata.csproj", "{3DC6646A-A5BC-4C2B-9A4C-42CD157406AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

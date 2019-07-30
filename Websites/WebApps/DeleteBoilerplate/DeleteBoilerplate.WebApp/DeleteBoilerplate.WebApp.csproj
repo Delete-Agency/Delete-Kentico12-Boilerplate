@@ -624,7 +624,7 @@
       <Project>{a7b10389-141e-41d6-84fb-50d2282b1f4c}</Project>
       <Name>DeleteBoilerplate.Infrastructure</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DeleteBoilerplate.Metadata\DeleteBoilerplate.Metadata.csproj">
+    <ProjectReference Include="..\..\..\Infrastructure\DeleteBoilerplate.Metadata\DeleteBoilerplate.Metadata.csproj">
       <Project>{3dc6646a-a5bc-4c2b-9a4c-42cd157406ac}</Project>
       <Name>DeleteBoilerplate.Metadata</Name>
     </ProjectReference>
