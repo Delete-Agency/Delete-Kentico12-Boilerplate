@@ -1,4 +1,20 @@
-﻿@model DeleteBoilerplate.Projects.Models.ProjectViewModel
+﻿@using DeleteBoilerplate.Projects.Helpers
+@using Kentico.PageBuilder.Web.Mvc
+@using Kentico.Web.Mvc
+@model DeleteBoilerplate.Projects.Models.ProjectViewModel
+
+@if (Context.Kentico().PageBuilder().EditMode)
+{
+@section styles
+{
+    @Html.Kentico().PageBuilderStyles()
+}
+
+@section scripts
+{
+    @Html.Kentico().PageBuilderScripts()
+}
+}
 
 <body>
     <div>
@@ -7,4 +23,7 @@
     <div>
         <img src="@Model.ImageUrl" width="200" height="200" />
     </div>
+
+    @Html.Kentico().EditableArea("deleteboilerplate-main", "DeleteBoilerplate.OneFullWidthColumnSection", AreaRestrictionHelper.GetProjectsMainRestrictions())
+
 </body>

@@ -49,6 +49,9 @@
     <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="AutoMapper, Version=8.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.8.1.1\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="AWSSDK.Core, Version=3.1.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
       <HintPath>..\..\packages\AWSSDK.Core.3.1.10.0\lib\net45\AWSSDK.Core.dll</HintPath>
     </Reference>
@@ -286,6 +289,18 @@
     <Reference Include="Kentico.Web.Mvc, Version=12.0.0.0, Culture=neutral, PublicKeyToken=834b12a258f213f9, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Kentico.AspNet.Mvc.Libraries.12.0.31\lib\net461\Kentico.Web.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="LightInject, Version=5.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\LightInject.5.5.0\lib\net46\LightInject.dll</HintPath>
+    </Reference>
+    <Reference Include="LightInject.Annotation, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\LightInject.Annotation.1.1.0\lib\net46\LightInject.Annotation.dll</HintPath>
+    </Reference>
+    <Reference Include="LightInject.Mvc, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\LightInject.Mvc.2.0.0\lib\net46\LightInject.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="LightInject.Web, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\LightInject.Web.2.0.0\lib\net46\LightInject.Web.dll</HintPath>
+    </Reference>
     <Reference Include="LinqToTwitter.AspNet, Version=5.0.0.14073, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\linqtotwitter.5.0.0\lib\net461\LinqToTwitter.AspNet.dll</HintPath>
     </Reference>
@@ -461,6 +476,7 @@
     <Reference Include="System.Data.HashFunction.Interfaces, Version=2.0.0.0, Culture=neutral, PublicKeyToken=80c9288e394c1322, processorArchitecture=MSIL">
       <HintPath>..\..\packages\System.Data.HashFunction.Interfaces.2.0.0\lib\net45\System.Data.HashFunction.Interfaces.dll</HintPath>
     </Reference>
+    <Reference Include="System.IO" />
     <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\..\packages\System.IO.FileSystem.Primitives.4.0.1\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
       <Private>True</Private>
@@ -469,6 +485,7 @@
     <Reference Include="System.IO.Packaging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\..\packages\System.IO.Packaging.4.0.0\lib\net46\System.IO.Packaging.dll</HintPath>
     </Reference>
+    <Reference Include="System.Linq.Expressions" />
     <Reference Include="System.Net" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -494,6 +511,7 @@
     <Reference Include="System.Spatial, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\System.Spatial.5.6.4\lib\net40\System.Spatial.dll</HintPath>
     </Reference>
+    <Reference Include="System.Threading.Tasks" />
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
@@ -549,13 +567,223 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\ckeditor.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\config.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\lang\en.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\lang\ru.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\af.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\ar.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\az.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\bg.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\ca.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\cs.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\cy.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\da.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\de-ch.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\de.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\el.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\en-au.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\en-gb.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\en.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\eo.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\es-mx.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\es.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\et.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\eu.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\fa.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\fi.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\fo.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\fr-ca.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\fr.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\gl.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\gu.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\he.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\hi.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\hr.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\hu.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\id.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\it.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\ja.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\km.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\ko.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\ku.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\lt.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\lv.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\mk.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\mn.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\nb.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\nl.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\no.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\oc.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\pl.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\pt-br.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\pt.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\ro.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\ru.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\si.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\sk.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\sl.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\sq.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\sr-latn.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\sr.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\sv.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\th.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\tr.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\tt.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\ug.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\uk.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\vi.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\zh-cn.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\zh.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\about\dialogs\about.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\confighelper\plugin.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\icons.png" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\icons_hidpi.png" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\image\dialogs\image.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\image\images\noimage.png" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\justify\icons\hidpi\justifyblock.png" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\justify\icons\hidpi\justifycenter.png" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\justify\icons\hidpi\justifyleft.png" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\justify\icons\hidpi\justifyright.png" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\justify\icons\justifyblock.png" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\justify\icons\justifycenter.png" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\justify\icons\justifyleft.png" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\justify\icons\justifyright.png" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\justify\plugin.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\link\dialogs\link.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\link\images\anchor.png" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\link\images\hidpi\anchor.png" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\magicline\images\hidpi\icon-rtl.png" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\magicline\images\hidpi\icon.png" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\magicline\images\icon-rtl.png" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\magicline\images\icon.png" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\scayt\dialogs\dialog.css" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\scayt\skins\moono-lisa\scayt.css" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\af.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\ar.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\az.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\bg.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\ca.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\cs.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\cy.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\da.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\de-ch.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\de.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\el.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\en-au.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\en-ca.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\en-gb.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\en.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\eo.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\es-mx.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\es.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\et.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\eu.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\fa.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\fi.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\fr-ca.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\fr.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\gl.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\he.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\hr.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\hu.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\id.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\it.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\ja.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\km.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\ko.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\ku.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\lt.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\lv.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\nb.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\nl.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\no.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\oc.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\pl.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\pt-br.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\pt.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\ro.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\ru.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\si.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\sk.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\sl.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\sq.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\sv.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\th.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\tr.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\tt.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\ug.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\uk.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\vi.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\zh-cn.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\zh.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\tableselection\styles\tableselection.css" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\table\dialogs\table.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\widget\images\handle.png" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\wsc\dialogs\wsc_ie.js" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\wsc\skins\moono-lisa\wsc.css" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\skins\moono-lisa\dialog.css" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\skins\moono-lisa\dialog_ie.css" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\skins\moono-lisa\dialog_ie8.css" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\skins\moono-lisa\dialog_iequirks.css" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\skins\moono-lisa\editor.css" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\skins\moono-lisa\editor_gecko.css" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\skins\moono-lisa\editor_ie.css" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\skins\moono-lisa\editor_ie8.css" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\skins\moono-lisa\editor_iequirks.css" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\skins\moono-lisa\icons.png" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\skins\moono-lisa\icons_hidpi.png" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\skins\moono-lisa\images\arrow.png" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\skins\moono-lisa\images\close.png" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\skins\moono-lisa\images\hidpi\close.png" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\skins\moono-lisa\images\hidpi\lock-open.png" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\skins\moono-lisa\images\hidpi\lock.png" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\skins\moono-lisa\images\hidpi\refresh.png" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\skins\moono-lisa\images\lock-open.png" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\skins\moono-lisa\images\lock.png" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\skins\moono-lisa\images\refresh.png" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\skins\moono-lisa\images\spinner.gif" />
+    <Content Include="Content\InlineEditors\RichTextEditor\richtext-editor.css" />
+    <Content Include="Content\InlineEditors\RichTextEditor\richtext-editor.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Automap\GenericComponentsAutoMap.cs" />
+    <Compile Include="Controllers\Sections\OneFullWidthColumnSectionController.cs" />
+    <Compile Include="Controllers\Widgets\ContentBlockWidgetController.cs" />
+    <Compile Include="Models\InlineEditors\RichTextEditorViewModel.cs" />
+    <Compile Include="Models\Widgets\ContentBlockWidget\ContentBlockWidgetProperties.cs" />
+    <Compile Include="Models\Widgets\ContentBlockWidget\ContentBlockWidgetViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\scayt\CHANGELOG.md" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\scayt\LICENSE.md" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\scayt\README.md" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\wsc\LICENSE.md" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\wsc\README.md" />
+    <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\skins\moono-lisa\readme.md" />
     <None Include="packages.config" />
+    <Content Include="Views\Shared\InlineEditors\_RichTextEditor.cshtml" />
+    <Content Include="Views\Shared\Widgets\_ContentBlock.cshtml" />
+    <Content Include="Views\Shared\Sections\_OneFullWidthColumnSection.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -565,6 +793,17 @@
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\..\packages\AWSSDK.S3.3.1.9.0\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Infrastructure\DeleteBoilerplate.DynamicRouting\DeleteBoilerplate.DynamicRouting.csproj">
+      <Project>{A165B815-191B-4831-9491-7010D7BEC88F}</Project>
+      <Name>DeleteBoilerplate.DynamicRouting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Infrastructure\DeleteBoilerplate.Infrastructure\DeleteBoilerplate.Infrastructure.csproj">
+      <Project>{A7B10389-141E-41D6-84FB-50D2282B1F4C}</Project>
+      <Name>DeleteBoilerplate.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

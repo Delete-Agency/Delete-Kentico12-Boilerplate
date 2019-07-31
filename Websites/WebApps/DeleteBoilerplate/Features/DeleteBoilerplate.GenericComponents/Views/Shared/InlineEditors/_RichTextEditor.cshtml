@@ -1,0 +1,14 @@
+﻿@using Kentico.PageBuilder.Web.Mvc
+@using Kentico.Web.Mvc
+@model DeleteBoilerplate.GenericComponents.Models.InlineEditors.RichTextEditorViewModel
+
+@using (Html.Kentico().BeginInlineEditor("richtext-editor", Model.PropertyName, new
+{
+    contenteditable = "true",
+    data_placeholder = Model.PlaceholderText,
+    data_enableformatting = Model.EnableFormatting.ToString().ToLower(),
+    data_styles = Model.StylesJson
+}))
+{
+    @Html.Raw(Model.Text)
+}

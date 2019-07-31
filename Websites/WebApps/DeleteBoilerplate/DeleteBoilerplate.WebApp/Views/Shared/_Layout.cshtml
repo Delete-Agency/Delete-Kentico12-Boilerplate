@@ -140,5 +140,8 @@
         <script type="module" src="@Html.GetWebPath("init.mjs")"></script>
         <script defer nomodule src="@Html.GetWebPath("init.js")"></script>
     }
+
+    @RenderSection("scripts", required: false)
+
 </body>
 </html>

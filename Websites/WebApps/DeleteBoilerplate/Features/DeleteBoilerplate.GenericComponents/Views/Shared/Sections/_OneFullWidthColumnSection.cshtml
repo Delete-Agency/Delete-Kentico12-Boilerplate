@@ -1,0 +1,12 @@
+﻿@using Kentico.PageBuilder.Web.Mvc
+@using Kentico.Web.Mvc
+@try
+{
+    @Html.Kentico().WidgetZone()
+}
+catch (Exception ex)
+{
+    <script type="text/javascript">
+        console.log('Error in widgets : ' + '@(ex.InnerException?.Message ?? ex.Message)');
+    </script>
+}

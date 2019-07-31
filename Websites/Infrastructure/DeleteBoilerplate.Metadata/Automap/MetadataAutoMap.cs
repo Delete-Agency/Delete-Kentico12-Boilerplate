@@ -8,7 +8,7 @@ using DeleteBoilerplate.Infrastructure.Extensions;
 using DeleteBoilerplate.Infrastructure.Helpers;
 using DeleteBoilerplate.Metadata.Models;
 
-namespace DeleteBoilerplate.Metadata.Automap
+namespace DeleteBoilerplate.Metadata
 {
     public class MetadataAutoMap : AutoMapper.Profile
     {
