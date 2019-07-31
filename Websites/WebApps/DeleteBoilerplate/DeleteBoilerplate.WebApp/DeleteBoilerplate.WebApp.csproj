@@ -48,7 +48,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AngleSharp, Version=0.9.9.0, Culture=neutral, PublicKeyToken=e83494dcdc6d31ea, processorArchitecture=MSIL">
-      <HintPath>..\packages\AngleSharp.0.9.9\lib\net45\AngleSharp.dll</HintPath>
+      <HintPath>..\packages\AngleSharp.0.9.9.2\lib\net45\AngleSharp.dll</HintPath>
     </Reference>
     <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
@@ -602,35 +602,10 @@
     <Content Include="Global.asax" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\web.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\Infrastructure\DeleteBoilerplate.DynamicRouting\DeleteBoilerplate.DynamicRouting.csproj">
-      <Project>{a165b815-191b-4831-9491-7010d7bec88f}</Project>
-      <Name>DeleteBoilerplate.DynamicRouting</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Infrastructure\DeleteBoilerplate.Infrastructure\DeleteBoilerplate.Infrastructure.csproj">
-      <Project>{a7b10389-141e-41d6-84fb-50d2282b1f4c}</Project>
-      <Name>DeleteBoilerplate.Infrastructure</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Infrastructure\DeleteBoilerplate.Metadata\DeleteBoilerplate.Metadata.csproj">
-      <Project>{3dc6646a-a5bc-4c2b-9a4c-42cd157406ac}</Project>
-      <Name>DeleteBoilerplate.Metadata</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Features\DeleteBoilerplate.Projects\DeleteBoilerplate.Projects.csproj">
-      <Project>{bfbbaf91-2904-4d5c-9ac5-365aeaee98ef}</Project>
-      <Name>DeleteBoilerplate.Projects</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Kentico\Content\FormComponents\FileUploader\file-uploader.js" />
@@ -738,6 +713,29 @@
     <Content Include="Kentico\Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Kentico\Scripts\modal-dialog.js" />
     <Content Include="Kentico\Scripts\shim.min.js" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Infrastructure\DeleteBoilerplate.DynamicRouting\DeleteBoilerplate.DynamicRouting.csproj">
+      <Project>{a165b815-191b-4831-9491-7010d7bec88f}</Project>
+      <Name>DeleteBoilerplate.DynamicRouting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Infrastructure\DeleteBoilerplate.Infrastructure\DeleteBoilerplate.Infrastructure.csproj">
+      <Project>{a7b10389-141e-41d6-84fb-50d2282b1f4c}</Project>
+      <Name>DeleteBoilerplate.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Infrastructure\DeleteBoilerplate.Metadata\DeleteBoilerplate.Metadata.csproj">
+      <Project>{3dc6646a-a5bc-4c2b-9a4c-42cd157406ac}</Project>
+      <Name>DeleteBoilerplate.Metadata</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Features\DeleteBoilerplate.Projects\DeleteBoilerplate.Projects.csproj">
+      <Project>{bfbbaf91-2904-4d5c-9ac5-365aeaee98ef}</Project>
+      <Name>DeleteBoilerplate.Projects</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -746,7 +744,6 @@
     <Compile Include="App_Start\ApplicationConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\WebAssemblyInfo.cs" />
   </ItemGroup>
@@ -765,14 +762,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Kentico\Scripts\builders\Core-icons.woff" />
-    <Content Include="Kentico\Scripts\builders\Core-icons.ttf" />
-    <Content Include="Kentico\Scripts\builders\Core-icons.eot" />
     <Content Include="connectionStrings.config" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="CMSResources\CMS.resx" />
     <EmbeddedResource Include="CMSResources\Hotfix.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Kentico\Scripts\builders\Core-icons.woff" />
+    <Content Include="Kentico\Scripts\builders\Core-icons.ttf" />
+    <Content Include="Kentico\Scripts\builders\Core-icons.eot" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\AWSSDK.S3.3.1.9.0\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />
@@ -808,8 +808,8 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Kentico.LanguagePack.English.12.0.31\build\Kentico.LanguagePack.English.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Kentico.LanguagePack.English.12.0.31\build\Kentico.LanguagePack.English.targets'))" />
-    <Error Condition="!Exists('..\packages\Kentico.AspNet.Mvc.12.0.31\build\Kentico.AspNet.Mvc.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Kentico.AspNet.Mvc.12.0.31\build\Kentico.AspNet.Mvc.targets'))" />
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Kentico.AspNet.Mvc.12.0.31\build\Kentico.AspNet.Mvc.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Kentico.AspNet.Mvc.12.0.31\build\Kentico.AspNet.Mvc.targets'))" />
   </Target>
   <Import Project="..\packages\Kentico.AspNet.Mvc.12.0.31\build\Kentico.AspNet.Mvc.targets" Condition="Exists('..\packages\Kentico.AspNet.Mvc.12.0.31\build\Kentico.AspNet.Mvc.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
