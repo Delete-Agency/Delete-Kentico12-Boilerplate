@@ -554,6 +554,7 @@
   <ItemGroup>
     <Compile Include="Attributes\StringValueAttribute.cs" />
     <Compile Include="Automap\AutoMapperConfig.cs" />
+    <Compile Include="Cache\CacheExpirationCallbacks.cs" />
     <Compile Include="Constants\Settings.cs" />
     <Compile Include="DeleteBoilerplateAssemblyAttribute.cs" />
     <Compile Include="DI\CompositionRoot.cs" />

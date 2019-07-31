@@ -1,6 +1,10 @@
-﻿using System.Web.Routing;
+﻿using System;
+using System.Web;
+using System.Web.Routing;
 using DeleteBoilerplate.DynamicRouting.Config;
 using DeleteBoilerplate.Infrastructure;
+using DeleteBoilerplate.OutputCache;
+using Kentico.OnlineMarketing.Web.Mvc;
 using Kentico.Web.Mvc;
 
 namespace DeleteBoilerplate.WebApp
@@ -19,6 +23,35 @@ namespace DeleteBoilerplate.WebApp
             // Registers routes including system routes for enabled features
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
+        }
+
+        public override string GetVaryByCustomString(HttpContext context, string arg)
+        {
+            var options = OutputCacheKeyHelper.CreateOptions().VarByAssetsCookie();
+
+            switch (arg)
+            {
+                case OutputCacheConsts.VarByCustom.Default:
+                    //options.VaryByHost().VaryByBrowser().VaryByUser();
+                    break;
+
+                case OutputCacheConsts.VarByCustom.OnlineMarketing:
+                    options
+                        .VaryByCookieLevel()
+                        .VaryByPersona()
+                        .VaryByABTestVariant();
+                    break;
+            }
+
+            string cacheKey = OutputCacheKeyHelper.GetVaryByCustomString(context, arg, options);
+
+            if (!String.IsNullOrEmpty(cacheKey))
+            {
+                return cacheKey;
+            }
+
+            // Calls the base implementation if the provided custom string does not match any predefined configurations
+            return base.GetVaryByCustomString(context, arg);
         }
 
     }

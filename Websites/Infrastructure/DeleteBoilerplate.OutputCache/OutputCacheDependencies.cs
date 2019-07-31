@@ -4,16 +4,12 @@ using System.Web;
 using CMS.DocumentEngine;
 using CMS.Helpers;
 using CMS.SiteProvider;
-using LightInject;
 
 namespace DeleteBoilerplate.OutputCache
 {
     public class OutputCacheDependencies : IOutputCacheDependencies
     {
         private readonly HashSet<string> _dependencyCacheKeys = new HashSet<string>();
-
-        [Inject]
-        public HttpResponseBase Response { get; set; }
 
         public void AddPageDependency<T>() where T : TreeNode, new()
         {
@@ -50,7 +46,7 @@ namespace DeleteBoilerplate.OutputCache
             {
                 _dependencyCacheKeys.Add(dependencyCacheKey);
                 CacheHelper.EnsureDummyKey(dependencyCacheKey);
-                Response.AddCacheItemDependency(dependencyCacheKey);
+                HttpContext.Current.Response.AddCacheItemDependency(dependencyCacheKey);
             }
         }
     }

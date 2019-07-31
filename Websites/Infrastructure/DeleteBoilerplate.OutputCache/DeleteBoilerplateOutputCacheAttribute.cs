@@ -7,6 +7,7 @@ namespace DeleteBoilerplate.OutputCache
         public DeleteBoilerplateOutputCacheAttribute()
         {
             VaryByCustom = OutputCacheConsts.VarByCustom.Default;
+            CacheProfile = OutputCacheConsts.CacheProfiles.Default;
         }
     }
 }

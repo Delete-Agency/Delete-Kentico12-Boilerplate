@@ -8,6 +8,7 @@ using LightInject;
 using CMS.DocumentEngine.Types.DeleteBoilerplate;
 using DeleteBoilerplate.DynamicRouting.Attributes;
 using DeleteBoilerplate.DynamicRouting.Controllers;
+using DeleteBoilerplate.OutputCache;
 
 namespace DeleteBoilerplate.Projects.Controllers
 {
@@ -19,6 +20,9 @@ namespace DeleteBoilerplate.Projects.Controllers
         [Inject]
         public IMapper Mapper { get; set; }
 
+        [Inject]
+        public IOutputCacheDependencies OutputCacheDependencies { get; set; }
+
         [PageTypeRouting(Project.CLASS_NAME)]
         public ActionResult Index()
         {
@@ -28,8 +32,10 @@ namespace DeleteBoilerplate.Projects.Controllers
             return View(viewModel);
         }
 
+        [DeleteBoilerplateOutputCache(VaryByParam = "year")]
         public ActionResult Search(int year)
         {
+            OutputCacheDependencies.AddPageDependency<Project>();
             var projects = ProjectRepository.GetAllProjects().Where(x => x.Year == year).ToList();
             return View("Search",Mapper.Map<List<ProjectViewModel>>(projects));
         }

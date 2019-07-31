@@ -4,7 +4,13 @@
     {
         public static class VarByCustom
         {
-            public static string Default = "Default";
+            public const string Default = "Default";
+            public const string OnlineMarketing = "OnlineMarketing";
+        }
+
+        public static class CacheProfiles
+        {
+            public const string Default = "Default";
         }
     }
 }

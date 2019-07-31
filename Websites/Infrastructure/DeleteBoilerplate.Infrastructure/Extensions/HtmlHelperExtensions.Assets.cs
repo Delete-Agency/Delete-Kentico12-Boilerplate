@@ -30,7 +30,7 @@ namespace DeleteBoilerplate.Infrastructure.Extensions
 
     public static partial class HtmlHelperExtensions
     {
-        private const string AssetsCookieName = "assets";
+        public const string AssetsCookieName = "assets";
         private static readonly Regex IsLocalPattern = new Regex(@"^((http(s)?):)?\/\/", RegexOptions.Compiled | RegexOptions.IgnoreCase);
         private static string CurrentContextKeys(ContentType type) => $"currentContext_{type}";
 
