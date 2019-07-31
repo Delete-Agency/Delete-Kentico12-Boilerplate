@@ -29,7 +29,7 @@ namespace DeleteBoilerplate.Projects.Controllers
             return View(viewModel);
         }
 
-        [DeleteBoilerplateOutputCache(VaryByParam = "year")]
+        [OutputCache(CacheProfile = OutputCacheConsts.CacheProfiles.Default,VaryByParam = "year")]
         public ActionResult Search(int year)
         {
             OutputCacheDependencies.AddPageDependency<Project>();

@@ -538,7 +538,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssetsOutputCacheKey.cs" />
-    <Compile Include="DeleteBoilerplateOutputCacheAttribute.cs" />
     <Compile Include="OutputCacheConsts.cs" />
     <Compile Include="DI\CompositionRoot.cs" />
     <Compile Include="IOutputCacheDependencies.cs" />
