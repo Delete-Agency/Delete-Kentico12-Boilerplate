@@ -1,0 +1,10 @@
+﻿/*.ktc-admin-ui kentico-widget-header {
+    z-index: 9999 !important
+}*/
+.cke {
+    z-index: 92999 !important;
+}
+
+table.cke_dialog.cke_browser_webkit.cke_ltr {
+   z-index: 100000 !important;
+}
