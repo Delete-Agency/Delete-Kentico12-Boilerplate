@@ -597,6 +597,10 @@
       <Project>{A7B10389-141E-41D6-84FB-50D2282B1F4C}</Project>
       <Name>DeleteBoilerplate.Infrastructure</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DeleteBoilerplate.OutputCache\DeleteBoilerplate.OutputCache.csproj">
+      <Project>{7042e8da-1c9a-413c-9154-cfa7f30d3c68}</Project>
+      <Name>DeleteBoilerplate.OutputCache</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="CMSResources\CMS.resx" />

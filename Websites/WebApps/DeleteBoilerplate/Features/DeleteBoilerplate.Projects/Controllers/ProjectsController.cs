@@ -20,9 +20,6 @@ namespace DeleteBoilerplate.Projects.Controllers
         [Inject]
         public IMapper Mapper { get; set; }
 
-        [Inject]
-        public IOutputCacheDependencies OutputCacheDependencies { get; set; }
-
         [PageTypeRouting(Project.CLASS_NAME)]
         public ActionResult Index()
         {

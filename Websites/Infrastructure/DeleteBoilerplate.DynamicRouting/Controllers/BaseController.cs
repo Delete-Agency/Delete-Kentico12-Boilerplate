@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using CMS.DocumentEngine;
 using DeleteBoilerplate.DynamicRouting.Extensions;
+using DeleteBoilerplate.OutputCache;
 using Kentico.Content.Web.Mvc;
 using Kentico.PageBuilder.Web.Mvc;
 using Kentico.Web.Mvc;
@@ -15,13 +16,20 @@ namespace DeleteBoilerplate.DynamicRouting.Controllers
         [Inject]
         protected IRequestContext RequestContext { get; set; }
 
+        [Inject]
+        protected IOutputCacheDependencies OutputCacheDependencies { get; set; }
+
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
             if (!this.RequestContext.ContextResolved)
                 this.ResolveContext();
 
             if (this.RequestContext.ContextItemId.HasValue)
-                HttpContext.Kentico().PageBuilder().Initialize(this.RequestContext.ContextItemId.Value);
+            {
+                HttpContext.Kentico().PageBuilder().Initialize(RequestContext.ContextItemId.Value);
+                OutputCacheDependencies.AddDocumentIdDependency(RequestContext.ContextItemId.Value);
+            }
+
 
             base.OnActionExecuting(filterContext);
         }
