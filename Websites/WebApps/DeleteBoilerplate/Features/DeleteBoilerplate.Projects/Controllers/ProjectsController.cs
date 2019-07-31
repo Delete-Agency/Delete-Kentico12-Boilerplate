@@ -35,7 +35,7 @@ namespace DeleteBoilerplate.Projects.Controllers
         {
             OutputCacheDependencies.AddPageDependency<Project>();
             var projects = ProjectRepository.GetAllProjects().Where(x => x.Year == year).ToList();
-            return View("Search",Mapper.Map<List<ProjectViewModel>>(projects));
+            return View("Search", Mapper.Map<List<ProjectViewModel>>(projects));
         }
     }
 }

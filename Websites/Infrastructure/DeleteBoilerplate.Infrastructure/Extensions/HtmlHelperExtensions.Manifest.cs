@@ -9,7 +9,6 @@ using CMS.Helpers;
 using CMS.IO;
 using CMS.SiteProvider;
 using Newtonsoft.Json;
-using Directory = System.IO.Directory;
 
 namespace DeleteBoilerplate.Infrastructure.Extensions
 {
@@ -111,9 +110,9 @@ namespace DeleteBoilerplate.Infrastructure.Extensions
                     {
                         var processedValue = fullPath.Replace($"{DistPath}/", string.Empty);
                         var fullFilePath = distServerPath + "\\" + prefix + processedValue;
-                        if (System.IO.File.Exists(fullFilePath))
+                        if (File.Exists(fullFilePath))
                         {
-                            result = System.IO.File.ReadAllText(fullFilePath);
+                            result = File.ReadAllText(fullFilePath);
                         }
 
                         cs.Data = result;

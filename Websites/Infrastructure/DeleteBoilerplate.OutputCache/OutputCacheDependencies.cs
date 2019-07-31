@@ -9,7 +9,7 @@ namespace DeleteBoilerplate.OutputCache
 {
     public class OutputCacheDependencies : IOutputCacheDependencies
     {
-        private readonly HashSet<string> _dependencyCacheKeys = new HashSet<string>();
+        private readonly HashSet<string> _dependencyCacheKeys = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
 
         public void AddPageDependency<T>() where T : TreeNode, new()
         {
@@ -42,11 +42,13 @@ namespace DeleteBoilerplate.OutputCache
 
         private void AddCacheItemDependency(string dependencyCacheKey)
         {
-            if (!_dependencyCacheKeys.Contains(dependencyCacheKey))
+            var lower = dependencyCacheKey.ToLowerInvariant();
+
+            if (!_dependencyCacheKeys.Contains(lower))
             {
-                _dependencyCacheKeys.Add(dependencyCacheKey);
+                _dependencyCacheKeys.Add(lower);
                 CacheHelper.EnsureDummyKey(dependencyCacheKey);
-                HttpContext.Current.Response.AddCacheItemDependency(dependencyCacheKey);
+                HttpContext.Current.Response.AddCacheItemDependency(lower);
             }
         }
     }

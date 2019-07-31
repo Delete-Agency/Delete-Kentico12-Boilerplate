@@ -80,14 +80,6 @@ namespace DeleteBoilerplate.Infrastructure.Extensions
             return key?.Value == ManifestHash;
         }
 
-
-        public static MvcHtmlString SetAssetsCacheCookie(this HtmlHelper htmlHelper)
-        {
-            var cookie = new HttpCookie(AssetsCookieName, ManifestHash) { Expires = DateTime.Now.AddDays(365), Secure = false };
-            HttpContext.Current.Response.Cookies.Add(cookie);
-            return new MvcHtmlString(string.Empty);
-        }
-
         private static string ConvertEntryToModern(string x)
         {
             return !IsLocal(x) ? x : (x ?? string.Empty).Replace(".js", ".mjs");

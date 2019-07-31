@@ -42,7 +42,7 @@
     else
     {
         @Html.InlineCSS(styles.Select(x => x.Name).ToArray())
-        @Html.SetAssetsCacheCookie()
+        //todo: JS to set manifest hash cookie on page load
     }
     <!-- Styles End -->
     <!-- Scripts Preload Begin -->
