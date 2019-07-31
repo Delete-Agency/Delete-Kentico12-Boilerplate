@@ -259,6 +259,12 @@
     <Reference Include="GlobalLink.Connect, Version=4.18.2.0, Culture=neutral, PublicKeyToken=946d606070618fd4, processorArchitecture=MSIL">
       <HintPath>..\..\Websites\WebApps\DeleteBoilerplate\packages\GlobalLink.Connect.4.18.3.1\lib\net46\GlobalLink.Connect.dll</HintPath>
     </Reference>
+    <Reference Include="LightInject, Version=5.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\Websites\WebApps\DeleteBoilerplate\packages\LightInject.5.5.0\lib\net46\LightInject.dll</HintPath>
+    </Reference>
+    <Reference Include="LightInject.Annotation, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\Websites\WebApps\DeleteBoilerplate\packages\LightInject.Annotation.1.1.0\lib\net46\LightInject.Annotation.dll</HintPath>
+    </Reference>
     <Reference Include="LinqToTwitter.AspNet, Version=5.0.0.14073, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\Websites\WebApps\DeleteBoilerplate\packages\linqtotwitter.5.0.0\lib\net461\LinqToTwitter.AspNet.dll</HintPath>
     </Reference>
@@ -463,16 +469,24 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants.cs" />
+    <Compile Include="DI\CompositionRoot.cs" />
+    <Compile Include="Models\PageTypes\BasePage\BasePage.cs" />
     <Compile Include="Models\PageTypes\BasePage\BasePage.generated.cs" />
     <Compile Include="Models\PageTypes\BasePage\BasePageProvider.generated.cs" />
+    <Compile Include="Models\PageTypes\BasePage\IBasePage.cs" />
     <Compile Include="Models\PageTypes\Project\Project.generated.cs" />
     <Compile Include="Models\PageTypes\Project\ProjectProvider.generated.cs" />
+    <Compile Include="Models\PageTypes\TaxonomyItem\TaxonomyItem.cs" />
     <Compile Include="Models\PageTypes\TaxonomyItem\TaxonomyItemProvider.generated.cs" />
     <Compile Include="Models\PageTypes\TaxonomyItem\TaxonomyItem.generated.cs" />
+    <Compile Include="Models\PageTypes\TaxonomyType\TaxonomyType.cs" />
     <Compile Include="Models\PageTypes\TaxonomyType\TaxonomyTypeProvider.generated.cs" />
     <Compile Include="Models\PageTypes\TaxonomyType\TaxonomyType.generated.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\TaxonomyRepository.cs" />
     <Compile Include="Repositories\ProjectRepository.cs" />
+    <Compile Include="Services\TaxonomySearch.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -480,6 +494,12 @@
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\..\Websites\WebApps\DeleteBoilerplate\packages\AWSSDK.S3.3.1.9.0\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Websites\Infrastructure\DeleteBoilerplate.Infrastructure\DeleteBoilerplate.Infrastructure.csproj">
+      <Project>{A7B10389-141E-41D6-84FB-50D2282B1F4C}</Project>
+      <Name>DeleteBoilerplate.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

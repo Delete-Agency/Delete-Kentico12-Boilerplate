@@ -1,14 +1,13 @@
 ﻿using DeleteBoilerplate.Domain.Repositories;
-using DeleteBoilerplate.Projects.Services;
 using LightInject;
 
-namespace DeleteBoilerplate.Projects.DI
+namespace DeleteBoilerplate.Domain.DI
 {
     public class CompositionRoot : ICompositionRoot
     {
         public void Compose(IServiceRegistry serviceRegistry)
         {
-            serviceRegistry.RegisterScoped<IProjectDescriber, ProjectDescriber>();
+            serviceRegistry.RegisterScoped<IProjectRepository, ProjectRepository>();
         }
     }
 }

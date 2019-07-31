@@ -23,143 +23,176 @@ using CMS.DocumentEngine;
 
 namespace CMS.DocumentEngine.Types.DeleteBoilerplate
 {
-	/// <summary>
-	/// Represents a content item of type BasePage.
-	/// </summary>
-	public partial class BasePage : TreeNode
-	{
-		#region "Constants and variables"
+    /// <summary>
+    /// Represents a content item of type BasePage.
+    /// </summary>
+    public partial class BasePage : TreeNode
+    {
+        #region "Constants and variables"
 
-		/// <summary>
-		/// The name of the data class.
-		/// </summary>
-		public const string CLASS_NAME = "DeleteBoilerplate.BasePage";
-
-
-		/// <summary>
-		/// The instance of the class that provides extended API for working with BasePage fields.
-		/// </summary>
-		private readonly BasePageFields mFields;
-
-		#endregion
+        /// <summary>
+        /// The name of the data class.
+        /// </summary>
+        public const string CLASS_NAME = "DeleteBoilerplate.BasePage";
 
 
-		#region "Properties"
+        /// <summary>
+        /// The instance of the class that provides extended API for working with BasePage fields.
+        /// </summary>
+        private readonly BasePageFields mFields;
 
-		/// <summary>
-		/// BasePageID.
-		/// </summary>
-		[DatabaseIDField]
-		public int BasePageID
-		{
-			get
-			{
-				return ValidationHelper.GetInteger(GetValue("BasePageID"), 0);
-			}
-			set
-			{
-				SetValue("BasePageID", value);
-			}
-		}
+        #endregion
 
 
-		/// <summary>
-		/// Seo Url.
-		/// </summary>
-		[DatabaseField]
-		public string SeoUrl
-		{
-			get
-			{
-				return ValidationHelper.GetString(GetValue("SeoUrl"), @"");
-			}
-			set
-			{
-				SetValue("SeoUrl", value);
-			}
-		}
+        #region "Properties"
+
+        /// <summary>
+        /// BasePageID.
+        /// </summary>
+        [DatabaseIDField]
+        public int BasePageID
+        {
+            get
+            {
+                return ValidationHelper.GetInteger(GetValue("BasePageID"), 0);
+            }
+            set
+            {
+                SetValue("BasePageID", value);
+            }
+        }
 
 
-		/// <summary>
-		/// Gets an object that provides extended API for working with BasePage fields.
-		/// </summary>
-		[RegisterProperty]
-		public BasePageFields Fields
-		{
-			get
-			{
-				return mFields;
-			}
-		}
+        /// <summary>
+        /// Seo Url.
+        /// </summary>
+        [DatabaseField]
+        public string SeoUrl
+        {
+            get
+            {
+                return ValidationHelper.GetString(GetValue("SeoUrl"), @"");
+            }
+            set
+            {
+                SetValue("SeoUrl", value);
+            }
+        }
 
 
-		/// <summary>
-		/// Provides extended API for working with BasePage fields.
-		/// </summary>
-		[RegisterAllProperties]
-		public partial class BasePageFields : AbstractHierarchicalObject<BasePageFields>
-		{
-			/// <summary>
-			/// The content item of type BasePage that is a target of the extended API.
-			/// </summary>
-			private readonly BasePage mInstance;
+        /// <summary>
+        /// Taxonomy.
+        /// </summary>
+        [DatabaseField]
+        public string Taxonomy
+        {
+            get
+            {
+                return ValidationHelper.GetString(GetValue("Taxonomy"), @"");
+            }
+            set
+            {
+                SetValue("Taxonomy", value);
+            }
+        }
 
 
-			/// <summary>
-			/// Initializes a new instance of the <see cref="BasePageFields" /> class with the specified content item of type BasePage.
-			/// </summary>
-			/// <param name="instance">The content item of type BasePage that is a target of the extended API.</param>
-			public BasePageFields(BasePage instance)
-			{
-				mInstance = instance;
-			}
+        /// <summary>
+        /// Gets an object that provides extended API for working with BasePage fields.
+        /// </summary>
+        [RegisterProperty]
+        public BasePageFields Fields
+        {
+            get
+            {
+                return mFields;
+            }
+        }
 
 
-			/// <summary>
-			/// BasePageID.
-			/// </summary>
-			public int ID
-			{
-				get
-				{
-					return mInstance.BasePageID;
-				}
-				set
-				{
-					mInstance.BasePageID = value;
-				}
-			}
+        /// <summary>
+        /// Provides extended API for working with BasePage fields.
+        /// </summary>
+        [RegisterAllProperties]
+        public partial class BasePageFields : AbstractHierarchicalObject<BasePageFields>
+        {
+            /// <summary>
+            /// The content item of type BasePage that is a target of the extended API.
+            /// </summary>
+            private readonly BasePage mInstance;
 
 
-			/// <summary>
-			/// Seo Url.
-			/// </summary>
-			public string SeoUrl
-			{
-				get
-				{
-					return mInstance.SeoUrl;
-				}
-				set
-				{
-					mInstance.SeoUrl = value;
-				}
-			}
-		}
-
-		#endregion
+            /// <summary>
+            /// Initializes a new instance of the <see cref="BasePageFields" /> class with the specified content item of type BasePage.
+            /// </summary>
+            /// <param name="instance">The content item of type BasePage that is a target of the extended API.</param>
+            public BasePageFields(BasePage instance)
+            {
+                mInstance = instance;
+            }
 
 
-		#region "Constructors"
+            /// <summary>
+            /// BasePageID.
+            /// </summary>
+            public int ID
+            {
+                get
+                {
+                    return mInstance.BasePageID;
+                }
+                set
+                {
+                    mInstance.BasePageID = value;
+                }
+            }
 
-		/// <summary>
-		/// Initializes a new instance of the <see cref="BasePage" /> class.
-		/// </summary>
-		public BasePage() : base(CLASS_NAME)
-		{
-			mFields = new BasePageFields(this);
-		}
 
-		#endregion
-	}
+            /// <summary>
+            /// Seo Url.
+            /// </summary>
+            public string SeoUrl
+            {
+                get
+                {
+                    return mInstance.SeoUrl;
+                }
+                set
+                {
+                    mInstance.SeoUrl = value;
+                }
+            }
+
+
+            /// <summary>
+            /// Taxonomy.
+            /// </summary>
+            public string Taxonomy
+            {
+                get
+                {
+                    return mInstance.Taxonomy;
+                }
+                set
+                {
+                    mInstance.Taxonomy = value;
+                }
+            }
+        }
+
+        #endregion
+
+
+        #region "Constructors"
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BasePage" /> class.
+        /// </summary>
+        public BasePage() : base(CLASS_NAME)
+        {
+            mFields = new BasePageFields(this);
+        }
+
+        #endregion
+    }
 }
