@@ -21,6 +21,7 @@ namespace DeleteBoilerplate.Projects.Controllers
         public IMapper Mapper { get; set; }
 
         [PageTypeRouting(Project.CLASS_NAME)]
+        [OutputCache(CacheProfile = OutputCacheConsts.CacheProfiles.Default)]
         public ActionResult Index()
         {
             var contextItem = this.GetContextItem<Project>();
@@ -29,7 +30,7 @@ namespace DeleteBoilerplate.Projects.Controllers
             return View(viewModel);
         }
 
-        [OutputCache(CacheProfile = OutputCacheConsts.CacheProfiles.Default,VaryByParam = "year")]
+        [OutputCache(CacheProfile = OutputCacheConsts.CacheProfiles.Default)]
         public ActionResult Search(int year)
         {
             OutputCacheDependencies.AddPageDependency<Project>();

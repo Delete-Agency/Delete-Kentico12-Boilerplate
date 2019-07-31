@@ -30,7 +30,6 @@ namespace DeleteBoilerplate.DynamicRouting.Controllers
                 OutputCacheDependencies.AddDocumentIdDependency(RequestContext.ContextItemId.Value);
             }
 
-
             base.OnActionExecuting(filterContext);
         }
 
