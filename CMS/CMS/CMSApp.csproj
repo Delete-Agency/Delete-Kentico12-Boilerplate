@@ -1980,6 +1980,8 @@
     <Content Include="CMSAdminControls\UI\UniGrid\Pages\MassDelete.aspx" />
     <Content Include="CMSAdminControls\UI\Selectors\FaviconSelector.ascx" />
     <Content Include="CMSAdminControls\UI\FontIconSelector.ascx" />
+    <Content Include="CMSFormControls\DropdownChosen.ascx" />
+    <Content Include="CMSFormControls\TreeTaxonomyMultiSelector.ascx" />
     <Content Include="CMSInstall\Controls\WizardSteps\CollationDialog.ascx" />
     <Content Include="CMSModules\AdminControls\Controls\UIControls\SmartTipPlaceholder.ascx" />
     <Content Include="CMSModules\BizForms\FormControls\FormFieldSelector.ascx" />
@@ -5995,6 +5997,13 @@
     <Compile Include="CMSAdminControls\UI\Selectors\FaviconSelector.ascx.designer.cs">
       <DependentUpon>FaviconSelector.ascx</DependentUpon>
     </Compile>
+    <Compile Include="CMSFormControls\DropdownChosen.ascx.cs">
+      <DependentUpon>DropdownChosen.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CMSFormControls\DropdownChosen.ascx.designer.cs">
+      <DependentUpon>DropdownChosen.ascx</DependentUpon>
+    </Compile>
     <Compile Include="CMSFormControls\Inputs\TextBox.ascx.cs">
       <DependentUpon>TextBox.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -6249,6 +6258,13 @@
     </Compile>
     <Compile Include="CMSFormControls\Classes\AssemblyClassSelector.ascx.designer.cs">
       <DependentUpon>AssemblyClassSelector.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CMSFormControls\TreeTaxonomyMultiSelector.ascx.cs">
+      <DependentUpon>TreeTaxonomyMultiSelector.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CMSFormControls\TreeTaxonomyMultiSelector.ascx.designer.cs">
+      <DependentUpon>TreeTaxonomyMultiSelector.ascx</DependentUpon>
     </Compile>
     <Compile Include="CMSInlineControls\SubLevelPlaceHolder.ascx.cs">
       <DependentUpon>SubLevelPlaceHolder.ascx</DependentUpon>
@@ -22193,6 +22209,10 @@
     <Analyzer Include="..\packages\AWSSDK.S3.3.1.9.0\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Shared\DeleteBoilerplate.Domain\DeleteBoilerplate.Domain.csproj">
+      <Project>{2a0e9bd2-90f5-466a-a742-d27c9302b1ca}</Project>
+      <Name>DeleteBoilerplate.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DeleteBoilerplate.Modules\DeleteBoilerplate.Modules.csproj">
       <Project>{fe669204-182e-4dec-a75c-d91780a15d32}</Project>
       <Name>DeleteBoilerplate.Modules</Name>

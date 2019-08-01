@@ -62,3 +62,5 @@ node_modules/
 connectionStrings.config
 /Websites/WebApps/*/tools/*
 **/dist/**
+/CMS/CMS/App_Data/**/*.dat
+/CMS/CMS/CMSSiteUtils/Import/*
