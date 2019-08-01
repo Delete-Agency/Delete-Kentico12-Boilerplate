@@ -470,11 +470,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
+    <Compile Include="DI\CompositionRoot.cs" />
     <Compile Include="Helpers\SiteSettingsHelper.cs" />
     <Compile Include="Models\PageTypes\BasePage\BasePage.cs" />
     <Compile Include="Models\PageTypes\BasePage\BasePage.generated.cs" />
     <Compile Include="Models\PageTypes\BasePage\BasePageProvider.generated.cs" />
     <Compile Include="Models\PageTypes\BasePage\IBasePage.cs" />
+    <Compile Include="Models\PageTypes\Project\Project.cs" />
     <Compile Include="Models\PageTypes\Project\Project.generated.cs" />
     <Compile Include="Models\PageTypes\Project\ProjectProvider.generated.cs" />
     <Compile Include="Models\PageTypes\TaxonomyItem\TaxonomyItem.cs" />
@@ -486,6 +488,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\TaxonomyRepository.cs" />
     <Compile Include="Repositories\ProjectRepository.cs" />
+    <Compile Include="Services\TaxonomyExtractBuilder.cs" />
     <Compile Include="Services\TaxonomyService.cs" />
     <Compile Include="Services\TaxonomySearch.cs" />
     <Compile Include="Settings.cs" />
@@ -496,6 +499,12 @@
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\..\Websites\WebApps\DeleteBoilerplate\packages\AWSSDK.S3.3.1.9.0\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DeleteBoilerplate.Common\DeleteBoilerplate.Common.csproj">
+      <Project>{25458D83-C877-4A3A-973F-E8A42254447D}</Project>
+      <Name>DeleteBoilerplate.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

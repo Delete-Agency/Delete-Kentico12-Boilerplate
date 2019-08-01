@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Reflection;
+using DeleteBoilerplate.Common;
 
 namespace DeleteBoilerplate.Infrastructure.Helpers
 {

@@ -1,15 +1,15 @@
 ﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using DeleteBoilerplate.Common;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DeleteBoilerplate.Infrastructure")]
+[assembly: AssemblyTitle("DeleteBoilerplate.Common")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("DeleteBoilerplate.Infrastructure")]
+[assembly: AssemblyProduct("DeleteBoilerplate.Common")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using DeleteBoilerplate.Common;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("a7b10389-141e-41d6-84fb-50d2282b1f4c")]
+[assembly: Guid("25458d83-c877-4a3a-973f-e8a42254447d")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -34,5 +34,3 @@ using DeleteBoilerplate.Common;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-
-[assembly: DeleteBoilerplateAssembly]

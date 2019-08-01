@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
+using DeleteBoilerplate.Common;
 using CMS;
-using DeleteBoilerplate.Infrastructure;
 using DeleteBoilerplate.DynamicRouting.Attributes;
 
 // General Information about an assembly is controlled through the following 

@@ -550,6 +550,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\DeleteBoilerplate.Common\DeleteBoilerplate.Common.csproj">
+      <Project>{25458D83-C877-4A3A-973F-E8A42254447D}</Project>
+      <Name>DeleteBoilerplate.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DeleteBoilerplate.Infrastructure\DeleteBoilerplate.Infrastructure.csproj">
       <Project>{A7B10389-141E-41D6-84FB-50D2282B1F4C}</Project>
       <Name>DeleteBoilerplate.Infrastructure</Name>

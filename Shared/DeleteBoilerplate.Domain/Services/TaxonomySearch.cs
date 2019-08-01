@@ -17,6 +17,12 @@ namespace DeleteBoilerplate.Domain.Services
 
         IEnumerable<T> GetItems(out int totalResults);
 
+        IEnumerable<T> GetItems(ITaxonomyExtractSet set, int skip = 0, int take = Int32.MaxValue,
+            string searchSort = "");
+
+        IEnumerable<T> GetItems(ITaxonomyExtractSet set, out int totalResults, int skip = 0,
+            int take = Int32.MaxValue, string searchSort = "");
+
         IEnumerable<T> GetItems(IEnumerable<Guid> taxonomies, int skip = 0, int take = Int32.MaxValue,
             string searchSort = "");
 
@@ -24,11 +30,10 @@ namespace DeleteBoilerplate.Domain.Services
             int take = Int32.MaxValue, string searchSort = "");
     }
 
-    public class TaxonomySearch<T> : ITaxonomySearch<T>
-        where T : TreeNode, IBasePage, new()
+    public class TaxonomySearch<T> : ITaxonomySearch<T> where T : TreeNode, IBasePage, new()
     {
         [Inject]
-        public TaxonomyRepository TaxonomyRepository { get; set; }
+        public ITaxonomyRepository TaxonomyRepository { get; set; }
 
         public IEnumerable<T> GetItems()
         {
@@ -93,5 +98,31 @@ namespace DeleteBoilerplate.Domain.Services
 
             return searchResults.Items.Select(x => x.Data).OfType<T>();
         }
+
+        private IEnumerable<Guid> Extract(ITaxonomyExtractSet set)
+        {
+            var result = new List<Guid>();
+            var taxonomyTypes = TaxonomyRepository.GetAllTaxonomyTypes().ToList();
+            foreach (var taxonomyType in taxonomyTypes)
+            {
+                if (set.TaxonomyDictionary.TryGetValue(taxonomyType.Code, out var targetItems))
+                {
+                    result.AddRange(taxonomyType.TaxonomyItems.Where(i => targetItems == null || !targetItems.Any() || targetItems.Contains(i.Code)).Select(i => i.NodeGUID));
+                }
+            }
+            return result;
+        }
+
+        public IEnumerable<T> GetItems(ITaxonomyExtractSet set, out int totalResults, int skip = 0,
+            int take = Int32.MaxValue, string searchSort = "")
+        {
+            return GetItems(Extract(set), out totalResults, skip, take, searchSort);
+        }
+
+        public IEnumerable<T> GetItems(ITaxonomyExtractSet set, int skip = 0, int take = Int32.MaxValue, string searchSort = "")
+        {
+            return GetItems(Extract(set), skip, take, searchSort);
+        }
+
     }
 }

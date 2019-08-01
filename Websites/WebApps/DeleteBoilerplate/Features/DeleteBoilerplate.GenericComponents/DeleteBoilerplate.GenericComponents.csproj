@@ -813,6 +813,10 @@
     <ProjectReference Include="..\..\..\..\..\Shared\DeleteBoilerplate.Domain\DeleteBoilerplate.Domain.csproj">
       <Project>{2A0E9BD2-90F5-466A-A742-D27C9302B1CA}</Project>
       <Name>DeleteBoilerplate.Domain</Name>
+    </ProjectReference>      
+    <ProjectReference Include="..\..\..\..\..\Shared\DeleteBoilerplate.Common\DeleteBoilerplate.Common.csproj">
+      <Project>{25458d83-c877-4a3a-973f-e8a42254447d}</Project>
+      <Name>DeleteBoilerplate.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\..\Infrastructure\DeleteBoilerplate.DynamicRouting\DeleteBoilerplate.DynamicRouting.csproj">
       <Project>{A165B815-191B-4831-9491-7010D7BEC88F}</Project>

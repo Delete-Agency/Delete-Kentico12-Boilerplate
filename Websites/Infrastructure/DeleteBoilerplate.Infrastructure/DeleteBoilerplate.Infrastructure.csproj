@@ -555,7 +555,6 @@
     <Compile Include="Attributes\StringValueAttribute.cs" />
     <Compile Include="Automap\AutoMapperConfig.cs" />
     <Compile Include="Cache\CacheExpirationCallbacks.cs" />
-    <Compile Include="DeleteBoilerplateAssemblyAttribute.cs" />
     <Compile Include="DI\CompositionRoot.cs" />
     <Compile Include="DI\DIConfig.cs" />
     <Compile Include="Enums\OpenGraphType.cs" />
@@ -583,6 +582,10 @@
     <Analyzer Include="..\..\WebApps\DeleteBoilerplate\packages\AWSSDK.S3.3.1.9.0\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\DeleteBoilerplate.Common\DeleteBoilerplate.Common.csproj">
+      <Project>{25458D83-C877-4A3A-973F-E8A42254447D}</Project>
+      <Name>DeleteBoilerplate.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\Shared\DeleteBoilerplate.Domain\DeleteBoilerplate.Domain.csproj">
       <Project>{2A0E9BD2-90F5-466A-A742-D27C9302B1CA}</Project>
       <Name>DeleteBoilerplate.Domain</Name>

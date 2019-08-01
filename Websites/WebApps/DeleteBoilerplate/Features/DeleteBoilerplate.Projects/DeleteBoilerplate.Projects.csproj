@@ -603,6 +603,10 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Shared\DeleteBoilerplate.Common\DeleteBoilerplate.Common.csproj">
+      <Project>{25458D83-C877-4A3A-973F-E8A42254447D}</Project>
+      <Name>DeleteBoilerplate.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\..\..\Shared\DeleteBoilerplate.Domain\DeleteBoilerplate.Domain.csproj">
       <Project>{2A0E9BD2-90F5-466A-A742-D27C9302B1CA}</Project>
       <Name>DeleteBoilerplate.Domain</Name>

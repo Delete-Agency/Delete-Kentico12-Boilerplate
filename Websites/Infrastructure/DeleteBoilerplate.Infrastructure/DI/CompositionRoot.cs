@@ -22,6 +22,7 @@ namespace DeleteBoilerplate.Infrastructure
             serviceRegistry.Register<VirtualPathProvider>(factory => HostingEnvironment.VirtualPathProvider, new PerRequestLifeTime());
 
             serviceRegistry.RegisterScoped<IProjectRepository, ProjectRepository>();
+
         }
     }
 }

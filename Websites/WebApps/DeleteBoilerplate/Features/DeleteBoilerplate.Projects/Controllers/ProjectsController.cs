@@ -6,6 +6,7 @@ using DeleteBoilerplate.Domain.Repositories;
 using DeleteBoilerplate.Projects.Models;
 using LightInject;
 using CMS.DocumentEngine.Types.DeleteBoilerplate;
+using DeleteBoilerplate.Domain.Services;
 using DeleteBoilerplate.DynamicRouting.Attributes;
 using DeleteBoilerplate.DynamicRouting.Controllers;
 using DeleteBoilerplate.OutputCache;
@@ -19,6 +20,9 @@ namespace DeleteBoilerplate.Projects.Controllers
 
         [Inject]
         public IMapper Mapper { get; set; }
+
+        [Inject]
+        public ITaxonomySearch<Project> TaxonomySearch { get; set; }
 
         [PageTypeRouting(Project.CLASS_NAME)]
         [OutputCache(CacheProfile = OutputCacheConsts.CacheProfiles.Default)]
@@ -35,6 +39,13 @@ namespace DeleteBoilerplate.Projects.Controllers
         {
             OutputCacheDependencies.AddPageDependency<Project>();
             var projects = ProjectRepository.GetAllProjects().Where(x => x.Year == year).ToList();
+            return View("Search", Mapper.Map<List<ProjectViewModel>>(projects));
+        }
+
+        public ActionResult SearchByArea(string area)
+        {
+            OutputCacheDependencies.AddPageDependency<Project>();
+            var projects = TaxonomySearch.GetItems(new TaxonomyExtractBuilder().AddTaxonomyItems("area", area));
             return View("Search", Mapper.Map<List<ProjectViewModel>>(projects));
         }
     }
