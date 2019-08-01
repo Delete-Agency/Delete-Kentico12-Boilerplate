@@ -1,0 +1,13 @@
+﻿@using Kentico.PageBuilder.Web.Mvc
+@using Kentico.Web.Mvc
+@model DeleteBoilerplate.GenericComponents.Models.InlineEditors.ImageSelectorViewModel
+
+@using (Html.Kentico().BeginInlineEditor("image-selector", Model.PropertyName, new {}))
+{
+    <button class="media-picker-button">
+        <div class="media-picker-button__title">
+            <p>Select Image</p>
+        </div>
+        <div class="media-picker-button__image"></div>
+    </button>
+}

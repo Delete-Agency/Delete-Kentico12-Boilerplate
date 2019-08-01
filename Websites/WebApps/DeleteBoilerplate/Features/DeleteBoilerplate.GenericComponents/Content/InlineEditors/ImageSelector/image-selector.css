@@ -1,0 +1,40 @@
+﻿.media-picker-button {
+    /*position: absolute;*/
+    left: 15px;
+    top: 15px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    padding: 9px 30px;
+    border-radius: 23px;
+    background-color: rgba(15, 97, 148, 0.5);
+    box-shadow: 0 0 7px 0 #FFFFFF;
+    transition: background-color 0.3s linear;
+    z-index: 100;
+}
+
+.media-picker-button__title {
+    margin-right: 40px;
+    text-align: left;
+    font-size: 16px;
+    line-height: 18px;
+    color: white;
+}
+
+.media-picker-button__image {
+    width: 40px;
+    height: 30px;
+    pointer-events: none;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 980 785'%3E%3Cg transform='translate(0.000000,785.000000) scale(0.100000,-0.100000)' fill='%23FFFFFF'%3E%3Cpath d='M661,7839c-294-58-540-283-633-579l-23-75V3925V665l32-91c43-125,103-222,193-314C347,139,472,66,625,29 c78-18,167-19,4275-19c4102,0,4197,1,4275,19c154,37,276,108,395,231c90,92,150,189,193,314l32,91v3260v3260l-23,75 c-84,265-273,462-532,552l-95,33l-4220,1C2560,7847,686,7844,661,7839z M9068,7170c18-11,41-34,52-52c20-33,20-57,20-3188 s0-3155-20-3188c-11-18-34-41-52-52c-33-20-60-20-4167-20H767l-33,21c-18,11-42,35-53,53l-21,33v3154c0,3130,0,3154,20,3187 c11,18,34,41,52,52c33,20,60,20,4168,20S9035,7190,9068,7170z'/%3E%3Cpath d='M2225,6543c-266-20-476-119-655-309c-134-142-218-308-250-494c-17-94-14-291,5-385c59-287,276-558,547-684 c141-66,238-86,418-85c133,1,168,5,252,27c335,89,610,364,694,694c58,230,34,493-63,688c-104,208-316,405-520,483 C2531,6525,2351,6553,2225,6543z'/%3E%3Cpath d='M5063,4418L3760,3115l-410,410l-410,410l-820-820l-820-820l2-490l3-490h3595h3595l3,1140l2,1140L7438,4657 c-585,585-1065,1063-1068,1063S5779,5134,5063,4418z'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+
+.media-picker-button:hover {
+    background-color: rgba(15, 97, 148, 1);
+}
+
+.media-picker-button:active {
+    box-shadow: inset 1px 1px 1px 0 #000000;
+}

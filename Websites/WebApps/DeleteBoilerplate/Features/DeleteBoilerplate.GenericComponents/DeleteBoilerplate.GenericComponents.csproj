@@ -567,6 +567,8 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\InlineEditors\ImageSelector\image-selector.css" />
+    <Content Include="Content\InlineEditors\ImageSelector\image-selector.js" />
     <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\ckeditor.js" />
     <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\config.js" />
     <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\lang\en.js" />
@@ -769,6 +771,7 @@
     <Compile Include="Controllers\Sections\OneFullWidthColumnSectionController.cs" />
     <Compile Include="Controllers\Widgets\ContentBlockWidgetController.cs" />
     <Compile Include="Controllers\Widgets\ImageWidgetController.cs" />
+    <Compile Include="Models\InlineEditors\ImageSelectorViewModel.cs" />
     <Compile Include="Models\InlineEditors\RichTextEditorViewModel.cs" />
     <Compile Include="Models\Widgets\ContentBlockWidget\ContentBlockWidgetProperties.cs" />
     <Compile Include="Models\Widgets\ContentBlockWidget\ContentBlockWidgetViewModel.cs" />
@@ -788,6 +791,7 @@
     <Content Include="Views\Shared\Widgets\_ContentBlock.cshtml" />
     <Content Include="Views\Shared\Sections\_OneFullWidthColumnSection.cshtml" />
     <Content Include="Views\Shared\Widgets\_Image.cshtml" />
+    <Content Include="Views\Shared\InlineEditors\_ImageSelector.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

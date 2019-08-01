@@ -1,7 +1,18 @@
-﻿@using DeleteBoilerplate.Infrastructure.Extensions
+﻿@using System.Web.Mvc.Html
+@using DeleteBoilerplate.GenericComponents.Models.InlineEditors
+@using DeleteBoilerplate.GenericComponents.Models.Widgets.Image
+@using DeleteBoilerplate.Infrastructure.Extensions
+@using Kentico.PageBuilder.Web.Mvc
+@using Kentico.Web.Mvc
 @model DeleteBoilerplate.GenericComponents.Models.Widgets.Image.ImageWidgetViewModel
 
-<div>Image Widget</div>
+@if (Context.Kentico().PageBuilder().EditMode)
+{
+    Html.RenderPartial("InlineEditors/_ImageSelector", new ImageSelectorViewModel
+    {
+        PropertyName = nameof(ImageWidgetProperties.Images),
+    });
+}
 
 @foreach (var image in Model.Images)
 {
