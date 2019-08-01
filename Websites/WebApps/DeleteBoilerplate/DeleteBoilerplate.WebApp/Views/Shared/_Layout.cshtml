@@ -42,7 +42,6 @@
     else
     {
         @Html.InlineCSS(styles.Select(x => x.Name).ToArray())
-        //todo: JS to set manifest hash cookie on page load
         <script>
             (function () {
                 var cookieName = '@(HtmlHelperExtensions.AssetsCookieName)';

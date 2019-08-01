@@ -81,7 +81,7 @@ namespace DeleteBoilerplate.Domain.Services
                 CheckPermissions = false,
                 SearchInAttachments = false,
                 User = MembershipContext.AuthenticatedUser,
-                SearchIndexes = "LaureusContent",
+                SearchIndexes = Settings.Taxonomy.SearchIndex,
                 StartingPosition = skip,
                 NumberOfProcessedResults = ((Int64)skip + (Int64)take) >= (Int64)Int32.MaxValue ? Int32.MaxValue : skip + take,
                 DisplayResults = take,
