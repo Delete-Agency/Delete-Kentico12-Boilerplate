@@ -1,6 +1,8 @@
 ﻿@using System.Globalization
 @using System.Web.Mvc.Html
 @using DeleteBoilerplate.Infrastructure.Extensions
+@using Kentico.Activities.Web.Mvc
+@using Kentico.OnlineMarketing.Web.Mvc
 @using HtmlHelperExtensions = DeleteBoilerplate.Infrastructure.Extensions.HtmlHelperExtensions
 
 @Html.RegisterStyle("app.css")
@@ -66,6 +68,7 @@
     <link rel="modulepreload" href="@Html.GetWebPath("init.mjs")">
     <!-- Scripts Preload End -->
     @RenderSection("styles", required: false)
+    @Html.Kentico().ABTestLoggerScript()
 </head>
 <body>
     @foreach (var svgFile in svgFiles)
@@ -152,6 +155,7 @@
     }
 
     @RenderSection("scripts", required: false)
+    @Html.Kentico().ActivityLoggingScript()
 
 </body>
 </html>

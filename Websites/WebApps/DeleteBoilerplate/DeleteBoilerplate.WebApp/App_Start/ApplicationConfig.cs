@@ -1,4 +1,9 @@
-﻿using Kentico.Content.Web.Mvc;
+﻿using Kentico.Activities.Web.Mvc;
+using Kentico.CampaignLogging.Web.Mvc;
+using Kentico.Content.Web.Mvc;
+using Kentico.Content.Web.Mvc.Routing;
+using Kentico.Newsletters.Web.Mvc;
+using Kentico.OnlineMarketing.Web.Mvc;
 using Kentico.PageBuilder.Web.Mvc;
 using Kentico.Web.Mvc;
 
@@ -9,13 +14,19 @@ namespace DeleteBoilerplate.WebApp
         public static void RegisterFeatures(IApplicationBuilder builder)
         {
             builder.UsePreview();
-            builder.UsePageBuilder();
 
-            // Enable required Kentico features
+            builder.UsePageBuilder(new PageBuilderOptions());
 
-            // Uncomment the following to use the Page builder feature
-            //builder.UsePreview();
-            //builder.UsePageBuilder();
+            //builder.UseDataAnnotationsLocalization();
+            builder.UseResourceSharingWithAdministration();
+            builder.UseCampaignLogger();
+            builder.UseActivityTracking();
+            builder.UseABTesting();
+            builder.UseEmailTracking(new EmailTrackingOptions());
+            builder.UsePageRouting(new PageRoutingOptions
+            {
+                EnableAlternativeUrls = true
+            });
         }
     }
 }
