@@ -1,6 +1,5 @@
 ﻿using CMS.DataEngine;
 using CMS.Localization;
-using DeleteBoilerplate.Infrastructure.Helpers;
 using CultureInfo = System.Globalization.CultureInfo;
 
 
@@ -27,14 +26,6 @@ namespace DeleteBoilerplate.Domain
                     return _default;
                 }
             }
-        }
-    }
-
-    public static class Settings
-    {
-        public static class Taxonomy
-        {
-            public static string SearchIndex => SiteSettingsHelper.GetSettingValue("DeleteBoilerplate_SearchIndex") ?? string.Empty;
         }
     }
 }

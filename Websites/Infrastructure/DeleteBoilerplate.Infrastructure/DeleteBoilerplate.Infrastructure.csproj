@@ -555,7 +555,6 @@
     <Compile Include="Attributes\StringValueAttribute.cs" />
     <Compile Include="Automap\AutoMapperConfig.cs" />
     <Compile Include="Cache\CacheExpirationCallbacks.cs" />
-    <Compile Include="Constants\Settings.cs" />
     <Compile Include="DeleteBoilerplateAssemblyAttribute.cs" />
     <Compile Include="DI\CompositionRoot.cs" />
     <Compile Include="DI\DIConfig.cs" />
@@ -569,7 +568,6 @@
     <Compile Include="Extensions\TreeNodeExtensions.cs" />
     <Compile Include="Helpers\AreaRestrictionHelper.cs" />
     <Compile Include="Helpers\AssemblyHelper.cs" />
-    <Compile Include="Helpers\SiteSettingsHelper.cs" />
     <Compile Include="Models\BaseInlineEditorViewModel.cs" />
     <Compile Include="Models\BaseWidgetViewModel.cs" />
     <Compile Include="Models\StaticAsset.cs" />

@@ -2,10 +2,9 @@
 using CMS.DocumentEngine;
 using CMS.Localization;
 using CMS.SiteProvider;
-using DeleteBoilerplate.Infrastructure.Constants;
+using DeleteBoilerplate.Domain;
 using DeleteBoilerplate.Infrastructure.Enums;
 using DeleteBoilerplate.Infrastructure.Extensions;
-using DeleteBoilerplate.Infrastructure.Helpers;
 using DeleteBoilerplate.Metadata.Models;
 
 namespace DeleteBoilerplate.Metadata

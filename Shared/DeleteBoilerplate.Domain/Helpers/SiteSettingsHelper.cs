@@ -1,7 +1,7 @@
 ﻿using CMS.DataEngine;
 using CMS.SiteProvider;
 
-namespace DeleteBoilerplate.Infrastructure.Helpers
+namespace DeleteBoilerplate.Domain.Helpers
 {
     public static class SiteSettingsHelper
     {
