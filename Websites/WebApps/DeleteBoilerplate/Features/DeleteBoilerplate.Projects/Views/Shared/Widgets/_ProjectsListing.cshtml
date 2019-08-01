@@ -1,0 +1,35 @@
+﻿@model IEnumerable<DeleteBoilerplate.Projects.Models.ProjectViewModel>
+
+<div class="projects-listing">
+    <table>
+        <thead>
+            <tr>
+                <td>Project image</td>
+                <td>Project description</td>
+                <td>Year started</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var project in Model)
+            {
+                <tr>
+                    <td><img src="@project.ImageUrl" width="50" height="50"/></td>
+                    <td>@project.Description</td>
+                    <td>@project.Year</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<style>
+    .projects-listing table {
+        border: solid black 1px;
+        text-align: center;
+    }
+
+    .projects-listing table td {
+        border: solid black 1px;
+        text-align: center;
+    }
+</style>

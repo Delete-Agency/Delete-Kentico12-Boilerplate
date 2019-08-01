@@ -29,6 +29,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteBoilerplate.OutputCache", "..\..\Infrastructure\DeleteBoilerplate.OutputCache\DeleteBoilerplate.OutputCache.csproj", "{7042E8DA-1C9A-413C-9154-CFA7F30D3C68}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteBoilerplate.GenericComponents", "Features\DeleteBoilerplate.GenericComponents\DeleteBoilerplate.GenericComponents.csproj", "{A4435C07-D74E-4883-B31B-7466D08DDD07}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2A0E9BD2-90F5-466A-A742-D27C9302B1CA} = {2A0E9BD2-90F5-466A-A742-D27C9302B1CA}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

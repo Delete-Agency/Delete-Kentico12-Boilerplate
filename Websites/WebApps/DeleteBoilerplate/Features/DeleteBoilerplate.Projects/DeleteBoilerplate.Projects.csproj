@@ -579,9 +579,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Automap\ProjectAutoMap.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
+    <Compile Include="Controllers\Widgets\ProjectsListingWidgetController.cs" />
     <Compile Include="DI\CompositionRoot.cs" />
     <Compile Include="Helpers\AreaRestrictionHelper.cs" />
     <Compile Include="Models\ProjectViewModel.cs" />
+    <Compile Include="Models\Widgets\ProjectsListing\ProjectsListingWidgetProperties.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ProjectDescriber.cs" />
   </ItemGroup>
@@ -589,6 +591,7 @@
     <Content Include="Views\Projects\Index.cshtml" />
     <Content Include="Views\Projects\Search.cshtml" />
     <None Include="packages.config" />
+    <Content Include="Views\Shared\Widgets\_ProjectsListing.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -620,9 +623,15 @@
       <Project>{7042e8da-1c9a-413c-9154-cfa7f30d3c68}</Project>
       <Name>DeleteBoilerplate.OutputCache</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DeleteBoilerplate.GenericComponents\DeleteBoilerplate.GenericComponents.csproj">
+      <Project>{A4435C07-D74E-4883-B31B-7466D08DDD07}</Project>
+      <Name>DeleteBoilerplate.GenericComponents</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CMSResources\CMS.resx" />
+    <EmbeddedResource Include="CMSResources\CMS.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="CMSResources\Hotfix.resx" />
   </ItemGroup>
   <ItemGroup>

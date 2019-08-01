@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
+using CMS;
 using DeleteBoilerplate.Infrastructure;
 using DeleteBoilerplate.DynamicRouting.Attributes;
 
@@ -37,3 +38,5 @@ using DeleteBoilerplate.DynamicRouting.Attributes;
 
 [assembly: DeleteBoilerplateAssembly]
 [assembly: PageTypeRoutingAssembly]
+
+[assembly: AssemblyDiscoverable]
