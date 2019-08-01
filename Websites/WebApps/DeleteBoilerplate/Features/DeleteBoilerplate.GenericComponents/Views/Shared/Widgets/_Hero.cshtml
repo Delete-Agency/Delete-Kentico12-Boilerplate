@@ -1,0 +1,41 @@
+﻿@using System.Web.Mvc.Html
+@using DeleteBoilerplate.GenericComponents.Models.InlineEditors
+@using DeleteBoilerplate.GenericComponents.Models.Widgets.HeroWidget
+@using DeleteBoilerplate.Infrastructure.Extensions
+@using Kentico.PageBuilder.Web.Mvc
+@using Kentico.Web.Mvc
+@model DeleteBoilerplate.GenericComponents.Models.Widgets.HeroWidget.HeroWidgetViewModel
+
+@if (Model != null)
+{
+    <section class="component" aria-label="section with hero block (image + text)">
+        <div class="hero-block">
+            @if (Context.Kentico().PageBuilder().EditMode)
+            {
+                Html.RenderPartial("InlineEditors/_ImageSelector", new ImageSelectorViewModel
+                {
+                    PropertyName = nameof(HeroWidgetProperties.Images),
+                });
+            }
+
+            @if (Model.Images != null && Model.Images.Any())
+            {
+                <img src="@Model.Images[0].GetMediaFilesSelectorItemUrl()" />
+            }
+
+            @if (Context.Kentico().PageBuilder().EditMode)
+            {
+                Html.RenderPartial("InlineEditors/_RichTextEditor", new RichTextEditorViewModel
+                {
+                    PropertyName = nameof(HeroWidgetProperties.Text),
+                    Text = Model.Text,
+                    PlaceholderText = Model.GetPlaceholder("Content")
+                });
+            }
+            else
+            {
+                @Html.Raw(Model.Text)
+            }
+        </div>
+    </section>
+}

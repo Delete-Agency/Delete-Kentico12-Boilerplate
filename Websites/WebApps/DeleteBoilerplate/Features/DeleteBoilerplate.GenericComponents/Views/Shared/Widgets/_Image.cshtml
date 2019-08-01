@@ -1,20 +1,27 @@
 ﻿@using System.Web.Mvc.Html
 @using DeleteBoilerplate.GenericComponents.Models.InlineEditors
-@using DeleteBoilerplate.GenericComponents.Models.Widgets.Image
+@using DeleteBoilerplate.GenericComponents.Models.Widgets.ImageWidget
 @using DeleteBoilerplate.Infrastructure.Extensions
 @using Kentico.PageBuilder.Web.Mvc
 @using Kentico.Web.Mvc
-@model DeleteBoilerplate.GenericComponents.Models.Widgets.Image.ImageWidgetViewModel
+@model DeleteBoilerplate.GenericComponents.Models.Widgets.ImageWidget.ImageWidgetViewModel
 
-@if (Context.Kentico().PageBuilder().EditMode)
+@if (Model != null)
 {
-    Html.RenderPartial("InlineEditors/_ImageSelector", new ImageSelectorViewModel
-    {
-        PropertyName = nameof(ImageWidgetProperties.Images),
-    });
-}
+    <section class="component" aria-label="section with image">
+        <div class="image">
+            @if (Context.Kentico().PageBuilder().EditMode)
+            {
+                Html.RenderPartial("InlineEditors/_ImageSelector", new ImageSelectorViewModel
+                {
+                    PropertyName = nameof(ImageWidgetProperties.Images),
+                });
+            }
 
-@if (Model.Images != null && Model.Images.Any())
-{
-    <img src="@Model.Images[0].GetMediaFilesSelectorItemUrl()" />
+            @if (Model.Images != null && Model.Images.Any())
+            {
+                <img src="@Model.Images[0].GetMediaFilesSelectorItemUrl()" />
+            }
+        </div>
+    </section>
 }
