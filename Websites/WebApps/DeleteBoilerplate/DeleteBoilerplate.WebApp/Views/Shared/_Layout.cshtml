@@ -43,6 +43,17 @@
     {
         @Html.InlineCSS(styles.Select(x => x.Name).ToArray())
         //todo: JS to set manifest hash cookie on page load
+        <script>
+            (function () {
+                var cookieName = '@(HtmlHelperExtensions.AssetsCookieName)';
+                var cookieValue = '@(HtmlHelperExtensions.ManifestHash?.ToLower())';
+                var days = 360;
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                var expires = "; expires=" + date.toUTCString();
+                document.cookie = cookieName + "=" + (cookieValue || "")  + expires + "; path=/";
+            }());
+        </script>
     }
     <!-- Styles End -->
     <!-- Scripts Preload Begin -->

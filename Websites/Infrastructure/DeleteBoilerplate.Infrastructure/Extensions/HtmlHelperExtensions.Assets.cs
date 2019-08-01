@@ -77,7 +77,7 @@ namespace DeleteBoilerplate.Infrastructure.Extensions
         public static bool IsSameAssetsCacheCookie()
         {
             var key = HttpContext.Current.Request.Cookies[AssetsCookieName];
-            return key?.Value == ManifestHash;
+            return key?.Value == ManifestHash?.ToLower();
         }
 
         private static string ConvertEntryToModern(string x)
