@@ -1,4 +1,5 @@
 ﻿using DeleteBoilerplate.GenericComponents.Models.Widgets.ContentBlockWidget;
+using DeleteBoilerplate.GenericComponents.Models.Widgets.Image;
 
 namespace DeleteBoilerplate.GenericComponents
 {
@@ -7,6 +8,7 @@ namespace DeleteBoilerplate.GenericComponents
         public GenericComponentsAutoMap()
         {
             CreateMap<ContentBlockWidgetProperties, ContentBlockWidgetViewModel>();
+            CreateMap<ImageWidgetProperties, ImageWidgetViewModel>();
         }
     }
 }

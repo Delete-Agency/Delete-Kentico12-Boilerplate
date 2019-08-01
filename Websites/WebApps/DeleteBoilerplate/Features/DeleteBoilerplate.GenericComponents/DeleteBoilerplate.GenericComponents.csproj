@@ -768,9 +768,12 @@
     <Compile Include="Automap\GenericComponentsAutoMap.cs" />
     <Compile Include="Controllers\Sections\OneFullWidthColumnSectionController.cs" />
     <Compile Include="Controllers\Widgets\ContentBlockWidgetController.cs" />
+    <Compile Include="Controllers\Widgets\ImageWidgetController.cs" />
     <Compile Include="Models\InlineEditors\RichTextEditorViewModel.cs" />
     <Compile Include="Models\Widgets\ContentBlockWidget\ContentBlockWidgetProperties.cs" />
     <Compile Include="Models\Widgets\ContentBlockWidget\ContentBlockWidgetViewModel.cs" />
+    <Compile Include="Models\Widgets\Image\ImageWidgetProperties.cs" />
+    <Compile Include="Models\Widgets\Image\ImageWidgetViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -784,6 +787,7 @@
     <Content Include="Views\Shared\InlineEditors\_RichTextEditor.cshtml" />
     <Content Include="Views\Shared\Widgets\_ContentBlock.cshtml" />
     <Content Include="Views\Shared\Sections\_OneFullWidthColumnSection.cshtml" />
+    <Content Include="Views\Shared\Widgets\_Image.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

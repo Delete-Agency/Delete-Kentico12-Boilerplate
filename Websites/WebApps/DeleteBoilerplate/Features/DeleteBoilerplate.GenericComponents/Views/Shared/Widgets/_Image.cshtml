@@ -1,0 +1,9 @@
+﻿@using DeleteBoilerplate.Infrastructure.Extensions
+@model DeleteBoilerplate.GenericComponents.Models.Widgets.Image.ImageWidgetViewModel
+
+<div>Image Widget</div>
+
+@foreach (var image in Model.Images)
+{
+    <img src="@image.GetMediaFilesSelectorItemUrl()" />
+}
