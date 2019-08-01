@@ -276,6 +276,15 @@
             Reloads the form and its data.
             </summary>
         </member>
+        <member name="M:CMS.OnlineForms.Web.UI.BizForm.RegisterRestoreFocusScript(System.Web.UI.Page)">
+            <summary>
+            Registers script capable of restoring focus when asynchronous postback is finished.
+            </summary>
+            <remarks>
+            Script is operational only when UpdatePanel control is used.
+            </remarks>
+            <param name="page">Page to register</param>
+        </member>
         <member name="M:CMS.OnlineForms.Web.UI.BizForm.BizForm_OnUploadFile(System.Object,System.EventArgs)">
             <summary>
             Handles file upload

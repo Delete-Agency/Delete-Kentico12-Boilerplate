@@ -89,9 +89,6 @@
     <Reference Include="DocumentFormat.OpenXml, Version=2.7.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
       <HintPath>..\packages\DocumentFormat.OpenXml.2.7.2\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
     </Reference>
-    <Reference Include="DotNetOpenAuth">
-      <HintPath>..\Lib\DotNetOpenAuth.dll</HintPath>
-    </Reference>
     <Reference Include="Facebook, Version=6.0.10.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
       <HintPath>..\packages\Facebook.6.4.2\lib\net45\Facebook.dll</HintPath>
     </Reference>
@@ -128,7 +125,6 @@
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Data.Edm, Version=5.8.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Data.Edm.5.8.4\lib\net40\Microsoft.Data.Edm.dll</HintPath>
     </Reference>
@@ -213,10 +209,6 @@
     <Reference Include="Mono.Cecil.Rocks, Version=0.10.0.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e, processorArchitecture=MSIL">
       <HintPath>..\packages\Mono.Cecil.0.10.0\lib\net40\Mono.Cecil.Rocks.dll</HintPath>
     </Reference>
-    <Reference Include="NetSpell.SpellChecker, Version=2.1.7.25730, Culture=neutral, PublicKeyToken=318b389f0db66e46, processorArchitecture=MSIL">
-      <HintPath>..\Lib\NetSpell.SpellChecker.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -229,10 +221,6 @@
     <Reference Include="PayPal, Version=1.8.0.0, Culture=neutral, PublicKeyToken=5b4afc1ccaef40fb, processorArchitecture=MSIL">
       <HintPath>..\packages\PayPal.1.8.0\lib\net451\PayPal.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data.HashFunction.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=80c9288e394c1322, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.HashFunction.Core.2.0.0\lib\net45\System.Data.HashFunction.Core.dll</HintPath>
     </Reference>
@@ -250,45 +238,73 @@
     <Reference Include="System.IO.Packaging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IO.Packaging.4.0.0\lib\net46\System.IO.Packaging.dll</HintPath>
     </Reference>
-    <Reference Include="System.Net" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
-    <Reference Include="System.Net.Http.WebRequest" />
-    <Reference Include="System.Numerics" />
+    <Reference Include="System.Reactive.Core, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Rx-Core.2.2.5\lib\net45\System.Reactive.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Reactive.Core, Version=3.0.3000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Reactive.Core.3.1.1\lib\net46\System.Reactive.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Rx-Interfaces.2.2.5\lib\net45\System.Reactive.Interfaces.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Reactive.Interfaces, Version=3.0.1000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Reactive.Interfaces.3.1.1\lib\net45\System.Reactive.Interfaces.dll</HintPath>
     </Reference>
+    <Reference Include="System.Reactive.Linq, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Rx-Linq.2.2.5\lib\net45\System.Reactive.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Reactive.Linq, Version=3.0.3000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Reactive.Linq.3.1.1\lib\net46\System.Reactive.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.PlatformServices, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Rx-PlatformServices.2.2.5\lib\net45\System.Reactive.PlatformServices.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Reactive.PlatformServices, Version=3.0.3000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Reactive.PlatformServices.3.1.1\lib\net46\System.Reactive.PlatformServices.dll</HintPath>
     </Reference>
-    <Reference Include="System.Runtime" />
-    <Reference Include="System.Runtime.Remoting" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.ServiceModel" />
-    <Reference Include="System.ServiceModel.Web" />
     <Reference Include="System.Spatial, Version=5.8.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Spatial.5.8.4\lib\net40\System.Spatial.dll</HintPath>
     </Reference>
     <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.4.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.ApplicationServices" />
-    <Reference Include="System.Web.DataVisualization" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
     </Reference>
+    <Reference Include="DotNetOpenAuth">
+      <HintPath>..\Lib\DotNetOpenAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NetSpell.SpellChecker, Version=2.1.7.25730, Culture=neutral, PublicKeyToken=318b389f0db66e46, processorArchitecture=MSIL">
+      <HintPath>..\Lib\NetSpell.SpellChecker.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -762,6 +778,179 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CMSFormControls\DropdownChosen.ascx" />
+    <Content Include="CMSFormControls\TreeTaxonomyMultiSelector.ascx" />
+    <Content Include="CorporateSite\Images\close.png" />
+    <Content Include="CorporateSite\Images\loading.gif" />
+    <Content Include="CorporateSite\Images\next.png" />
+    <Content Include="CorporateSite\Images\prev.png" />
+    <Content Include="CorporateSite\Scripts\jquery-1.7.2.min.js" />
+    <Content Include="CorporateSite\Scripts\lightbox.js" />
+    <Content Include="CorporateSite\Scripts\LightboxBundle.js" />
+    <Content Include="CorporateSite\Stylesheets\lightbox.css" />
+    <Content Include="DancingGoatMvc\media\CoffeeGallery\Bakery-And-Coffee.jpg" />
+    <Content Include="DancingGoatMvc\media\CoffeeGallery\Brew-Bar.jpg" />
+    <Content Include="DancingGoatMvc\media\CoffeeGallery\Cauca-Farmer.jpg" />
+    <Content Include="DancingGoatMvc\media\CoffeeGallery\Coffee-Cherries.jpg" />
+    <Content Include="DancingGoatMvc\media\CoffeeGallery\Coffee-Region.jpg" />
+    <Content Include="DancingGoatMvc\media\CoffeeGallery\Coffee-Shop.jpg" />
+    <Content Include="DancingGoatMvc\media\CoffeeGallery\Coffee-Triangle.jpg" />
+    <Content Include="DancingGoatMvc\media\CoffeeGallery\Colombia-Coffee.jpg" />
+    <Content Include="DancingGoatMvc\media\CoffeeGallery\Kona-Coffee.jpg" />
+    <Content Include="DancingGoatMvc\media\CoffeeGallery\Robusta.jpg" />
+    <Content Include="DancingGoatMvc\media\CoffeeGallery\St-Helena-Coffee.jpg" />
+    <Content Include="DancingGoatMvc\media\CoffeeGallery\Thailand-Coffee.jpg" />
+    <Content Include="DancingGoatMvc\media\CoffeeGallery\Work-And-Coffee.jpg" />
+    <Content Include="DancingGoatMvc\media\EmailCampaigns\coffee-101-lesson-1.jpg" />
+    <Content Include="DancingGoatMvc\media\EmailCampaigns\coffee-101-lesson-2.jpg" />
+    <Content Include="DancingGoatMvc\media\EmailCampaigns\colombia-coffee-promotion.jpg" />
+    <Content Include="DancingGoatMvc\media\Graphics\banner-default.jpg" />
+    <Content Include="DancingGoatMvc\media\Graphics\colombia-coffee.jpg" />
+    <Content Include="DancingGoatMvc\media\Graphics\default-image-product.png" />
+    <Content Include="DancingGoatMvc\media\Graphics\hero-image.jpg" />
+    <Content Include="DancingGoatMvc\media\Graphics\Logos\logo-dancing-goat-inverted.png" />
+    <Content Include="DancingGoat\Fonts\Core-icons.svg" />
+    <Content Include="DancingGoat\Icons\icons-core.css" />
+    <Content Include="DancingGoat\Images\Favicons\favicon-16.png" />
+    <Content Include="DancingGoat\Images\Favicons\favicon-32.png" />
+    <Content Include="DancingGoat\media\CoffeeGallery\Bakery-And-Coffee.jpg" />
+    <Content Include="DancingGoat\media\CoffeeGallery\Brew-Bar.jpg" />
+    <Content Include="DancingGoat\media\CoffeeGallery\Cauca-Farmer.jpg" />
+    <Content Include="DancingGoat\media\CoffeeGallery\Coffee-Cherries.jpg" />
+    <Content Include="DancingGoat\media\CoffeeGallery\Coffee-Region.jpg" />
+    <Content Include="DancingGoat\media\CoffeeGallery\Coffee-Shop.jpg" />
+    <Content Include="DancingGoat\media\CoffeeGallery\Coffee-Triangle.jpg" />
+    <Content Include="DancingGoat\media\CoffeeGallery\Colombia-Coffee.jpg" />
+    <Content Include="DancingGoat\media\CoffeeGallery\Kona-Coffee.jpg" />
+    <Content Include="DancingGoat\media\CoffeeGallery\Robusta.jpg" />
+    <Content Include="DancingGoat\media\CoffeeGallery\St-Helena-Coffee.jpg" />
+    <Content Include="DancingGoat\media\CoffeeGallery\Thailand-Coffee.jpg" />
+    <Content Include="DancingGoat\media\CoffeeGallery\Work-And-Coffee.jpg" />
+    <Content Include="DancingGoat\media\EmailCampaigns\coffee-101-lesson-1.jpg" />
+    <Content Include="DancingGoat\media\EmailCampaigns\coffee-101-lesson-2.jpg" />
+    <Content Include="DancingGoat\media\EmailCampaigns\colombia-coffee-promotion.jpg" />
+    <Content Include="DancingGoat\media\EmailCampaigns\dancing-goat-newsletter.jpg" />
+    <Content Include="DancingGoat\media\EmailCampaigns\logo-dancing-goat-inverted.png" />
+    <Content Include="DancingGoat\media\EmailCampaigns\logo-dancing-goat.png" />
+    <Content Include="DancingGoat\media\Graphics\CSS sprites\continents.png" />
+    <Content Include="DancingGoat\media\Graphics\default-image-article.jpg" />
+    <Content Include="DancingGoat\media\Graphics\default-image-cafe.jpg" />
+    <Content Include="DancingGoat\media\Graphics\default-image-product.png" />
+    <Content Include="DancingGoat\media\Graphics\Icons\chevron-down.png" />
+    <Content Include="DancingGoat\media\Graphics\Icons\facebook.png" />
+    <Content Include="DancingGoat\media\Graphics\Icons\magnifier.png" />
+    <Content Include="DancingGoat\media\Graphics\Icons\twitter.png" />
+    <Content Include="DancingGoat\media\Graphics\Logos\dancing-goat.png" />
+    <Content Include="DancingGoat\media\Graphics\Logos\facebook.png" />
+    <Content Include="DancingGoat\media\Graphics\Logos\twitter.png" />
+    <Content Include="DancingGoat\media\Graphics\page-404.jpg" />
+    <Content Include="DancingGoat\media\Graphics\__thumbnails\404_jpg_300_200.jpg" />
+    <Content Include="DancingGoat\media\Graphics\__thumbnails\default-cafe_jpg_300_300.jpg" />
+    <Content Include="DancingGoat\media\Graphics\__thumbnails\default-product_png_200_200.png" />
+    <Content Include="DancingGoat\media\Graphics\__thumbnails\default-product_png_500_500.png" />
+    <Content Include="DancingGoat\media\Graphics\__thumbnails\default-product_png_60_60.png" />
+    <Content Include="DancingGoat\media\Graphics\__thumbnails\default-product_png_70_70.png" />
+    <Content Include="DancingGoat\media\Graphics\__thumbnails\our-story_jpg_200_93.jpg" />
+    <Content Include="DancingGoat\media\Homepage\banner-b2b.jpg" />
+    <Content Include="DancingGoat\media\Homepage\banner-b2c.jpg" />
+    <Content Include="DancingGoat\media\Homepage\banner-default.jpg" />
+    <Content Include="DancingGoat\media\LandingPage\banner-buena-vista.jpg" />
+    <Content Include="DancingGoat\media\LandingPage\banner-colombia-1.jpg" />
+    <Content Include="DancingGoat\media\LandingPage\banner-colombia-2.jpg" />
+    <Content Include="DancingGoat\media\LandingPage\map-latin-america.png" />
+    <Content Include="DancingGoat\Scripts\Main.js" />
+    <Content Include="DancingGoat\Scripts\Modules\ChangeImgSrcToBackground.js" />
+    <Content Include="DancingGoat\Scripts\Modules\DeleteAddress.js" />
+    <Content Include="DancingGoat\Scripts\Modules\FloatingBox.js" />
+    <Content Include="DancingGoat\Scripts\Modules\ResponsiveMenuDropdown.js" />
+    <Content Include="DancingGoat\Scripts\Modules\MobileMenu.js" />
+    <Content Include="DancingGoat\Scripts\Modules\ProductFilter.js" />
+    <Content Include="DancingGoat\Scripts\Modules\ScrollToForm.js" />
+    <Content Include="DancingGoat\Scripts\Modules\ScrollToMap.js" />
+    <Content Include="DancingGoat\Scripts\Vendor\DomReady\DomReady.js" />
+    <Content Include="DancingGoat\Scripts\Vendor\jQuery\jQuery.min.js" />
+    <Content Include="DancingGoat\Scripts\Vendor\RequireJS\require.min.js" />
+    <Content Include="EcommerceSite\images\blank.gif" />
+    <Content Include="EcommerceSite\images\fancybox-x.png" />
+    <Content Include="EcommerceSite\images\fancybox-y.png" />
+    <Content Include="EcommerceSite\images\fancybox.png" />
+    <Content Include="EcommerceSite\images\fancy_close.png" />
+    <Content Include="EcommerceSite\images\fancy_loading.png" />
+    <Content Include="EcommerceSite\images\fancy_nav_left.png" />
+    <Content Include="EcommerceSite\images\fancy_nav_right.png" />
+    <Content Include="EcommerceSite\images\fancy_shadow_e.png" />
+    <Content Include="EcommerceSite\images\fancy_shadow_n.png" />
+    <Content Include="EcommerceSite\images\fancy_shadow_ne.png" />
+    <Content Include="EcommerceSite\images\fancy_shadow_nw.png" />
+    <Content Include="EcommerceSite\images\fancy_shadow_s.png" />
+    <Content Include="EcommerceSite\images\fancy_shadow_se.png" />
+    <Content Include="EcommerceSite\images\fancy_shadow_sw.png" />
+    <Content Include="EcommerceSite\images\fancy_shadow_w.png" />
+    <Content Include="EcommerceSite\images\fancy_title_left.png" />
+    <Content Include="EcommerceSite\images\fancy_title_main.png" />
+    <Content Include="EcommerceSite\images\fancy_title_over.png" />
+    <Content Include="EcommerceSite\images\fancy_title_right.png" />
+    <Content Include="EcommerceSite\media\HeadlineBannerImages\apple_ipod_shuffle.jpg" />
+    <Content Include="EcommerceSite\media\HeadlineBannerImages\apple_mac_pro.jpg" />
+    <Content Include="EcommerceSite\media\HeadlineBannerImages\cant_touch_tees.jpg" />
+    <Content Include="EcommerceSite\media\HeadlineBannerImages\htc_evo.jpg" />
+    <Content Include="EcommerceSite\media\HeadlineBannerImages\samsung_led_hdtv.jpg" />
+    <Content Include="EcommerceSite\media\HeadlineBannerImages\__thumbnails\apple_ipod_shuffle_jpg_200_62.jpg" />
+    <Content Include="EcommerceSite\media\HeadlineBannerImages\__thumbnails\apple_ipod_shuffle_jpg_300_92.jpg" />
+    <Content Include="EcommerceSite\media\HeadlineBannerImages\__thumbnails\apple_mac_pro_jpg_200_62.jpg" />
+    <Content Include="EcommerceSite\media\HeadlineBannerImages\__thumbnails\apple_mac_pro_jpg_300_92.jpg" />
+    <Content Include="EcommerceSite\media\HeadlineBannerImages\__thumbnails\cant_touch_tees_jpg_200_62.jpg" />
+    <Content Include="EcommerceSite\media\HeadlineBannerImages\__thumbnails\cant_touch_tees_jpg_300_92.jpg" />
+    <Content Include="EcommerceSite\media\HeadlineBannerImages\__thumbnails\htc_evo_jpg_200_62.jpg" />
+    <Content Include="EcommerceSite\media\HeadlineBannerImages\__thumbnails\htc_evo_jpg_300_92.jpg" />
+    <Content Include="EcommerceSite\media\HeadlineBannerImages\__thumbnails\samsung_led_hdtv_jpg_200_62.jpg" />
+    <Content Include="EcommerceSite\media\HeadlineBannerImages\__thumbnails\samsung_led_hdtv_jpg_300_92.jpg" />
+    <Content Include="EcommerceSite\media\PTSansFont\Paratype-PT-Sans-Free-Font-License.txt" />
+    <Content Include="EcommerceSite\media\PTSansFont\PTSansBold.svg" />
+    <Content Include="EcommerceSite\media\PTSansFont\PTSansRegular.svg" />
+    <Content Include="EcommerceSite\Scripts\Bundle.js" />
+    <Content Include="EcommerceSite\Scripts\FancyboxInit.js" />
+    <Content Include="EcommerceSite\Scripts\jquery-1.7.2.min.js" />
+    <Content Include="EcommerceSite\Scripts\jquery-carousel.js" />
+    <Content Include="EcommerceSite\Scripts\jquery.fancybox-1.3.4.js" />
+    <Content Include="EcommerceSite\Scripts\JQueryMobile\images\ajax-loader.gif" />
+    <Content Include="EcommerceSite\Scripts\JQueryMobile\images\icons-18-black.png" />
+    <Content Include="EcommerceSite\Scripts\JQueryMobile\images\icons-18-white.png" />
+    <Content Include="EcommerceSite\Scripts\JQueryMobile\images\icons-36-black.png" />
+    <Content Include="EcommerceSite\Scripts\JQueryMobile\images\icons-36-white.png" />
+    <Content Include="EcommerceSite\Scripts\JQueryMobile\jquery.mobile-1.3.2.css" />
+    <Content Include="EcommerceSite\Scripts\JQueryMobile\jquery.mobile-1.3.2.js" />
+    <Content Include="EcommerceSite\Scripts\JQueryMobile\jquery.mobile-1.3.2.min.css" />
+    <Content Include="EcommerceSite\Scripts\JQueryMobile\jquery.mobile-1.3.2.min.js" />
+    <Content Include="EcommerceSite\Stylesheets\jquery.fancybox-1.3.4.css" />
+    <Content Include="IntranetPortal\media\IT\IT-related graphics\IT.jpg" />
+    <Content Include="IntranetPortal\media\IT\IT-related graphics\IT_col.jpg" />
+    <Content Include="IntranetPortal\media\IT\IT-related graphics\msoffice.jpg" />
+    <Content Include="IntranetPortal\media\IT\IT-related graphics\msoffice_col.jpg" />
+    <Content Include="IntranetPortal\media\Media\Team Building Trip\IM001775.JPG" />
+    <Content Include="IntranetPortal\media\Media\Team Building Trip\IM002595.JPG" />
+    <Content Include="IntranetPortal\media\Media\Team Building Trip\IM002601.JPG" />
+    <Content Include="IntranetPortal\media\Media\Team Building Trip\IM002628.JPG" />
+    <Content Include="IntranetPortal\media\Media\Trees for Bugs\Trees-for-bugs-1.jpg" />
+    <Content Include="IntranetPortal\media\Media\Trees for Bugs\Trees-for-bugs-2.jpg" />
+    <Content Include="IntranetPortal\media\Media\Trees for Bugs\Trees-for-bugs-3.jpg" />
+    <Content Include="IntranetPortal\media\Media\Trees for Bugs\Trees-for-bugs-4.jpg" />
+    <Content Include="IntranetPortal\media\Media\Trees for Bugs\Trees-for-bugs-5.jpg" />
+    <Content Include="IntranetPortal\media\Microsoft_Office_Upgrade\Microsoft Office graphics\msoffice.jpg" />
+    <Content Include="IntranetPortal\media\Microsoft_Office_Upgrade\Microsoft Office graphics\msoffice_col.jpg" />
+    <Content Include="DancingGoat\Fonts\Core-icons.eot" />
+    <Content Include="DancingGoat\Fonts\Core-icons.ttf" />
+    <Content Include="DancingGoat\Fonts\Core-icons.woff" />
+    <Content Include="DancingGoat\Fonts\PTSerif-Bold.woff" />
+    <Content Include="DancingGoat\Fonts\SourceSansPro-Bold.woff" />
+    <Content Include="DancingGoat\Fonts\SourceSansPro-Light.woff" />
+    <Content Include="DancingGoat\Fonts\SourceSansPro-Regular.woff" />
+    <Content Include="EcommerceSite\media\PTSansFont\PTSansBold.eot" />
+    <Content Include="EcommerceSite\media\PTSansFont\PTSansBold.ttf" />
+    <Content Include="EcommerceSite\media\PTSansFont\PTSansBold.woff" />
+    <Content Include="EcommerceSite\media\PTSansFont\PTSansRegular.eot" />
+    <Content Include="EcommerceSite\media\PTSansFont\PTSansRegular.ttf" />
+    <Content Include="EcommerceSite\media\PTSansFont\PTSansRegular.woff" />
     <None Include="App_Themes\Default\CMSModules\cms.messages.less" />
     <None Include="App_Themes\Default\CMSModules\cms.emailmarketing\cms.emailmarketing.emailbuilder.emailproperties.less" />
     <None Include="App_Themes\Default\CMSModules\cms.emailmarketing\cms.emailmarketing.emailbuilder.less" />
@@ -1980,8 +2169,6 @@
     <Content Include="CMSAdminControls\UI\UniGrid\Pages\MassDelete.aspx" />
     <Content Include="CMSAdminControls\UI\Selectors\FaviconSelector.ascx" />
     <Content Include="CMSAdminControls\UI\FontIconSelector.ascx" />
-    <Content Include="CMSFormControls\DropdownChosen.ascx" />
-    <Content Include="CMSFormControls\TreeTaxonomyMultiSelector.ascx" />
     <Content Include="CMSInstall\Controls\WizardSteps\CollationDialog.ascx" />
     <Content Include="CMSModules\AdminControls\Controls\UIControls\SmartTipPlaceholder.ascx" />
     <Content Include="CMSModules\BizForms\FormControls\FormFieldSelector.ascx" />
@@ -4772,165 +4959,7 @@
     <Content Include="CMSWebParts\WebServices\GridForWebService.ascx" />
     <Content Include="CMSWebParts\WebServices\RepeaterForWebService.ascx" />
     <Content Include="CMSWebParts\Widgets\WidgetActions.ascx" />
-    <Content Include="CorporateSite\Images\close.png" />
-    <Content Include="CorporateSite\Images\loading.gif" />
-    <Content Include="CorporateSite\Images\next.png" />
-    <Content Include="CorporateSite\Images\prev.png" />
-    <Content Include="CorporateSite\Scripts\jquery-1.7.2.min.js" />
-    <Content Include="CorporateSite\Scripts\lightbox.js" />
-    <Content Include="CorporateSite\Scripts\LightboxBundle.js" />
-    <Content Include="CorporateSite\Stylesheets\lightbox.css" />
-    <Content Include="DancingGoatMvc\media\CoffeeGallery\Bakery-And-Coffee.jpg" />
-    <Content Include="DancingGoatMvc\media\CoffeeGallery\Brew-Bar.jpg" />
-    <Content Include="DancingGoatMvc\media\CoffeeGallery\Cauca-Farmer.jpg" />
-    <Content Include="DancingGoatMvc\media\CoffeeGallery\Coffee-Cherries.jpg" />
-    <Content Include="DancingGoatMvc\media\CoffeeGallery\Coffee-Region.jpg" />
-    <Content Include="DancingGoatMvc\media\CoffeeGallery\Coffee-Shop.jpg" />
-    <Content Include="DancingGoatMvc\media\CoffeeGallery\Coffee-Triangle.jpg" />
-    <Content Include="DancingGoatMvc\media\CoffeeGallery\Colombia-Coffee.jpg" />
-    <Content Include="DancingGoatMvc\media\CoffeeGallery\Kona-Coffee.jpg" />
-    <Content Include="DancingGoatMvc\media\CoffeeGallery\Robusta.jpg" />
-    <Content Include="DancingGoatMvc\media\CoffeeGallery\St-Helena-Coffee.jpg" />
-    <Content Include="DancingGoatMvc\media\CoffeeGallery\Thailand-Coffee.jpg" />
-    <Content Include="DancingGoatMvc\media\CoffeeGallery\Work-And-Coffee.jpg" />
-    <Content Include="DancingGoatMvc\media\EmailCampaigns\coffee-101-lesson-1.jpg" />
-    <Content Include="DancingGoatMvc\media\EmailCampaigns\coffee-101-lesson-2.jpg" />
-    <Content Include="DancingGoatMvc\media\EmailCampaigns\colombia-coffee-promotion.jpg" />
-    <Content Include="DancingGoatMvc\media\Graphics\banner-default.jpg" />
-    <Content Include="DancingGoatMvc\media\Graphics\colombia-coffee.jpg" />
-    <Content Include="DancingGoatMvc\media\Graphics\default-image-product.png" />
-    <Content Include="DancingGoatMvc\media\Graphics\hero-image.jpg" />
-    <Content Include="DancingGoatMvc\media\Graphics\Logos\logo-dancing-goat-inverted.png" />
-    <Content Include="DancingGoat\Fonts\Core-icons.svg" />
-    <Content Include="DancingGoat\Icons\icons-core.css" />
-    <Content Include="DancingGoat\Images\Favicons\favicon-16.png" />
-    <Content Include="DancingGoat\Images\Favicons\favicon-32.png" />
-    <Content Include="DancingGoat\media\CoffeeGallery\Bakery-And-Coffee.jpg" />
-    <Content Include="DancingGoat\media\CoffeeGallery\Brew-Bar.jpg" />
-    <Content Include="DancingGoat\media\CoffeeGallery\Cauca-Farmer.jpg" />
-    <Content Include="DancingGoat\media\CoffeeGallery\Coffee-Cherries.jpg" />
-    <Content Include="DancingGoat\media\CoffeeGallery\Coffee-Region.jpg" />
-    <Content Include="DancingGoat\media\CoffeeGallery\Coffee-Shop.jpg" />
-    <Content Include="DancingGoat\media\CoffeeGallery\Coffee-Triangle.jpg" />
-    <Content Include="DancingGoat\media\CoffeeGallery\Colombia-Coffee.jpg" />
-    <Content Include="DancingGoat\media\CoffeeGallery\Kona-Coffee.jpg" />
-    <Content Include="DancingGoat\media\CoffeeGallery\Robusta.jpg" />
-    <Content Include="DancingGoat\media\CoffeeGallery\St-Helena-Coffee.jpg" />
-    <Content Include="DancingGoat\media\CoffeeGallery\Thailand-Coffee.jpg" />
-    <Content Include="DancingGoat\media\CoffeeGallery\Work-And-Coffee.jpg" />
-    <Content Include="DancingGoat\media\EmailCampaigns\coffee-101-lesson-1.jpg" />
-    <Content Include="DancingGoat\media\EmailCampaigns\coffee-101-lesson-2.jpg" />
-    <Content Include="DancingGoat\media\EmailCampaigns\colombia-coffee-promotion.jpg" />
-    <Content Include="DancingGoat\media\EmailCampaigns\dancing-goat-newsletter.jpg" />
-    <Content Include="DancingGoat\media\EmailCampaigns\logo-dancing-goat-inverted.png" />
-    <Content Include="DancingGoat\media\EmailCampaigns\logo-dancing-goat.png" />
-    <Content Include="DancingGoat\media\Graphics\CSS sprites\continents.png" />
-    <Content Include="DancingGoat\media\Graphics\default-image-article.jpg" />
-    <Content Include="DancingGoat\media\Graphics\default-image-cafe.jpg" />
-    <Content Include="DancingGoat\media\Graphics\default-image-product.png" />
-    <Content Include="DancingGoat\media\Graphics\Icons\chevron-down.png" />
-    <Content Include="DancingGoat\media\Graphics\Icons\facebook.png" />
-    <Content Include="DancingGoat\media\Graphics\Icons\magnifier.png" />
-    <Content Include="DancingGoat\media\Graphics\Icons\twitter.png" />
-    <Content Include="DancingGoat\media\Graphics\Logos\dancing-goat.png" />
-    <Content Include="DancingGoat\media\Graphics\Logos\facebook.png" />
-    <Content Include="DancingGoat\media\Graphics\Logos\twitter.png" />
-    <Content Include="DancingGoat\media\Graphics\page-404.jpg" />
-    <Content Include="DancingGoat\media\Graphics\__thumbnails\404_jpg_300_200.jpg" />
-    <Content Include="DancingGoat\media\Graphics\__thumbnails\default-cafe_jpg_300_300.jpg" />
-    <Content Include="DancingGoat\media\Graphics\__thumbnails\default-product_png_200_200.png" />
-    <Content Include="DancingGoat\media\Graphics\__thumbnails\default-product_png_500_500.png" />
-    <Content Include="DancingGoat\media\Graphics\__thumbnails\default-product_png_60_60.png" />
-    <Content Include="DancingGoat\media\Graphics\__thumbnails\default-product_png_70_70.png" />
-    <Content Include="DancingGoat\media\Graphics\__thumbnails\our-story_jpg_200_93.jpg" />
-    <Content Include="DancingGoat\media\Homepage\banner-b2b.jpg" />
-    <Content Include="DancingGoat\media\Homepage\banner-b2c.jpg" />
-    <Content Include="DancingGoat\media\Homepage\banner-default.jpg" />
-    <Content Include="DancingGoat\media\LandingPage\banner-buena-vista.jpg" />
-    <Content Include="DancingGoat\media\LandingPage\banner-colombia-1.jpg" />
-    <Content Include="DancingGoat\media\LandingPage\banner-colombia-2.jpg" />
-    <Content Include="DancingGoat\media\LandingPage\map-latin-america.png" />
-    <Content Include="DancingGoat\Scripts\Main.js" />
-    <Content Include="DancingGoat\Scripts\Modules\ChangeImgSrcToBackground.js" />
-    <Content Include="DancingGoat\Scripts\Modules\DeleteAddress.js" />
-    <Content Include="DancingGoat\Scripts\Modules\FloatingBox.js" />
-    <Content Include="DancingGoat\Scripts\Modules\ResponsiveMenuDropdown.js" />
-    <Content Include="DancingGoat\Scripts\Modules\MobileMenu.js" />
-    <Content Include="DancingGoat\Scripts\Modules\ProductFilter.js" />
-    <Content Include="DancingGoat\Scripts\Modules\ScrollToForm.js" />
-    <Content Include="DancingGoat\Scripts\Modules\ScrollToMap.js" />
-    <Content Include="DancingGoat\Scripts\Vendor\DomReady\DomReady.js" />
-    <Content Include="DancingGoat\Scripts\Vendor\jQuery\jQuery.min.js" />
-    <Content Include="DancingGoat\Scripts\Vendor\RequireJS\require.min.js" />
-    <Content Include="EcommerceSite\images\blank.gif" />
-    <Content Include="EcommerceSite\images\fancybox-x.png" />
-    <Content Include="EcommerceSite\images\fancybox-y.png" />
-    <Content Include="EcommerceSite\images\fancybox.png" />
-    <Content Include="EcommerceSite\images\fancy_close.png" />
-    <Content Include="EcommerceSite\images\fancy_loading.png" />
-    <Content Include="EcommerceSite\images\fancy_nav_left.png" />
-    <Content Include="EcommerceSite\images\fancy_nav_right.png" />
-    <Content Include="EcommerceSite\images\fancy_shadow_e.png" />
-    <Content Include="EcommerceSite\images\fancy_shadow_n.png" />
-    <Content Include="EcommerceSite\images\fancy_shadow_ne.png" />
-    <Content Include="EcommerceSite\images\fancy_shadow_nw.png" />
-    <Content Include="EcommerceSite\images\fancy_shadow_s.png" />
-    <Content Include="EcommerceSite\images\fancy_shadow_se.png" />
-    <Content Include="EcommerceSite\images\fancy_shadow_sw.png" />
-    <Content Include="EcommerceSite\images\fancy_shadow_w.png" />
-    <Content Include="EcommerceSite\images\fancy_title_left.png" />
-    <Content Include="EcommerceSite\images\fancy_title_main.png" />
-    <Content Include="EcommerceSite\images\fancy_title_over.png" />
-    <Content Include="EcommerceSite\images\fancy_title_right.png" />
-    <Content Include="EcommerceSite\media\HeadlineBannerImages\apple_ipod_shuffle.jpg" />
-    <Content Include="EcommerceSite\media\HeadlineBannerImages\apple_mac_pro.jpg" />
-    <Content Include="EcommerceSite\media\HeadlineBannerImages\cant_touch_tees.jpg" />
-    <Content Include="EcommerceSite\media\HeadlineBannerImages\htc_evo.jpg" />
-    <Content Include="EcommerceSite\media\HeadlineBannerImages\samsung_led_hdtv.jpg" />
-    <Content Include="EcommerceSite\media\HeadlineBannerImages\__thumbnails\apple_ipod_shuffle_jpg_200_62.jpg" />
-    <Content Include="EcommerceSite\media\HeadlineBannerImages\__thumbnails\apple_ipod_shuffle_jpg_300_92.jpg" />
-    <Content Include="EcommerceSite\media\HeadlineBannerImages\__thumbnails\apple_mac_pro_jpg_200_62.jpg" />
-    <Content Include="EcommerceSite\media\HeadlineBannerImages\__thumbnails\apple_mac_pro_jpg_300_92.jpg" />
-    <Content Include="EcommerceSite\media\HeadlineBannerImages\__thumbnails\cant_touch_tees_jpg_200_62.jpg" />
-    <Content Include="EcommerceSite\media\HeadlineBannerImages\__thumbnails\cant_touch_tees_jpg_300_92.jpg" />
-    <Content Include="EcommerceSite\media\HeadlineBannerImages\__thumbnails\htc_evo_jpg_200_62.jpg" />
-    <Content Include="EcommerceSite\media\HeadlineBannerImages\__thumbnails\htc_evo_jpg_300_92.jpg" />
-    <Content Include="EcommerceSite\media\HeadlineBannerImages\__thumbnails\samsung_led_hdtv_jpg_200_62.jpg" />
-    <Content Include="EcommerceSite\media\HeadlineBannerImages\__thumbnails\samsung_led_hdtv_jpg_300_92.jpg" />
-    <Content Include="EcommerceSite\media\PTSansFont\Paratype-PT-Sans-Free-Font-License.txt" />
-    <Content Include="EcommerceSite\media\PTSansFont\PTSansBold.svg" />
-    <Content Include="EcommerceSite\media\PTSansFont\PTSansRegular.svg" />
-    <Content Include="EcommerceSite\Scripts\Bundle.js" />
-    <Content Include="EcommerceSite\Scripts\FancyboxInit.js" />
-    <Content Include="EcommerceSite\Scripts\jquery-1.7.2.min.js" />
-    <Content Include="EcommerceSite\Scripts\jquery-carousel.js" />
-    <Content Include="EcommerceSite\Scripts\jquery.fancybox-1.3.4.js" />
-    <Content Include="EcommerceSite\Scripts\JQueryMobile\images\ajax-loader.gif" />
-    <Content Include="EcommerceSite\Scripts\JQueryMobile\images\icons-18-black.png" />
-    <Content Include="EcommerceSite\Scripts\JQueryMobile\images\icons-18-white.png" />
-    <Content Include="EcommerceSite\Scripts\JQueryMobile\images\icons-36-black.png" />
-    <Content Include="EcommerceSite\Scripts\JQueryMobile\images\icons-36-white.png" />
-    <Content Include="EcommerceSite\Scripts\JQueryMobile\jquery.mobile-1.3.2.css" />
-    <Content Include="EcommerceSite\Scripts\JQueryMobile\jquery.mobile-1.3.2.js" />
-    <Content Include="EcommerceSite\Scripts\JQueryMobile\jquery.mobile-1.3.2.min.css" />
-    <Content Include="EcommerceSite\Scripts\JQueryMobile\jquery.mobile-1.3.2.min.js" />
-    <Content Include="EcommerceSite\Stylesheets\jquery.fancybox-1.3.4.css" />
     <Content Include="Global.asax" />
-    <Content Include="IntranetPortal\media\IT\IT-related graphics\IT.jpg" />
-    <Content Include="IntranetPortal\media\IT\IT-related graphics\IT_col.jpg" />
-    <Content Include="IntranetPortal\media\IT\IT-related graphics\msoffice.jpg" />
-    <Content Include="IntranetPortal\media\IT\IT-related graphics\msoffice_col.jpg" />
-    <Content Include="IntranetPortal\media\Media\Team Building Trip\IM001775.JPG" />
-    <Content Include="IntranetPortal\media\Media\Team Building Trip\IM002595.JPG" />
-    <Content Include="IntranetPortal\media\Media\Team Building Trip\IM002601.JPG" />
-    <Content Include="IntranetPortal\media\Media\Team Building Trip\IM002628.JPG" />
-    <Content Include="IntranetPortal\media\Media\Trees for Bugs\Trees-for-bugs-1.jpg" />
-    <Content Include="IntranetPortal\media\Media\Trees for Bugs\Trees-for-bugs-2.jpg" />
-    <Content Include="IntranetPortal\media\Media\Trees for Bugs\Trees-for-bugs-3.jpg" />
-    <Content Include="IntranetPortal\media\Media\Trees for Bugs\Trees-for-bugs-4.jpg" />
-    <Content Include="IntranetPortal\media\Media\Trees for Bugs\Trees-for-bugs-5.jpg" />
-    <Content Include="IntranetPortal\media\Microsoft_Office_Upgrade\Microsoft Office graphics\msoffice.jpg" />
-    <Content Include="IntranetPortal\media\Microsoft_Office_Upgrade\Microsoft Office graphics\msoffice_col.jpg" />
     <Content Include="ObjectTranslationRESTService.svc" />
     <Content Include="DocumentRESTService.svc" />
     <Content Include="Default.aspx" />
@@ -4945,13 +4974,6 @@
     <Content Include="CMSModules\SharePoint\CMSPages\MultiFileUploader.ashx" />
     <Content Include="CMSModules\Membership\CMSPages\SignOut.ashx" />
     <Content Include="App_Data\Templates\DancingGoat\Template.zip" />
-    <Content Include="DancingGoat\Fonts\Core-icons.eot" />
-    <Content Include="DancingGoat\Fonts\Core-icons.ttf" />
-    <Content Include="DancingGoat\Fonts\Core-icons.woff" />
-    <Content Include="DancingGoat\Fonts\PTSerif-Bold.woff" />
-    <Content Include="DancingGoat\Fonts\SourceSansPro-Bold.woff" />
-    <Content Include="DancingGoat\Fonts\SourceSansPro-Light.woff" />
-    <Content Include="DancingGoat\Fonts\SourceSansPro-Regular.woff" />
     <Content Include="App_Themes\Default\CMSModules\cms.onlinemarketing.less" />
     <Content Include="App_Themes\Default\CMSModules\cms.onlinemarketing\magnific-popup.less" />
     <Content Include="App_Themes\Default\CMSModules\cms.emailmarketing.less" />
@@ -5001,6 +5023,9 @@
     <Content Include="CMSScripts\CMSModules\CMS.Charts\amCharts\plugins\responsive\responsive.min.js.map" />
     <Content Include="App_Themes\Default\CMSModules\cms.webanalytics\cms.autosaveform.less" />
     <Content Include="App_Themes\Default\CMSModules\cms.webanalytics\modal-dialog.less" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Data\CMSModules\QRCode\Resources.zip" />
     <Content Include="App_Data\CMSModules\HealthMonitoring\Counters.xpc" />
     <Content Include="App_Data\CMSModules\SmartSearch\_StopWords\ar.txt" />
@@ -5751,12 +5776,6 @@
     <Content Include="CMSModules\Chat\web.config" />
     <Content Include="CMSTemplates\BlankSiteASPX\Blank.master" />
     <Content Include="CMSTemplates\CorporateSite\Root.master" />
-    <Content Include="EcommerceSite\media\PTSansFont\PTSansBold.eot" />
-    <Content Include="EcommerceSite\media\PTSansFont\PTSansBold.ttf" />
-    <Content Include="EcommerceSite\media\PTSansFont\PTSansBold.woff" />
-    <Content Include="EcommerceSite\media\PTSansFont\PTSansRegular.eot" />
-    <Content Include="EcommerceSite\media\PTSansFont\PTSansRegular.ttf" />
-    <Content Include="EcommerceSite\media\PTSansFont\PTSansRegular.woff" />
     <Content Include="CMSScripts\CMSModules\CMS.ContactManagement\ContactProfile\app.config.json" />
     <Content Include="CMSScripts\CMSModules\CMS.ContactManagement\ContactProfile\build.localization.json" />
     <Content Include="CMSScripts\CMSModules\CMS.ContactManagement\ContactProfile\app\shared\cms.application.service.js" />
@@ -5858,9 +5877,22 @@
     </Content>
     <Content Include="App_Data\DancingGoat\Resources\dancingGoat.resx" />
     <Content Include="App_Data\DancingGoat\Resources\es-ES\dancingGoat.es-ES.resx" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CMSFormControls\DropdownChosen.ascx.cs">
+      <DependentUpon>DropdownChosen.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CMSFormControls\DropdownChosen.ascx.designer.cs">
+      <DependentUpon>DropdownChosen.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CMSFormControls\TreeTaxonomyMultiSelector.ascx.cs">
+      <DependentUpon>TreeTaxonomyMultiSelector.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CMSFormControls\TreeTaxonomyMultiSelector.ascx.designer.cs">
+      <DependentUpon>TreeTaxonomyMultiSelector.ascx</DependentUpon>
+    </Compile>
     <Compile Include="CMSAdminControls\UI\SmartTip.ascx.cs">
       <DependentUpon>SmartTip.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -5996,13 +6028,6 @@
     </Compile>
     <Compile Include="CMSAdminControls\UI\Selectors\FaviconSelector.ascx.designer.cs">
       <DependentUpon>FaviconSelector.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="CMSFormControls\DropdownChosen.ascx.cs">
-      <DependentUpon>DropdownChosen.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CMSFormControls\DropdownChosen.ascx.designer.cs">
-      <DependentUpon>DropdownChosen.ascx</DependentUpon>
     </Compile>
     <Compile Include="CMSFormControls\Inputs\TextBox.ascx.cs">
       <DependentUpon>TextBox.ascx</DependentUpon>
@@ -6258,13 +6283,6 @@
     </Compile>
     <Compile Include="CMSFormControls\Classes\AssemblyClassSelector.ascx.designer.cs">
       <DependentUpon>AssemblyClassSelector.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="CMSFormControls\TreeTaxonomyMultiSelector.ascx.cs">
-      <DependentUpon>TreeTaxonomyMultiSelector.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CMSFormControls\TreeTaxonomyMultiSelector.ascx.designer.cs">
-      <DependentUpon>TreeTaxonomyMultiSelector.ascx</DependentUpon>
     </Compile>
     <Compile Include="CMSInlineControls\SubLevelPlaceHolder.ascx.cs">
       <DependentUpon>SubLevelPlaceHolder.ascx</DependentUpon>
@@ -22188,8 +22206,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\CMSModules\WebAnalytics\MaxMind\" />
     <Folder Include="CorporateSite\media\VideoGallery\__thumbnails\" />
+    <Folder Include="App_Data\CMSModules\WebAnalytics\MaxMind\" />
   </ItemGroup>
   <ItemGroup>
     <WebReferences Include="Web References\" />

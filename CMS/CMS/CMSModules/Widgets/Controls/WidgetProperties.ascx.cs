@@ -848,7 +848,7 @@ public partial class CMSModules_Widgets_Controls_WidgetProperties : CMSUserContr
             ViewModeEnum viewMode = PortalContext.ViewMode;
 
             // Check manage permission for non-livesite version
-            if (!viewMode.IsLiveSite() && (viewMode != ViewModeEnum.DashboardWidgets))
+            if (!viewMode.IsLiveSite() && viewMode != ViewModeEnum.DashboardWidgets && viewMode != ViewModeEnum.UserWidgets)
             {
                 if (CurrentUser.IsAuthorizedPerDocument(CurrentPageInfo.NodeID, CurrentPageInfo.ClassName, NodePermissionsEnum.Modify) != AuthorizationResultEnum.Allowed)
                 {
