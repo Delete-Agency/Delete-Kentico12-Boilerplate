@@ -14,7 +14,7 @@
     });
 }
 
-@foreach (var image in Model.Images)
+@if (Model.Images != null && Model.Images.Any())
 {
-    <img src="@image.GetMediaFilesSelectorItemUrl()" />
+    <img src="@Model.Images[0].GetMediaFilesSelectorItemUrl()" />
 }

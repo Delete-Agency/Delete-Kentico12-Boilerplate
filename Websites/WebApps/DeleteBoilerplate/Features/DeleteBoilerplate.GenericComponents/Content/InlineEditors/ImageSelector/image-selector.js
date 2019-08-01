@@ -8,7 +8,6 @@
             button.addEventListener("click", function () {
                 // Sets the options object with individual properties
                 var dialogOptions = {
-                    // libraryName: "DeleteBoilerplate",
                     maxFilesLimit: 1,
                     allowedExtensions: ".gif;.png;.jpg;.jpeg",
                     selectedValues: options.propertyValue,
