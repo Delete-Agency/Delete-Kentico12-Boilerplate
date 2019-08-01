@@ -1,5 +1,6 @@
 ﻿using System.Web;
 using System.Web.Hosting;
+using DeleteBoilerplate.Domain.Repositories;
 using LightInject;
 
 namespace DeleteBoilerplate.Infrastructure
@@ -19,6 +20,8 @@ namespace DeleteBoilerplate.Infrastructure
             serviceRegistry.Register<HttpServerUtilityBase>(factory => new HttpServerUtilityWrapper(HttpContext.Current.Server), new PerRequestLifeTime());
             serviceRegistry.Register<HttpSessionStateBase>(factory => new HttpSessionStateWrapper(HttpContext.Current.Session), new PerRequestLifeTime());
             serviceRegistry.Register<VirtualPathProvider>(factory => HostingEnvironment.VirtualPathProvider, new PerRequestLifeTime());
+
+            serviceRegistry.RegisterScoped<IProjectRepository, ProjectRepository>();
         }
     }
 }

@@ -583,6 +583,12 @@
   <ItemGroup>
     <Analyzer Include="..\..\WebApps\DeleteBoilerplate\packages\AWSSDK.S3.3.1.9.0\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\DeleteBoilerplate.Domain\DeleteBoilerplate.Domain.csproj">
+      <Project>{2A0E9BD2-90F5-466A-A742-D27C9302B1CA}</Project>
+      <Name>DeleteBoilerplate.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\..\WebApps\DeleteBoilerplate\packages\Kentico.LanguagePack.English.12.0.31\build\Kentico.LanguagePack.English.targets" Condition="Exists('..\..\WebApps\DeleteBoilerplate\packages\Kentico.LanguagePack.English.12.0.31\build\Kentico.LanguagePack.English.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

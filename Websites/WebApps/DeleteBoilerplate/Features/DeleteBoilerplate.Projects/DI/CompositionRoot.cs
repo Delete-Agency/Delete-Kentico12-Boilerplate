@@ -1,5 +1,4 @@
-﻿using DeleteBoilerplate.Domain.Repositories;
-using DeleteBoilerplate.Projects.Services;
+﻿using DeleteBoilerplate.Projects.Services;
 using LightInject;
 
 namespace DeleteBoilerplate.Projects.DI
