@@ -27,5 +27,12 @@ namespace DeleteBoilerplate.Domain
                 }
             }
         }
+
+        public static class Taxonomy
+        {
+            public const string SearchFieldNamePrefix = "Taxonomy";
+            public const string ParentSearchFieldNamePrefix = SearchFieldNamePrefix + "Parent";
+
+        }
     }
 }
