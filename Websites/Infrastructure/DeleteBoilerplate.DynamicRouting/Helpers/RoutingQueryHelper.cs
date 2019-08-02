@@ -8,27 +8,20 @@ using CMS.SiteProvider;
 
 namespace DeleteBoilerplate.DynamicRouting.Helpers
 {
-    public class DocumentQueryHelper
+    public class RoutingQueryHelper
     {
         /// <summary>
-        /// Gets the query to get TreeNode for the corresponding path
+        /// Gets the query returning TreeNode for the corresponding url
         /// </summary>
-        /// <param name="url"></param>
+        /// <param name="url">Relative URL without parameters</param>
         /// <returns></returns>
-        public static MultiDocumentQuery GetNodeByAliasPathOrSeoUrlQuery(string url)
+        public static MultiDocumentQuery GetNodeBySeoUrlQuery(string url)
         {
-            var pageTypesWithSeoUrlClassNames = GetPageTypesWithSeoUrlClassNames();
-
-            // Specific page query
-            var query = DocumentHelper.GetDocuments()
-                .Types(pageTypesWithSeoUrlClassNames)
-                .Columns("NodeAliasPath", "SeoUrl", "DocumentID")
+            return DocumentHelper.GetDocuments()
+                .Types(GetPageTypesWithSeoUrlClassNames())
+                .Columns("SeoUrl", "DocumentID")
                 .WhereEquals("SeoUrl", url)
-                .Or()
-                .WhereEquals("NodeAliasPath", url)
                 .TopN(1);
-
-            return query;
         }
 
         private static string[] GetPageTypesWithSeoUrlClassNames()

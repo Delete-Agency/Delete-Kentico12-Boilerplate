@@ -1,26 +1,33 @@
 ﻿using System.Linq;
 using System.Web;
 using System.Web.Routing;
+using CMS.DocumentEngine;
+using DeleteBoilerplate.DynamicRouting.Extensions;
 using DeleteBoilerplate.DynamicRouting.Helpers;
+using Kentico.Content.Web.Mvc;
+using Kentico.Web.Mvc;
 
 namespace DeleteBoilerplate.DynamicRouting.RequestHandling
 {
     public class PageFoundConstraint : IRouteConstraint
     {
-        public PageFoundConstraint(bool ignoreRootPage = true)
+        public bool Match(HttpContextBase context, Route route, string parameterName, RouteValueDictionary values, RouteDirection routeDirection)
         {
-            this.IgnoreRootPage = ignoreRootPage;
-        }
+            if (!context.Items.Contains("ContextItemDocumentId"))
+            {
+                // Get the classname based on the URL
+                var foundNode = RoutingQueryHelper
+                    .GetNodeBySeoUrlQuery(EnvironmentHelper.GetUrl(context.Request))
+                    .AddVersionsParameters(context.Kentico().Preview().Enabled)
+                    .FirstOrDefault();
 
-        public bool IgnoreRootPage;
+                context.Items.Add("ContextItemDocumentId", foundNode?.DocumentID);
+                context.Items.Add("ContextItemClassName", foundNode?.ClassName);
 
-        public bool Match(HttpContextBase httpContext, Route route, string parameterName, RouteValueDictionary values, RouteDirection routeDirection)
-        {
-            var url = EnvironmentHelper.GetUrl(httpContext.Request);
+                return foundNode != default(TreeNode);
+            }
 
-            var foundDoc = DocumentQueryHelper.GetNodeByAliasPathOrSeoUrlQuery(url).FirstOrDefault();
-
-            return (foundDoc != null && (foundDoc.NodeAliasPath != "/" || !IgnoreRootPage));
+            return context.Items["ContextItemDocumentId"] != null;
         }
     }
 }

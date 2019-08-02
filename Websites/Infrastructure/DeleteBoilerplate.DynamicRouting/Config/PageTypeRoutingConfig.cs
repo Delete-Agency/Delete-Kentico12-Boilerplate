@@ -10,7 +10,7 @@ namespace DeleteBoilerplate.DynamicRouting.Config
     public static class PageTypeRoutingConfig
     {
         // ReSharper disable once FieldCanBeMadeReadOnly.Local
-        private static Dictionary<string, MethodInfo> _routingDictionary = new Dictionary<string, MethodInfo>();
+        private static Dictionary<string, MethodInfo> _routingDictionary = new Dictionary<string, MethodInfo>(StringComparer.OrdinalIgnoreCase);
 
         public static void Initialize()
         {

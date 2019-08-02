@@ -13,6 +13,7 @@ using DeleteBoilerplate.OutputCache;
 
 namespace DeleteBoilerplate.Projects.Controllers
 {
+    [OutputCache(CacheProfile = OutputCacheConsts.CacheProfiles.Default)]
     public class ProjectsController : BaseController
     {
         [Inject]
@@ -25,7 +26,6 @@ namespace DeleteBoilerplate.Projects.Controllers
         public ITaxonomySearch<Project> TaxonomySearch { get; set; }
 
         [PageTypeRouting(Project.CLASS_NAME)]
-        [OutputCache(CacheProfile = OutputCacheConsts.CacheProfiles.Default)]
         public ActionResult Index()
         {
             var contextItem = this.GetContextItem<Project>();
@@ -34,7 +34,6 @@ namespace DeleteBoilerplate.Projects.Controllers
             return View(viewModel);
         }
 
-        [OutputCache(CacheProfile = OutputCacheConsts.CacheProfiles.Default)]
         public ActionResult Search(int year)
         {
             OutputCacheDependencies.AddPageDependency<Project>();
@@ -42,6 +41,7 @@ namespace DeleteBoilerplate.Projects.Controllers
             return View("Search", Mapper.Map<List<ProjectViewModel>>(projects));
         }
 
+        [OutputCache(NoStore = true, Duration = 0)]
         public ActionResult SearchByArea(string area)
         {
             OutputCacheDependencies.AddPageDependency<Project>();

@@ -12,8 +12,8 @@ namespace DeleteBoilerplate.DynamicRouting
             var route = routes.MapRoute(
                 name: "DefaultIfPriority",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
-                constraints: new { ControlIsPriority = new RouteOverPathPriorityConstraint() }
+                defaults: new {controller = "Home", action = "Index", id = UrlParameter.Optional},
+                constraints: new {ControlIsPriority = new RouteOverPathPriorityConstraint()}
             );
 
             // If the Page is found, will handle the routing dynamically
@@ -21,8 +21,8 @@ namespace DeleteBoilerplate.DynamicRouting
                 name: "CheckByUrl",
                 url: "{*url}",
                 // Defaults are if it can't find a controller based on the pages
-                defaults: new { defaultcontroller = "HttpErrors", defaultaction = "Index" },
-                constraints: new { PageFound = new PageFoundConstraint(true) }
+                defaults: new {defaultcontroller = "HttpErrors", defaultaction = "Index"},
+                constraints: new {PageFound = new PageFoundConstraint()}
             );
             route.RouteHandler = new DynamicRouteHandler();
         }

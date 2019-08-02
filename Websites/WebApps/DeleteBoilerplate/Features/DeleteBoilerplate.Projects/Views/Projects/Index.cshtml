@@ -4,17 +4,14 @@
 @using Kentico.Web.Mvc
 @model DeleteBoilerplate.Projects.Models.ProjectViewModel
 
-@if (Context.Kentico().PageBuilder().EditMode)
+@section styles
 {
-    @section styles
-    {
-        @Html.Kentico().PageBuilderStyles()
-    }
+    @Html.Kentico().PageBuilderStyles()
+}
 
-    @section scripts
-    {
-        @Html.Kentico().PageBuilderScripts()
-    }
+@section scripts
+{
+    @Html.Kentico().PageBuilderScripts()
 }
 
 <body>

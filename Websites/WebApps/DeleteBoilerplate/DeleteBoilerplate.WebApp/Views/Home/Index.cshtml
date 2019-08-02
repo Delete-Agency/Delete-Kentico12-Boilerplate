@@ -1,16 +1,13 @@
 ﻿@using Kentico.PageBuilder.Web.Mvc
 
-@if (Context.Kentico().PageBuilder().EditMode)
+@section styles
 {
-    @section styles
-    {
-        @Html.Kentico().PageBuilderStyles()
-    }
+    @Html.Kentico().PageBuilderStyles()
+}
 
-    @section scripts
-    {
-        @Html.Kentico().PageBuilderScripts()
-    }
+@section scripts
+{
+    @Html.Kentico().PageBuilderScripts()
 }
 
 <body>
