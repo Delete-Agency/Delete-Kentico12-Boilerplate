@@ -1,5 +1,7 @@
 ﻿using CMS.DocumentEngine;
 using CMS.DocumentEngine.Types.DeleteBoilerplate;
+using DeleteBoilerplate.GenericComponents.Models.Widgets;
+using DeleteBoilerplate.Infrastructure.Extensions;
 using DeleteBoilerplate.Metadata.Models;
 using DeleteBoilerplate.Projects.Models;
 using DeleteBoilerplate.Projects.Services;
@@ -18,7 +20,18 @@ namespace DeleteBoilerplate.Projects
                 .ForMember(dst => dst.Id, opt => opt.MapFrom(src => src.NodeGUID))
                 .ForMember(dst => dst.Description, opt => opt.MapFrom(src => ProjectDescriber.GetDescribe(src)))
                 .ForMember(dst => dst.Year, opt => opt.MapFrom(src => src.Year))
-                .ForMember(dst => dst.ImageUrl, opt => opt.MapFrom(src => src.Image));
+                .ForMember(src => src.Image, opt => opt.Ignore())
+                .AfterMap((s, d, context) =>
+                {
+                    if (s.Image != null)
+                    {
+                        var model = MediaExtensions.GetImageModelByURl(s.Image);
+                        if (model != null)
+                        {
+                            d.Image = context.Mapper.Map<ImageViewModel>(model);
+                        }
+                    }
+                });
 
             CreateMap<Project, IMetadata>()
                 .IncludeBase<TreeNode, IMetadata>();

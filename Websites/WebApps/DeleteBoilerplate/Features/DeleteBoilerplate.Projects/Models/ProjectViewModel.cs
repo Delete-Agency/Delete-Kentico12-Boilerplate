@@ -1,4 +1,5 @@
 ﻿using System;
+using DeleteBoilerplate.GenericComponents.Models.Widgets;
 
 namespace DeleteBoilerplate.Projects.Models
 {
@@ -10,6 +11,6 @@ namespace DeleteBoilerplate.Projects.Models
 
         public int Year { get; set; }
 
-        public string ImageUrl { get; set; }
+        public ImageViewModel Image { get; set; }
     }
 }

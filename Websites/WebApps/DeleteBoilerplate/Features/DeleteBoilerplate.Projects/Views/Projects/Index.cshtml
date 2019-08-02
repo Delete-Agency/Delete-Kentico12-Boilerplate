@@ -1,4 +1,5 @@
-﻿@using DeleteBoilerplate.Projects.Helpers
+﻿@using DeleteBoilerplate.Infrastructure.Extensions
+@using DeleteBoilerplate.Projects.Helpers
 @using Kentico.PageBuilder.Web.Mvc
 @using Kentico.Web.Mvc
 @model DeleteBoilerplate.Projects.Models.ProjectViewModel
@@ -21,7 +22,7 @@
         @Model.Year - @Model.Description
     </div>
     <div>
-        <img src="@Model.ImageUrl" width="200" height="200" />
+        <img srcset="@Html.GetResizedSrcSet(Model.Image.Url)" alt="@Model.Image.Title" class="lazyload" width="200" height="200">
     </div>
 
     @Html.Kentico().EditableArea("deleteboilerplate-main", "DeleteBoilerplate.OneFullWidthColumnSection", AreaRestrictionHelper.GetProjectsMainRestrictions())
