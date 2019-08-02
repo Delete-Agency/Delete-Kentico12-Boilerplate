@@ -1,80 +1,21 @@
-﻿@using System.Globalization
-@using System.Web.Mvc.Html
+﻿@using System.Web.Mvc.Html
 @using DeleteBoilerplate.Infrastructure.Extensions
 @using Kentico.Activities.Web.Mvc
 @using Kentico.OnlineMarketing.Web.Mvc
 @using HtmlHelperExtensions = DeleteBoilerplate.Infrastructure.Extensions.HtmlHelperExtensions
 
 @Html.RegisterStyle("app.css")
-@Html.RegisterScript("commons.js")
-@Html.RegisterScript("vendors.app.js")
 @Html.RegisterScript("app.js")
-
 @Html.RegisterSvg("app.svg")
 
-@{
-    var styles = Html.GetRegisteredComponents(ContentType.CSS);
-    var scripts = Html.GetRegisteredComponents(ContentType.JS);
-    var scriptsModern = Html.GetRegisteredComponents(ContentType.ModernJS);
-    var svgFiles = Html.GetRegisteredComponents(ContentType.Svg);
-
-    var isStyleLoaded = HtmlHelperExtensions.IsSameAssetsCacheCookie();
-}
-@functions {
-    private bool isLocal(string path)
-    {
-        if (string.IsNullOrEmpty(path)) return false;
-        return path.StartsWith("/dist", true, CultureInfo.CurrentCulture);
-    }
-}
 <!DOCTYPE html>
 <html>
 <head>
     @{ Html.RenderAction("RenderMeta", "Metadata"); }
-
-
-    <!-- Styles Begin -->
-    @if (isStyleLoaded)
-    {
-        foreach (var style in styles)
-        {
-            <link rel="stylesheet" href="@style.Path">
-        }
-    }
-    else
-    {
-        @Html.InlineCSS(styles.Select(x => x.Name).ToArray())
-        <script>
-            (function () {
-                var cookieName = '@(HtmlHelperExtensions.AssetsCookieName)';
-                var cookieValue = '@(HtmlHelperExtensions.ManifestHash?.ToLower())';
-                var days = 360;
-                var date = new Date();
-                date.setTime(date.getTime() + (days*24*60*60*1000));
-                var expires = "; expires=" + date.toUTCString();
-                document.cookie = cookieName + "=" + (cookieValue || "")  + expires + "; path=/";
-            }());
-        </script>
-    }
-    <!-- Styles End -->
-    <!-- Scripts Preload Begin -->
-    @foreach (var script in scriptsModern)
-    {
-        if (isLocal(script.Path))
-        {
-            <link rel="modulepreload" href="@script.Path">
-        }
-    }
-    <link rel="modulepreload" href="@Html.GetWebPath("init.mjs")">
-    <!-- Scripts Preload End -->
     @RenderSection("styles", required: false)
     @Html.Kentico().ABTestLoggerScript()
 </head>
 <body>
-    @foreach (var svgFile in svgFiles)
-    {
-        <text>@Html.InlineSVG(svgFile.Name)</text>
-    }
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -82,80 +23,44 @@
             <p>&copy; @DateTime.Now.Year - <a href="https://deleteagency.com">Delete</a></p>
         </footer>
     </div>
-
-    <!-- Scripts load Begin -->
-    @if (Html.NoCache())
-    {
-        foreach (var script in scripts)
-        {
-            <script defer src="@script.Path"></script>
-        }
+    
+    @RenderSection("scripts", required: false)
+    @Html.Kentico().ActivityLoggingScript()
+    @Html.RenderRegisteredScripts()
+    @{
+        var styles = Html.GetRegisteredComponents(ContentType.CSS);
+        var isStyleLoaded = HtmlHelperExtensions.IsSameAssetsCacheCookie();
     }
-    else
-    {
-        <!-- Modern scripts load Begin -->
-        foreach (var script in scriptsModern)
-        {
-            <script type="module" src="@script.Path"></script>
-        }
-        <!-- Regular scripts load Begin -->
-        <script>
-            !function () {
-                var t = document.createElement("script");
-                if (!("noModule" in t) && "onbeforeload" in t) {
-                    var n = !1;
-                    document.addEventListener("beforeload",
-                        function (e) {
-                            if (e.target === t) n = !0;
-                            else if (!e.target.hasAttribute("nomodule") ||
-                                !n) return;
-                            e.preventDefault();
-                        },
-                        !0), t.type = "module", t.src = ".", document.head.appendChild(t), t.remove();
-                }
-            }()
-        </script>
-        foreach (var script in scripts)
-        {
-            <script defer @(script.IsLocal ? "nomodule" : "") src="@script.Path"></script>
-        }
-        <!-- Regular scripts load End -->
-    }
-    <!-- Scripts load End -->
 
     @if (!isStyleLoaded)
     {
         <script>
-        var cachedStyles = [@Html.Raw(string.Join(",", styles.Select(x => $"\"{x.Path}\"")))];
-        var loadStyle = function(file) {
-            var _sl = document.createElement("link");
-            _sl.rel = "stylesheet";
-            _sl.media = "print";
-            _sl.href = file;
-            document.head.appendChild(_sl);
-        };
+        (function () {
+            var cookieName = '@(HtmlHelperExtensions.AssetsCookieName)';
+            var cookieValue = '@(HtmlHelperExtensions.ManifestHash)';
+            var days = 360;
+            var date = new Date();
+            date.setTime(date.getTime() + (days*24*60*60*1000));
+            var expires = "; expires=" + date.toUTCString();
+            document.cookie = cookieName + "=" + (cookieValue || "")  + expires + "; path=/";
 
-        setTimeout(function() {
-                for (var i = 0; i < cachedStyles.length; i++) {
-                    loadStyle(cachedStyles[i]);
-                }
-            },
-            10000);
+            var cachedStyles = [@Html.Raw(string.Join(",", styles.Select(x => $"\"{x.Path}\"")))];
+            var loadStyle = function(file) {
+                var _sl = document.createElement("link");
+                _sl.rel = "stylesheet";
+                _sl.media = "print";
+                _sl.href = file;
+                document.head.appendChild(_sl);
+            };
+
+            setTimeout(function() {
+                    for (var i = 0; i < cachedStyles.length; i++) {
+                        loadStyle(cachedStyles[i]);
+                    }
+                },
+                10000);
+        }());
         </script>
     }
-
-    @if (Html.NoCache())
-    {
-        <script defer src="@Html.GetWebPath("init.js")"></script>
-    }
-    else
-    {
-        <script type="module" src="@Html.GetWebPath("init.mjs")"></script>
-        <script defer nomodule src="@Html.GetWebPath("init.js")"></script>
-    }
-
-    @RenderSection("scripts", required: false)
-    @Html.Kentico().ActivityLoggingScript()
-
 </body>
 </html>

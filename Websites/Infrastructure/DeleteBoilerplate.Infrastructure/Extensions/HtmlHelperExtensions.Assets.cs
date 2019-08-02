@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using CMS.Helpers;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -17,8 +18,7 @@ namespace DeleteBoilerplate.Infrastructure.Extensions
         Undefined = 0,
         CSS = 1,
         JS = 2,
-        Svg = 4,
-        ModernJS = 8,
+        Svg = 4
     }
 
     public enum AssetRendering
@@ -40,6 +40,10 @@ namespace DeleteBoilerplate.Infrastructure.Extensions
             { ContentType.JS, "<script>{0}</script>\n" },
             { ContentType.Svg, "{0}\n" },
         };
+
+        private static string CssPatternRegular = "<link rel=\"stylesheet\" href=\"{0}\"><script> </script>";
+        private static string JsPatternRegular = "<script defer src=\"{0}\"></script>";
+
 
         public static IList<StaticAsset> GetRegisteredComponents(this HtmlHelper htmlHelper, ContentType contentType)
         {
@@ -77,35 +81,37 @@ namespace DeleteBoilerplate.Infrastructure.Extensions
         public static bool IsSameAssetsCacheCookie()
         {
             var key = HttpContext.Current.Request.Cookies[AssetsCookieName];
-            return key?.Value == ManifestHash?.ToLower();
+            return key?.Value == ManifestHash;
         }
 
-        private static string ConvertEntryToModern(string x)
+        public static string RegisterComponent(ContentType contentType, string fileName, int order = -1)
         {
-            return !IsLocal(x) ? x : (x ?? string.Empty).Replace(".js", ".mjs");
-        }
+            if (fileName.IsEmpty()) return string.Empty;
 
-        public static void RegisterComponent(ContentType contentType, string fileName, int order = -1)
-        {
-            if (fileName.IsEmpty()) return;
-
+            var assetLink = string.Empty;
             var dictionary = GetAssetDict(contentType);
             lock (dictionary)
             {
-                if (dictionary.ContainsKey(fileName)) return;
+                if (dictionary.ContainsKey(fileName)) return string.Empty;
                 var staticAsset = CreateStaticAsset(fileName, order);
                 if (string.IsNullOrWhiteSpace(staticAsset.Path))
                 {
                     EventLogProvider.LogException("Frontend", "ASSETNOTFOUND", new Exception($"Entry point \"{fileName}\" not found!"));
-                    return;
+                    return string.Empty;
                 }
                 dictionary.Add(fileName, staticAsset);
+                if (contentType == ContentType.CSS)
+                {
+                    assetLink = IsSameAssetsCacheCookie() ? string.Format(CssPatternRegular,staticAsset.Path) : InlineCSS(fileName);
+                }
+
+                if (contentType == ContentType.Svg)
+                {
+                    assetLink = InlineSVG(fileName);
+                }
             }
 
-            if (contentType == ContentType.JS && IsLocal(fileName))
-            {
-                RegisterComponent(ContentType.ModernJS, ConvertEntryToModern(fileName), order);
-            }
+            return assetLink;
         }
 
         private static StaticAsset CreateStaticAsset(string x, int order = -1)
@@ -115,11 +121,11 @@ namespace DeleteBoilerplate.Infrastructure.Extensions
             return asset;
         }
 
-        public static MvcHtmlString InlineCSS(this HtmlHelper htmlHelper, params string[] assets) =>
-            Inline(htmlHelper, ContentType.CSS, assets);
-        public static MvcHtmlString InlineSVG(this HtmlHelper htmlHelper, params string[] assets) =>
-            Inline(htmlHelper, ContentType.Svg, assets);
-        private static MvcHtmlString Inline(this HtmlHelper htmlHelper,ContentType type, IEnumerable<string> assets)
+        public static string InlineCSS(params string[] assets) =>
+            Inline(ContentType.CSS, assets);
+        public static string InlineSVG(params string[] assets) =>
+            Inline(ContentType.Svg, assets);
+        private static string Inline(ContentType type, IEnumerable<string> assets)
         {
             var builder = new StringBuilder();
             foreach (var asset in assets)
@@ -128,7 +134,7 @@ namespace DeleteBoilerplate.Infrastructure.Extensions
             }
 
             var str = builder.ToString();
-            return new MvcHtmlString(str.IsEmpty() ? str : string.Format(ContentPatternsInline.GetValueOrDefault(type), str));
+            return str.IsEmpty() ? str : string.Format(ContentPatternsInline.GetValueOrDefault(type), str);
         }
 
 
@@ -152,11 +158,15 @@ namespace DeleteBoilerplate.Infrastructure.Extensions
                 return MvcHtmlString.Empty;
             }
 
-            RegisterComponent(assetType, fileName, order);
-
-            return MvcHtmlString.Create(string.Empty);
+            return MvcHtmlString.Create(RegisterComponent(assetType, fileName, order));
         }
 
+        public static MvcHtmlString RenderRegisteredScripts(this HtmlHelper htmlHelper)
+        {
+            var combinedScripts = GetAssetDict(ContentType.JS).Select(x=>string.Format(JsPatternRegular, x.Value.Path)).Join("\n") ?? String.Empty;
+
+            return MvcHtmlString.Create(combinedScripts);
+        }
 
     }
 }
