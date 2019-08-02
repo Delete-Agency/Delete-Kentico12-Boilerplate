@@ -768,6 +768,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Automap\GenericComponentsAutoMap.cs" />
+    <Compile Include="Controllers\FormComponents\TaxonomySelectorController.cs" />
     <Compile Include="Controllers\Sections\OneFullWidthColumnSectionController.cs" />
     <Compile Include="Controllers\Widgets\BaseListingWidgetController.cs" />
     <Compile Include="Models\Widgets\BaseListingWidgetProperties.cs" />

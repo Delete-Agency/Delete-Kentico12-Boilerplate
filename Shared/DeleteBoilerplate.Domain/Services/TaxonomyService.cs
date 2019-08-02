@@ -5,7 +5,12 @@ using DeleteBoilerplate.Domain.Repositories;
 
 namespace DeleteBoilerplate.Domain.Services
 {
-    public class TaxonomyService 
+    public interface ITaxonomyService
+    {
+        List<TaxonomyTreeItem> GetTaxonomyTree(string targetTaxonomyType = "");
+    }
+
+    public class TaxonomyService : ITaxonomyService
     {
         private readonly ITaxonomyRepository _taxonomyRepository;
 
@@ -14,7 +19,7 @@ namespace DeleteBoilerplate.Domain.Services
             _taxonomyRepository = taxonomyRepository;
         }
 
-        public string GetTaxonomyTree(string targetTaxonomyType = "")
+        public List<TaxonomyTreeItem> GetTaxonomyTree(string targetTaxonomyType = "")
         {
             var targetTaxonomyTypes = new List<string>();
             var types = _taxonomyRepository.GetAllTaxonomyTypes();
@@ -30,7 +35,8 @@ namespace DeleteBoilerplate.Domain.Services
                 result.AddRange(type.TaxonomyItems.Select(x => new TaxonomyTreeItem()
                 { Id = x.NodeGUID.ToString(), Parent = type.NodeGUID.ToString(), Name = x.Title }));
             }
-            return JsonConvert.SerializeObject(result);
+
+            return result;
         }
 
     }

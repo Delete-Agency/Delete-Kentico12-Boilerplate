@@ -558,6 +558,7 @@
     <Compile Include="DI\CompositionRoot.cs" />
     <Compile Include="DI\DIConfig.cs" />
     <Compile Include="Enums\OpenGraphType.cs" />
+    <Compile Include="Extensions\JsonNetResult.cs" />
     <Compile Include="Extensions\DictionaryExtensions.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Extensions\HtmlHelperExtensions.Assets.cs" />

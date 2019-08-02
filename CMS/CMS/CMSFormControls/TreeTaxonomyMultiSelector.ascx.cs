@@ -20,7 +20,7 @@ public partial class CMSFormControls_TreeTaxonomyMultiSelector : FormEngineUserC
         CssRegistration.RegisterCssLink(Page, "~/CMSScripts/Laureus/jsTree/themes/default/style.min.css");
 
         var taxonomyService = new TaxonomyService(new TaxonomyRepository());
-        TaxonomyTree = taxonomyService.GetTaxonomyTree(TargetTaxonomyType);
+        TaxonomyTree = JsonConvert.SerializeObject(taxonomyService.GetTaxonomyTree(TargetTaxonomyType));
     }
 
     public override object Value
