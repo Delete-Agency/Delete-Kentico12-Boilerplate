@@ -1,6 +1,6 @@
 #addin "Cake.Watch"
 #addin Cake.Curl
-#addin "Cake.XdtTransform"
+#addin nuget:?package=Cake.XdtTransform&version=0.17.0
 using System.Text.RegularExpressions;
 
 const string solution = "./DeleteBoilerplate.sln";
