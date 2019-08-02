@@ -23,7 +23,7 @@
         @Model.Year - @Model.Description
     </div>
     <div>
-        <img srcset="@Html.GetResizedSrcSet(Model.Image.Url)" alt="@Model.Image.Title" class="lazyload" width="200" height="200">
+        <img srcset="@Html.GetResizedSrcSet(Model.Image.Url)" alt="@Model.Image.Title" class="lazyload" />
     </div>
 
     @Html.Kentico().EditableArea("deleteboilerplate-main", "DeleteBoilerplate.OneFullWidthColumnSection", AreaRestrictionHelper.GetProjectsMainRestrictions())

@@ -1,7 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using AutoMapper;
+using CMS.DocumentEngine.Types.DeleteBoilerplate;
+using DeleteBoilerplate.Domain.Services;
 using DeleteBoilerplate.DynamicRouting.Controllers;
 using DeleteBoilerplate.GenericComponents.Extensions;
 using DeleteBoilerplate.Projects.Controllers.Widgets;
@@ -23,7 +26,10 @@ namespace DeleteBoilerplate.Projects.Controllers.Widgets
         [Inject]
         public IMapper Mapper { get; set; }
 
-        public ActionResult Index()
+        //[Inject]
+        //public ITaxonomySearch<Project> TaxonomySearch { get; set; }
+
+        public ActionResult Index(BaseListingFilters filters)
         {
             var properties = GetProperties();
             var projects = properties.GetPages();
@@ -37,9 +43,26 @@ namespace DeleteBoilerplate.Projects.Controllers.Widgets
                 }
             }
 
+            //var properties = GetProperties();
+
+            //var taxonomiesList = properties
+            //    .ToTaxonomiesList()
+            //    .Select(Guid.Parse);
+
+            //var rootAliasPath = properties.GetRootPageAliasPath();
+
+            //var projects = TaxonomySearch.GetItems(taxonomiesList, out _, searchRootAliasPath: rootAliasPath);
+
             var model = Mapper.Map<List<ProjectViewModel>>(projects);
 
             return PartialView("Widgets/_ProjectsListing", model);
         }
+    }
+
+    public class BaseListingFilters
+    {
+        public int Page { get; set; }
+
+        public int PageSize { get; set; }
     }
 }

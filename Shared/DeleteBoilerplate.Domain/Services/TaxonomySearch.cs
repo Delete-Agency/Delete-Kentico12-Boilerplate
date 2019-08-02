@@ -27,7 +27,7 @@ namespace DeleteBoilerplate.Domain.Services
             string searchSort = "");
 
         IEnumerable<T> GetItems(IEnumerable<Guid> taxonomies, out int totalResults, int skip = 0,
-            int take = Int32.MaxValue, string searchSort = "");
+            int take = Int32.MaxValue, string searchSort = "", string searchRootAliasPath = "/");
     }
 
     public class TaxonomySearch<T> : ITaxonomySearch<T> where T : TreeNode, IBasePage, new()
@@ -50,7 +50,7 @@ namespace DeleteBoilerplate.Domain.Services
             return GetItems(taxonomies, out var totalResults, skip, take, searchSort);
         }
 
-        public IEnumerable<T> GetItems(IEnumerable<Guid> taxonomies, out int totalResults, int skip = 0, int take = Int32.MaxValue, string searchSort = "")
+        public IEnumerable<T> GetItems(IEnumerable<Guid> taxonomies, out int totalResults, int skip = 0, int take = Int32.MaxValue, string searchSort = "", string searchRootAliasPath = "/")
         {
             var taxonomyCondition = string.Empty;
 
@@ -81,7 +81,7 @@ namespace DeleteBoilerplate.Domain.Services
             var parameters = new SearchParameters
             {
                 SearchFor = condition,
-                Path = "/%",
+                Path = $"{searchRootAliasPath}%",
                 CombineWithDefaultCulture = false,
                 CheckPermissions = false,
                 SearchInAttachments = false,

@@ -17,11 +17,11 @@ namespace DeleteBoilerplate.Modules
         {
             base.OnInit();
 
-            DocumentEvents.Update.Before += UpdateOnBefore;
-            DocumentEvents.Insert.Before += UpdateOnBefore;
+            DocumentEvents.Update.Before += UpdateSeoUrlOnInsertOrUpdate;
+            DocumentEvents.Insert.After += UpdateSeoUrlOnInsertOrUpdate;
         }
 
-        private void UpdateOnBefore(object sender, DocumentEventArgs e)
+        private void UpdateSeoUrlOnInsertOrUpdate(object sender, DocumentEventArgs e)
         {
             if (e.Node.ContainsColumn("SeoUrl"))
                 this.EnsurePopulatedSeoField(e.Node);
