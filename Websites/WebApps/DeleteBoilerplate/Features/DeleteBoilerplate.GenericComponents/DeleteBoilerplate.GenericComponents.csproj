@@ -567,6 +567,14 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\FormComponents\TaxonomySelectorComponent\jsTree\jstree.js" />
+    <Content Include="Content\FormComponents\TaxonomySelectorComponent\jsTree\themes\default\32px.png" />
+    <Content Include="Content\FormComponents\TaxonomySelectorComponent\jsTree\themes\default\40px.png" />
+    <Content Include="Content\FormComponents\TaxonomySelectorComponent\jsTree\themes\default\style.css" />
+    <Content Include="Content\FormComponents\TaxonomySelectorComponent\jsTree\themes\default\style.min.css" />
+    <Content Include="Content\FormComponents\TaxonomySelectorComponent\jsTree\themes\default\throbber.gif" />
+    <Content Include="Content\FormComponents\TaxonomySelectorComponent\taxonomy-editor.css" />
+    <Content Include="Content\FormComponents\TaxonomySelectorComponent\taxonomy-editor.js" />
     <Content Include="Content\InlineEditors\ImageSelector\image-selector.css" />
     <Content Include="Content\InlineEditors\ImageSelector\image-selector.js" />
     <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\ckeditor.js" />
@@ -770,9 +778,10 @@
     <Compile Include="Automap\GenericComponentsAutoMap.cs" />
     <Compile Include="Controllers\FormComponents\TaxonomySelectorController.cs" />
     <Compile Include="Controllers\Sections\OneFullWidthColumnSectionController.cs" />
+    <Compile Include="Models\FormComponents\FormComponentsIdentifiers.cs" />
     <Compile Include="Models\Widgets\IListingWidgetProperties.cs" />
-    <Compile Include="Models\FormComponents\TaxonomySelectorProperties.cs" />
-    <Compile Include="Models\FormComponents\TaxonomySelectorComponent.cs" />
+    <Compile Include="Models\FormComponents\TaxonomySelector\TaxonomySelectorProperties.cs" />
+    <Compile Include="Models\FormComponents\TaxonomySelector\TaxonomySelectorComponent.cs" />
     <Compile Include="Controllers\Widgets\ContentBlockWidgetController.cs" />
     <Compile Include="Controllers\Widgets\HeroWidgetController.cs" />
     <Compile Include="Controllers\Widgets\ImageWidgetController.cs" />
@@ -784,7 +793,8 @@
     <Compile Include="Models\Widgets\HeroWidget\HeroWidgetProperties.cs" />
     <Compile Include="Models\Widgets\ImageWidget\ImageWidgetProperties.cs" />
     <Compile Include="Models\Widgets\ImageWidget\ImageWidgetViewModel.cs" />
-    <Compile Include="Extensions\ListingWidgetPropertiesExtensions.cs" />
+    <Compile Include="Extensions\WidgetPropertiesExtensions.cs" />
+    <Compile Include="Models\Widgets\ITaxonomyWidgetProperties.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

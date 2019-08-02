@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 using AutoMapper;
 using DeleteBoilerplate.DynamicRouting.Controllers;
@@ -25,8 +26,18 @@ namespace DeleteBoilerplate.Projects.Controllers.Widgets
         public ActionResult Index()
         {
             var properties = GetProperties();
-            var pages = properties.GetPages();
-            var model = Mapper.Map<List<ProjectViewModel>>(pages);
+            var projects = properties.GetPages();
+            // filter by Taxonomy 
+            if (projects.Any())
+            {
+                var taxonomiesList = properties.ToTaxonomiesList();
+                if (taxonomiesList.Any())
+                {
+                    projects = projects.Where(x => taxonomiesList.Contains(x.Area)).ToList();
+                }
+            }
+
+            var model = Mapper.Map<List<ProjectViewModel>>(projects);
 
             return PartialView("Widgets/_ProjectsListing", model);
         }

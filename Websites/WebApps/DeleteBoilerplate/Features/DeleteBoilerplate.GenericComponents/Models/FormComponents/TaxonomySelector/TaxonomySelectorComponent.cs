@@ -2,7 +2,7 @@
 using Kentico.Forms.Web.Mvc;
 
 [assembly:
-    RegisterFormComponent("DeleteBoilerplate.TaxonomySelector", typeof(TaxonomySelectorComponent), "Taxonomy selector",
+    RegisterFormComponent(FormComponentsIdentifiers.TaxonomySelector, typeof(TaxonomySelectorComponent), "Taxonomy selector",
         IsAvailableInFormBuilderEditor = false, ViewName = "FormComponents/_TaxonomySelectorComponent")]
 
 namespace DeleteBoilerplate.GenericComponents.Models.FormComponents

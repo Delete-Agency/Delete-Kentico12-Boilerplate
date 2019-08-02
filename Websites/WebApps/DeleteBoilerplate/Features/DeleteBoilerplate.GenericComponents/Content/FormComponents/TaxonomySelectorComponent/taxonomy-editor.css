@@ -1,0 +1,10 @@
+﻿.jstree {
+    max-height: 250px;
+    overflow: auto;
+    border: solid thin;
+    margin-top: 5px;
+}
+
+.jstree-container-ul {
+    padding-left: 0px !important;
+}
