@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Web.Mvc;
 using AutoMapper;
-using CMS.DocumentEngine.Types.DeleteBoilerplate;
-using DeleteBoilerplate.GenericComponents.Controllers.Widgets;
+using DeleteBoilerplate.DynamicRouting.Controllers;
+using DeleteBoilerplate.GenericComponents.Extensions;
 using DeleteBoilerplate.Projects.Controllers.Widgets;
 using DeleteBoilerplate.Projects.Models;
 using DeleteBoilerplate.Projects.Models.Widgets.ProjectsListing;
@@ -17,7 +17,7 @@ using LightInject;
 
 namespace DeleteBoilerplate.Projects.Controllers.Widgets
 {
-    public class ProjectsListingWidgetController : BaseListingWidgetController<ProjectsListingWidgetProperties, Project>
+    public class ProjectsListingWidgetController : BaseWidgetController<ProjectsListingWidgetProperties>
     {
         [Inject]
         public IMapper Mapper { get; set; }
@@ -25,9 +25,7 @@ namespace DeleteBoilerplate.Projects.Controllers.Widgets
         public ActionResult Index()
         {
             var properties = GetProperties();
-
             var pages = properties.GetPages();
-
             var model = Mapper.Map<List<ProjectViewModel>>(pages);
 
             return PartialView("Widgets/_ProjectsListing", model);

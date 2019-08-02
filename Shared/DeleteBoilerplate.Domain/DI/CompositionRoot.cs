@@ -1,5 +1,4 @@
-﻿using CMS.DocumentEngine.Types.DeleteBoilerplate;
-using DeleteBoilerplate.Domain.Repositories;
+﻿using DeleteBoilerplate.Domain.Repositories;
 using DeleteBoilerplate.Domain.Services;
 using LightInject;
 

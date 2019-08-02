@@ -770,8 +770,7 @@
     <Compile Include="Automap\GenericComponentsAutoMap.cs" />
     <Compile Include="Controllers\FormComponents\TaxonomySelectorController.cs" />
     <Compile Include="Controllers\Sections\OneFullWidthColumnSectionController.cs" />
-    <Compile Include="Controllers\Widgets\BaseListingWidgetController.cs" />
-    <Compile Include="Models\Widgets\BaseListingWidgetProperties.cs" />
+    <Compile Include="Models\Widgets\IListingWidgetProperties.cs" />
     <Compile Include="Controllers\Widgets\ContentBlockWidgetController.cs" />
     <Compile Include="Controllers\Widgets\HeroWidgetController.cs" />
     <Compile Include="Controllers\Widgets\ImageWidgetController.cs" />
@@ -783,6 +782,7 @@
     <Compile Include="Models\Widgets\HeroWidget\HeroWidgetProperties.cs" />
     <Compile Include="Models\Widgets\ImageWidget\ImageWidgetProperties.cs" />
     <Compile Include="Models\Widgets\ImageWidget\ImageWidgetViewModel.cs" />
+    <Compile Include="Extensions\ListingWidgetPropertiesExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
