@@ -1,0 +1,94 @@
+﻿@model DeleteBoilerplate.GenericComponents.Models.FormComponents.TaxonomySelectorComponent
+
+@using System.Web.Mvc.Html
+@using Kentico.Content.Web.Mvc
+@using Kentico.Forms.Web.Mvc
+@using Kentico.Web.Mvc
+
+@{
+    IDictionary<string, object> htmlAttributes = ViewData.GetEditorHtmlAttributes();
+    if (htmlAttributes.ContainsKey("class"))
+    {
+        htmlAttributes["class"] += " tax-input";
+    }
+    else
+    {
+        htmlAttributes["class"] = "tax-input";
+    }
+    var inputHtmlAttributes = ViewData.GetEditorHtmlAttributes();
+    inputHtmlAttributes.Add("readonly", string.Empty);
+}
+
+@{
+
+    HtmlString GetDataUrl()
+    {
+        return Url.Kentico().AuthenticateUrl(Url.Action("GetTaxonomyTree", "TaxonomySelector"), false);
+    }
+
+}
+<div id="jstree-container">
+    <div>
+        @Html.TextBox("selectedNames", "", inputHtmlAttributes)
+    </div>
+    <div id="jstree"></div>
+    @Html.HiddenFor(m => m.SelectedTaxonomies, htmlAttributes)
+</div>
+
+<script type="text/javascript">
+    (function () {
+        $('#jstree-container:not(.jstree-inited)').each(function() {
+            var treeItem = $('#jstree', this);
+            var selectedValuesItem = $('input[name*="selectedNames"]', this);
+            var treeContainer = $(this);
+            $.ajax({
+                url: "@GetDataUrl()",
+                type: "GET",
+                data: { "targetTaxonomyType" : "@Model.TargetTaxonomyType"},
+                dataType: "JSON",
+                async: true
+            }).done(function(results) {
+                var ids = '@Html.Raw(Model.SelectedTaxonomies)';
+                if (ids) {
+                    var selected = JSON.parse(ids);
+                    var selectedValues = [];
+                    results.forEach(function(t) {
+                        if (selected.indexOf(t.id) >= 0) {
+                            t.state = { selected: true };
+                            selectedValues.push(t.text);
+                        }
+                    });
+                    $(selectedValuesItem).val(selectedValues.join(','));
+                }
+                $(treeItem).jstree({
+                    'plugins': ['search', 'checkbox', 'wholerow'],
+                    'core': {
+                        'data': results,
+                        'animation': false,
+                        'themes': {
+                            'icons': false
+                        }
+                    }
+                });
+
+                $(treeItem).on('changed.jstree',
+                    function(e, data) {
+                        var objects = data.instance.get_selected(true);
+                        var leaves = $.grep(objects, function(o) { return data.instance.is_leaf(o) });
+                        var selectedValues = [];
+                        var selected = [];
+                        $.each(leaves,
+                            function (i, o) {
+                                selected.push(o.id);
+                                selectedValues.push(o.text);
+                            });
+                        $('.tax-input', treeContainer).val(JSON.stringify(selected));
+                        $(selectedValuesItem).val(selectedValues.join(','));
+                    });
+                $(this).addClass('jstree-inited');
+            });
+        });
+
+
+    })();
+</script>
