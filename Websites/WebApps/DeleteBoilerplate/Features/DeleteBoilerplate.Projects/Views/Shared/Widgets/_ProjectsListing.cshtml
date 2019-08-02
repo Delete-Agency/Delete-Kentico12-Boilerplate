@@ -1,4 +1,5 @@
-﻿@model IEnumerable<DeleteBoilerplate.Projects.Models.ProjectViewModel>
+﻿@using DeleteBoilerplate.Infrastructure.Extensions
+@model IEnumerable<DeleteBoilerplate.Projects.Models.ProjectViewModel>
 
 <div class="projects-listing">
     <table>
@@ -12,7 +13,7 @@
             {
                 <tr>
                     <td>
-                        <img src="@project.ImageUrl" width="150" height="100" />
+                        <img srcset="@Html.GetResizedSrcSet(project.Image.Url)" alt="@project.Image.Title" width="150" height="100" />
                         <br />
                         <a href="@project.Url">Learn more...</a>
                     </td>
