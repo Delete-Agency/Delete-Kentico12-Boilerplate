@@ -4,6 +4,7 @@
 @using DeleteBoilerplate.Infrastructure.Extensions
 @using Kentico.PageBuilder.Web.Mvc
 @using Kentico.Web.Mvc
+
 @model DeleteBoilerplate.GenericComponents.Models.Widgets.ImageWidget.ImageWidgetViewModel
 
 @if (Model != null)
@@ -20,7 +21,11 @@
 
             @if (Model.Images != null && Model.Images.Any())
             {
-                <img src="@Model.Images[0].GetMediaFilesSelectorItemUrl()" />
+                foreach (var image in Model.Images)
+                {
+                    //ToDo: use attribute data-srcset (needs assets for it)
+                    <img srcset="@Html.GetResizedSrcSet(image.Url)" alt="@image.Title" class="lazyload" data-sizes="auto">
+                }
             }
         </div>
     </section>

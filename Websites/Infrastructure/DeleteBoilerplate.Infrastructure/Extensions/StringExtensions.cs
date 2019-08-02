@@ -22,5 +22,12 @@ namespace DeleteBoilerplate.Infrastructure.Extensions
         {
             return !IsEmpty(value) ? value : defaultValue;
         }
+
+        public static string IfEmpty(this string value, string ifEmptyValue)
+        {
+            return string.IsNullOrWhiteSpace(value)
+                ? ifEmptyValue
+                : value;
+        }
     }
 }

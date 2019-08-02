@@ -571,6 +571,7 @@
     <Compile Include="Helpers\AssemblyHelper.cs" />
     <Compile Include="Models\BaseInlineEditorViewModel.cs" />
     <Compile Include="Models\BaseWidgetViewModel.cs" />
+    <Compile Include="Models\Media\ImageModel.cs" />
     <Compile Include="Models\StaticAsset.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Routing\CustomRoutesHelper.cs" />
