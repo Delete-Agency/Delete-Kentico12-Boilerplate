@@ -23,3 +23,4 @@ using LightInject;
 [assembly: CompositionRootType(typeof(CompositionRoot))]
 [assembly: PageTypeRoutingAssembly]
 [assembly: DeleteBoilerplateAssembly]
+

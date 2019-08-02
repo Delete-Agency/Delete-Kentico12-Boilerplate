@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
+using CMS;
 using DeleteBoilerplate.Common;
 
 // General Information about an assembly is controlled through the following
@@ -36,3 +37,4 @@ using DeleteBoilerplate.Common;
 [assembly: AssemblyFileVersion("1.0.0.0")]
 
 [assembly: DeleteBoilerplateAssembly]
+[assembly: AssemblyDiscoverable]
