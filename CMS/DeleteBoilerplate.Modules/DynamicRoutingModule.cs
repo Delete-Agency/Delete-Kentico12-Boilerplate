@@ -39,7 +39,7 @@ namespace DeleteBoilerplate.Modules
             }
             else if (!seoUrl.StartsWith("/"))
             {
-                node["SeoUrl"] = $"/{seoUrl}";
+                node["SeoUrl"] = $"/{node["SeoUrl"]}";
                 updated = true;
             }
 

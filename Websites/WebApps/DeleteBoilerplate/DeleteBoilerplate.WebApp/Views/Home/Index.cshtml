@@ -1,12 +1,20 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@using Kentico.PageBuilder.Web.Mvc
+
+@if (Context.Kentico().PageBuilder().EditMode)
+{
+    @section styles
+    {
+        @Html.Kentico().PageBuilderStyles()
+    }
+
+    @section scripts
+    {
+        @Html.Kentico().PageBuilderScripts()
+    }
 }
 
-<h1>Welcome</h1>
-<p>The site has not been configured yet.</p>
+<body>
 
-@* See ~/App_Start/ApplicationConfig.cs, ~/Controllers/HomeController.cs and ~/Views/Shared/_Layout.cshtml
-   Uncomment the following lines to insert a Page builder editable area *@
-@*<div>
-        @Html.Kentico().EditableArea("main")
-</div>*@
+    @Html.Kentico().EditableArea("deleteboilerplate-main", "DeleteBoilerplate.OneFullWidthColumnSection")
+
+</body>

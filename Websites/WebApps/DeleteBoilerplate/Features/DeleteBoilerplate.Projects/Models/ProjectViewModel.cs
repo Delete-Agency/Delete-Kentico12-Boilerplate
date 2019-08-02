@@ -11,6 +11,8 @@ namespace DeleteBoilerplate.Projects.Models
 
         public int Year { get; set; }
 
+        public string Url { get; set; }
+        
         public ImageViewModel Image { get; set; }
     }
 }

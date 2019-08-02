@@ -4,16 +4,18 @@
     <table>
         <thead>
             <tr>
-                <td>Project image</td>
-                <td>Project description</td>
-                <td>Year started</td>
+                <td colspan="3">Our projects</td>
             </tr>
         </thead>
         <tbody>
             @foreach (var project in Model)
             {
                 <tr>
-                    <td><img src="@project.ImageUrl" width="50" height="50"/></td>
+                    <td>
+                        <img src="@project.ImageUrl" width="150" height="100" />
+                        <br />
+                        <a href="@project.Url">Learn more...</a>
+                    </td>
                     <td>@project.Description</td>
                     <td>@project.Year</td>
                 </tr>

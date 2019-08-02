@@ -6,18 +6,19 @@
 
 @if (Context.Kentico().PageBuilder().EditMode)
 {
-@section styles
-{
-    @Html.Kentico().PageBuilderStyles()
-}
+    @section styles
+    {
+        @Html.Kentico().PageBuilderStyles()
+    }
 
-@section scripts
-{
-    @Html.Kentico().PageBuilderScripts()
-}
+    @section scripts
+    {
+        @Html.Kentico().PageBuilderScripts()
+    }
 }
 
 <body>
+
     <div>
         @Model.Year - @Model.Description
     </div>

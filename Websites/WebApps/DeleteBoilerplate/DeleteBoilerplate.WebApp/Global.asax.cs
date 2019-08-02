@@ -3,6 +3,7 @@ using System.Web;
 using System.Web.Routing;
 using DeleteBoilerplate.DynamicRouting.Config;
 using DeleteBoilerplate.Infrastructure;
+using DeleteBoilerplate.Infrastructure.Routing;
 using DeleteBoilerplate.OutputCache;
 using Kentico.OnlineMarketing.Web.Mvc;
 using Kentico.Web.Mvc;
@@ -21,8 +22,7 @@ namespace DeleteBoilerplate.WebApp
             PageTypeRoutingConfig.Initialize();
 
             // Registers routes including system routes for enabled features
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
-
+            CustomRoutesHelper.RegisterFeaturesRoutes(RouteTable.Routes);
         }
 
         public override string GetVaryByCustomString(HttpContext context, string arg)
