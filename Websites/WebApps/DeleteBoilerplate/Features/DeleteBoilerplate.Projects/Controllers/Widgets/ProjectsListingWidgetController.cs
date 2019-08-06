@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using AutoMapper;
+using CMS.DocumentEngine;
 using CMS.DocumentEngine.Types.DeleteBoilerplate;
 using DeleteBoilerplate.Domain.Services;
 using DeleteBoilerplate.DynamicRouting.Controllers;
@@ -26,32 +27,20 @@ namespace DeleteBoilerplate.Projects.Controllers.Widgets
         [Inject]
         public IMapper Mapper { get; set; }
 
-        //[Inject]
-        //public ITaxonomySearch<Project> TaxonomySearch { get; set; }
+        [Inject]
+        public ITaxonomySearch<Project> TaxonomySearch { get; set; }
 
         public ActionResult Index(BaseListingFilters filters)
         {
             var properties = GetProperties();
-            var projects = properties.GetPages();
-            // filter by Taxonomy 
-            if (projects.Any())
-            {
-                var taxonomiesList = properties.ToTaxonomiesList();
-                if (taxonomiesList.Any())
-                {
-                    projects = projects.Where(x => taxonomiesList.Contains(x.Area)).ToList();
-                }
-            }
 
-            //var properties = GetProperties();
+            var taxonomiesList = properties
+                .ToTaxonomiesList()
+                .Select(Guid.Parse);
 
-            //var taxonomiesList = properties
-            //    .ToTaxonomiesList()
-            //    .Select(Guid.Parse);
+            var rootAliasPath = properties.GetRootPageAliasPath();
 
-            //var rootAliasPath = properties.GetRootPageAliasPath();
-
-            //var projects = TaxonomySearch.GetItems(taxonomiesList, out _, searchRootAliasPath: rootAliasPath);
+            var projects = TaxonomySearch.GetItems(taxonomiesList, out _, searchRootAliasPath: rootAliasPath);
 
             var model = Mapper.Map<List<ProjectViewModel>>(projects);
 
