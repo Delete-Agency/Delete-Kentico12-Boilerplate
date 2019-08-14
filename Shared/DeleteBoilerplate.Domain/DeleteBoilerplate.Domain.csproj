@@ -476,11 +476,24 @@
     <Compile Include="Models\PageTypes\BasePage\BasePage.generated.cs" />
     <Compile Include="Models\PageTypes\BasePage\BasePageProvider.generated.cs" />
     <Compile Include="Models\PageTypes\BasePage\IBasePage.cs" />
+    <Compile Include="Models\PageTypes\ContentPage\ContentPage.generated.cs" />
+    <Compile Include="Models\PageTypes\ContentPage\ContentPageProvider.generated.cs" />
     <Compile Include="Models\PageTypes\Home\Home.generated.cs" />
     <Compile Include="Models\PageTypes\Home\HomeProvider.generated.cs" />
+    <Compile Include="Models\PageTypes\NavigationContainer\NavigationContainer.generated.cs" />
+    <Compile Include="Models\PageTypes\NavigationContainer\NavigationContainerProvider.generated.cs" />
+    <Compile Include="Models\PageTypes\NavigationLink\NavigationLink.cs" />
+    <Compile Include="Models\PageTypes\NavigationLink\NavigationLink.generated.cs" />
+    <Compile Include="Models\PageTypes\NavigationLink\NavigationLinkProvider.generated.cs" />
     <Compile Include="Models\PageTypes\Project\Project.cs" />
     <Compile Include="Models\PageTypes\Project\Project.generated.cs" />
     <Compile Include="Models\PageTypes\Project\ProjectProvider.generated.cs" />
+    <Compile Include="Models\PageTypes\SocialIconContainer\SocialIconContainer.cs" />
+    <Compile Include="Models\PageTypes\SocialIconContainer\SocialIconContainer.generated.cs" />
+    <Compile Include="Models\PageTypes\SocialIconContainer\SocialIconContainerProvider.generated.cs" />
+    <Compile Include="Models\PageTypes\SocialIcon\SocialIcon.cs" />
+    <Compile Include="Models\PageTypes\SocialIcon\SocialIcon.generated.cs" />
+    <Compile Include="Models\PageTypes\SocialIcon\SocialIconProvider.generated.cs" />
     <Compile Include="Models\PageTypes\TaxonomyItem\TaxonomyItem.cs" />
     <Compile Include="Models\PageTypes\TaxonomyItem\TaxonomyItemProvider.generated.cs" />
     <Compile Include="Models\PageTypes\TaxonomyItem\TaxonomyItem.generated.cs" />
@@ -488,6 +501,8 @@
     <Compile Include="Models\PageTypes\TaxonomyType\TaxonomyTypeProvider.generated.cs" />
     <Compile Include="Models\PageTypes\TaxonomyType\TaxonomyType.generated.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\NavigationRepository.cs" />
+    <Compile Include="Repositories\SocialLinksRepository.cs" />
     <Compile Include="Repositories\TaxonomyRepository.cs" />
     <Compile Include="Repositories\ProjectRepository.cs" />
     <Compile Include="Services\TaxonomyExtractBuilder.cs" />
@@ -508,5 +523,6 @@
       <Name>DeleteBoilerplate.Common</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -527,6 +527,10 @@
       <Project>{2A0E9BD2-90F5-466A-A742-D27C9302B1CA}</Project>
       <Name>DeleteBoilerplate.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\WebApps\DeleteBoilerplate\Features\DeleteBoilerplate.GenericComponents\DeleteBoilerplate.GenericComponents.csproj">
+      <Project>{a4435c07-d74e-4883-b31b-7466d08ddd07}</Project>
+      <Name>DeleteBoilerplate.GenericComponents</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DeleteBoilerplate.DynamicRouting\DeleteBoilerplate.DynamicRouting.csproj">
       <Project>{a165b815-191b-4831-9491-7010d7bec88f}</Project>
       <Name>DeleteBoilerplate.DynamicRouting</Name>

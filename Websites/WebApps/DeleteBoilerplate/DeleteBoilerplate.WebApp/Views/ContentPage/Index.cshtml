@@ -1,0 +1,17 @@
+﻿@using Kentico.PageBuilder.Web.Mvc
+
+@section styles
+{
+    @Html.Kentico().PageBuilderStyles()
+}
+
+@section scripts
+{
+    @Html.Kentico().PageBuilderScripts()
+}
+
+<body>
+
+@Html.Kentico().EditableArea("deleteboilerplate-main", "DeleteBoilerplate.OneFullWidthColumnSection")
+
+</body>

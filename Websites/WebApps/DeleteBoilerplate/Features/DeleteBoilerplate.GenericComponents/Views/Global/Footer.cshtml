@@ -1,0 +1,46 @@
+﻿@using CMS.Helpers
+@model DeleteBoilerplate.GenericComponents.Models.Footer.FooterViewModel
+
+@{
+    Layout = null;
+}
+<hr />
+<footer>
+    
+    <table>
+        <tr>
+            <td style="width: 250px">
+                © 2019 - <a href="https://deleteagency.com">Delete</a>
+            </td>
+            <td style="width: 250px">
+                @if (Model.SocialLinks.Count > 0)
+                {
+                    <h3>Social links</h3>
+                    <ul>
+                        @foreach (var socialLink in Model.SocialLinks)
+                        {
+                            <li>
+                                <a href="@socialLink.Url">@socialLink.Title</a>
+                            </li>
+                        }
+                    </ul>
+                }
+            </td>
+            <td style="width: 250px">
+                @if (Model.NavigationLinks.Count > 0)
+                {
+                    <h3>Navigation links</h3>
+                    <ul>
+                        @foreach (var navigationLink in Model.NavigationLinks)
+                        {
+                            <li>
+                                <a href="@navigationLink.Url">@navigationLink.Title</a>
+                            </li>
+                        }
+                    </ul>
+                }
+            </td>
+        </tr>
+    </table>
+</footer>
+

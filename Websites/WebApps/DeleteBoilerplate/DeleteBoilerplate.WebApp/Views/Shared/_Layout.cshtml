@@ -17,11 +17,11 @@
 </head>
 <body>
     <div class="container body-content">
+        @{ Html.RenderAction("Header", "Global"); }
+
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - <a href="https://deleteagency.com">Delete</a></p>
-        </footer>
+
+        @{ Html.RenderAction("Footer", "Global"); }
     </div>
     
     @RenderSection("scripts", required: false)

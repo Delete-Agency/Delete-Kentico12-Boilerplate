@@ -12,6 +12,8 @@ namespace DeleteBoilerplate.Domain
             serviceRegistry.RegisterScoped<ITaxonomyRepository, TaxonomyRepository>();
             serviceRegistry.Register(typeof(ITaxonomySearch<>),typeof(TaxonomySearch<>), new PerScopeLifetime());
             serviceRegistry.RegisterScoped<ITaxonomyService, TaxonomyService>();
+            serviceRegistry.RegisterScoped<ISocialLinksRepository, SocialLinksRepository>();
+            serviceRegistry.RegisterScoped<INavigationRepository, NavigationRepository>();
         }
     }
 }

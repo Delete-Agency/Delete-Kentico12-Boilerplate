@@ -597,11 +597,13 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\ContextPage\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\ContextPageController.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -742,6 +744,10 @@
       <Project>{3dc6646a-a5bc-4c2b-9a4c-42cd157406ac}</Project>
       <Name>DeleteBoilerplate.Metadata</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Features\DeleteBoilerplate.GenericComponents\DeleteBoilerplate.GenericComponents.csproj">
+      <Project>{A4435C07-D74E-4883-B31B-7466D08DDD07}</Project>
+      <Name>DeleteBoilerplate.GenericComponents</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Features\DeleteBoilerplate.Projects\DeleteBoilerplate.Projects.csproj">
       <Project>{bfbbaf91-2904-4d5c-9ac5-365aeaee98ef}</Project>
       <Name>DeleteBoilerplate.Projects</Name>
@@ -786,6 +792,7 @@
     <Content Include="Kentico\Scripts\builders\Core-icons.eot" />
     <None Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\ContentPage\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\AWSSDK.S3.3.1.9.0\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />
