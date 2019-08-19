@@ -13,8 +13,11 @@
             {
                 <tr>
                     <td>
-                        <img srcset="@Html.GetResizedSrcSet(project.Image.Url)" alt="@project.Image.Title" width="150" height="100" />
-                        <br />
+                        @if (project.Image != null)
+                        {
+                            <img srcset="@Html.GetResizedSrcSet(project.Image.Url)" alt="@project.Image.Title" width="150" height="100"/>
+                        }
+                        <br/>
                         <a href="@project.Url">Learn more...</a>
                     </td>
                     <td>@project.Description</td>

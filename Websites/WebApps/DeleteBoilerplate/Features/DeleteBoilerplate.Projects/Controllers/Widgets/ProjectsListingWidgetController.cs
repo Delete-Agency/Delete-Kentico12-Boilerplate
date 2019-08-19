@@ -40,7 +40,7 @@ namespace DeleteBoilerplate.Projects.Controllers.Widgets
 
             var rootAliasPath = properties.GetRootPageAliasPath();
 
-            var projects = TaxonomySearch.GetItems(taxonomiesList, out _, searchRootAliasPath: rootAliasPath);
+            var projects = TaxonomySearch.GetItems(taxonomiesList, out _, 0, 10, searchRootAliasPath: rootAliasPath);
 
             var model = Mapper.Map<List<ProjectViewModel>>(projects);
 
