@@ -67,15 +67,15 @@ namespace CMS.DocumentEngine.Types.DeleteBoilerplate
         /// Name.
         /// </summary>
         [DatabaseField]
-        public string Name
+        public string ContentPageName
         {
             get
             {
-                return ValidationHelper.GetString(GetValue("Name"), @"");
+                return ValidationHelper.GetString(GetValue("ContentPageName"), @"");
             }
             set
             {
-                SetValue("Name", value);
+                SetValue("ContentPageName", value);
             }
         }
 
@@ -172,11 +172,11 @@ namespace CMS.DocumentEngine.Types.DeleteBoilerplate
             {
                 get
                 {
-                    return mInstance.Name;
+                    return mInstance.ContentPageName;
                 }
                 set
                 {
-                    mInstance.Name = value;
+                    mInstance.ContentPageName = value;
                 }
             }
 
