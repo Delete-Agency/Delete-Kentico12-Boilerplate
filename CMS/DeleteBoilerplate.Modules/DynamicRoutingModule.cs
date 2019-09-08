@@ -1,6 +1,11 @@
-﻿using CMS;
+﻿using System;
+using System.Linq;
+using CMS;
 using CMS.DataEngine;
 using CMS.DocumentEngine;
+using CMS.Helpers;
+using DeleteBoilerplate.Domain;
+using DeleteBoilerplate.Domain.Services;
 using DeleteBoilerplate.Modules;
 
 [assembly: RegisterModule(typeof(DynamicRoutingModule))]
@@ -9,7 +14,9 @@ namespace DeleteBoilerplate.Modules
 {
     public class DynamicRoutingModule : Module
     {
-        public DynamicRoutingModule() : base("DynamicRouting")
+        protected ISeoUrlService SeoUrlService = new SeoUrlService();
+
+        public DynamicRoutingModule() : base("DeleteBoilerplate.DynamicRouting")
         {
         }
 
@@ -23,28 +30,46 @@ namespace DeleteBoilerplate.Modules
 
         private void UpdateSeoUrlOnInsertOrUpdate(object sender, DocumentEventArgs e)
         {
-            if (e.Node.ContainsColumn("SeoUrl"))
-                this.EnsurePopulatedSeoField(e.Node);
+            if (e.Node.ContainsColumn(Constants.DynamicRouting.SeoUrlFieldName))
+            {
+                EnsureSeoUrlPopulated(e);
+                EnsureSeoUrlUnique(e);
+            }
         }
 
-        private void EnsurePopulatedSeoField(TreeNode node)
+        private void EnsureSeoUrlPopulated(DocumentEventArgs eventArgs)
         {
-            var seoUrl = (string)node["SeoUrl"];
+            var node = eventArgs.Node;
+
+            var seoUrl = ValidationHelper.GetString(node[Constants.DynamicRouting.SeoUrlFieldName], String.Empty);
             var updated = false;
 
             if (string.IsNullOrWhiteSpace(seoUrl))
             {
-                node["SeoUrl"] = node.NodeAliasPath;
+                node[Constants.DynamicRouting.SeoUrlFieldName] = node.NodeAliasPath;
                 updated = true;
             }
             else if (!seoUrl.StartsWith("/"))
             {
-                node["SeoUrl"] = $"/{node["SeoUrl"]}";
+                node[Constants.DynamicRouting.SeoUrlFieldName] = $"/{node[Constants.DynamicRouting.SeoUrlFieldName]}";
                 updated = true;
             }
 
             if (updated)
                 node.Update();
+        }
+
+        private void EnsureSeoUrlUnique(DocumentEventArgs eventArgs)
+        {
+            var seoUrl = ValidationHelper.GetString(eventArgs.Node[Constants.DynamicRouting.SeoUrlFieldName], String.Empty);
+
+            var foundNodes = SeoUrlService.GetAllDocumentsBySeoUrl(seoUrl);
+
+            if (foundNodes.Count == 0 || foundNodes.All(x => x.DocumentID == eventArgs.Node.DocumentID)) return;
+
+            eventArgs.Cancel();
+            throw new Exception(
+                $"URL '{seoUrl}' is in conflict with another URL used for the page '{foundNodes.FirstOrDefault()?.DocumentNamePath ?? String.Empty}' ({foundNodes.FirstOrDefault()?.DocumentCulture ?? String.Empty}) page.");
         }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using System.Web;
 using System.Web.Mvc;
-using DeleteBoilerplate.DynamicRouting.Config;
+using DeleteBoilerplate.Domain;
+using DeleteBoilerplate.DynamicRouting.Helpers;
+using DeleteBoilerplate.Infrastructure.Extensions;
 using RequestContext = System.Web.Routing.RequestContext;
 
 namespace DeleteBoilerplate.DynamicRouting.RequestHandling
@@ -20,11 +22,11 @@ namespace DeleteBoilerplate.DynamicRouting.RequestHandling
         {
             var factory = ControllerBuilder.Current.GetControllerFactory();
 
-            var defaultController = this.HttpRequestContext.RouteData.Values.ContainsKey("controller") ? this.HttpRequestContext.RouteData.Values["controller"].ToString() : "";
-            var defaultAction = this.HttpRequestContext.RouteData.Values.ContainsKey("action") ? this.HttpRequestContext.RouteData.Values["action"].ToString() : "";
+            var defaultController = this.HttpRequestContext.RouteData.GetValueSafe("Controller");
+            var defaultAction = this.HttpRequestContext.RouteData.GetValueSafe("Action");
 
-            var className = context.Items["ContextItemClassName"]?.ToString();
-            var controllerMethod = PageTypeRoutingConfig.GetTargetControllerMethod(className);
+            var className = context.Items[Constants.DynamicRouting.ContextItemClassName]?.ToString();
+            var controllerMethod = PageTypeRoutingHelper.GetTargetControllerMethod(className);
 
             var controllerName = controllerMethod?.ReflectedType?.Name;
             var controllerAction = controllerMethod?.Name;

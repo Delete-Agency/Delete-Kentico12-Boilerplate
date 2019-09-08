@@ -1,7 +1,7 @@
 ﻿using CMS.DocumentEngine;
 using CMS.SiteProvider;
 
-namespace DeleteBoilerplate.DynamicRouting.Extensions
+namespace DeleteBoilerplate.Domain.Extensions
 {
     public static class DocumentQueryExtensions
     {

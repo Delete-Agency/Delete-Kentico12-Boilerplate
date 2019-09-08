@@ -1,7 +1,6 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
 using DeleteBoilerplate.Common;
-using DeleteBoilerplate.DynamicRouting.Attributes;
 using DeleteBoilerplate.Projects.DI;
 using LightInject;
 
@@ -21,6 +20,5 @@ using LightInject;
 [assembly: AssemblyInformationalVersion("12.0.31")]
 
 [assembly: CompositionRootType(typeof(CompositionRoot))]
-[assembly: PageTypeRoutingAssembly]
 [assembly: DeleteBoilerplateAssembly]
 

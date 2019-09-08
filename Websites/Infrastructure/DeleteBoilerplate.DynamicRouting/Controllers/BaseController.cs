@@ -1,7 +1,8 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
 using CMS.DocumentEngine;
-using DeleteBoilerplate.DynamicRouting.Extensions;
+using DeleteBoilerplate.Domain;
+using DeleteBoilerplate.Domain.Extensions;
 using DeleteBoilerplate.OutputCache;
 using Kentico.Content.Web.Mvc;
 using Kentico.PageBuilder.Web.Mvc;
@@ -46,7 +47,7 @@ namespace DeleteBoilerplate.DynamicRouting.Controllers
 
         private void ResolveContext()
         {
-            this.RequestContext.ContextItemId = this.HttpContext.Items["ContextItemDocumentId"] as int?;
+            this.RequestContext.ContextItemId = this.HttpContext.Items[Constants.DynamicRouting.ContextItemDocumentId] as int?;
             this.RequestContext.IsPreview = this.HttpContext.Kentico().Preview().Enabled;
         }
 

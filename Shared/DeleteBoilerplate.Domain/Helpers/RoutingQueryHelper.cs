@@ -2,11 +2,10 @@
 using System.Linq;
 using CMS.DataEngine;
 using CMS.DocumentEngine;
-using CMS.DocumentEngine.Types.DeleteBoilerplate;
 using CMS.Helpers;
 using CMS.SiteProvider;
 
-namespace DeleteBoilerplate.DynamicRouting.Helpers
+namespace DeleteBoilerplate.Domain.Helpers
 {
     public class RoutingQueryHelper
     {
@@ -14,14 +13,14 @@ namespace DeleteBoilerplate.DynamicRouting.Helpers
         /// Gets the query returning TreeNode for the corresponding url
         /// </summary>
         /// <param name="url">Relative URL without parameters</param>
+        /// <param name="columns">Columns to include in the query</param>
         /// <returns></returns>
-        public static MultiDocumentQuery GetNodeBySeoUrlQuery(string url)
+        public static MultiDocumentQuery GetNodeBySeoUrlQuery(string url, string[] columns = null)
         {
             return DocumentHelper.GetDocuments()
                 .Types(GetPageTypesWithSeoUrlClassNames())
-                .Columns("SeoUrl", "DocumentID")
-                .WhereEquals("SeoUrl", url)
-                .TopN(1);
+                .Columns(columns ?? new[] {Constants.DynamicRouting.SeoUrlFieldName, "DocumentID"})
+                .WhereEquals(Constants.DynamicRouting.SeoUrlFieldName, url);
         }
 
         private static string[] GetPageTypesWithSeoUrlClassNames()
@@ -34,24 +33,19 @@ namespace DeleteBoilerplate.DynamicRouting.Helpers
             using (var cs = new CachedSection<string[]>(ref result, CacheHelper.CacheMinutes(siteName), true, cacheKey))
             {
                 if (cs.LoadData)
-                {            
-                    // All page types
-                    var allPageTypes = DataClassInfoProvider.GetClasses()
-                        .Where(dataClass => dataClass.ClassIsDocumentType)
-                        .ToList();
-
-                    var basePageType = allPageTypes
-                        .FirstOrDefault(x => x.ClassName == BasePage.CLASS_NAME);
-
+                {
                     // All page types with SeoUrl column
-                    result = allPageTypes
-                        .Where(x => x.ClassInheritsFromClassID == basePageType?.ClassID)
+                    result = DataClassInfoProvider.GetClasses()
+                        .Where(dataClass =>
+                            dataClass.ClassIsDocumentType &&
+                            dataClass.ClassSearchSettingsInfos.Any(x => x.Name.Equals(Constants.DynamicRouting.SeoUrlFieldName)))
                         .Select(x => x.ClassName)
                         .ToArray();
 
                     var cacheDependencies = new List<string>
                     {
-                        "cms.classes|all"
+                        "cms.class|all",
+                        "cms.documenttype|all"
                     };
 
                     cs.Data = result;

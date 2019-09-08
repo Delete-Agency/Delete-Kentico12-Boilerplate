@@ -5,22 +5,18 @@ using System.Reflection;
 using System.Web.Mvc;
 using DeleteBoilerplate.DynamicRouting.Attributes;
 
-namespace DeleteBoilerplate.DynamicRouting.Config
+namespace DeleteBoilerplate.DynamicRouting.Helpers
 {
-    public static class PageTypeRoutingConfig
+    public static class PageTypeRoutingHelper
     {
-        // ReSharper disable once FieldCanBeMadeReadOnly.Local
-        private static Dictionary<string, MethodInfo> _routingDictionary = new Dictionary<string, MethodInfo>(StringComparer.OrdinalIgnoreCase);
+        private static readonly Dictionary<string, MethodInfo> RoutingDictionary = new Dictionary<string, MethodInfo>(StringComparer.OrdinalIgnoreCase);
 
         public static void Initialize()
         {
-            var assemblies = AppDomain.CurrentDomain.GetAssemblies()
-                .Where(assembly => assembly.CustomAttributes
-                    .Any(attribute => attribute.AttributeType == typeof(PageTypeRoutingAssemblyAttribute)));
+            var assemblies = AppDomain.CurrentDomain.GetAssemblies();
 
             var controllerTypes = assemblies
-                .SelectMany(assembly => assembly
-                    .GetTypes()
+                .SelectMany(assembly => GetAvailableTypes(assembly)
                     .Where(type => type
                         .IsSubclassOf(typeof(Controller))));
 
@@ -37,15 +33,27 @@ namespace DeleteBoilerplate.DynamicRouting.Config
 
                     foreach (var pageTypeClassName in pageTypeClassNames)
                     {
-                        _routingDictionary.Add(pageTypeClassName, method);
+                        RoutingDictionary.Add(pageTypeClassName, method);
                     }
                 }
             }
         }
 
+        private static Type[] GetAvailableTypes(Assembly assembly)
+        {
+            try
+            {
+                return assembly.GetTypes();
+            }
+            catch (Exception)
+            {
+                return new Type[0];
+            }
+        }
+
         public static MethodInfo GetTargetControllerMethod(string className)
         {
-            _routingDictionary.TryGetValue(className, out var result);
+            RoutingDictionary.TryGetValue(className, out var result);
 
             return result;
         }

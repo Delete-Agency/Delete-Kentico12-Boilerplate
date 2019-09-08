@@ -471,6 +471,8 @@
   <ItemGroup>
     <Compile Include="Constants.cs" />
     <Compile Include="DI\CompositionRoot.cs" />
+    <Compile Include="Extensions\DocumentQueryExtensions.cs" />
+    <Compile Include="Helpers\RoutingQueryHelper.cs" />
     <Compile Include="Helpers\SiteSettingsHelper.cs" />
     <Compile Include="Models\PageTypes\BasePage\BasePage.cs" />
     <Compile Include="Models\PageTypes\BasePage\BasePage.generated.cs" />
@@ -505,6 +507,7 @@
     <Compile Include="Repositories\SocialLinksRepository.cs" />
     <Compile Include="Repositories\TaxonomyRepository.cs" />
     <Compile Include="Repositories\ProjectRepository.cs" />
+    <Compile Include="Services\SeoUrlService.cs" />
     <Compile Include="Services\TaxonomyExtractBuilder.cs" />
     <Compile Include="Services\TaxonomyService.cs" />
     <Compile Include="Services\TaxonomySearch.cs" />

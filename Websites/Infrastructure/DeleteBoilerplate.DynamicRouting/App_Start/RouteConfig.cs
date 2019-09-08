@@ -6,18 +6,10 @@ namespace DeleteBoilerplate.DynamicRouting
 {
     public class RouteConfig
     {
-        public static void RegisterRoutes(RouteCollection routes)
+        public static void RegisterDynamicRoutes(RouteCollection routes)
         {
-            // If a normal MVC Route is found and it has priority, it will take it, otherwise it will bypass.
+            // If the Page is found by URL, will handle the routing dynamically
             var route = routes.MapRoute(
-                name: "DefaultIfPriority",
-                url: "{controller}/{action}/{id}",
-                defaults: new {controller = "Home", action = "Index", id = UrlParameter.Optional},
-                constraints: new {ControlIsPriority = new RouteOverPathPriorityConstraint()}
-            );
-
-            // If the Page is found, will handle the routing dynamically
-            route = routes.MapRoute(
                 name: "CheckByUrl",
                 url: "{*url}",
                 // Defaults are if it can't find a controller based on the pages

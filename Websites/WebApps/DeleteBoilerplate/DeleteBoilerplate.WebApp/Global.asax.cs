@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Web;
 using System.Web.Routing;
-using DeleteBoilerplate.DynamicRouting.Config;
+using DeleteBoilerplate.DynamicRouting;
+using DeleteBoilerplate.DynamicRouting.Helpers;
 using DeleteBoilerplate.Infrastructure;
 using DeleteBoilerplate.Infrastructure.Routing;
 using DeleteBoilerplate.OutputCache;
@@ -19,10 +20,13 @@ namespace DeleteBoilerplate.WebApp
 
             DIConfig.Bootstrap();
 
-            PageTypeRoutingConfig.Initialize();
+            PageTypeRoutingHelper.Initialize();
 
             // Registers routes including system routes for enabled features
             CustomRoutesHelper.RegisterFeaturesRoutes(RouteTable.Routes);
+
+            // Register dynamic routes at the end
+            RouteConfig.RegisterDynamicRoutes(RouteTable.Routes);
         }
 
         public override string GetVaryByCustomString(HttpContext context, string arg)

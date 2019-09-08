@@ -2,7 +2,6 @@
 using System.Runtime.InteropServices;
 using DeleteBoilerplate.Common;
 using CMS;
-using DeleteBoilerplate.DynamicRouting.Attributes;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
@@ -37,6 +36,4 @@ using DeleteBoilerplate.DynamicRouting.Attributes;
 [assembly: AssemblyFileVersion("1.0.0.0")]
 
 [assembly: DeleteBoilerplateAssembly]
-[assembly: PageTypeRoutingAssembly]
-
 [assembly: AssemblyDiscoverable]

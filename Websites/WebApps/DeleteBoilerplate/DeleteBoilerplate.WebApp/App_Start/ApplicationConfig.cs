@@ -17,7 +17,7 @@ namespace DeleteBoilerplate.WebApp
 
             builder.UsePageBuilder(new PageBuilderOptions());
 
-            //builder.UseDataAnnotationsLocalization();
+            builder.UseDataAnnotationsLocalization();
             builder.UseResourceSharingWithAdministration();
             builder.UseCampaignLogger();
             builder.UseActivityTracking();

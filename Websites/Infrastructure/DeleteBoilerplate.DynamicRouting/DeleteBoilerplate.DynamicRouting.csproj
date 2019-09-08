@@ -560,23 +560,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Attributes\PageTypeRoutingAssemblyAttribute.cs" />
     <Compile Include="Attributes\PageTypeRoutingAttribute.cs" />
-    <Compile Include="Config\PageTypeRoutingConfig.cs" />
+    <Compile Include="Helpers\PageTypeRoutingHelper.cs" />
     <Compile Include="Contexts\Implementation\RequestContext.cs" />
     <Compile Include="Contexts\IRequestContext.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BaseWidgetController.cs" />
     <Compile Include="DI\CompositionRoot.cs" />
-    <Compile Include="Extensions\DocumentQueryExtensions.cs" />
-    <Compile Include="Helpers\RoutingQueryHelper.cs" />
     <Compile Include="Helpers\EnvironmentHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RequestHandling\DynamicHttpHandler.cs" />
     <Compile Include="RequestHandling\DynamicRouteHandler.cs" />
     <Compile Include="RequestHandling\PageFoundConstraint.cs" />
-    <Compile Include="RequestHandling\RouteOverPathPriority.cs" />
-    <Compile Include="RequestHandling\RouteOverPathPriorityConstraint.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config" />

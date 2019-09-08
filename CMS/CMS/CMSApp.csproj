@@ -763,6 +763,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CMSFormControls\DropdownChosen.ascx" />
+    <Content Include="CMSFormControls\SeoUrlSelector.ascx" />
     <Content Include="CMSFormControls\TreeTaxonomyMultiSelector.ascx" />
     <Content Include="CorporateSite\Images\close.png" />
     <Content Include="CorporateSite\Images\loading.gif" />
@@ -5870,6 +5871,13 @@
     </Compile>
     <Compile Include="CMSFormControls\DropdownChosen.ascx.designer.cs">
       <DependentUpon>DropdownChosen.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CMSFormControls\SeoUrlSelector.ascx.cs">
+      <DependentUpon>SeoUrlSelector.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CMSFormControls\SeoUrlSelector.ascx.designer.cs">
+      <DependentUpon>SeoUrlSelector.ascx</DependentUpon>
     </Compile>
     <Compile Include="CMSFormControls\TreeTaxonomyMultiSelector.ascx.cs">
       <DependentUpon>TreeTaxonomyMultiSelector.ascx</DependentUpon>
