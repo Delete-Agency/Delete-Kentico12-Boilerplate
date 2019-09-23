@@ -6,12 +6,10 @@ namespace DeleteBoilerplate.DynamicRouting.Contexts
     {
         int? ContextItemId { get; set; }
 
-        TreeNode ContextItem { get; set; }
-
-        bool ContextItemResolved { get; set; }
-
         bool ContextResolved { get; set; }
 
         bool IsPreview { get; set; }
+
+        T GetContextItem<T>() where T : TreeNode, new();
     }
 }

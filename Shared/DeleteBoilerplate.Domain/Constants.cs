@@ -41,6 +41,7 @@ namespace DeleteBoilerplate.Domain
             public const string SeoUrlFieldName = nameof(BasePage.SeoUrl);
             public const string ContextItemDocumentId = "ContextItemDocumentId";
             public const string ContextItemClassName = "ContextItemClassName";
+            public const string RoutingUrlParameter = "url";
         }
     }
 }

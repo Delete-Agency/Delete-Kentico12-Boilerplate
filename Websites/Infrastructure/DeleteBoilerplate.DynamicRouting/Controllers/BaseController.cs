@@ -1,8 +1,6 @@
-﻿using System.Linq;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using CMS.DocumentEngine;
 using DeleteBoilerplate.Domain;
-using DeleteBoilerplate.Domain.Extensions;
 using DeleteBoilerplate.OutputCache;
 using Kentico.Content.Web.Mvc;
 using Kentico.PageBuilder.Web.Mvc;
@@ -34,35 +32,16 @@ namespace DeleteBoilerplate.DynamicRouting.Controllers
             base.OnActionExecuting(filterContext);
         }
 
-        protected virtual T GetContextItem<T>() where T: TreeNode, new()
+        protected virtual T GetContextItem<T>() where T : TreeNode, new()
         {
-            if (!this.RequestContext.ContextItemResolved)
-                this.ResolveContextItem<T>();
-
-            if (this.RequestContext.ContextItem is T typedContextItem)
-                return typedContextItem;
-
-            return null;
+            return this.RequestContext.GetContextItem<T>();
         }
 
         private void ResolveContext()
         {
             this.RequestContext.ContextItemId = this.HttpContext.Items[Constants.DynamicRouting.ContextItemDocumentId] as int?;
             this.RequestContext.IsPreview = this.HttpContext.Kentico().Preview().Enabled;
-        }
-
-        private void ResolveContextItem<T>() where T: TreeNode, new()
-        {
-            if (this.RequestContext.ContextItemId.HasValue)
-            {
-                var query = DocumentHelper.GetDocuments<T>()
-                    .WithID(this.RequestContext.ContextItemId.Value)
-                    .TopN(1)
-                    .AddVersionsParameters(this.RequestContext.IsPreview);
-
-                this.RequestContext.ContextItem = query.FirstOrDefault();
-                this.RequestContext.ContextItemResolved = true;
-            }
+            this.RequestContext.ContextResolved = true;
         }
     }
 }

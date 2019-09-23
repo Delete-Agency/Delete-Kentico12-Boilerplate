@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using AutoMapper;
 using CMS.DataEngine;
+using CMS.DocumentEngine;
 using CMS.DocumentEngine.Types.DeleteBoilerplate;
 using CMS.SiteProvider;
 using DeleteBoilerplate.Domain.Repositories;
@@ -40,7 +41,7 @@ namespace DeleteBoilerplate.GenericComponents.Controllers.Global
             var activeLinks = navigationLinks.SelectMany(x => x.ChildLinks)
                 .Union(navigationLinks)
                 .Where(x => !string.IsNullOrWhiteSpace(x.AssociatedPagePath) &&
-                            RequestContext.ContextItem.NodeAliasPath.StartsWith(x.AssociatedPagePath, StringComparison.OrdinalIgnoreCase))
+                            RequestContext.GetContextItem<TreeNode>().NodeAliasPath.StartsWith(x.AssociatedPagePath, StringComparison.OrdinalIgnoreCase))
                 .ToList();
             var activeLink = activeLinks.FirstOrDefault(x => x.AssociatedPagePath.Equals(activeLinks.Aggregate("",
                 (max, cur) => max.Length > cur.AssociatedPagePath.Length ? max : cur.AssociatedPagePath)));

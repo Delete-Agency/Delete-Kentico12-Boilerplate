@@ -20,13 +20,11 @@ namespace DeleteBoilerplate.WebApp
 
             DIConfig.Bootstrap();
 
-            PageTypeRoutingHelper.Initialize();
-
             // Registers routes including system routes for enabled features
             CustomRoutesHelper.RegisterFeaturesRoutes(RouteTable.Routes);
 
             // Register dynamic routes at the end
-            RouteConfig.RegisterDynamicRoutes(RouteTable.Routes);
+            DynamicRouteConfig.RegisterDynamicRoutes(RouteTable.Routes);
         }
 
         public override string GetVaryByCustomString(HttpContext context, string arg)
