@@ -21,6 +21,13 @@ namespace DeleteBoilerplate.DynamicRouting
                 constraints: new {PageFound = new PageFoundConstraint()}
             );
             route.RouteHandler = new DynamicRouteHandler();
+
+            // Default route
+            routes.MapRoute(
+                name: "Default",
+                url: "{controller}/{action}",
+                defaults: new {controller = "HttpErrors", action = "Index"}
+            );
         }
     }
 }
