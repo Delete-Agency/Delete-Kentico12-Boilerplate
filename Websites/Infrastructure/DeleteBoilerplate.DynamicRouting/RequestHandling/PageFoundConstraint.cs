@@ -30,7 +30,7 @@ namespace DeleteBoilerplate.DynamicRouting.RequestHandling
 
                 // Get the classname based on the URL
                 var foundNode = RoutingQueryHelper
-                    .GetNodeBySeoUrlQuery($"/{url}")
+                    .GetNodeBySeoUrlQuery(url)
                     .TopN(1)
                     .AddVersionsParameters(context.Kentico().Preview().Enabled)
                     .FirstOrDefault();
