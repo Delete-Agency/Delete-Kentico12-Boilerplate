@@ -7,6 +7,7 @@ using CMS.Helpers;
 using DeleteBoilerplate.Domain;
 using DeleteBoilerplate.Domain.Extensions;
 using DeleteBoilerplate.Domain.Helpers;
+using DeleteBoilerplate.DynamicRouting.Helpers;
 using Kentico.Content.Web.Mvc;
 using Kentico.Web.Mvc;
 
@@ -18,11 +19,18 @@ namespace DeleteBoilerplate.DynamicRouting.RequestHandling
         {
             if (!context.Items.Contains(Constants.DynamicRouting.ContextItemDocumentId))
             {
+                // Try to get the URL from the routing parameter
                 var url = $"/{ValidationHelper.GetString(values[Constants.DynamicRouting.RoutingUrlParameter], String.Empty)}";
+
+                // If the URL is empty - try to distinguish the URL from the request
+                if (url.Equals("/", StringComparison.OrdinalIgnoreCase))
+                {
+                    url = EnvironmentHelper.GetUrl(context.Request);
+                }
 
                 // Get the classname based on the URL
                 var foundNode = RoutingQueryHelper
-                    .GetNodeBySeoUrlQuery(url)
+                    .GetNodeBySeoUrlQuery($"/{url}")
                     .TopN(1)
                     .AddVersionsParameters(context.Kentico().Preview().Enabled)
                     .FirstOrDefault();
