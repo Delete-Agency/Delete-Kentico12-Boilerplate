@@ -44,7 +44,7 @@
             $.ajax({
                 url: "@GetDataUrl()",
                 type: "GET",
-                data: { "targetTaxonomyType" : "@Model.TargetTaxonomyType"},
+                data: {"targetTaxonomyTypes" : "@Model.TargetTaxonomyTypes"},
                 dataType: "JSON",
                 async: true
             }).done(function(results) {

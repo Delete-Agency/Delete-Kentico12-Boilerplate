@@ -16,7 +16,7 @@ namespace DeleteBoilerplate.Projects.Models.Widgets.ProjectsListing
         public List<PathSelectorItem> Items { get; set; }
 
         [EditingComponent(FormComponentsIdentifiers.TaxonomySelector, Order = 0, Label = "Area")]
-        [EditingComponentProperty("TargetTaxonomyType", "Area")]
+        [EditingComponentProperty("TargetTaxonomyTypes", "Area;Country")]
         public string Type { get; set; }
     }
 }

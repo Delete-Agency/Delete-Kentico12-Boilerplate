@@ -183,18 +183,18 @@ namespace CMS.DocumentEngine.Types.DeleteBoilerplate
 
 
 		/// <summary>
-		/// Additional Area.
+		/// Other Tags.
 		/// </summary>
 		[DatabaseField]
-		public string AdditionalArea
+		public string OtherTags
 		{
 			get
 			{
-				return ValidationHelper.GetString(GetValue("AdditionalArea"), @"");
+				return ValidationHelper.GetString(GetValue("OtherTags"), @"");
 			}
 			set
 			{
-				SetValue("AdditionalArea", value);
+				SetValue("OtherTags", value);
 			}
 		}
 
@@ -363,17 +363,17 @@ namespace CMS.DocumentEngine.Types.DeleteBoilerplate
 
 
 			/// <summary>
-			/// Additional Area.
+			/// Other Tags.
 			/// </summary>
-			public string AdditionalArea
+			public string OtherTags
 			{
 				get
 				{
-					return mInstance.AdditionalArea;
+					return mInstance.OtherTags;
 				}
 				set
 				{
-					mInstance.AdditionalArea = value;
+					mInstance.OtherTags = value;
 				}
 			}
 		}

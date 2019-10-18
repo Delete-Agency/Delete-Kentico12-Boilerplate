@@ -9,7 +9,7 @@ using DeleteBoilerplate.Domain.Services;
 
 public partial class CMSFormControls_TreeTaxonomyMultiSelector : FormEngineUserControl
 {
-    public string TargetTaxonomyType => ValidationHelper.GetString(GetValue("TargetTaxonomyType"), string.Empty);
+    public string TargetTaxonomyTypes => ValidationHelper.GetString(GetValue("TargetTaxonomyTypes"), string.Empty);
 
     protected string TaxonomyTree { get; set; }
 
@@ -20,7 +20,7 @@ public partial class CMSFormControls_TreeTaxonomyMultiSelector : FormEngineUserC
         CssRegistration.RegisterCssLink(Page, "~/CMSScripts/Laureus/jsTree/themes/default/style.min.css");
 
         var taxonomyService = new TaxonomyService(new TaxonomyRepository());
-        TaxonomyTree = JsonConvert.SerializeObject(taxonomyService.GetTaxonomyTree(TargetTaxonomyType));
+        TaxonomyTree = JsonConvert.SerializeObject(taxonomyService.GetTaxonomyTree(TargetTaxonomyTypes));
     }
 
     public override object Value

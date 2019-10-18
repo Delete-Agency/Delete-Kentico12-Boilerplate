@@ -12,7 +12,7 @@ namespace DeleteBoilerplate.GenericComponents.Models.FormComponents
         [BindableProperty]
         public string SelectedTaxonomies { get; set; }
 
-        public string TargetTaxonomyType { get; set; }
+        public string TargetTaxonomyTypes { get; set; }
 
         public override string GetValue()
         {
@@ -27,7 +27,7 @@ namespace DeleteBoilerplate.GenericComponents.Models.FormComponents
         public override void LoadProperties(FormComponentProperties properties)
         {
             base.LoadProperties(properties);
-            TargetTaxonomyType = (properties as TaxonomySelectorProperties)?.TargetTaxonomyType;
+            TargetTaxonomyTypes = (properties as TaxonomySelectorProperties)?.TargetTaxonomyTypes;
         }
     }
 }

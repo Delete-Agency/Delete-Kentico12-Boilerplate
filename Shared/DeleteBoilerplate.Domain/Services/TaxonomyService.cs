@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
 using DeleteBoilerplate.Domain.Repositories;
@@ -7,7 +8,9 @@ namespace DeleteBoilerplate.Domain.Services
 {
     public interface ITaxonomyService
     {
-        List<TaxonomyTreeItem> GetTaxonomyTree(string targetTaxonomyType = "");
+        List<TaxonomyTreeItem> GetTaxonomyTree(string targetTaxonomyTypes = "");
+
+        List<TaxonomyTreeItem> GetTaxonomyTree(string[] targetTaxonomyTypes);
     }
 
     public class TaxonomyService : ITaxonomyService
@@ -19,26 +22,44 @@ namespace DeleteBoilerplate.Domain.Services
             _taxonomyRepository = taxonomyRepository;
         }
 
-        public List<TaxonomyTreeItem> GetTaxonomyTree(string targetTaxonomyType = "")
+        public List<TaxonomyTreeItem> GetTaxonomyTree(string targetTaxonomyTypes = "")
         {
-            var targetTaxonomyTypes = new List<string>();
+            var typesArray = targetTaxonomyTypes
+                .Split(new[] {";", " ", "|", ","}, StringSplitOptions.RemoveEmptyEntries)
+                .Select(x => x.Trim())
+                .ToArray();
+
+            return GetTaxonomyTree(typesArray);
+        }
+
+        public List<TaxonomyTreeItem> GetTaxonomyTree(string[] targetTaxonomyTypes)
+        {
             var types = _taxonomyRepository.GetAllTaxonomyTypes();
-            if (!string.IsNullOrEmpty(targetTaxonomyType))
+            if (targetTaxonomyTypes != null && targetTaxonomyTypes.Any())
             {
-                targetTaxonomyTypes.AddRange(targetTaxonomyType.Split(';'));
-                types = types.Where(x => targetTaxonomyTypes.Contains(x.Title));
+                types = types.Where(x => targetTaxonomyTypes.Contains(x.Title, StringComparer.OrdinalIgnoreCase));
             }
+
             var result = new List<TaxonomyTreeItem>();
             foreach (var type in types)
             {
-                result.Add(new TaxonomyTreeItem() { Id = type.NodeGUID.ToString(), Name = type.Title });
-                result.AddRange(type.TaxonomyItems.Select(x => new TaxonomyTreeItem()
-                { Id = x.NodeGUID.ToString(), Parent = type.NodeGUID.ToString(), Name = x.Title }));
+                result.Add(
+                    new TaxonomyTreeItem
+                    {
+                        Id = type.NodeGUID.ToString("D"),
+                        Name = type.Title
+                    });
+                result.AddRange(type.TaxonomyItems.Select(x =>
+                    new TaxonomyTreeItem
+                    {
+                        Id = x.NodeGUID.ToString("D"),
+                        Parent = type.NodeGUID.ToString("D"),
+                        Name = x.Title
+                    }));
             }
 
             return result;
         }
-
     }
 
 
@@ -52,14 +73,7 @@ namespace DeleteBoilerplate.Domain.Services
         public string Parent { get; set; }
 
         [JsonProperty("parent")]
-        public string SurrogateParent
-        {
-            get
-            {
-                if (Parent == null) return "#";
-                return Parent;
-            }
-        }
+        public string SurrogateParent => Parent ?? "#";
 
         [JsonProperty("text")]
         public string Name { get; set; }

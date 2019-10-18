@@ -8,12 +8,11 @@ namespace DeleteBoilerplate.GenericComponents.Controllers.FormComponents
 {
     public class TaxonomySelectorController : Controller
     {
-        [Inject]
-        public ITaxonomyService TaxonomyService { get; set; }
+        [Inject] public ITaxonomyService TaxonomyService { get; set; }
 
-        public JsonResult GetTaxonomyTree(string targetTaxonomyType)
+        public JsonResult GetTaxonomyTree(string targetTaxonomyTypes)
         {
-            var result = TaxonomyService.GetTaxonomyTree(targetTaxonomyType);
+            var result = TaxonomyService.GetTaxonomyTree(targetTaxonomyTypes);
             return Json(result, JsonRequestBehavior.AllowGet);
         }
 
@@ -28,5 +27,4 @@ namespace DeleteBoilerplate.GenericComponents.Controllers.FormComponents
             };
         }
     }
-
 }
