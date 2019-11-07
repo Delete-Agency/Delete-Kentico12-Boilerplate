@@ -941,6 +941,7 @@
     <Compile Include="Controllers\FormComponents\TaxonomySelectorController.cs" />
     <Compile Include="Controllers\Global\GlobalController.cs" />
     <Compile Include="Controllers\Sections\OneFullWidthColumnSectionController.cs" />
+    <Compile Include="Controllers\Widgets\StaticHtmlWidgetController.cs" />
     <Compile Include="Models\Footer\FooterViewModel.cs" />
     <Compile Include="Models\Footer\NavigationLinkViewModel.cs" />
     <Compile Include="Models\Footer\SocialLinkViewModel.cs" />
@@ -963,6 +964,8 @@
     <Compile Include="Models\Widgets\ImageWidget\ImageWidgetViewModel.cs" />
     <Compile Include="Extensions\WidgetPropertiesExtensions.cs" />
     <Compile Include="Models\Widgets\ITaxonomyWidgetProperties.cs" />
+    <Compile Include="Models\Widgets\StaticHtmlWidget\StaticHtmlWidgetProperties.cs" />
+    <Compile Include="Models\Widgets\StaticHtmlWidget\StaticHtmlWidgetViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -982,6 +985,7 @@
     <Content Include="Views\Global\Footer.cshtml" />
     <Content Include="Views\Global\Header.cshtml" />
     <None Include="packages.config" />
+    <Content Include="Views\Shared\Widgets\_StaticHtml.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

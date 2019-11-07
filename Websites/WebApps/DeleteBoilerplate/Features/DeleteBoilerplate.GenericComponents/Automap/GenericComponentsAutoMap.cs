@@ -1,8 +1,12 @@
 ﻿using System.Linq;
+using CMS.DocumentEngine.Types.DeleteBoilerplate;
+using CMS.Localization;
+using CMS.SiteProvider;
 using DeleteBoilerplate.GenericComponents.Models.Widgets;
 using DeleteBoilerplate.GenericComponents.Models.Widgets.ContentBlockWidget;
 using DeleteBoilerplate.GenericComponents.Models.Widgets.HeroWidget;
 using DeleteBoilerplate.GenericComponents.Models.Widgets.ImageWidget;
+using DeleteBoilerplate.GenericComponents.Models.Widgets.StaticHtmlWidget;
 using DeleteBoilerplate.Infrastructure.Extensions;
 using DeleteBoilerplate.Infrastructure.Models.Media;
 
@@ -34,6 +38,9 @@ namespace DeleteBoilerplate.GenericComponents
                         }).Where(x=>x!=null).ToList();
                     }
                 });
+
+            CreateMap<StaticHtmlWidgetProperties, StaticHtmlWidgetViewModel>()
+                .ForMember(dst => dst.Html, opt => opt.MapFrom(src => src.Html));
         }
     }
 }

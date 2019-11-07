@@ -14,6 +14,7 @@ namespace DeleteBoilerplate.Domain
             serviceRegistry.RegisterScoped<ITaxonomyService, TaxonomyService>();
             serviceRegistry.RegisterScoped<ISocialLinksRepository, SocialLinksRepository>();
             serviceRegistry.RegisterScoped<INavigationRepository, NavigationRepository>();
+            serviceRegistry.RegisterScoped<IStaticHtmlChunkRepository, StaticHtmlChunkRepository>();
         }
     }
 }
