@@ -41,7 +41,7 @@ namespace DeleteBoilerplate.Infrastructure.Extensions
             { ContentType.Svg, "{0}\n" },
         };
 
-        private static string CssPatternRegular = "<link rel=\"stylesheet\" href=\"{0}\"><script> </script>";
+        private static string CssPatternRegular = "<link rel=\"stylesheet\" href=\"{0}\" />";
         private static string JsPatternRegular = "<script defer src=\"{0}\"></script>";
 
 
