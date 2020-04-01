@@ -26,6 +26,7 @@ public partial class CMSModules_Membership_Pages_Users_User_Edit_CustomFields : 
 
             if (!CheckGlobalAdminEdit(ui))
             {
+                btnOk.Visible = false;
                 plcUserCustomFields.Visible = false;
                 plcUserSettingsCustomFields.Visible = false;
                 ShowError(GetString("Administration-User_List.ErrorGlobalAdmin"));

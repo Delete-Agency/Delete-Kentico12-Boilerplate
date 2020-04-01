@@ -22531,7 +22531,7 @@
             Removes item specified by <paramref name="shoppingCartItemInfo"/> from the current shopping cart.
             Also removes all children and bundle items from the cart, logs the activity and evaluates the cart.
             </summary>
-            <param name="shoppingCartItemInfo">Item to be removed.</param>     
+            <param name="shoppingCartItemInfo">Item to be removed.</param>
             <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="shoppingCartItemInfo"/> is null.</exception>
             <seealso cref="M:CMS.Ecommerce.ShoppingCartInfo.Evaluate"/>
             <remarks>This method does nothing when the specified <paramref name="shoppingCartItemInfo"/> is not in the cart.</remarks>

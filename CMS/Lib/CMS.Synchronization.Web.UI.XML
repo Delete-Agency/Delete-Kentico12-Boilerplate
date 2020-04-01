@@ -95,6 +95,11 @@
             Staging task runner instance
             </summary>
         </member>
+        <member name="P:CMS.Synchronization.Web.UI.CMSStagingTasksPage.TaskType">
+            <summary>
+            The task type that is used when cheking priviliges for links generated for the task grid.
+            </summary>
+        </member>
         <member name="P:CMS.Synchronization.Web.UI.CMSStagingTasksPage.CurrentError">
             <summary>
             Current Error.

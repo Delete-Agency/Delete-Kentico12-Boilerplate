@@ -692,6 +692,12 @@ public partial class CMSWebParts_Membership_Registration_CustomRegistrationForm 
             return;
         }
 
+        if (!ValidationHelper.IsUserName(userName))
+        {
+            ShowError(String.Format(GetString("Webparts_Membership_RegistrationForm.UserNameNotValid"), HTMLHelper.HTMLEncode(userName)));
+            return;
+        }
+
         formUser.SaveData(null, String.IsNullOrEmpty(DisplayMessage.Trim()));
     }
 

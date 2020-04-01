@@ -9,26 +9,14 @@
 <cms:CMSUpdatePanel ID="pnlUpdateRoles" runat="server" UpdateMode="Conditional">
     <ContentTemplate>
         <cms:LocalizedHeading runat="server" ID="headRoles" Level="4" EnableViewState="false" />
-        <div class=" form-horizontal form-filter">
-            <div class="radio-list-vertical">
+        <div class="form-horizontal">
+            <div class="form-group radio-list-vertical">
                 <cms:CMSRadioButtonList ID="rbRoleType" runat="server" AutoPostBack="true" RepeatDirection="Vertical" />
-                <asp:PlaceHolder ID="plcRolesBox" runat="server">
-                    <div class="selector-subitem">
-                        <div class="form-group">
-                            <div class="filter-form-label-cell">
-                                <cms:LocalizedLabel CssClass="control-label" runat="server" ID="lblSites" ResourceString="siteselect.selectitem"
-                                    AssociatedControlID="siteSelector" EnableViewState="false" DisplayColon="true" />
-                            </div>
-                            <div class="filter-form-value-cell">
-                                <cms:SiteSelector ID="siteSelector" runat="server" IsLiveSite="false" />
-                            </div>
-                        </div>
-                    </div>
-                </asp:PlaceHolder>
             </div>
-            <cms:UniSelector ID="usRoles" runat="server" IsLiveSite="false" SelectionMode="Multiple" ResourcePrefix="addroles" />
+            <div class="form-group">
+                <cms:UniSelector ID="usRoles" runat="server" IsLiveSite="false" SelectionMode="Multiple" ResourcePrefix="addroles" />
+            </div>            
         </div>
-
     </ContentTemplate>
 </cms:CMSUpdatePanel>
 
@@ -36,11 +24,13 @@
     <ContentTemplate>
         <cms:LocalizedHeading runat="server" ID="headUsers" Level="4" EnableViewState="false" />
         <div class=" form-horizontal">
-            <div class="radio-list-vertical">
+            <div class="form-group radio-list-vertical">
                 <cms:CMSRadioButtonList ID="rbUserType" runat="server" AutoPostBack="true" RepeatDirection="Vertical" />
             </div>
+            <div class="form-group">
+                <cms:UniSelector ID="usUsers" runat="server" IsLiveSite="false" SelectionMode="Multiple"
+                    ResourcePrefix="addusers" DisplayNameFormat="##USERDISPLAYFORMAT##" />
+            </div>
         </div>
-        <cms:UniSelector ID="usUsers" runat="server" IsLiveSite="false" SelectionMode="Multiple"
-            ResourcePrefix="addusers" DisplayNameFormat="##USERDISPLAYFORMAT##" />
     </ContentTemplate>
 </cms:CMSUpdatePanel>

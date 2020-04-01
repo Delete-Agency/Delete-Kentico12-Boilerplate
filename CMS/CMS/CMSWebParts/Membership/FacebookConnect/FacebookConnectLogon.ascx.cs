@@ -648,8 +648,16 @@ public partial class CMSWebParts_Membership_FacebookConnect_FacebookConnectLogon
         // Map Facebook user on appropriate action
         if (FacebookMappingHelper.GetUserProfileMappingTrigger(SiteContext.CurrentSiteName) >= mappingTrigger)
         {
+            var previousUserEmail = user.Email;
+
             FacebookMappingHelper.MapUserProfile(facebookUser, user);
             userChanged = true;
+
+            // Do not change Email field if new value is not unique
+            if (!UserInfoProvider.IsEmailUnique(facebookUser.Email, user))
+            {
+                user.Email = previousUserEmail;
+            }
         }
 
         if (userChanged)

@@ -26,6 +26,12 @@ public partial class CMSModules_SocialMarketing_Pages_LinkedInCompanyAccessToken
     #endregion
 
 
+    /// <summary>
+    /// Space delimited list of member permissions the application is requesting on behalf of the user to manage companies.
+    /// </summary>
+    private const string COMPANIES_API_PERMISSION_SCOPE = "rw_organization_admin r_organization_social w_organization_social";
+
+
     #region "Properties"
 
     private string DataKey
@@ -147,6 +153,7 @@ CloseDialog();", Parameters["ClientID"], json);
         try
         {
             var data = new LinkedInData((string)Parameters["ApiKey"], (string)Parameters["ApiSecret"]);
+            data.AdditionalQueryParameters["scope"] = COMPANIES_API_PERMISSION_SCOPE;
             LinkedInProvider.OpenAuthorizationPage(data, url);
         }
         catch (CMS.SocialMarketing.LinkedInApiUnauthorizedException)

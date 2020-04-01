@@ -4,7 +4,9 @@ using System.Linq;
 using CMS.Base.Web.UI;
 using CMS.Helpers;
 using CMS.Membership;
+using CMS.SiteProvider;
 using CMS.UIControls;
+using CMS.UIControls.UniGridConfig;
 using CMS.WorkflowEngine;
 using CMS.WorkflowEngine.Definitions;
 
@@ -12,8 +14,7 @@ using CMS.WorkflowEngine.Definitions;
 public partial class CMSModules_Workflows_Controls_UI_WorkflowStep_Security : CMSAdminEditControl
 {
     #region "Variables"
-
-    private int siteId;
+    
     private WorkflowStepInfo mWorkflowStep;
     private WorkflowInfo mWorkflow;
     private SourcePoint mCurrentSourcePoint;
@@ -39,16 +40,6 @@ public partial class CMSModules_Workflows_Controls_UI_WorkflowStep_Security : CM
     /// With source point GUID set, this control manages security for source point. With null manages security for workflow step.
     /// </summary>
     public Guid? SourcePointGuid
-    {
-        get;
-        set;
-    }
-
-
-    /// <summary>
-    /// Site ID
-    /// </summary>
-    public int SiteID
     {
         get;
         set;
@@ -106,7 +97,6 @@ public partial class CMSModules_Workflows_Controls_UI_WorkflowStep_Security : CM
         set
         {
             base.StopProcessing = value;
-            siteSelector.StopProcessing = value;
             usRoles.StopProcessing = value;
             usUsers.StopProcessing = value;
         }
@@ -125,7 +115,6 @@ public partial class CMSModules_Workflows_Controls_UI_WorkflowStep_Security : CM
         set
         {
             base.IsLiveSite = value;
-            siteSelector.IsLiveSite = value;
             usRoles.IsLiveSite = value;
             usUsers.IsLiveSite = value;
         }
@@ -228,49 +217,29 @@ public partial class CMSModules_Workflows_Controls_UI_WorkflowStep_Security : CM
             headUsers.ResourceString = (SourcePointGuid == null) ? "workflowstep.userssecurity" : "workflowsteppoint.userssecurity";
         }
 
-        // Set site selector
-        siteSelector.AllowGlobal = true;
-        siteSelector.DropDownSingleSelect.AutoPostBack = true;
-        siteSelector.AllowAll = false;
-        siteSelector.OnlyRunningSites = false;
-        siteSelector.UniSelector.OnSelectionChanged += UniSelector_OnSelectionChanged;
+        usRoles.FilterControl = "~/CMSFormControls/Filters/SiteFilter.ascx";
+        usRoles.SetValue("DefaultFilterValue", SiteContext.CurrentSiteID);
+        usRoles.AdditionalColumns = "SiteId";
         usRoles.OnSelectionChanged += usRoles_OnSelectionChanged;
-        usUsers.OnSelectionChanged += usUsers_OnSelectionChanged;
         usRoles.ObjectType = RoleInfo.OBJECT_TYPE;
+        usRoles.UniGrid.OnLoadColumns += PrepareColumns;
+
+        usUsers.OnSelectionChanged += usUsers_OnSelectionChanged;
         usUsers.ObjectType = UserInfo.OBJECT_TYPE;
+
         rbRoleType.SelectedIndexChanged += rbRoleType_SelectedIndexChanged;
         rbUserType.SelectedIndexChanged += rbUserType_SelectedIndexChanged;
 
         if (!RequestHelper.IsPostBack())
         {
-            siteId = SiteID;
-            siteSelector.Value = siteId;
             string resPrefix = (SourcePointGuid == null) ? "workflowstep" : "workflowsteppoint";
             ControlsHelper.FillListControlWithEnum<WorkflowStepSecurityEnum>(rbRoleType, resPrefix + ".security");
             ControlsHelper.FillListControlWithEnum<WorkflowStepSecurityEnum>(rbUserType, resPrefix + ".usersecurity");
             rbRoleType.SelectedValue = ((int)RolesSecurity).ToString();
             rbUserType.SelectedValue = ((int)UsersSecurity).ToString();
         }
-        else
-        {
-            // Make sure the current site is always selected
-            int selectedId = ValidationHelper.GetInteger(siteSelector.Value, 0);
-            if (selectedId == 0)
-            {
-                selectedId = SiteID;
-                siteSelector.Value = SiteID;
-            }
-            siteId = selectedId;
-        }
 
-        // If global role selected - set siteID to 0
-        if (siteSelector.GlobalRecordValue == siteId.ToString())
-        {
-            siteId = 0;
-        }
-
-        string siteIDWhere = (siteId == 0) ? "SiteID IS NULL" : "SiteID = " + siteId;
-        usRoles.WhereCondition = siteIDWhere + " AND RoleGroupID IS NULL";
+        usRoles.WhereCondition = "RoleGroupID IS NULL";
         usUsers.WhereCondition = "(UserIsHidden = 0 OR UserIsHidden IS NULL)";
 
         // Get the active roles for this site
@@ -305,7 +274,6 @@ public partial class CMSModules_Workflows_Controls_UI_WorkflowStep_Security : CM
         if (WorkflowStepID > 0)
         {
             usRoles.Visible = RolesSecurity != WorkflowStepSecurityEnum.Default;
-            plcRolesBox.Visible = usRoles.Visible;
             usUsers.Visible = UsersSecurity != WorkflowStepSecurityEnum.Default;
         }
     }
@@ -368,7 +336,7 @@ public partial class CMSModules_Workflows_Controls_UI_WorkflowStep_Security : CM
         if (!String.IsNullOrEmpty(items))
         {
             string[] newItems = items.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
-            
+
             // Add all new items to site
             foreach (string item in newItems)
             {
@@ -384,7 +352,7 @@ public partial class CMSModules_Workflows_Controls_UI_WorkflowStep_Security : CM
         if (!String.IsNullOrEmpty(items))
         {
             string[] newItems = items.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
-            
+
             // Add all new items to site
             foreach (string item in newItems)
             {
@@ -415,7 +383,7 @@ public partial class CMSModules_Workflows_Controls_UI_WorkflowStep_Security : CM
         if (!String.IsNullOrEmpty(items))
         {
             string[] newItems = items.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
-            
+
             // Add all new items to site
             foreach (string item in newItems)
             {
@@ -431,7 +399,7 @@ public partial class CMSModules_Workflows_Controls_UI_WorkflowStep_Security : CM
         if (!String.IsNullOrEmpty(items))
         {
             string[] newItems = items.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
-            
+
             // Add all new items to site
             foreach (string item in newItems)
             {
@@ -446,6 +414,34 @@ public partial class CMSModules_Workflows_Controls_UI_WorkflowStep_Security : CM
         }
 
         ShowChangesSaved();
+    }
+
+
+    private void PrepareColumns()
+    {
+        if (usRoles.UniGrid.GridColumns == null)
+        {
+            return;
+        }
+
+        var siteColumn = new Column
+        {
+            Name = "sitename",
+            Source = "SiteID",
+            ExternalSourceName = "#sitenameorglobal",
+            Wrap = false,
+            Caption = "$general.sitename$"
+        };
+
+        var fillingColumn = new Column
+        {
+            CssClass = "filling-column"
+        };
+
+        usRoles.UniGrid.GridColumns.Columns.Add(siteColumn);
+        usRoles.UniGrid.GridColumns.Columns.Add(fillingColumn);
+
+        usRoles.UniGrid.GridColumns.Columns[1].CssClass = string.Empty;
     }
 
     #endregion

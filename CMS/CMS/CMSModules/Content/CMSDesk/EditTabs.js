@@ -58,8 +58,8 @@ function TreeRefresh() {
 }
 
 function CheckChanges() {
-    if (window.frames['contenteditview'] && (window.frames['contenteditview'].CheckChanges)) {
-        return window.frames['contenteditview'].CheckChanges();
+    if (window.frames['c'] && (window.frames['c'].CheckChanges)) {
+        return window.frames['c'].CheckChanges();
     }
     return true;
 }

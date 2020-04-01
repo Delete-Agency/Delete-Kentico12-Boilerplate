@@ -2,8 +2,10 @@
 using System.Text;
 
 using CMS.Base.Web.UI;
+using CMS.DataEngine;
 using CMS.ExternalAuthentication;
 using CMS.Helpers;
+using CMS.SiteProvider;
 using CMS.UIControls;
 
 
@@ -19,6 +21,13 @@ public partial class CMSModules_Membership_Pages_LinkedIn_LinkedInAccessTokenPag
         if (data.SettingsMissing)
         {
             lblStatus.Text = GetString("socialnetworking.linkedin.apisettingsmissing");
+            return;
+        }
+
+        if (!String.IsNullOrEmpty(data.Error))
+        {
+            // Error occurred while communicating with LinkedIn
+            lblStatus.Text = GetString("socialnetworking.authorizationerror");
             return;
         }
 
@@ -53,6 +62,10 @@ public partial class CMSModules_Membership_Pages_LinkedIn_LinkedInAccessTokenPag
             ScriptHelper.RegisterStartupScript(Page, typeof(string), "TokenScript", ScriptHelper.GetScript(script.ToString()));
 
             return;
+        }
+
+        if (!data.AdditionalQueryParameters.ContainsKey("scope")) { 
+            data.AdditionalQueryParameters["scope"] = SettingsKeyInfoProvider.GetValue("CMSLinkedInSignInPermissionScope", SiteContext.CurrentSiteID);
         }
 
         LinkedInProvider.OpenAuthorizationPage(data, returnUrl);

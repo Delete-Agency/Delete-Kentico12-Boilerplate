@@ -439,6 +439,11 @@
             <param name="width">Width.</param>
             <param name="height">Height.</param>
         </member>
+        <member name="T:CMS.DocumentEngine.DocumentObjectDependenciesConditionProvider">
+            <summary>
+            Optimized <see cref="T:CMS.DataEngine.WhereCondition"/> provider for documents which uses CTE instead of dynamically generated queries.
+            </summary>
+        </member>
         <member name="T:CMS.DocumentEngine.AlternativeUrlsCopier">
             <summary>
             Provides methods to copy alternative URLs between 2 documents.

@@ -145,6 +145,12 @@
             Array containing pairs (name, period) of structured Insights for Facebook page.
             </summary>
         </member>
+        <member name="F:CMS.SocialMarketing.FacebookInsightsHelper.mInsightsTranslationToOldNames">
+            <summary>
+            Dictionary containing the new name of insights metric as key and its old name as value.
+            Covers the breaking changes in metric names in Facebook API.
+            </summary>
+        </member>
         <member name="F:CMS.SocialMarketing.FacebookInsightsHelper.POSTS_INSIGHTS_METRICS">
             <summary>
             Collection of metrics to be requested during posts retrieval.
@@ -186,6 +192,13 @@
             <param name="insightsState">Contains Insights collection state.</param>
             <exception cref="T:Facebook.FacebookApiException">FacebookApiException is thrown when an error occurs while communicating with Facebook.</exception>
         </member>
+        <member name="M:CMS.SocialMarketing.FacebookInsightsHelper.ProcessInsightsPage(CMS.SocialMarketing.FacebookAccountInfo,System.String[][],CMS.SocialMarketing.FacebookInsightsStateItem,System.String)">
+            <summary>
+            Processes a single page of Insights data and returns the Facebook Graph API endpoint that will return the next page of data.
+            If the result is <c>null</c>, the processed page was the last page of data.
+            http://developers.facebook.com/docs/graph-api/using-graph-api#paging
+            </summary>
+        </member>
         <member name="M:CMS.SocialMarketing.FacebookInsightsHelper.ProcessBothFacebookInsights(CMS.SocialMarketing.FacebookAccountInfo,CMS.SocialMarketing.FacebookInsightsParser,System.DateTime)">
             <summary>
             Processes scalar and structured Facebook page insights.
@@ -193,6 +206,12 @@
             <param name="account">Facebook account (page).</param>
             <param name="insightsParser">Insights parser with Facebook API response.</param>
             <param name="endTime">End time of values to process.</param>
+        </member>
+        <member name="M:CMS.SocialMarketing.FacebookInsightsHelper.GetOriginalMetricName(System.String)">
+            <summary>
+            A helper method for handling breaking changes in Facebook insight metric names - translates the name of insight metric to its original name (as in Kentico DB).
+            Insight reports in Kentico rely on old metric names, plus there may be some already collected statistics under the old names.
+            </summary>
         </member>
         <member name="M:CMS.SocialMarketing.FacebookInsightsHelper.ProcessScalarFacebookInsights(CMS.SocialMarketing.FacebookAccountInfo,CMS.SocialMarketing.FacebookInsightsParser,System.DateTime)">
             <summary>
@@ -268,6 +287,11 @@
             DateTime.MinValue means the end time is not present in response (data section is probably empty).
             </summary>
         </member>
+        <member name="F:CMS.SocialMarketing.FacebookInsightsParser.mPagingData">
+            <summary>
+            Contains Facebook Graph API response paging section, or null if not present.
+            </summary>
+        </member>
         <member name="M:CMS.SocialMarketing.FacebookInsightsParser.#ctor(System.Object)">
             <summary>
             Creates a new instance of parser for given API response.
@@ -314,6 +338,12 @@
             </summary>
             <param name="namesAndPeriods">Array of pairs (name, period) for which to return DateTime</param>
             <returns>Set of DateTime with available end_time values.</returns>
+        </member>
+        <member name="M:CMS.SocialMarketing.FacebookInsightsParser.GetNextPageUrl">
+            <summary>
+            Returns the Facebook Graph API endpoint that will return the next page of data.
+            See http://developers.facebook.com/docs/graph-api/using-graph-api#paging for more details.
+            </summary>
         </member>
         <member name="M:CMS.SocialMarketing.FacebookInsightsParser.FacebookDateTimeStringToDateTime(System.String)">
             <summary>
@@ -860,12 +890,6 @@
             Pass comma separated list of IDs as parameter 0.
             </summary>
         </member>
-        <member name="F:CMS.SocialMarketing.FacebookHelper.GRAPH_API_OBJECT_MULTIPLE_ID">
-            <summary>
-            Multiple Facebook objects URL.
-            Pass comma separated list of IDs as parameter 0.
-            </summary>
-        </member>
         <member name="F:CMS.SocialMarketing.FacebookHelper.PAGE_ACCESS_TOKEN_SESSION_KEY">
             <summary>
             Session key for page access token.
@@ -922,25 +946,43 @@
             <param name="pageId">Facebook page identifier to find page access token for.</param>
             <param name="appSecret">Facebook application secret key for improving security.</param>
         </member>
-        <member name="M:CMS.SocialMarketing.FacebookHelper.RetrieveFacebookInsights(System.String,System.Collections.Generic.IEnumerable{System.String},System.String,System.String)">
+        <member name="M:CMS.SocialMarketing.FacebookHelper.RetrieveFacebookInsightsPage(System.String,System.String,System.String)">
             <summary>
-            Retrieves Facebook Insights for object with given Facebook object ID.
+            Retrieves a single page of Facebook Insights via direct link <paramref name="insightsDirectPageUrl"/>.
+            Most of Facebook's responses are paginated by default, the direct link can be obtained from the response on request for insights initial page.
+            See http://developers.facebook.com/docs/graph-api/using-graph-api#paging for more details.
             </summary>
-            <param name="objectId">Facebook object ID.</param>
-            <param name="metrics">Metrics to be included in result data.</param>
+            <param name="insightsDirectPageUrl">The Facebook Graph API endpoint that will return the page of insights data.</param>
             <param name="accessToken">Access token for Facebook object.</param>
             <param name="appSecret">Facebook application secret key for improving security.</param>
             <returns>Facebook Graph API response.</returns>
             <exception cref="T:Facebook.FacebookApiException">FacebookApiException is thrown when an error occurs while communicating with Facebook.</exception>
         </member>
-        <member name="M:CMS.SocialMarketing.FacebookHelper.RetrieveFacebookInsights(System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String},System.String,System.String)">
+        <member name="M:CMS.SocialMarketing.FacebookHelper.RetrieveFacebookInsightsInitialPage(System.String,System.Collections.Generic.IEnumerable{System.String},System.String,System.String,System.Nullable{System.DateTime},System.String)">
+            <summary>
+            Retrieves the initial page of Facebook Insights for object with given Facebook object ID.
+            The response may contain a link to the next page of data as described in http://developers.facebook.com/docs/graph-api/using-graph-api#paging.
+            </summary>
+            <param name="objectId">Facebook object ID.</param>
+            <param name="metrics">Metrics to be included in result data.</param>
+            <param name="accessToken">Access token for Facebook object.</param>
+            <param name="appSecret">Facebook application secret key for improving security.</param>
+            <param name="since">A date that points to the start of the range of time-based data.</param>
+            <param name="period">The aggregation period for all requested <paramref name="metrics"/>. Shrinks the response size, recommended to use only when all metrics use the same period.</param>
+            <returns>Facebook Graph API response.</returns>
+            <exception cref="T:Facebook.FacebookApiException">FacebookApiException is thrown when an error occurs while communicating with Facebook.</exception>
+        </member>
+        <member name="M:CMS.SocialMarketing.FacebookHelper.RetrieveFacebookInsightsInitialPage(System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String},System.String,System.String,System.Nullable{System.DateTime},System.String)">
             <summary>
             Retrieves Facebook Insights for objects with given Facebook object IDs.
+            The response may contain a link to the next page of data as described in http://developers.facebook.com/docs/graph-api/using-graph-api#paging.
             </summary>
             <param name="ids">Facebook object IDs.</param>
             <param name="metrics">Metrics to be retrieved.</param>
             <param name="accessToken">Access token for Facebook objects.</param>
             <param name="appSecret">Facebook application secret key for improving security.</param>
+            <param name="since">A date that points to the start of the range of time-based data.</param>
+            <param name="period">The aggregation period for all requested <paramref name="metrics"/>. Shrinks the response size, recommended to use only when all metrics use the same period.</param>
             <returns>Facebook Graph API response.</returns>
             <exception cref="T:Facebook.FacebookApiException">FacebookApiException is thrown when an error occurs while communicating with Facebook.</exception>
         </member>
@@ -957,16 +999,6 @@
         <member name="M:CMS.SocialMarketing.FacebookHelper.RetrieveFacebookLikesSummary(System.Collections.Generic.IEnumerable{System.String},System.String,System.String)">
             <summary>
             Retrieves Facebook Likes for objects with given Facebook object IDs.
-            </summary>
-            <param name="ids">Facebook object IDs.</param>
-            <param name="accessToken">Access token for Facebook objects.</param>
-            <param name="appSecret">Facebook application secret key for improving security.</param>
-            <returns>Facebook Graph API response.</returns>
-            <exception cref="T:Facebook.FacebookApiException">FacebookApiException is thrown when an error occurs while communicating with Facebook.</exception>
-        </member>
-        <member name="M:CMS.SocialMarketing.FacebookHelper.RetrieveFacebookObjects(System.Collections.Generic.IEnumerable{System.String},System.String,System.String)">
-            <summary>
-            Retrieves Facebook objects with given IDs.
             </summary>
             <param name="ids">Facebook object IDs.</param>
             <param name="accessToken">Access token for Facebook objects.</param>
@@ -1014,6 +1046,14 @@
             <param name="accessToken">Application access token acquired via login bounce.</param>
             <param name="pageId">Facebook page identifier to find page access token for.</param>
             <param name="appSecret">Facebook application secret key for improving security.</param>
+        </member>
+        <member name="M:CMS.SocialMarketing.FacebookHelper.EnsureAdditionalInsightsQueryParameters(System.String,System.Nullable{System.DateTime},System.String)">
+            <summary>
+            Adds optional Facebook query parameters to the <paramref name="url"/> to adjust the Facebook Insights API request.
+            </summary>
+            <param name="url">URL for GET request.</param>
+            <param name="since">A date that points to the start of the range of time-based data.</param>
+            <param name="period">The aggregation period for all requested metrics. Shrinks the response size, recommended to use only when all metrics use the same period.</param>
         </member>
         <member name="M:CMS.SocialMarketing.FacebookHelper.GetFacebookResponse(System.String,System.String,System.String)">
             <summary>
@@ -1242,19 +1282,190 @@
             <param name="periodDateTime">The local date and time that applies to the specified value.</param>
             <param name="hits">The value to store.</param>
         </member>
-        <member name="T:CMS.SocialMarketing.LinkedInCompany">
+        <member name="T:CMS.SocialMarketing.LinkedInInternal.CompanyProjection">
             <summary>
-            Represents a LinkedIn company.
+            Represents a LinkedIn company projection.
             </summary>
         </member>
-        <member name="P:CMS.SocialMarketing.LinkedInCompany.ID">
+        <member name="P:CMS.SocialMarketing.LinkedInInternal.CompanyProjection.Company">
             <summary>
-            Company ID.
+            Company.
             </summary>
         </member>
-        <member name="P:CMS.SocialMarketing.LinkedInCompany.Name">
+        <member name="P:CMS.SocialMarketing.LinkedInInternal.CompanyProjection.CompanyURN">
             <summary>
-            Company name.
+            Company URN.
+            </summary>
+        </member>
+        <member name="T:CMS.SocialMarketing.LinkedInInternal.FollowerGainStatisticsData">
+            <summary>
+            Follower gain statistics data. 
+            See https://docs.microsoft.com/en-us/linkedin/marketing/integrations/community-management/organizations/follower-statistics#retrieve-time-bound-follower-statistics for more information.
+            </summary>
+        </member>
+        <member name="P:CMS.SocialMarketing.LinkedInInternal.FollowerGainStatisticsData.OrganicFollowerGain">
+            <summary>
+            Number of gained organic followers.
+            </summary>
+        </member>
+        <member name="P:CMS.SocialMarketing.LinkedInInternal.FollowerGainStatisticsData.PaidFollowerGain">
+            <summary>
+            Number of gained paid followers.
+            </summary>
+        </member>
+        <member name="T:CMS.SocialMarketing.LinkedInInternal.FollowerGainStatisticsRecord">
+            <summary>
+            Represents Time-Bound Follower Statistics.
+            See https://docs.microsoft.com/en-us/linkedin/marketing/integrations/community-management/organizations/follower-statistics#retrieve-time-bound-follower-statistics for more information.
+            </summary>
+        </member>
+        <member name="P:CMS.SocialMarketing.LinkedInInternal.FollowerGainStatisticsRecord.TimeRange">
+            <summary>
+            Statistics contained in retrieved response.
+            </summary>
+        </member>
+        <member name="P:CMS.SocialMarketing.LinkedInInternal.FollowerGainStatisticsRecord.FollowerGainStatisticsData">
+            <summary>
+            Gain statistics during the specified time range.
+            </summary>
+        </member>
+        <member name="P:CMS.SocialMarketing.LinkedInInternal.FollowerGainStatisticsRecord.CompanyURN">
+            <summary>
+            Company URN.
+            </summary>
+        </member>
+        <member name="T:CMS.SocialMarketing.LinkedInInternal.ShareCommentary">
+            <summary>
+            Represents the message content of the share.
+            </summary>
+        </member>
+        <member name="P:CMS.SocialMarketing.LinkedInInternal.ShareCommentary.Text">
+            <summary>
+            Text of share commentary.
+            </summary>
+        </member>
+        <member name="T:CMS.SocialMarketing.LinkedInInternal.ShareContent">
+            <summary>
+            Represents the content of the share. 
+            See https://docs.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin#share-content for more information.
+            </summary>
+        </member>
+        <member name="P:CMS.SocialMarketing.LinkedInInternal.ShareContent.ShareCommentary">
+            <summary>
+            Provides the primary content for the share.
+            </summary>
+        </member>
+        <member name="P:CMS.SocialMarketing.LinkedInInternal.ShareContent.ShareMediaCategory">
+            <summary>
+            Represents the media assets attached to the share. 
+            For Kentico integration, the only viable option is "NONE" - the share does not contain any media, and will only consist of text.
+            </summary>
+        </member>
+        <member name="T:CMS.SocialMarketing.LinkedInInternal.CompanyShareStatisticsRecord">
+            /// <summary>
+            Represents a company update statistic.
+            See https://docs.microsoft.com/en-us/linkedin/marketing/integrations/community-management/organizations/share-statistics#schema for more information.
+            </summary>
+        </member>
+        <member name="P:CMS.SocialMarketing.LinkedInInternal.CompanyShareStatisticsRecord.CompanyURN">
+            <summary>
+            The organizational entity URN for which the statistics represents.
+            </summary>
+        </member>
+        <member name="P:CMS.SocialMarketing.LinkedInInternal.CompanyShareStatisticsRecord.ShareURN">
+            <summary>
+            The share URN for describing individual share statistics. Is blank for aggregate share statistics.
+            </summary>
+        </member>
+        <member name="P:CMS.SocialMarketing.LinkedInInternal.CompanyShareStatisticsRecord.UgcPost">
+            <summary>
+            The UGC Post URN for describing individual share statistics.
+            </summary>
+        </member>
+        <member name="P:CMS.SocialMarketing.LinkedInInternal.CompanyShareStatisticsRecord.TimeRange">
+            <summary>
+            Time the statistics record is related to.
+            </summary>
+        </member>
+        <member name="P:CMS.SocialMarketing.LinkedInInternal.CompanyShareStatisticsRecord.ShareStatisticsData">
+            <summary>
+            Share statistics during the specified time range.
+            </summary>
+        </member>
+        <member name="T:CMS.SocialMarketing.LinkedInInternal.ShareStatisticsData">
+            <summary>
+            Share statistics data. 
+            See https://docs.microsoft.com/en-us/linkedin/marketing/integrations/community-management/organizations/share-statistics#share-statistics-data-schema for more information.
+            </summary>
+        </member>
+        <member name="P:CMS.SocialMarketing.LinkedInInternal.ShareStatisticsData.ClickCount">
+            <summary>
+            Number of clicks.
+            </summary>
+        </member>
+        <member name="P:CMS.SocialMarketing.LinkedInInternal.ShareStatisticsData.CommentCount">
+            <summary>
+            Number of comments.
+            </summary>
+        </member>
+        <member name="P:CMS.SocialMarketing.LinkedInInternal.ShareStatisticsData.CommentMentionsCount">
+            <summary>
+            Number of mentions of the organizational entity in a comment across LinkedIn. The field does not have a value when individual share statistics are requested.
+            </summary>
+        </member>
+        <member name="P:CMS.SocialMarketing.LinkedInInternal.ShareStatisticsData.Engagement">
+            <summary>
+            Engagement - Number of organic clicks, likes, comments, and shares over impressions [%].
+            </summary>
+        </member>
+        <member name="P:CMS.SocialMarketing.LinkedInInternal.ShareStatisticsData.ImpressionCount">
+            <summary>
+            Number of impressions.
+            </summary>
+        </member>
+        <member name="P:CMS.SocialMarketing.LinkedInInternal.ShareStatisticsData.LikeCount">
+            <summary>
+            Number of likes. This field can become negative when members who liked a sponsored share later unlike it. The like is not counted since it is not organic, but the unlike is counted as organic.
+            </summary>
+        </member>
+        <member name="P:CMS.SocialMarketing.LinkedInInternal.ShareStatisticsData.ShareCount">
+            <summary>
+            Number of shares.
+            </summary>
+        </member>
+        <member name="P:CMS.SocialMarketing.LinkedInInternal.ShareStatisticsData.ShareMentionsCount">
+            <summary>
+            Number of mentions of the organizational entity in a share across LinkedIn. The field does not have a value when individual share statistics are requested.
+            </summary>
+        </member>
+        <member name="P:CMS.SocialMarketing.LinkedInInternal.ShareStatisticsData.UniqueImpressionsCount">
+            <summary>
+            Count of unique member impressions.
+            </summary>
+        </member>
+        <member name="T:CMS.SocialMarketing.LinkedInInternal.SpecificContent">
+            <summary>
+            Provides additional options while defining the content of the share.
+            </summary>
+        </member>
+        <member name="P:CMS.SocialMarketing.LinkedInInternal.SpecificContent.ShareContent">
+            <summary>
+            The content of the share.
+            </summary>
+        </member>
+        <member name="T:CMS.SocialMarketing.LinkedInInternal.TimeRange">
+            <summary>
+            Represents the time range for statistics.
+            </summary>
+        </member>
+        <member name="P:CMS.SocialMarketing.LinkedInInternal.TimeRange.Start">
+            <summary>
+            Exclusive starting timestamp of when the query should begin (milliseconds since epoch) Queries from beginning of time when not set.
+            </summary>
+        </member>
+        <member name="P:CMS.SocialMarketing.LinkedInInternal.TimeRange.End">
+            <summary>
+            Inclusive ending timestamp of when the query should end (milliseconds since epoch). Queries until current time when not set.
             </summary>
         </member>
         <member name="T:CMS.SocialMarketing.LinkedInInternal.Company">
@@ -1284,9 +1495,14 @@
             List of companies.
             </summary>
         </member>
+        <member name="P:CMS.SocialMarketing.LinkedInInternal.Companies.CompanyProjectionList">
+            <summary>
+            List of companies.
+            </summary>
+        </member>
         <member name="T:CMS.SocialMarketing.LinkedInInternal.HistoricalFollowStatistics">
             <summary>
-            Represents a historical follower statistics element element which is usually returned as an API response to company followers statistics request.
+            Represents a historical follower statistics element which is usually returned as an API response to company followers statistics request.
             </summary>
             <remarks>This class is public for purposes of serialization only. Do not consider it a part of public API. The class' content may change without prior notification.</remarks>
         </member>
@@ -1296,6 +1512,11 @@
             </summary>
         </member>
         <member name="P:CMS.SocialMarketing.LinkedInInternal.HistoricalFollowStatistics.Statistics">
+            <summary>
+            Statistics contained in retrieved response.
+            </summary>
+        </member>
+        <member name="P:CMS.SocialMarketing.LinkedInInternal.HistoricalFollowStatistics.FollowerGainStatisticsRecords">
             <summary>
             Statistics contained in retrieved response.
             </summary>
@@ -1312,6 +1533,11 @@
             </summary>
         </member>
         <member name="P:CMS.SocialMarketing.LinkedInInternal.HistoricalStatusUpdateStatistics.Statistics">
+            <summary>
+            Statistics contained in retrieved response.
+            </summary>
+        </member>
+        <member name="P:CMS.SocialMarketing.LinkedInInternal.HistoricalStatusUpdateStatistics.CompanyShareStatisticsRecords">
             <summary>
             Statistics contained in retrieved response.
             </summary>
@@ -1401,7 +1627,12 @@
         </member>
         <member name="P:CMS.SocialMarketing.LinkedInInternal.ApiResponse.ResponseBody">
             <summary>
-            Contains the reponse body.
+            Contains the response body.
+            </summary>
+        </member>
+        <member name="P:CMS.SocialMarketing.LinkedInInternal.ApiResponse.Headers">
+            <summary>
+            Contains the response headers.
             </summary>
         </member>
         <member name="T:CMS.SocialMarketing.LinkedInInternal.Update">
@@ -1443,23 +1674,39 @@
         </member>
         <member name="P:CMS.SocialMarketing.LinkedInInternal.Error.ErrorCode">
             <summary>
-            Error code of the response.
+            A subcode that further classifies the error.
             </summary>
         </member>
         <member name="P:CMS.SocialMarketing.LinkedInInternal.Error.Message">
             <summary>
-            Message describing the error condition.
+            A description of the error.
             </summary>
         </member>
         <member name="T:CMS.SocialMarketing.LinkedInInternal.Share">
             <summary>
-            Represents a request body for publishing a new share.
+            Represents a request body for publishing a new share. 
+            See https://docs.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin#creating-a-share-on-linkedin for more information.
             </summary>
             <remarks>This class is public for purposes of serialization only. Do not consider it a part of public API. The class' content may change without prior notification.</remarks>
         </member>
         <member name="P:CMS.SocialMarketing.LinkedInInternal.Share.Comment">
             <summary>
             Share's comment.
+            </summary>
+        </member>
+        <member name="P:CMS.SocialMarketing.LinkedInInternal.Share.Author">
+            <summary>
+            The author of a share contains Person URN of the Member creating the share.
+            </summary>
+        </member>
+        <member name="P:CMS.SocialMarketing.LinkedInInternal.Share.LifecycleState">
+            <summary>
+            Defines the state of the share. For the purposes of creating a share, the lifecycleState will always be "PUBLISHED".
+            </summary>
+        </member>
+        <member name="P:CMS.SocialMarketing.LinkedInInternal.Share.SpecificContent">
+            <summary>
+            Provides additional options while defining the content of the share.
             </summary>
         </member>
         <member name="P:CMS.SocialMarketing.LinkedInInternal.Share.Visibility">
@@ -1476,6 +1723,26 @@
         <member name="P:CMS.SocialMarketing.LinkedInInternal.Visibility.Code">
             <summary>
             Visibility code.
+            </summary>
+        </member>
+        <member name="P:CMS.SocialMarketing.LinkedInInternal.Visibility.MemberNetworkVisibility">
+            <summary>
+            Visibility code.
+            </summary>
+        </member>
+        <member name="T:CMS.SocialMarketing.LinkedInCompany">
+            <summary>
+            Represents a LinkedIn company.
+            </summary>
+        </member>
+        <member name="P:CMS.SocialMarketing.LinkedInCompany.ID">
+            <summary>
+            Company ID.
+            </summary>
+        </member>
+        <member name="P:CMS.SocialMarketing.LinkedInCompany.Name">
+            <summary>
+            Company name.
             </summary>
         </member>
         <member name="T:CMS.SocialMarketing.LinkedInApiThrottleLimitException">
@@ -2097,6 +2364,7 @@
             <exception cref="T:System.ArgumentOutOfRangeException">Thrown when comment is longer than <see cref="F:CMS.SocialMarketing.LinkedInHelper.COMPANY_SHARE_COMMENT_MAX_LENGTH"/></exception>
             <exception cref="T:CMS.SocialMarketing.LinkedInApiUnauthorizedException">Thrown when protocol error occurs because the request is not authorized properly.</exception>
             <exception cref="T:CMS.SocialMarketing.LinkedInApiException">Thrown when protocol error occurs.</exception>
+            <exception cref="T:System.Net.ProtocolViolationException">Thrown when request was not issued correctly or when unexpected (other than 201 Created) response for publishing request is returned.</exception>
         </member>
         <member name="M:CMS.SocialMarketing.LinkedInHelper.GetUserCompanies(System.String)">
             <summary>
@@ -2120,6 +2388,7 @@
             <exception cref="T:CMS.SocialMarketing.LinkedInApiUnauthorizedException">Thrown when protocol error occurs because the request is not authorized properly.</exception>
             <exception cref="T:CMS.SocialMarketing.LinkedInApiThrottleLimitException">Thrown when protocol error occurs because the limit of API requests was overdrawn.</exception>
             <exception cref="T:CMS.SocialMarketing.LinkedInApiException">Thrown when protocol error occurs.</exception>
+            <exception cref="T:System.Net.ProtocolViolationException">When request was not issued correctly.</exception>
         </member>
         <member name="M:CMS.SocialMarketing.LinkedInHelper.ProcessGetRequest(System.String,System.Uri)">
             <summary>
@@ -2131,6 +2400,7 @@
             <exception cref="T:CMS.SocialMarketing.LinkedInApiUnauthorizedException">Thrown when protocol error occurs because the request is not authorized properly.</exception>
             <exception cref="T:CMS.SocialMarketing.LinkedInApiThrottleLimitException">Thrown when protocol error occurs because the limit of API requests was overdrawn.</exception>
             <exception cref="T:CMS.SocialMarketing.LinkedInApiException">Thrown when protocol error occurs.</exception>
+            <exception cref="T:System.Net.ProtocolViolationException">When request was not issued correctly.</exception>
         </member>
         <member name="M:CMS.SocialMarketing.LinkedInHelper.ProcessApiResponse(System.Net.HttpWebRequest)">
             <summary>
@@ -2141,6 +2411,7 @@
             <exception cref="T:CMS.SocialMarketing.LinkedInApiUnauthorizedException">Thrown when protocol error occurs because the request is not authorized properly.</exception>
             <exception cref="T:CMS.SocialMarketing.LinkedInApiThrottleLimitException">Thrown when protocol error occurs because the limit of API requests was overdrawn.</exception>
             <exception cref="T:CMS.SocialMarketing.LinkedInApiException">Thrown when protocol error occurs.</exception>
+            <exception cref="T:System.Net.ProtocolViolationException">When request was not issued correctly.</exception>
         </member>
         <member name="M:CMS.SocialMarketing.LinkedInHelper.GetResponse(System.Net.HttpWebRequest,System.Boolean@)">
             <summary>
@@ -2154,7 +2425,7 @@
             <exception cref="T:System.Net.WebException">Thrown when abort was previously called or timeout occurred or an error occurred while processing the request.</exception>
             <exception cref="T:System.Net.ProtocolViolationException">When request was not issued correctly.</exception>
         </member>
-        <member name="M:CMS.SocialMarketing.LinkedInHelper.WriteRequest(System.Net.HttpWebRequest,System.String)">
+        <member name="M:CMS.SocialMarketing.LinkedInHelper.WriteRequestBody(System.Net.HttpWebRequest,System.String)">
             <summary>
             Writes data stored in a string to the request object.
             Uses UTF-8 encoding for the outgoing data.
@@ -2162,7 +2433,7 @@
             <param name="request">Request whose stream will be used</param>
             <param name="data">Data to be written to the stream</param>
         </member>
-        <member name="M:CMS.SocialMarketing.LinkedInHelper.ReadReponse(System.Net.HttpWebResponse)">
+        <member name="M:CMS.SocialMarketing.LinkedInHelper.ReadResponse(System.Net.HttpWebResponse)">
             <summary>
             Reads response content from a HttpWebResponse.
             </summary>
@@ -2182,6 +2453,7 @@
             <exception cref="T:System.ArgumentOutOfRangeException">Thrown when comment is longer than <see cref="F:CMS.SocialMarketing.LinkedInHelper.COMPANY_SHARE_COMMENT_MAX_LENGTH"/></exception>
             <exception cref="T:CMS.SocialMarketing.LinkedInApiUnauthorizedException">Thrown when protocol error occurs because the request is not authorized properly.</exception>
             <exception cref="T:CMS.SocialMarketing.LinkedInApiException">Thrown when protocol error occurs.</exception>
+            <exception cref="T:System.Net.ProtocolViolationException">Thrown when request was not issued correctly or when unexpected (other than 201 Created) response for publishing request is returned.</exception>
         </member>
         <member name="M:CMS.SocialMarketing.LinkedInHelper.GetUserCompaniesInternal(System.String)">
             <summary>
@@ -2193,14 +2465,16 @@
             <exception cref="T:CMS.SocialMarketing.LinkedInApiThrottleLimitException">Thrown when protocol error occurs because the limit of API requests was overdrawn.</exception>
             <exception cref="T:CMS.SocialMarketing.LinkedInApiException">Thrown when protocol error occurs.</exception>
             <exception cref="T:System.InvalidOperationException">Thrown when unexpected error occurs.</exception>
+            <exception cref="T:System.Net.ProtocolViolationException">When request was not issued correctly.</exception>
         </member>
-        <member name="M:CMS.SocialMarketing.LinkedInHelper.GetXmlForCompanyShare(System.String,CMS.SocialMarketing.LinkedInVisibilityCodeEnum)">
+        <member name="M:CMS.SocialMarketing.LinkedInHelper.GetJsonForCompanyShare(System.String,System.String,CMS.SocialMarketing.LinkedInMemberNetworkVisibilityEnum)">
             <summary>
-            Gets XML representation of a company share.
+            Gets JSON representation of a company share.
             </summary>
             <param name="comment">Text of company share.</param>
+            <param name="companyId">Company ID.</param>
             <param name="visibilityCode">Visibility code.</param>
-            <returns>XML suitable for LinkedIn API request.</returns>
+            <returns>JSON suitable for LinkedIn API request.</returns>
         </member>
         <member name="T:CMS.SocialMarketing.LinkedInInsightsHelper">
             <summary>
@@ -2230,6 +2504,11 @@
         <member name="F:CMS.SocialMarketing.LinkedInInsightsHelper.ACCOUNT_FOLLOWER_STATISTICS_URI_FORMAT">
             <summary>
             URI for account stats collection (followers).
+            </summary>
+        </member>
+        <member name="F:CMS.SocialMarketing.LinkedInInsightsHelper.ACCOUNT_NUMBER_OF_FOLLOWERS_URI_FORMAT">
+            <summary>
+            URI to retrieve number of company followers.
             </summary>
         </member>
         <member name="F:CMS.SocialMarketing.LinkedInInsightsHelper.ACCOUNT_STATUS_STATISTICS_URI_FORMAT">
@@ -2267,19 +2546,19 @@
             <param name="account">LinkedIn account (company profile).</param>
             <returns>True on successful processing, false otherwise. Any internal errors are logged into event log.</returns>
         </member>
-        <member name="M:CMS.SocialMarketing.LinkedInInsightsHelper.CollectLinkedInAccountInsights(System.String,System.String,System.Nullable{System.DateTime})">
+        <member name="M:CMS.SocialMarketing.LinkedInInsightsHelper.CollectLinkedInAccountInsights(CMS.SocialMarketing.LinkedInAccountInfo,System.Nullable{System.DateTime})">
             <summary>
             Collects LinkedIn statistics for company identified by its LinkedIn identifier.
-            The stats are collected once a day, by default for yesterday (in UTC).
-            When lastCollectedDateTime is supplied (UTC date) the stats are collected from the day after lastCollectedDateTime till yesterday.
+            The stats are collected once a day.
+            If <paramref name="lastCollectedDateTime"/> is not provided, the system will retrieve statistics for the past 2 days.
+            When <paramref name="lastCollectedDateTime"/> is supplied (UTC date), the stats are collected from the day after lastCollectedDateTime till yesterday.
             Collects both status update stats and follower stats.
             </summary>
-            <param name="accessToken">Access token for API requests.</param>
-            <param name="companyId">ID of the company on LinkedIn</param>
+            <param name="account">Account for which to process insights.</param>
             <param name="lastCollectedDateTime">UTC date (time is not needed) of the last collected stats (accordingly to LinkedIn's time stamps)</param>
-            <returns>UTC date of the recently collected stats (accordinly to LinkedIn's time stamps). Null if nothing collected.</returns>
+            <returns>UTC date of the recently collected stats (accordingly to LinkedIn's time stamps). Null if nothing collected.</returns>
             <exception cref="T:CMS.SocialMarketing.LinkedInApiUnauthorizedException">Thrown when protocol error occurs because the request is not authorized properly.</exception>
-            <exception cref="T:CMS.SocialMarketing.LinkedInApiThrottleLimitException">Thrown when protocol error occurs because the limit of API requests was overdrown.</exception>
+            <exception cref="T:CMS.SocialMarketing.LinkedInApiThrottleLimitException">Thrown when protocol error occurs because the limit of API requests was overdrawn.</exception>
             <exception cref="T:CMS.SocialMarketing.LinkedInApiException">Thrown when protocol error occurs.</exception>
         </member>
         <member name="M:CMS.SocialMarketing.LinkedInInsightsHelper.ProcessLinkedInAccountStatusUpdateInsights(System.String,CMS.SocialMarketing.LinkedInInternal.HistoricalStatusUpdateStatistics)">
@@ -2288,7 +2567,7 @@
             </summary>
             <param name="companyId">ID of the company on LinkedIn</param>
             <param name="statusUpdateAccountStats">Historical status update statistics to be stored.</param>
-            <returns>UTC date of the latest stored stat (accordinly to LinkedIn's time stamps). Null if nothing to be stored (statusUpdateAccountStats are empty).</returns>
+            <returns>UTC date of the latest stored stat (accordingly to LinkedIn's time stamps). Null if nothing to be stored (statusUpdateAccountStats are empty).</returns>
         </member>
         <member name="M:CMS.SocialMarketing.LinkedInInsightsHelper.ProcessLinkedInAccountFollowerInsights(System.String,CMS.SocialMarketing.LinkedInInternal.HistoricalFollowStatistics)">
             <summary>
@@ -2296,19 +2575,26 @@
             </summary>
             <param name="companyId">ID of the company on LinkedIn</param>
             <param name="followerAccountStats">Historical follower statistics to be stored.</param>
-            <returns>UTC date of the latest stored stat (accordinly to LinkedIn's time stamps). Null if nothing to be stored (followerAccountStats are empty).</returns>
+            <returns>UTC date of the latest stored stat (accordingly to LinkedIn's time stamps). Null if nothing to be stored (followerAccountStats are empty).</returns>
         </member>
-        <member name="M:CMS.SocialMarketing.LinkedInInsightsHelper.UpdateLinkedInPostInsights(System.String,System.String,CMS.SocialMarketing.LinkedInPostInfo)">
+        <member name="M:CMS.SocialMarketing.LinkedInInsightsHelper.ProcessLinkedInNumberOfCompanyFollowers(System.String,System.Int32)">
+            <summary>
+            Stores number of followers of given company.
+            </summary>
+            <param name="companyId">ID of the company on LinkedIn</param>
+            <param name="numberOfFollowers">Number of followers to be stored.</param>
+        </member>
+        <member name="M:CMS.SocialMarketing.LinkedInInsightsHelper.UpdateLinkedInPostInsights(CMS.SocialMarketing.LinkedInAccountInfo,CMS.SocialMarketing.LinkedInPostInfo)">
             <summary>
             Retrieves LinkedIn Insights for given post. Insights are retrieved by one batch request for each type of insight.
             </summary>
-            <param name="accessToken">Access token for posts.</param>
-            <param name="companyId">ID of the company on LinkedIn</param>
+            <param name="account">Account for which to process insights.</param>
             <param name="post">Post.</param>
             <returns>True on successful processing, false otherwise. Any internal errors are logged into event log.</returns>
             <exception cref="T:CMS.SocialMarketing.LinkedInApiUnauthorizedException">Thrown when protocol error occurs because the request is not authorized properly.</exception>
-            <exception cref="T:CMS.SocialMarketing.LinkedInApiThrottleLimitException">Thrown when protocol error occurs because the limit of API requests was overdrown.</exception>
+            <exception cref="T:CMS.SocialMarketing.LinkedInApiThrottleLimitException">Thrown when protocol error occurs because the limit of API requests was overdrawn.</exception>
             <exception cref="T:CMS.SocialMarketing.LinkedInApiException">Thrown when protocol error occurs.</exception>
+            <exception cref="T:System.Net.ProtocolViolationException">When request was not issued correctly.</exception>
         </member>
         <member name="M:CMS.SocialMarketing.LinkedInInsightsHelper.GetLinkedInHistoricalFollowerStatistics(System.String,System.String,System.Nullable{System.DateTime})">
             <summary>
@@ -2316,13 +2602,14 @@
             </summary>
             <param name="accessToken">Access token to be used for API querying.</param>
             <param name="companyId">Company profile ID on LinkedIn.</param>
-            <param name="sinceWhen">Since when to get the statistics. Should be a UTC date from the past until yesterday. Today's stats can not be retrieved since they are not complete.</param>
+            <param name="sinceWhen">Since when to get the statistics. The endpoint will provide statistics from 12 months before the request date(UTC) till 2 days before the request date(UTC), or later.</param>
             <returns>Historical follower stats for the company profile.</returns>
             <exception cref="T:CMS.SocialMarketing.LinkedInApiUnauthorizedException">Thrown when protocol error occurs because the request is not authorized properly.</exception>
-            <exception cref="T:CMS.SocialMarketing.LinkedInApiThrottleLimitException">Thrown when protocol error occurs because the limit of API requests was overdrown.</exception>
+            <exception cref="T:CMS.SocialMarketing.LinkedInApiThrottleLimitException">Thrown when protocol error occurs because the limit of API requests was overdrawn.</exception>
             <exception cref="T:CMS.SocialMarketing.LinkedInApiException">Thrown when protocol error occurs.</exception>
+            <exception cref="T:System.Net.ProtocolViolationException">When request was not issued correctly.</exception>
             <remarks>
-            Can be used to collect statistics for whole days only. This means the latest sinceWhen must represent UTC's yesterday (LinkedIn uses UTC).
+            Can be used to collect statistics for whole days only. This means the latest sinceWhen must represent UTC's date (LinkedIn uses UTC).
             </remarks>
         </member>
         <member name="M:CMS.SocialMarketing.LinkedInInsightsHelper.GetLinkedInHistoricalStatusUpdateStatistics(System.String,System.String,System.Nullable{System.DateTime})">
@@ -2334,25 +2621,38 @@
             <param name="sinceWhen">Since when to get the statistics. Should be a UTC date from the past until yesterday. Today's stats can not be retrieved since they are not complete.</param>
             <returns>Historical status update stats for the company profile.</returns>
             <exception cref="T:CMS.SocialMarketing.LinkedInApiUnauthorizedException">Thrown when protocol error occurs because the request is not authorized properly.</exception>
-            <exception cref="T:CMS.SocialMarketing.LinkedInApiThrottleLimitException">Thrown when protocol error occurs because the limit of API requests was overdrown.</exception>
+            <exception cref="T:CMS.SocialMarketing.LinkedInApiThrottleLimitException">Thrown when protocol error occurs because the limit of API requests was overdrawn.</exception>
             <exception cref="T:CMS.SocialMarketing.LinkedInApiException">Thrown when protocol error occurs.</exception>
+            <exception cref="T:System.Net.ProtocolViolationException">When request was not issued correctly.</exception>
             <remarks>
             Can be used to collect statistics for whole days only. This means the latest sinceWhen must represent UTC's yesterday (LinkedIn uses UTC).
             </remarks>
         </member>
-        <member name="M:CMS.SocialMarketing.LinkedInInsightsHelper.GetLinkedInHistoricalStatusUpdateStatistics(System.String,System.String,System.String,System.DateTime)">
+        <member name="M:CMS.SocialMarketing.LinkedInInsightsHelper.GetLinkedInHistoricalStatusUpdateStatistics(System.String,System.String,System.String)">
             <summary>
             Gets historical status update statistics for given LinkedIn company update.
             The statistics are with month granularity starting at the post published datetime.
             </summary>
             <param name="accessToken">Access token to be used for API querying.</param>
             <param name="companyId">Company profile ID on LinkedIn.</param>
-            <param name="updateKey">Update key of the company update to query.</param>
-            <param name="postPublishedDateTime">Date time of post publishing.</param>
+            <param name="postUpdateKey">Update key of the company update to query.</param>
             <returns>Historical status update stats.</returns>
             <exception cref="T:CMS.SocialMarketing.LinkedInApiUnauthorizedException">Thrown when protocol error occurs because the request is not authorized properly.</exception>
-            <exception cref="T:CMS.SocialMarketing.LinkedInApiThrottleLimitException">Thrown when protocol error occurs because the limit of API requests was overdrown.</exception>
+            <exception cref="T:CMS.SocialMarketing.LinkedInApiThrottleLimitException">Thrown when protocol error occurs because the limit of API requests was overdrawn.</exception>
             <exception cref="T:CMS.SocialMarketing.LinkedInApiException">Thrown when protocol error occurs.</exception>
+            <exception cref="T:System.Net.ProtocolViolationException">When request was not issued correctly.</exception>
+        </member>
+        <member name="M:CMS.SocialMarketing.LinkedInInsightsHelper.GetLinkedInCompanyNumberOfFollowers(System.String,System.String)">
+            <summary>
+            Gets current number of LinkedIn company followers.
+            </summary>
+            <param name="accessToken">Access token to be used for API querying.</param>
+            <param name="companyId">Company profile ID on LinkedIn.</param>
+            <returns>Number of followers or <c>null</c> could not retrieve it.</returns>
+            <exception cref="T:CMS.SocialMarketing.LinkedInApiUnauthorizedException">Thrown when protocol error occurs because the request is not authorized properly.</exception>
+            <exception cref="T:CMS.SocialMarketing.LinkedInApiThrottleLimitException">Thrown when protocol error occurs because the limit of API requests was overdrawn.</exception>
+            <exception cref="T:CMS.SocialMarketing.LinkedInApiException">Thrown when protocol error occurs.</exception>
+            <exception cref="T:System.Net.ProtocolViolationException">When request was not issued correctly.</exception>
         </member>
         <member name="M:CMS.SocialMarketing.LinkedInInsightsHelper.UnixTimeStampToDateTime(System.Double)">
             <summary>
@@ -2852,36 +3152,25 @@
             <param name="errorMessage">Error message that LinkedIn returned in the response body.</param>
             <returns>Localized error message.</returns>
         </member>
-        <member name="T:CMS.SocialMarketing.LinkedInXmlSerializer">
-            <summary>
-            Helper methods for LinkedIn xml serialization.
-            </summary>
-        </member>
-        <member name="T:CMS.SocialMarketing.LinkedInVisibilityCodeEnum">
+        <member name="T:CMS.SocialMarketing.LinkedInMemberNetworkVisibilityEnum">
             <summary>
             Specifies visibility of a LinkedIn share.
             </summary>
-            <remarks>The enum is currently internal because <see cref="F:CMS.SocialMarketing.LinkedInVisibilityCodeEnum.Anyone"/> is the only working option.</remarks>
         </member>
-        <member name="F:CMS.SocialMarketing.LinkedInVisibilityCodeEnum.Anyone">
+        <member name="F:CMS.SocialMarketing.LinkedInMemberNetworkVisibilityEnum.Public">
             <summary>
-            All members.
+            The share will be viewable by anyone on LinkedIn.
             </summary>
         </member>
-        <member name="F:CMS.SocialMarketing.LinkedInVisibilityCodeEnum.ConnectionsOnly">
+        <member name="F:CMS.SocialMarketing.LinkedInMemberNetworkVisibilityEnum.ConnectionsOnly">
             <summary>
-            Connections only.
+            The share will be viewable by 1st-degree connections only.
             </summary>
-            <remarks>
-            <para>
-            Despite the fact the documentation for company shares claims 'connections-only' is a valid option, the API response disagrees.
-            400: Invalid visibility for company share: {connections-only}, only 'anyone' or 'dark' is allowed.
-            </para>
-            <para>
-            Publishing with 'dark' visibility results in
-            403: Dark post is not allowed for this app.
-            </para>
-            </remarks>
+        </member>
+        <member name="F:CMS.SocialMarketing.LinkedInMemberNetworkVisibilityEnum.LoggedInOnly">
+            <summary>
+            Viewable by logged in members only.
+            </summary>
         </member>
         <member name="T:CMS.SocialMarketing.SocialMarketingHandlers">
             <summary>

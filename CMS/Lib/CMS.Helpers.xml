@@ -4689,6 +4689,12 @@
             Custom theme name.
             </summary>
         </member>
+        <member name="P:CMS.Helpers.URLHelper.Host">
+            <summary>
+            Application's host without port. Is to be used for customizing host in case of having application behind a proxy.
+            Can be set via AppSettings's key 'CMSUrlHost'. Front-end application is to be customized by 'SitePresentationUrl'.
+            </summary>
+        </member>
         <member name="P:CMS.Helpers.URLHelper.UrlPort">
             <summary>
             Application's URL port.
@@ -4812,6 +4818,9 @@
             <summary>
             Adds parameter to specified URL.
             </summary>
+            <remarks>
+            This method does NOT support URLs with hash (#).
+            </remarks>
             <param name="url">URL to be modified</param>
             <param name="parameterName">Parameter name</param>
             <param name="parameterValue">Parameter value</param>
@@ -4963,6 +4972,14 @@
             Returns true for url's starting with hash (#) character.
             </summary>
             <param name="url">URL to process</param>
+        </member>
+        <member name="M:CMS.Helpers.URLHelper.RemoveAnchorFromUrl(System.String,System.String@)">
+            <summary>
+            Removes the anchor from the given <paramref name="url"/>.
+            </summary>
+            <param name="url">The URL to be stripped.</param>
+            <param name="anchorValue">Returns the anchor value (including the anchor symbol).</param>
+            <returns>The URL without the anchor.</returns>
         </member>
         <member name="M:CMS.Helpers.URLHelper.IsExcludedSystem(System.String)">
             <summary>
@@ -5387,6 +5404,11 @@
             Name of the preview link parameter
             </summary>
         </member>
+        <member name="F:CMS.Helpers.VirtualContext.PARAM_PREVIEW_EXPIRATION">
+            <summary>
+            Name of the parameter which indicates non-readonly preview link expiration.
+            </summary>
+        </member>
         <member name="F:CMS.Helpers.VirtualContext.PARAM_FORM_BUILDER_URL">
             <summary>
             Name of the parameter which indicates that data in the <see cref="T:CMS.Helpers.VirtualContext"/> URL belong to Form builder.
@@ -5407,6 +5429,11 @@
             Name of the hash parameter
             </summary>
         </member>
+        <member name="F:CMS.Helpers.VirtualContext.PARAM_READONLY_MODE">
+            <summary>
+            Name of the readonly mode parameter.
+            </summary>
+        </member>
         <member name="F:CMS.Helpers.VirtualContext.ADMINISTRATION_DOMAIN_PARAMETER">
             <summary>
             Query string parameter that holds administration url (scheme + domain + appPath)
@@ -5425,6 +5452,11 @@
         <member name="F:CMS.Helpers.VirtualContext.FormBuilderLinkExpiration">
             <summary>
             Represents period for which the form builder preview link is valid.
+            </summary>
+        </member>
+        <member name="F:CMS.Helpers.VirtualContext.PreviewLinkExpiration">
+            <summary>
+            Represents period for which the non-readonly preview link is valid.
             </summary>
         </member>
         <member name="P:CMS.Helpers.VirtualContext.VirtualContextPrefix">
@@ -5569,7 +5601,7 @@
             <param name="cultureCode">Defines a culture code for resulting preview path. If not provided, culture code from current initialized context is used.</param>
             <param name="embededInAdministration">Indicates if page is embedded in administration inside an iframe.</param>
         </member>
-        <member name="M:CMS.Helpers.VirtualContext.GetPreviewParameters(System.String,System.String,System.Guid,System.Boolean,System.Boolean)">
+        <member name="M:CMS.Helpers.VirtualContext.GetPreviewParameters(System.String,System.String,System.Guid,System.Boolean,System.Boolean,System.String)">
             <summary>
             Gets the collection of parameters for preview path.
             </summary>
@@ -5578,6 +5610,7 @@
             <param name="workflowCycleGuid">Context of workflow cycle GUID.</param>
             <param name="readonlyMode">Indicates if readonly mode should be enabled to disallow modify actions and POST requests.</param>
             <param name="embededInAdministration">Indicates if page is embedded in administration inside an iframe.</param>
+            <param name="previewLinkExpiration">Preview link expiration.</param>
         </member>
         <member name="M:CMS.Helpers.VirtualContext.GetFormBuilderPath(System.String,System.String)">
             <summary>
@@ -5601,9 +5634,20 @@
             </remarks>
             <exclude />
         </member>
+        <member name="M:CMS.Helpers.VirtualContext.GetPreviewLinkExpiration(System.DateTime)">
+            <summary>
+            Returns given <paramref name="dateTime"/> represented in UTC time as number of ticks.
+            </summary>
+        </member>
         <member name="M:CMS.Helpers.VirtualContext.GetFormBuilderLinkExpiration(System.DateTime)">
             <summary>
             Returns given <paramref name="dateTime"/> represented in UTC time as number of ticks.
+            </summary>
+        </member>
+        <member name="M:CMS.Helpers.VirtualContext.AddParameterToUrl(System.String,System.String,System.String)">
+            <summary>
+            Adds a query string parameter to the given URL.
+            Supports URLs with hash (#).
             </summary>
         </member>
         <member name="T:CMS.Helpers.AbstractStockHelper`1">
@@ -7417,15 +7461,11 @@
         <member name="M:CMS.Helpers.MimeTypeHelper.GetSafeMimeType(System.String,System.String)">
             <summary>
             Returns a MIME type for the given <paramref name="fileName"/>.
-            If the <paramref name="fileName"/> indicates an image, returns a common MIME type related to file's extension; otherwise the given <paramref name="contentType"/> is returned.
+            If the <paramref name="contentType"/> does not match <paramref name="fileName"/> extension, mime-type is taken from conversion tables.
             </summary>
             <param name="fileName">File name</param>
             <param name="contentType">File content type</param>
             <returns>MIME type</returns>
-            <remarks>
-            Use the method to check uploaded image files to prevent XSS attacks when the file seems to be an image (according to an extension) but actually it contains HTML code
-            including script. This method prevents a potential attacker from forging the request content type when being uploaded to the server. 
-            </remarks>
         </member>
         <member name="T:CMS.Helpers.IReadOnlyFlag">
             <summary>
@@ -10758,6 +10798,13 @@
             CSS class marker to enable conversion of TABLE to DIV
             </summary>
         </member>
+        <member name="T:CMS.Helpers.HTMLHelper.DecoratePathArbiterHandler">
+            <summary>
+            Handler to decide whether the given path should be decorated with a virtual context prefix.
+            </summary>
+            <param name="path">The original path.</param>
+            <param name="applicationPath">The application path.</param>
+        </member>
         <member name="F:CMS.Helpers.HTMLHelper.NOT_CONVERT">
             <summary>
             Conversion level for no conversion
@@ -10766,11 +10813,6 @@
         <member name="F:CMS.Helpers.HTMLHelper.mUseExtensionOnPostback">
             <summary>
             Use extension on postback?
-            </summary>
-        </member>
-        <member name="F:CMS.Helpers.HTMLHelper.mLocalUrlRegEx">
-            <summary>
-            Hash table of regular expressions to resolve local URLs.
             </summary>
         </member>
         <member name="F:CMS.Helpers.HTMLHelper.mSelfClosingTags">
@@ -11072,7 +11114,7 @@
             <param name="applicationPath">Application path</param>
             <param name="canResolveAllUrls">Determines whether resolving of all URL can be used, <c>true</c> is used by default</param>
         </member>
-        <member name="M:CMS.Helpers.HTMLHelper.EnsureURLPrefixes(System.String,System.String,System.String,CMS.Helpers.URLHelper.PathModifierHandler)">
+        <member name="M:CMS.Helpers.HTMLHelper.EnsureURLPrefixes(System.String,System.String,System.String,CMS.Helpers.URLHelper.PathModifierHandler,System.Boolean,CMS.Helpers.HTMLHelper.DecoratePathArbiterHandler)">
             <summary>
             Ensures that all local URLs have given prefix
             </summary>
@@ -11080,8 +11122,10 @@
             <param name="applicationPath">Application path</param>
             <param name="urlPrefix">URL prefix to ensure</param>
             <param name="urlModifier">Callback for URL modification, optional</param>
+            <param name="decorateHrefAttributes">Indicates whether 'href' attributes should be decorated with the virtual context prefix.</param>
+            <param name="decoratePathArbiter">The arbiter which decides whether the given path should be decorated with a virtual context prefix or kept as is.</param>
         </member>
-        <member name="M:CMS.Helpers.HTMLHelper.EnsureURLPrefix(System.Text.RegularExpressions.Match,System.String,System.String,CMS.Helpers.URLHelper.PathModifierHandler)">
+        <member name="M:CMS.Helpers.HTMLHelper.EnsureURLPrefix(System.Text.RegularExpressions.Match,System.String,System.String,CMS.Helpers.URLHelper.PathModifierHandler,CMS.Helpers.HTMLHelper.DecoratePathArbiterHandler)">
             <summary>
             Ensures the URL prefix in the given match
             </summary>
@@ -11089,6 +11133,7 @@
             <param name="applicationPath">Application path</param>
             <param name="urlPrefix">URL prefix</param>
             <param name="urlModifier">URL modifier</param>
+            <param name="decoratePathArbiter">The arbiter which decides whether the given path should be decorated with a virtual context prefix or kept as is.</param>
         </member>
         <member name="M:CMS.Helpers.HTMLHelper.ResolveCSSUrls(System.String,System.String)">
             <summary>

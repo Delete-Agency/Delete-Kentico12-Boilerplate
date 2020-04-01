@@ -66,6 +66,18 @@ public partial class CMSModules_Staging_Tools_Objects_Tasks : CMSStagingTasksPag
         }
     }
 
+
+    /// <summary>
+    /// The task type that is used when cheking priviliges for links generated for the task grid.
+    /// </summary>
+    protected override string TaskType
+    {
+        get
+        {
+            return "Objects";
+        }
+    }
+
     #endregion
 
 

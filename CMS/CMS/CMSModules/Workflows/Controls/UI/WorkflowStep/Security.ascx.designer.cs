@@ -9,8 +9,9 @@
 
 
 
-public partial class CMSModules_Workflows_Controls_UI_WorkflowStep_Security {
-    
+public partial class CMSModules_Workflows_Controls_UI_WorkflowStep_Security
+{
+
     /// <summary>
     /// pnlUpdateRoles control.
     /// </summary>
@@ -19,7 +20,7 @@ public partial class CMSModules_Workflows_Controls_UI_WorkflowStep_Security {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::CMS.Base.Web.UI.CMSUpdatePanel pnlUpdateRoles;
-    
+
     /// <summary>
     /// headRoles control.
     /// </summary>
@@ -28,7 +29,7 @@ public partial class CMSModules_Workflows_Controls_UI_WorkflowStep_Security {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::CMS.Base.Web.UI.LocalizedHeading headRoles;
-    
+
     /// <summary>
     /// rbRoleType control.
     /// </summary>
@@ -37,34 +38,7 @@ public partial class CMSModules_Workflows_Controls_UI_WorkflowStep_Security {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::CMS.Base.Web.UI.CMSRadioButtonList rbRoleType;
-    
-    /// <summary>
-    /// plcRolesBox control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.PlaceHolder plcRolesBox;
-    
-    /// <summary>
-    /// lblSites control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::CMS.Base.Web.UI.LocalizedLabel lblSites;
-    
-    /// <summary>
-    /// siteSelector control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::CMSFormControls_Sites_SiteSelector siteSelector;
-    
+
     /// <summary>
     /// usRoles control.
     /// </summary>
@@ -73,7 +47,7 @@ public partial class CMSModules_Workflows_Controls_UI_WorkflowStep_Security {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::CMSAdminControls_UI_UniSelector_UniSelector usRoles;
-    
+
     /// <summary>
     /// pnlUpdateUsers control.
     /// </summary>
@@ -82,7 +56,7 @@ public partial class CMSModules_Workflows_Controls_UI_WorkflowStep_Security {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::CMS.Base.Web.UI.CMSUpdatePanel pnlUpdateUsers;
-    
+
     /// <summary>
     /// headUsers control.
     /// </summary>
@@ -91,7 +65,7 @@ public partial class CMSModules_Workflows_Controls_UI_WorkflowStep_Security {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::CMS.Base.Web.UI.LocalizedHeading headUsers;
-    
+
     /// <summary>
     /// rbUserType control.
     /// </summary>
@@ -100,7 +74,7 @@ public partial class CMSModules_Workflows_Controls_UI_WorkflowStep_Security {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::CMS.Base.Web.UI.CMSRadioButtonList rbUserType;
-    
+
     /// <summary>
     /// usUsers control.
     /// </summary>

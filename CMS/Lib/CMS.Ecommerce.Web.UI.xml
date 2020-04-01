@@ -1323,6 +1323,16 @@
             <param name="sender">Sender</param>
             <param name="e">The TabCreatedEventArgs instance containing the event data.</param>
         </member>
+        <member name="M:CMS.Ecommerce.Web.UI.ProductTabsExtender.AddAdministrationDomainToPreviewTabUrl(CMS.UIControls.UITabItem)">
+            <summary>
+            Instead of setting the URL of a tab directly, fire the 'FrameSrcAttributeModifier' module on tab click
+            to set the frame 'src' attribute and add administration domain into it.
+            </summary>
+            <remarks>
+            As a result of this action the MVC application will add correct CSP headers to the response.
+            </remarks>
+            <param name="tab">Tab to be created.</param>
+        </member>
         <member name="T:CMS.Ecommerce.Web.UI.ShippingOptionTabsExtender">
             <summary>
             Extender for UITabs control used in detail of shipping option. Adds extra configuration tab if shipping carrier providers any configuration.

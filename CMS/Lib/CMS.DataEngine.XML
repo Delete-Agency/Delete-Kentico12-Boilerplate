@@ -4770,6 +4770,37 @@
             Gets or sets if the value of the condition column is allowing null.
             </summary>
         </member>
+        <member name="T:CMS.DataEngine.DependencyObjectsConditionFactory">
+            <summary>
+            Factory used to register custom <see cref="T:CMS.DataEngine.WhereCondition"/> provider for object types with specified path column.
+            </summary>
+            <seealso cref="P:CMS.DataEngine.ObjectTypeInfo.ObjectPathColumn"/>
+            <seealso cref="T:CMS.DataEngine.ObjectDependenciesConditionProvider"/>.
+        </member>
+        <member name="M:CMS.DataEngine.DependencyObjectsConditionFactory.RegisterConditionProvider(System.String,CMS.DataEngine.ObjectDependenciesConditionProvider)">
+            <summary>
+            Registers given <paramref name="provider"/> for given <paramref name="objectType"/>.
+            </summary>
+        </member>
+        <member name="M:CMS.DataEngine.DependencyObjectsConditionFactory.GetConditionProvider(System.String)">
+            <summary>
+            Returns registered provider for given <paramref name="objectType"/> or null.
+            </summary>
+        </member>
+        <member name="T:CMS.DataEngine.ObjectDependenciesConditionProvider">
+            <summary>
+            Describes <see cref="T:CMS.DataEngine.WhereCondition"/> provider for object types with specified path column.
+            </summary>
+            <seealso cref="P:CMS.DataEngine.ObjectTypeInfo.ObjectPathColumn"/>
+        </member>
+        <member name="M:CMS.DataEngine.ObjectDependenciesConditionProvider.GetWhereCondition(CMS.DataEngine.BaseInfo,CMS.DataEngine.IWhereCondition,System.String)">
+            <summary>
+            Returns <see cref="T:CMS.DataEngine.WhereCondition"/> used to retrieve data from database based on object path.
+            </summary>
+            <param name="info">Info object instance</param>
+            <param name="objectWhereCondition">Where condition applied to retrieve data.</param>
+            <param name="pathColumnName">Name of the column containing object path.</param>
+        </member>
         <member name="T:CMS.DataEngine.ObjectTypeColumnNotFoundException">
             <summary>
             The ObjectTypeColumnNotFoundException is thrown when an object type is without column definition.
@@ -28102,7 +28133,12 @@
             <summary>
             Copies the properties of this collection to the other collection
             </summary>
-            <param name="col">Target collection</param>
+            <param name="targetCollection">Target collection</param>
+        </member>
+        <member name="M:CMS.DataEngine.InfoObjectCollection`1.CopyItemsTo(CMS.DataEngine.IInfoObjectCollection)">
+            <summary>
+            Copies the items of this collection to the other collection
+            </summary>
         </member>
         <member name="M:CMS.DataEngine.InfoObjectCollection`1.EnsureObjectValues(CMS.DataEngine.BaseInfo)">
             <summary>

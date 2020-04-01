@@ -39,6 +39,15 @@ public partial class CMSModules_Membership_Pages_Users_User_Edit_General : CMSUs
         // Get user info object and check if UI should be displayed
         ui = UserInfoProvider.GetUserInfo(userId);
         CheckUserAvaibleOnSite(ui);
+
+        // Check that only global administrator can edit other administrator's accounts
+        if (!CheckGlobalAdminEdit(ui))
+        {
+            plcTable.Visible = false;
+            ShowError(GetString("Administration-User_List.ErrorGlobalAdmin"));
+            return;
+        }
+
         EditedObject = ui;
 
         ucUserName.UseDefaultValidationGroup = false;
@@ -48,13 +57,6 @@ public partial class CMSModules_Membership_Pages_Users_User_Edit_General : CMSUs
         // Register picture delete script
         ScriptHelper.RegisterClientScriptBlock(this, typeof(string), "PictDelConfirm",
                                                ScriptHelper.GetScript("function DeleteConfirmation(){ return confirm(" + ScriptHelper.GetString(GetString("MyProfile.PictDeleteConfirm")) + ");}"));
-
-        // Check that only global administrator can edit global administrator's accounts
-        if (!CheckGlobalAdminEdit(ui))
-        {
-            plcTable.Visible = false;
-            ShowError(GetString("Administration-User_List.ErrorGlobalAdmin"));
-        }
 
         if (!RequestHelper.IsPostBack())
         {
@@ -650,25 +652,37 @@ public partial class CMSModules_Membership_Pages_Users_User_Edit_General : CMSUs
     /// <param name="userId">Modified user</param>
     protected string ValidateGlobalAndDeskAdmin(int userId)
     {
-        string result = String.Empty;
+        var editedUser = UserInfoProvider.GetUserInfo(userId);
+        if (editedUser == null)
+        {
+            return GetString("Administration-User.WrongUserId");
+        }
+
+        if (CurrentUser.CheckPrivilegeLevel(UserPrivilegeLevelEnum.GlobalAdmin))
+        {
+            // User is global admin - can edit anyone
+            return String.Empty;
+        }
 
         if (CurrentUser.CheckPrivilegeLevel(UserPrivilegeLevelEnum.Admin))
         {
-            // User is global admin
-            return result;
+            // Site admin can't edit other admins except himself
+            if (editedUser.CheckPrivilegeLevel(UserPrivilegeLevelEnum.Admin) && userId != CurrentUser.UserID)
+            {
+                return GetString("Administration-User.NotAllowedToModify");
+            }
+
+            // Site admin can edit other lower privilege users
+            return String.Empty;
         }
 
-        UserInfo userInfo = UserInfoProvider.GetUserInfo(userId);
-        if (userInfo == null)
+        if (CurrentUser.CheckPrivilegeLevel(UserPrivilegeLevelEnum.Editor) && !editedUser.CheckPrivilegeLevel(UserPrivilegeLevelEnum.Admin))
         {
-            result = GetString("Administration-User.WrongUserId");
+            // Editor is able to edit other editors and normal users
+            return String.Empty;
         }
-        else if (userInfo.CheckPrivilegeLevel(UserPrivilegeLevelEnum.Admin))
-        {
-            // Current user has lower permissions than given user
-            result = GetString("Administration-User.NotAllowedToModify");
-        }
-        return result;
+
+        return GetString("Administration-User.NotAllowedToModify"); ;
     }
 
 

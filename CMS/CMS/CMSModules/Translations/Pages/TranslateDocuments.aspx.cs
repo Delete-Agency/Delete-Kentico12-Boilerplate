@@ -572,8 +572,9 @@ public partial class CMSModules_Translations_Pages_TranslateDocuments : CMSTrans
                                .WhereIn("NodeID", nodeIds)
                                .OnSite(CurrentSiteName)
                                .OrderBy("NodeLevel, NodeAliasPath")
-                               .Column("NodeID");
-
+                               .Column("NodeID")
+                               .FilterDuplicates();
+                
                 if (!DataHelper.DataSourceIsEmpty(data))
                 {
                     var processedNodes = new List<int>();

@@ -49,7 +49,14 @@
                             // When not a web page
                         }
 
-                        var oldUrl = frame.location.href;
+                        var oldUrl;
+                        try {
+                            oldUrl = frame.location.href;
+                        }
+                        catch (ex) {
+                            // Same-origin policy violation = frame.location property will throw an exception
+                            oldUrl = "";
+                        }
 
                         if (url.substr(0, 1) == '/') {
                             oldUrl = "/" + oldUrl.replace(/^(?:\/\/|[^\/]+)*\//, "");
@@ -58,7 +65,7 @@
                         if (!noRefresh || (oldUrl != url)) {
                             if (useIFrame && window.Loader) {
                                 var fr = $('iframe[name="' + target + '"]');
-                                if (window.Loader) {
+                                if (window.Loader && oldUrl !== "") {
                                     window.Loader.show(fr);
                                 }
                             }

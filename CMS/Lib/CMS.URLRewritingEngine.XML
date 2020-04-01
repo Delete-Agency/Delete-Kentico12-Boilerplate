@@ -789,13 +789,14 @@
             <param name="viewMode">View mode</param>
             <param name="action">Rewriting action</param>
         </member>
-        <member name="M:CMS.URLRewritingEngine.URLRewriter.RedirectToDefaultPage(CMS.SiteProvider.SiteNameOnDemand,CMS.PortalEngine.ViewModeOnDemand,CMS.DocumentEngine.PageInfo)">
+        <member name="M:CMS.URLRewritingEngine.URLRewriter.RedirectToDefaultPage(CMS.SiteProvider.SiteNameOnDemand,CMS.PortalEngine.ViewModeOnDemand,CMS.DocumentEngine.PageInfo,System.String)">
             <summary>
-            Ensures the default page settings
+            Ensures the default page settings.
             </summary>
-            <param name="siteName">Site name</param>
-            <param name="viewMode">View mode</param>
-            <param name="pageInfo">Current page info</param>
+            <param name="siteName">Site name.</param>
+            <param name="viewMode">View mode.</param>
+            <param name="pageInfo">Current page info.</param>
+            <param name="queryString">Query string parameters.</param>
         </member>
         <member name="M:CMS.URLRewritingEngine.URLRewriter.CheckPublishedState(CMS.DocumentEngine.PageInfo@,CMS.SiteProvider.SiteNameOnDemand,CMS.PortalEngine.ViewModeOnDemand)">
             <summary>
