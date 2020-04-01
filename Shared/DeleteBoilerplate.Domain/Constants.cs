@@ -43,5 +43,10 @@ namespace DeleteBoilerplate.Domain
             public const string ContextItemClassName = "ContextItemClassName";
             public const string RoutingUrlParameter = "url";
         }
+
+        public static class SearchIndexes
+        {
+            public const string SearchIndex = "SearchIndex";
+        }
     }
 }

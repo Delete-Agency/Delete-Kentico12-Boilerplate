@@ -23,12 +23,22 @@ namespace DeleteBoilerplate.Domain.Helpers
                 .WhereEquals(Constants.DynamicRouting.SeoUrlFieldName, url);
         }
 
-        private static string[] GetPageTypesWithSeoUrlClassNames()
+        public static MultiDocumentQuery GetAllNodesWithSeoUrlQuery(string siteName = null)
+        {
+            return DocumentHelper.GetDocuments()
+                .Types(GetPageTypesWithSeoUrlClassNames(siteName))
+                .Columns(new[] { Constants.DynamicRouting.SeoUrlFieldName, "DocumentID" });
+        }
+
+        public static string[] GetPageTypesWithSeoUrlClassNames(string siteName = null)
         {
             const string cacheKey = "deleteboilerplate|pagetypeswithseourlclassnames|all";
 
             var result = new string[0];
-            var siteName = SiteContext.CurrentSiteName;
+            if (siteName == null)
+            {
+                siteName = SiteContext.CurrentSiteName;
+            }
 
             using (var cs = new CachedSection<string[]>(ref result, CacheHelper.CacheMinutes(siteName), true, cacheKey))
             {

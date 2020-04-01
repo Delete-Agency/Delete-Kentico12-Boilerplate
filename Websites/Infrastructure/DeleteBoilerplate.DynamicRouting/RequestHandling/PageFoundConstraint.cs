@@ -7,6 +7,7 @@ using CMS.Helpers;
 using DeleteBoilerplate.Domain;
 using DeleteBoilerplate.Domain.Extensions;
 using DeleteBoilerplate.Domain.Helpers;
+using DeleteBoilerplate.Domain.Services;
 using DeleteBoilerplate.DynamicRouting.Helpers;
 using Kentico.Content.Web.Mvc;
 using Kentico.Web.Mvc;
@@ -26,6 +27,18 @@ namespace DeleteBoilerplate.DynamicRouting.RequestHandling
                 if (url.Equals("/", StringComparison.OrdinalIgnoreCase))
                 {
                     url = EnvironmentHelper.GetUrl(context.Request);
+                }
+
+                if (Settings.PreviewEnabled == false)
+                {
+                    //Try to get classname based on the URL from SearchIndex
+                    var searchResult = SeoUrlPageIndexSearchService.SearchBySeoUrl(url);
+                    if (searchResult.IsSuccess)
+                    {
+                        context.Items.Add(Constants.DynamicRouting.ContextItemDocumentId, searchResult.DocumentId);
+                        context.Items.Add(Constants.DynamicRouting.ContextItemClassName, searchResult.ClassName);
+                        return true;
+                    }
                 }
 
                 // Get the classname based on the URL
