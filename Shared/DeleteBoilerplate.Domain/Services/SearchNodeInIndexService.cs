@@ -6,9 +6,29 @@ using System.Linq;
 
 namespace DeleteBoilerplate.Domain.Services
 {
-    public class SeoUrlPageIndexSearchService
+    public class SearchNodeInIndexResult
     {
-        public static SeoUrlPageIndexSearchResult SearchBySeoUrl(string seoUrl)
+        public int DocumentId { get; set; }
+
+        public string ClassName { get; set; }
+
+        public bool IsSuccess { get; } = true;
+
+        public SearchNodeInIndexResult()
+        {
+        }
+
+        protected SearchNodeInIndexResult(bool isSuccess)
+        {
+            IsSuccess = isSuccess;
+        }
+
+        public static SearchNodeInIndexResult Fail() => new SearchNodeInIndexResult(false);
+    }
+
+    public class SearchNodeInIndexService
+    {
+        public static SearchNodeInIndexResult SearchBySeoUrl(string seoUrl)
         {
             try
             {
@@ -19,21 +39,21 @@ namespace DeleteBoilerplate.Domain.Services
 
                 if (searchResults.Items?.Any() != true)
                 {
-                    return SeoUrlPageIndexSearchResult.Fail();
+                    return SearchNodeInIndexResult.Fail();
                 }
 
-                var foundPage = searchResults.Items.Select(x => new SeoUrlPageIndexSearchResult()
+                var foundNode = searchResults.Items.Select(x => new SearchNodeInIndexResult()
                 {
                     ClassName = x.SearchDocument.Get(nameof(TreeNode.ClassName).ToLower()),
                     DocumentId = int.Parse(x.SearchDocument.Get(nameof(TreeNode.DocumentID).ToLower()))
                 }).FirstOrDefault();
 
-                return foundPage;
+                return foundNode;
             }
             catch (Exception exception)
             {
-                EventLogProvider.LogException(nameof(SeoUrlPageIndexSearchService), "SearchBySeoUrl", exception);
-                return SeoUrlPageIndexSearchResult.Fail();
+                EventLogProvider.LogException(nameof(SearchNodeInIndexService), "SearchBySeoUrl", exception);
+                return SearchNodeInIndexResult.Fail();
             }
         }
 
@@ -56,25 +76,5 @@ namespace DeleteBoilerplate.Domain.Services
                 AttachmentOrderBy = null
             };
         }
-    }
-
-    public class SeoUrlPageIndexSearchResult
-    {
-        public int DocumentId { get; set; }
-
-        public string ClassName { get; set; }
-
-        public bool IsSuccess { get; } = true;
-
-        public SeoUrlPageIndexSearchResult()
-        {
-        }
-
-        protected SeoUrlPageIndexSearchResult(bool isSuccess)
-        {
-            IsSuccess = isSuccess;
-        }
-
-        public static SeoUrlPageIndexSearchResult Fail() => new SeoUrlPageIndexSearchResult(false);
     }
 }

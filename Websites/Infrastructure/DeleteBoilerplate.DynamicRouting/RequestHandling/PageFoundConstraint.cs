@@ -32,11 +32,11 @@ namespace DeleteBoilerplate.DynamicRouting.RequestHandling
                 if (Settings.PreviewEnabled == false)
                 {
                     //Try to get classname based on the URL from SearchIndex
-                    var searchResult = SeoUrlPageIndexSearchService.SearchBySeoUrl(url);
-                    if (searchResult.IsSuccess)
+                    var foundNodeInIndex = SearchNodeInIndexService.SearchBySeoUrl(url);
+                    if (foundNodeInIndex.IsSuccess)
                     {
-                        context.Items.Add(Constants.DynamicRouting.ContextItemDocumentId, searchResult.DocumentId);
-                        context.Items.Add(Constants.DynamicRouting.ContextItemClassName, searchResult.ClassName);
+                        context.Items.Add(Constants.DynamicRouting.ContextItemDocumentId, foundNodeInIndex.DocumentId);
+                        context.Items.Add(Constants.DynamicRouting.ContextItemClassName, foundNodeInIndex.ClassName);
                         return true;
                     }
                 }

@@ -501,7 +501,7 @@
     <Compile Include="Repositories\StaticHtmlChunkRepository.cs" />
     <Compile Include="Repositories\TaxonomyRepository.cs" />
     <Compile Include="Repositories\ProjectRepository.cs" />
-    <Compile Include="Services\SeoUrlPageIndexSearchService.cs" />
+    <Compile Include="Services\SearchNodeInIndexService.cs" />
     <Compile Include="Services\SeoUrlService.cs" />
     <Compile Include="Services\TaxonomyExtractBuilder.cs" />
     <Compile Include="Services\TaxonomyService.cs" />
