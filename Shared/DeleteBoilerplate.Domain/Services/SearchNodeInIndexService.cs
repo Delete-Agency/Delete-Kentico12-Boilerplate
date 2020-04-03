@@ -26,7 +26,7 @@ namespace DeleteBoilerplate.Domain.Services
         public static SearchNodeInIndexResult Fail() => new SearchNodeInIndexResult(false);
     }
 
-    public class SearchNodeInIndexService
+    public static class SearchNodeInIndexService
     {
         public static SearchNodeInIndexResult SearchBySeoUrl(string seoUrl)
         {

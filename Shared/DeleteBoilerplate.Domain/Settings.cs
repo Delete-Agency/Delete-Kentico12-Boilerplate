@@ -27,5 +27,10 @@ namespace DeleteBoilerplate.Domain
         {
             public static string SearchIndex => SiteSettingsHelper.GetSettingValue("DeleteBoilerplate_SearchIndex") ?? string.Empty;
         }
+
+        public static class Cache
+        {
+            public static int RepositoryCacheItemDuration => SiteSettingsHelper.GetSettingIntValue("DeleteBoilerplate_Cache_RepositoryCacheItemDuration");
+        }
     }
 }

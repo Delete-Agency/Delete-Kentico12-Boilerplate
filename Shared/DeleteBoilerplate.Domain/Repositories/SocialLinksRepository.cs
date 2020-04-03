@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CMS.DocumentEngine.Types.DeleteBoilerplate;
+﻿using CMS.DocumentEngine.Types.DeleteBoilerplate;
 using CMS.Helpers;
 using CMS.SiteProvider;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace DeleteBoilerplate.Domain.Repositories
 {
-    public interface ISocialLinksRepository
+    public interface ISocialLinksRepository : IRepository<SocialIcon>
     {
         List<SocialIcon> GetAllSocialIcons(string siteName = null);
     }

@@ -1,12 +1,12 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using CMS.DocumentEngine.Types.DeleteBoilerplate;
+﻿using CMS.DocumentEngine.Types.DeleteBoilerplate;
 using CMS.Helpers;
 using CMS.SiteProvider;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace DeleteBoilerplate.Domain.Repositories
 {
-    public interface IProjectRepository
+    public interface IProjectRepository : IRepository<Project>
     {
         List<Project> GetAllProjects(string siteName = null);
     }

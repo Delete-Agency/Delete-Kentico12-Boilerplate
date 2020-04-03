@@ -1,20 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CMS.DocumentEngine;
+﻿using CMS.DocumentEngine;
 using CMS.DocumentEngine.Types.DeleteBoilerplate;
 using CMS.Helpers;
 using CMS.SiteProvider;
+using DeleteBoilerplate.Domain.RepositoryCaching.Attributes;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace DeleteBoilerplate.Domain.Repositories
 {
-    public interface INavigationRepository
+    public interface INavigationRepository : IRepository<NavigationLink>
     {
         List<NavigationLink> GetAllNavigationLinks(string siteName = null);
+
         List<NavigationLink> GetNavigationLinksByPath(string path);
     }
+
     public class NavigationRepository : INavigationRepository
     {
         private readonly string _projectCacheKey = "deleteboilerplate|navigation";

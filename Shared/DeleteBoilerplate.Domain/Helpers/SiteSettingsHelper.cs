@@ -12,5 +12,13 @@ namespace DeleteBoilerplate.Domain.Helpers
 
             return SettingsKeyInfoProvider.GetValue($"{SiteContext.CurrentSiteName}.{settingKey}");
         }
+
+        public static int GetSettingIntValue(string settingKey)
+        {
+            if (string.IsNullOrWhiteSpace(settingKey))
+                return 0;
+
+            return SettingsKeyInfoProvider.GetIntValue($"{SiteContext.CurrentSiteName}.{settingKey}");
+        }
     }
 }

@@ -1,16 +1,18 @@
-﻿using System;
+﻿using CMS.DocumentEngine.Types.DeleteBoilerplate;
+using DeleteBoilerplate.Domain.RepositoryCaching.Attributes;
+using System;
 using System.Linq;
-using CMS.DocumentEngine.Types.DeleteBoilerplate;
 
 namespace DeleteBoilerplate.Domain.Repositories
 {
-    public interface IStaticHtmlChunkRepository
+    public interface IStaticHtmlChunkRepository : IRepository<StaticHtmlChunk>
     {
         StaticHtmlChunk GetByNodeGuid(Guid nodeGuid);
     }
 
     public class StaticHtmlChunkRepository : IStaticHtmlChunkRepository
     {
+        [RepositoryCaching]
         public StaticHtmlChunk GetById(int id)
         {
             return StaticHtmlChunkProvider
@@ -20,6 +22,7 @@ namespace DeleteBoilerplate.Domain.Repositories
                 .FirstOrDefault();
         }
 
+        [RepositoryCaching]
         public StaticHtmlChunk GetByNodeGuid(Guid nodeGuid)
         {
             return StaticHtmlChunkProvider
