@@ -12,8 +12,8 @@ using Microsoft.Owin.Host.SystemWeb;
 using Microsoft.Owin.Security.DataProtection;
 using Owin;
 using DeleteBoilerplate.Account.Infrastructure;
+using Microsoft.Owin.Infrastructure;
 
-[assembly: OwinStartup(typeof(DeleteBoilerplate.Account.IdentityConfig))]
 
 namespace DeleteBoilerplate.Account
 {
