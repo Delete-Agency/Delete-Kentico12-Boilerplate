@@ -573,6 +573,10 @@
     <Analyzer Include="..\..\..\..\..\packages\AWSSDK.S3.3.1.9.0\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Shared\DeleteBoilerplate.Common\DeleteBoilerplate.Common.csproj">
+      <Project>{25458D83-C877-4A3A-973F-E8A42254447D}</Project>
+      <Name>DeleteBoilerplate.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\..\..\Shared\DeleteBoilerplate.Domain\DeleteBoilerplate.Domain.csproj">
       <Project>{2a0e9bd2-90f5-466a-a742-d27c9302b1ca}</Project>
       <Name>DeleteBoilerplate.Domain</Name>
