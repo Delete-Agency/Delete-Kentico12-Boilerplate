@@ -48,5 +48,12 @@ namespace DeleteBoilerplate.Domain
         {
             public const string SearchIndex = "SearchIndex";
         }
+
+        public static class Identity
+        {
+            public const string AppName = "Kentico12_DeleteBoilerplate";
+            public static string AppCookieName => $".{AppName}.ApplicationCookie";
+            public static string AppTokenName => $"{AppName}TokenName";
+        }
     }
 }
