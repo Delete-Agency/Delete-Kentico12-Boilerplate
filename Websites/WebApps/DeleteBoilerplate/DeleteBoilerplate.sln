@@ -35,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteBoilerplate.GenericCo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteBoilerplate.Common", "..\..\..\Shared\DeleteBoilerplate.Common\DeleteBoilerplate.Common.csproj", "{25458D83-C877-4A3A-973F-E8A42254447D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteBoilerplate.Account", "Features\DeleteBoilerplate.Account\DeleteBoilerplate.Account.csproj", "{1466452D-F867-4E9B-93DD-09BE1D2B1E2D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +79,10 @@ Global
 		{25458D83-C877-4A3A-973F-E8A42254447D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{25458D83-C877-4A3A-973F-E8A42254447D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{25458D83-C877-4A3A-973F-E8A42254447D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1466452D-F867-4E9B-93DD-09BE1D2B1E2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1466452D-F867-4E9B-93DD-09BE1D2B1E2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1466452D-F867-4E9B-93DD-09BE1D2B1E2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1466452D-F867-4E9B-93DD-09BE1D2B1E2D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -90,6 +96,7 @@ Global
 		{7042E8DA-1C9A-413C-9154-CFA7F30D3C68} = {25B3DC14-1D18-4110-8416-2372716B7505}
 		{A4435C07-D74E-4883-B31B-7466D08DDD07} = {60D6784B-12CB-4ACD-B26B-545FC97DC901}
 		{25458D83-C877-4A3A-973F-E8A42254447D} = {2971F724-2145-4CB1-9464-1A379C67E410}
+		{1466452D-F867-4E9B-93DD-09BE1D2B1E2D} = {60D6784B-12CB-4ACD-B26B-545FC97DC901}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C6500213-6CF9-462C-B95D-DCF91FC64889}
