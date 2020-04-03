@@ -2,6 +2,7 @@
 using DeleteBoilerplate.Domain.RepositoryCaching.Attributes;
 using System;
 using System.Linq;
+using DeleteBoilerplate.Domain.Extensions;
 
 namespace DeleteBoilerplate.Domain.Repositories
 {
@@ -17,6 +18,7 @@ namespace DeleteBoilerplate.Domain.Repositories
         {
             return StaticHtmlChunkProvider
                 .GetStaticHtmlChunks()
+                .AddVersionsParameters()
                 .WithID(id)
                 .TopN(1)
                 .FirstOrDefault();
@@ -27,6 +29,7 @@ namespace DeleteBoilerplate.Domain.Repositories
         {
             return StaticHtmlChunkProvider
                 .GetStaticHtmlChunks()
+                .AddVersionsParameters()
                 .WhereEquals("NodeGUID", nodeGuid)
                 .TopN(1)
                 .FirstOrDefault();
