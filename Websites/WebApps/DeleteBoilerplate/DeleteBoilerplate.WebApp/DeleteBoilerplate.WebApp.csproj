@@ -824,6 +824,10 @@
       <Project>{3dc6646a-a5bc-4c2b-9a4c-42cd157406ac}</Project>
       <Name>DeleteBoilerplate.Metadata</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Features\DeleteBoilerplate.Account\DeleteBoilerplate.Account.csproj">
+      <Project>{1466452d-f867-4e9b-93dd-09be1d2b1e2d}</Project>
+      <Name>DeleteBoilerplate.Account</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Features\DeleteBoilerplate.GenericComponents\DeleteBoilerplate.GenericComponents.csproj">
       <Project>{A4435C07-D74E-4883-B31B-7466D08DDD07}</Project>
       <Name>DeleteBoilerplate.GenericComponents</Name>
