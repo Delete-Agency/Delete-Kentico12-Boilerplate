@@ -45,7 +45,7 @@ namespace DeleteBoilerplate.DynamicRouting.RequestHandling
                 var foundNode = RoutingQueryHelper
                     .GetNodeBySeoUrlQuery(url)
                     .TopN(1)
-                    .AddVersionsParameters(context.Kentico().Preview().Enabled)
+                    .AddVersionsParameters(Settings.PreviewEnabled)
                     .FirstOrDefault();
 
                 context.Items.Add(Constants.DynamicRouting.ContextItemDocumentId, foundNode?.DocumentID);

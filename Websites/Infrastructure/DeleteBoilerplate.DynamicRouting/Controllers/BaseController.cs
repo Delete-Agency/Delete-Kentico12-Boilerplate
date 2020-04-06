@@ -40,7 +40,7 @@ namespace DeleteBoilerplate.DynamicRouting.Controllers
         private void ResolveContext()
         {
             this.RequestContext.ContextItemId = this.HttpContext.Items[Constants.DynamicRouting.ContextItemDocumentId] as int?;
-            this.RequestContext.IsPreview = this.HttpContext.Kentico().Preview().Enabled;
+            this.RequestContext.IsPreview = Settings.PreviewEnabled;
             this.RequestContext.ContextResolved = true;
         }
     }

@@ -8,6 +8,7 @@ using System.Web;
 using DeleteBoilerplate.Infrastructure.Models;
 using System.Web.Mvc;
 using CMS.EventLog;
+using DeleteBoilerplate.Domain;
 using Kentico.Content.Web.Mvc;
 using Kentico.Web.Mvc;
 
@@ -152,8 +153,8 @@ namespace DeleteBoilerplate.Infrastructure.Extensions
 
         private static MvcHtmlString RegisterAsset(this HtmlHelper htmlHelper, ContentType assetType, string fileName, AssetRendering renderWhen, int order)
         {
-            if (!htmlHelper.ViewContext.HttpContext.Kentico().Preview().Enabled && renderWhen == AssetRendering.AdminOnly ||
-                htmlHelper.ViewContext.HttpContext.Kentico().Preview().Enabled && renderWhen == AssetRendering.FrontendOnly)
+            if (!Settings.PreviewEnabled && renderWhen == AssetRendering.AdminOnly ||
+                Settings.PreviewEnabled && renderWhen == AssetRendering.FrontendOnly)
             {
                 return MvcHtmlString.Empty;
             }
