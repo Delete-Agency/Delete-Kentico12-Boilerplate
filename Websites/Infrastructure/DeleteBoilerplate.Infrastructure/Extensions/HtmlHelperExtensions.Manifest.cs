@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Web;
+using System.Web.Hosting;
 using System.Web.Mvc;
 using CMS.Helpers;
 using CMS.IO;
@@ -14,14 +16,29 @@ namespace DeleteBoilerplate.Infrastructure.Extensions
 {
     public static partial class HtmlHelperExtensions
     {
-        public const string DistPath = "/dist";
-        public const string ManifestJsonPath = DistPath + "/manifest.json";
-        public const string MonolithManifestJsonPath = DistPath + "/monolith.manifest.json";
+        public static string DistPath
+        {
+            get
+            {
+                if (string.IsNullOrWhiteSpace(_distPath))
+                    _distPath = HttpContext.Current.Server.MapPath(Path.Combine(HostingEnvironment.ApplicationVirtualPath, "dist"));
+
+                return _distPath;
+            }
+        }
+
+        private static string _distPath;
+
+        public static bool ApplicationHasAlias => HostingEnvironment.ApplicationVirtualPath != null && HostingEnvironment.ApplicationVirtualPath != "/";
+
+        public static string ApplicationAlias => HostingEnvironment.ApplicationVirtualPath;
 
         private static readonly object ManifestLock = new object();
+
         private static Dictionary<string, string> _manifest;
 
         public static string ManifestHash { get; private set; } = string.Empty;
+
         public static Dictionary<string, string> Manifest
         {
             get
@@ -36,9 +53,10 @@ namespace DeleteBoilerplate.Infrastructure.Extensions
                         try
                         {
                             var strBuilder = new StringBuilder();
-                            foreach (var fileName in new List<string> { ManifestJsonPath, MonolithManifestJsonPath })
+                            foreach (var fileName in new List<string> { "manifest.json", "monolith.manifest.json" })
                             {
-                                var path = HttpContext.Current.Server.MapPath(fileName);
+                                var path = Path.Combine(DistPath, fileName);
+
                                 if (!File.Exists(path)) continue;
                                 var fileContent = File.ReadAllText(path);
                                 strBuilder.Append(fileContent);
@@ -50,7 +68,7 @@ namespace DeleteBoilerplate.Infrastructure.Extensions
                                 {
                                     if (!_manifest.ContainsKey(entry.Key))
                                     {
-                                        _manifest.Add(entry.Key, entry.Value);
+                                        _manifest.Add(entry.Key, ApplicationHasAlias ? $"{ApplicationAlias}{entry.Value}" : entry.Value);
                                     }
                                 }
                             }
@@ -92,27 +110,26 @@ namespace DeleteBoilerplate.Infrastructure.Extensions
             return Manifest.GetValueOrDefault(manifestKey).OrDefault(manifestKey);
         }
 
-
-        public static string GetContent(string manifestKey, string prefix = "")
+        public static string GetContent(string manifestKey)
         {
-            var distServerPath = HttpContext.Current.Server.MapPath(DistPath);
-            if (string.IsNullOrEmpty(distServerPath) || !Directory.Exists(distServerPath))
-                return null;
             var result = string.Empty;
-            
+
             using (var cs = new CachedSection<string>(ref result, CacheHelper.CacheMinutes(SiteContext.CurrentSiteName), true,
                 $"AssetsCache_{manifestKey}_{ManifestHash}"))
             {
                 if (cs.LoadData)
                 {
-                    var fullPath = GetFullPathFromManifest(manifestKey);
+                    var relativePath = ApplicationHasAlias
+                        ? new Regex($"{ApplicationAlias}/dist/").Replace(GetFullPathFromManifest(manifestKey), string.Empty, 1)
+                        : new Regex("/dist/").Replace(GetFullPathFromManifest(manifestKey), string.Empty, 1);
+
+                    var fullPath = Path.Combine(DistPath, relativePath);
+
                     if (!string.IsNullOrEmpty(fullPath))
                     {
-                        var processedValue = fullPath.Replace($"{DistPath}/", string.Empty);
-                        var fullFilePath = distServerPath + "\\" + prefix + processedValue;
-                        if (File.Exists(fullFilePath))
+                        if (File.Exists(fullPath))
                         {
-                            result = File.ReadAllText(fullFilePath);
+                            result = File.ReadAllText(fullPath);
                         }
 
                         cs.Data = result;
@@ -122,6 +139,5 @@ namespace DeleteBoilerplate.Infrastructure.Extensions
 
             return result;
         }
-
     }
 }
