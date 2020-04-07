@@ -24,6 +24,8 @@ namespace DeleteBoilerplate.Domain
             serviceRegistry.RegisterSingleton<IDependencyCacheKey, DependencyCacheKey>();
             serviceRegistry.RegisterScoped<ICachingRepositoryInterceptor, CachingRepositoryInterceptor>();
             RegisterRepositories(serviceRegistry);
+
+            serviceRegistry.RegisterSingleton<IMailService, MailService>();
         }
 
         private static void RegisterRepositories(IServiceRegistry serviceRegistry)
