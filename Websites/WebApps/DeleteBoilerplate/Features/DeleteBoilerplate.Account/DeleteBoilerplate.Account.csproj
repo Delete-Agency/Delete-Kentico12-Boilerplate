@@ -576,8 +576,10 @@
     <Compile Include="Models\UpdateUserDetailsViewModel.cs" />
     <Compile Include="Models\UserViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ConsentService.cs" />
     <Compile Include="Services\IAuthService.cs" />
     <Compile Include="Services\AuthService.cs" />
+    <Compile Include="Services\IConsentService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
