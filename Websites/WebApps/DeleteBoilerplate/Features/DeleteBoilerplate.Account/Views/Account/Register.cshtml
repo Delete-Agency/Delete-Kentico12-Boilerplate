@@ -1,5 +1,34 @@
-﻿@{
+﻿@model DeleteBoilerplate.Account.Models.RegisterViewModel
+
+@{
     Layout = null;
 }
 
-<h1>Register page</h1>
+@using (Html.BeginRouteForm("Default", new { action = "Register", controller = "Account" }, FormMethod.Post))
+{
+    @Html.ValidationSummary();
+
+    <div>
+        @Html.TextBoxFor(it => it.FirstName, 
+            new { placeholder = Html.DisplayNameFor(it => it.FirstName) })
+    </div>
+    <div>
+        @Html.TextBoxFor(it => it.LastName, 
+            new { placeholder = Html.DisplayNameFor(it => it.LastName) })
+    </div>
+    <div>
+        @Html.TextBoxFor(it => it.Email, 
+            new { placeholder = Html.DisplayNameFor(it => it.Email) })
+    </div>
+    <div class="form__row">
+        @Html.PasswordFor(it => it.Password, 
+            new { placeholder = Html.DisplayNameFor(it => it.Password) })
+    </div>
+    <div class="form__row">
+        @Html.PasswordFor(it => it.PasswordConfirmation, 
+            new { placeholder = Html.DisplayNameFor(it => it.PasswordConfirmation) })
+    </div>
+    <div>
+        <button type="submit">Sign up</button>
+    </div>
+}

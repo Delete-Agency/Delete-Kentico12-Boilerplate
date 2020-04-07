@@ -1,5 +1,23 @@
-﻿@{
+﻿@model DeleteBoilerplate.Account.Models.LoginViewModel
+
+@{
     Layout = null;
 }
 
-<h1>Login page</h1>
+
+@using (Html.BeginRouteForm("Default", new { action = "Login", controller = "Account" }, FormMethod.Post))
+{
+    @Html.ValidationSummary();
+
+    <div>
+        @Html.TextBoxFor(it => it.Email,
+            new { placeholder = Html.DisplayNameFor(it => it.Email) })
+    </div>
+    <div class="form__row">
+        @Html.PasswordFor(it => it.Password,
+            new { placeholder = Html.DisplayNameFor(it => it.Password) })
+    </div>
+    <div>
+        <button type="submit">Sign in</button>
+    </div>
+}
