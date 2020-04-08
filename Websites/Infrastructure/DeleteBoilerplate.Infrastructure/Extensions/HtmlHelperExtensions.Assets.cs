@@ -8,6 +8,7 @@ using System.Web;
 using DeleteBoilerplate.Infrastructure.Models;
 using System.Web.Mvc;
 using CMS.EventLog;
+using DeleteBoilerplate.Common.Extensions;
 using DeleteBoilerplate.Domain;
 using Kentico.Content.Web.Mvc;
 using Kentico.Web.Mvc;

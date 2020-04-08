@@ -641,7 +641,6 @@
     <Compile Include="Extensions\HtmlHelperExtensions.Manifest.cs" />
     <Compile Include="Extensions\MediaExtensions.cs" />
     <Compile Include="Extensions\RouteDataExtensions.cs" />
-    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\TreeNodeExtensions.cs" />
     <Compile Include="Helpers\AreaRestrictionHelper.cs" />
     <Compile Include="Helpers\AssemblyHelper.cs" />

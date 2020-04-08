@@ -3,6 +3,7 @@ using System.Text.RegularExpressions;
 using CMS.EventLog;
 using CMS.MediaLibrary;
 using CMS.SiteProvider;
+using DeleteBoilerplate.Common.Extensions;
 using DeleteBoilerplate.Infrastructure.Models.Media;
 using Kentico.Components.Web.Mvc.FormComponents;
 

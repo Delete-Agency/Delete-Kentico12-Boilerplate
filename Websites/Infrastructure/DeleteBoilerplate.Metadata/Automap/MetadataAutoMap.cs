@@ -4,6 +4,7 @@ using CMS.DocumentEngine.Types.DeleteBoilerplate;
 using CMS.Helpers;
 using CMS.Localization;
 using CMS.SiteProvider;
+using DeleteBoilerplate.Common.Extensions;
 using DeleteBoilerplate.Domain;
 using DeleteBoilerplate.GenericComponents.Models.Footer;
 using DeleteBoilerplate.Infrastructure.Enums;

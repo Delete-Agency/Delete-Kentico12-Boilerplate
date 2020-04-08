@@ -31,6 +31,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CMS.Helpers">
+      <HintPath>..\..\Websites\Infrastructure\DeleteBoilerplate.Metadata\bin\CMS.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="CMS.SiteProvider">
+      <HintPath>..\..\Websites\Infrastructure\DeleteBoilerplate.Metadata\bin\CMS.SiteProvider.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,7 +48,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DeleteBoilerplateAssemblyAttribute.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -10,6 +10,7 @@ using System.Web.Mvc;
 using CMS.Helpers;
 using CMS.IO;
 using CMS.SiteProvider;
+using DeleteBoilerplate.Common.Extensions;
 using Newtonsoft.Json;
 
 namespace DeleteBoilerplate.Infrastructure.Extensions
