@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="DeleteBoilerplateAssemblyAttribute.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Models\ParseResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
