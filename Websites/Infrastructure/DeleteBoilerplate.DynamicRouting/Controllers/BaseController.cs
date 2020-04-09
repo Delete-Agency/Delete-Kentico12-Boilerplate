@@ -1,11 +1,12 @@
-﻿using System.Web.Mvc;
-using CMS.DocumentEngine;
+﻿using CMS.DocumentEngine;
 using DeleteBoilerplate.Domain;
+using DeleteBoilerplate.Domain.Extensions;
 using DeleteBoilerplate.OutputCache;
-using Kentico.Content.Web.Mvc;
 using Kentico.PageBuilder.Web.Mvc;
 using Kentico.Web.Mvc;
 using LightInject;
+using System.Linq;
+using System.Web.Mvc;
 using IRequestContext = DeleteBoilerplate.DynamicRouting.Contexts.IRequestContext;
 
 namespace DeleteBoilerplate.DynamicRouting.Controllers
@@ -20,7 +21,7 @@ namespace DeleteBoilerplate.DynamicRouting.Controllers
 
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            if (!this.RequestContext.ContextResolved)
+            if (!this.RequestContext.IsContextResolved)
                 this.ResolveContext();
 
             if (this.RequestContext.ContextItemId.HasValue)
@@ -34,14 +35,34 @@ namespace DeleteBoilerplate.DynamicRouting.Controllers
 
         protected virtual T GetContextItem<T>() where T : TreeNode, new()
         {
-            return this.RequestContext.GetContextItem<T>();
+            if (!this.RequestContext.IsContextItemResolved)
+                this.ResolveContextItem<T>();
+
+            if (this.RequestContext.ContextItem is T typedContextItem)
+                return typedContextItem;
+
+            return null;
         }
 
         private void ResolveContext()
         {
             this.RequestContext.ContextItemId = this.HttpContext.Items[Constants.DynamicRouting.ContextItemDocumentId] as int?;
-            this.RequestContext.IsPreview = Settings.PreviewEnabled;
-            this.RequestContext.ContextResolved = true;
+            this.RequestContext.IsContextResolved = true;
+        }
+
+        private void ResolveContextItem<T>() where T : TreeNode, new()
+        {
+            if (this.RequestContext.ContextItemId.HasValue)
+            {
+                T contextItem = DocumentHelper.GetDocuments<T>()
+                        .WithID(this.RequestContext.ContextItemId.Value)
+                        .TopN(1)
+                        .AddVersionsParameters(Settings.PreviewEnabled)
+                        .FirstOrDefault();
+
+                this.RequestContext.ContextItem = contextItem;
+                this.RequestContext.IsContextItemResolved = true;
+            }
         }
     }
 }

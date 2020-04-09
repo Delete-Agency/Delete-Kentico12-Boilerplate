@@ -38,21 +38,26 @@ namespace DeleteBoilerplate.GenericComponents.Controllers.Global
                 Mapper.Map<List<NavigationLinkViewModel>>(NavigationLinksRepository.GetNavigationLinksByPath(headerNavigatePath)
                     .OrderBy(x => x.NodeOrder));
 
-            var activeLinks = navigationLinks.SelectMany(x => x.ChildLinks)
-                .Union(navigationLinks)
-                .Where(x => !string.IsNullOrWhiteSpace(x.AssociatedPagePath) &&
-                            RequestContext.GetContextItem<TreeNode>().NodeAliasPath.StartsWith(x.AssociatedPagePath, StringComparison.OrdinalIgnoreCase))
-                .ToList();
-            var activeLink = activeLinks.FirstOrDefault(x => x.AssociatedPagePath.Equals(activeLinks.Aggregate("",
-                (max, cur) => max.Length > cur.AssociatedPagePath.Length ? max : cur.AssociatedPagePath)));
-            if (activeLink != null) activeLink.IsActive = true;
+            //ToDo: Refactoring ActiveLinks
+            //var activeLinks = navigationLinks.SelectMany(x => x.ChildLinks)
+            //    .Union(navigationLinks)
+            //    .Where(x => !string.IsNullOrWhiteSpace(x.AssociatedPagePath) &&
+            //                RequestContext.GetContextItem<TreeNode>().NodeAliasPath.StartsWith(x.AssociatedPagePath, StringComparison.OrdinalIgnoreCase))
+            //    .ToList();
+
+            //var activeLink = activeLinks.FirstOrDefault(x => x.AssociatedPagePath.Equals(activeLinks.Aggregate("",
+            //    (max, cur) => max.Length > cur.AssociatedPagePath.Length ? max : cur.AssociatedPagePath)));
+
+            //if (activeLink != null) 
+            //    activeLink.IsActive = true;
+
             var socialLinks = SocialLinksRepository.GetAllSocialIcons().OrderBy(x => x.NodeOrder);
 
             var model = new HeaderViewModel
             {
                 NavLinks = navigationLinks,
-                SocLinks = Mapper.Map<List<SocialLinkViewModel>>(socialLinks),
-                ActiveLink = activeLink
+                SocLinks = Mapper.Map<List<SocialLinkViewModel>>(socialLinks)
+                //, ActiveLink = activeLink
             };
 
             return PartialView("Header", model);

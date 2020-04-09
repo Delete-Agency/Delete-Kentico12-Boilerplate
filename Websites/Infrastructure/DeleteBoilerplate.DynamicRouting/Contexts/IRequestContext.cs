@@ -1,4 +1,5 @@
-﻿using CMS.DocumentEngine;
+﻿using CMS.Base;
+using CMS.DocumentEngine;
 
 namespace DeleteBoilerplate.DynamicRouting.Contexts
 {
@@ -6,10 +7,11 @@ namespace DeleteBoilerplate.DynamicRouting.Contexts
     {
         int? ContextItemId { get; set; }
 
-        bool ContextResolved { get; set; }
+        ICMSObject ContextItem { get; set; }
 
-        bool IsPreview { get; set; }
+        bool IsContextItemResolved { get; set; }
 
-        T GetContextItem<T>() where T : TreeNode, new();
+        bool IsContextResolved { get; set; }
+
     }
 }

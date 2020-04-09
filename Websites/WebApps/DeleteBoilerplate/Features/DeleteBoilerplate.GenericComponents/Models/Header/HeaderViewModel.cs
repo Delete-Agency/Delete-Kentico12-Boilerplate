@@ -16,26 +16,27 @@ namespace DeleteBoilerplate.GenericComponents.Models.Header
 
         public List<SocialLinkViewModel> SocLinks { get; set; }
 
-        public NavigationLinkViewModel ActiveLink { get; set; }
+        //ToDo: Refactoring ActiveLinks
+        //public NavigationLinkViewModel ActiveLink { get; set; }
 
         public int DefaultViewItemsNumber { get; set; }
 
         public int ExpandedViewItemsNumber { get; set; }
 
-        public IEnumerable<NavigationLinkViewModel> GetSecondLevelLinks()
-        {
-            var result = new List<NavigationLinkViewModel>();
+        //public IEnumerable<NavigationLinkViewModel> GetSecondLevelLinks()
+        //{
+        //    var result = new List<NavigationLinkViewModel>();
 
-            if (ActiveLink != null)
-            {
-                result.Add(ActiveLink.ParentLink ?? ActiveLink);
+        //    if (ActiveLink != null)
+        //    {
+        //        result.Add(ActiveLink.ParentLink ?? ActiveLink);
 
-                result.AddRange(ActiveLink.ParentLink == null
-                    ? ActiveLink.ChildLinks
-                    : ActiveLink.ParentLink.ChildLinks);
-            }
+        //        result.AddRange(ActiveLink.ParentLink == null
+        //            ? ActiveLink.ChildLinks
+        //            : ActiveLink.ParentLink.ChildLinks);
+        //    }
 
-            return result;
-        }
+        //    return result;
+        //}
     }
 }
