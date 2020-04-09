@@ -295,6 +295,9 @@
       <HintPath>..\..\..\packages\LightInject.Mvc.2.0.0\lib\net46\LightInject.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="LightInject.ServiceLocation, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\LightInject.ServiceLocation.1.0.0.2\lib\net45\LightInject.ServiceLocation.dll</HintPath>
+    </Reference>
     <Reference Include="LightInject.Web, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\LightInject.Web.2.0.0\lib\net46\LightInject.Web.dll</HintPath>
       <Private>True</Private>
@@ -392,6 +395,9 @@
     <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Microsoft.Owin.Security.OAuth.3.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ProjectServer.Client, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Microsoft.SharePointOnline.CSOM.16.1.6621.1200\lib\net45\Microsoft.ProjectServer.Client.dll</HintPath>

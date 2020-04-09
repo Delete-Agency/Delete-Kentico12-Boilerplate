@@ -13,6 +13,16 @@ namespace DeleteBoilerplate.Domain.Repositories
 
     public class ProjectRepository : IProjectRepository
     {
+        public Project GetById(int id)
+        {
+            return ProjectProvider
+                .GetProjects()
+                .WithID(id)
+                .AddVersionsParameters()
+                .TopN(1)
+                .FirstOrDefault();
+        }
+
         [RepositoryCaching]
         public List<Project> GetAllProjects()
         {

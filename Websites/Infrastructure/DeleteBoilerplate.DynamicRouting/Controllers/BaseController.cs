@@ -7,6 +7,8 @@ using Kentico.Web.Mvc;
 using LightInject;
 using System.Linq;
 using System.Web.Mvc;
+using DeleteBoilerplate.Domain.Repositories;
+using DeleteBoilerplate.Infrastructure;
 using IRequestContext = DeleteBoilerplate.DynamicRouting.Contexts.IRequestContext;
 
 namespace DeleteBoilerplate.DynamicRouting.Controllers
@@ -54,7 +56,16 @@ namespace DeleteBoilerplate.DynamicRouting.Controllers
         {
             if (this.RequestContext.ContextItemId.HasValue)
             {
-                T contextItem = DocumentHelper.GetDocuments<T>()
+                T contextItem;
+
+                var repository = DIConfig.DefaultServiceLocator
+                    .GetAllInstances<IRepository<T>>()
+                    .FirstOrDefault();
+
+                if (repository != null)
+                    contextItem = repository.GetById(this.RequestContext.ContextItemId.Value);
+                else
+                    contextItem = DocumentHelper.GetDocuments<T>()
                         .WithID(this.RequestContext.ContextItemId.Value)
                         .TopN(1)
                         .AddVersionsParameters(Settings.PreviewEnabled)

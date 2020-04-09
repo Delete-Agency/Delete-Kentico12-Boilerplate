@@ -17,6 +17,16 @@ namespace DeleteBoilerplate.Domain.Repositories
 
     public class NavigationRepository : INavigationRepository
     {
+        public NavigationLink GetById(int id)
+        {
+            return NavigationLinkProvider
+                .GetNavigationLinks()
+                .WithID(id)
+                .AddVersionsParameters()
+                .TopN(1)
+                .FirstOrDefault();
+        }
+
         [RepositoryCaching]
         public IList<NavigationLink> GetAllNavigationLinks(string siteName = null)
         {

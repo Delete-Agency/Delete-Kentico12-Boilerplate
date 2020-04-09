@@ -13,6 +13,16 @@ namespace DeleteBoilerplate.Domain.Repositories
 
     public class SocialLinksRepository : ISocialLinksRepository
     {
+        public SocialIcon GetById(int id)
+        {
+            return SocialIconProvider
+                .GetSocialIcons()
+                .WithID(id)
+                .AddVersionsParameters()
+                .TopN(1)
+                .FirstOrDefault();
+        }
+
         [RepositoryCaching]
         public List<SocialIcon> GetAllSocialIcons()
         {
