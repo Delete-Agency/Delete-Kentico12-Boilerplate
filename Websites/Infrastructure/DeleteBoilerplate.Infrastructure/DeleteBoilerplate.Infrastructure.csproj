@@ -626,6 +626,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\NoDirectAccessAttribute.cs" />
     <Compile Include="Attributes\StringValueAttribute.cs" />
     <Compile Include="Automap\AutoMapperConfig.cs" />
     <Compile Include="Cache\CacheExpirationCallbacks.cs" />

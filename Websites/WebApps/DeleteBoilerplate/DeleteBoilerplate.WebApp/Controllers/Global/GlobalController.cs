@@ -7,6 +7,7 @@ using DeleteBoilerplate.WebApp.Models.Global.Header;
 using LightInject;
 using System.Collections.Generic;
 using System.Web.Mvc;
+using DeleteBoilerplate.Infrastructure.Attributes;
 
 namespace DeleteBoilerplate.WebApp.Controllers.Global
 {
@@ -21,6 +22,7 @@ namespace DeleteBoilerplate.WebApp.Controllers.Global
         [Inject]
         public IMapper Mapper { get; set; }
 
+        [NoDirectAccess]
         public ActionResult Header()
         {
             var headerNavigationLinks = this.NavigationLinksRepository.GetNavigationLinksByPath(Settings.Navigation.HeaderNavigationPath);
@@ -35,6 +37,7 @@ namespace DeleteBoilerplate.WebApp.Controllers.Global
             return PartialView("Header", model);
         }
 
+        [NoDirectAccess]
         public ActionResult Footer()
         {
             var footerNavigationLinks = this.NavigationLinksRepository.GetNavigationLinksByPath(Settings.Navigation.FooterNavigationPath);

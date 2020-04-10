@@ -43,5 +43,10 @@ namespace DeleteBoilerplate.Domain
 
             public static string CompanyLogoLink => SiteSettingsHelper.GetSettingValue("DeleteBoilerplate_Content_Navigation_CompanyLogoLink");
         }
+
+        public static class Pages
+        {
+            public static string NotFoundPagePath => SiteSettingsHelper.GetSettingValue("DeleteBoilerplate_Content_Pages_NotFoundPagePath");
+        }
     }
 }
