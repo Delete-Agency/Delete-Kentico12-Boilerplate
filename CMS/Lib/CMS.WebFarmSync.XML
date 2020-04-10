@@ -1894,6 +1894,11 @@
             Server ID.
             </summary>
         </member>
+        <member name="P:CMS.WebFarmSync.WebFarmContext.MaintenanceTaskDeleteBatchSize">
+            <summary>
+            Returns bach size for deleting tasks during maintenance. Default value is 500.
+            </summary>
+        </member>
         <member name="M:CMS.WebFarmSync.WebFarmContext.Clear(System.Boolean)">
             <summary>
             Clears the hashtables of web farm servers.

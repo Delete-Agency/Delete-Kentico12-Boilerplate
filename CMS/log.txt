@@ -1,0 +1,1079 @@
+[2020-04-10 13:21:47] Initializing hotfix...
+[2020-04-10 13:21:52] Testing DB connection.
+[2020-04-10 13:21:52] Copying files...
+[2020-04-10 13:21:52] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\App_Data\CMSModules\Content\UI\Grids\CMS_PageTemplateConfiguration\default.xml
+[2020-04-10 13:21:52] CMS\CMS\App_Data\CMSModules\Content\UI
+[2020-04-10 13:21:52] CMS\CMS\App_Data\CMSModules\Content
+[2020-04-10 13:21:52] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\App_Data\CMSModules\DataProtection\UI\Grids\CMS_ConsentAgreement\list.xml
+[2020-04-10 13:21:52] CMS\CMS\App_Data\CMSModules\DataProtection\UI
+[2020-04-10 13:21:52] CMS\CMS\App_Data\CMSModules\DataProtection
+[2020-04-10 13:21:52] CMS\CMS\App_Data\CMSModules
+[2020-04-10 13:21:52] CMS\CMS\App_Data\Install
+[2020-04-10 13:21:52] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\App_Data\Install\SQL.zip
+[2020-04-10 13:21:52] CMS\CMS\App_Data\Templates\BlankSite
+[2020-04-10 13:21:52] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\App_Data\Templates\BlankSite\Template.zip
+[2020-04-10 13:21:52] CMS\CMS\App_Data\Templates\BlankSiteASPX
+[2020-04-10 13:21:52] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\App_Data\Templates\BlankSiteASPX\Template.zip
+[2020-04-10 13:21:52] CMS\CMS\App_Data\Templates\BlankSiteMvc
+[2020-04-10 13:21:52] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\App_Data\Templates\BlankSiteMvc\Template.zip
+[2020-04-10 13:21:52] CMS\CMS\App_Data\Templates\CorporateSite
+[2020-04-10 13:21:52] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\App_Data\Templates\CorporateSite\Template.zip
+[2020-04-10 13:21:52] CMS\CMS\App_Data\Templates\DancingGoat
+[2020-04-10 13:21:52] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\App_Data\Templates\DancingGoat\Template.zip
+[2020-04-10 13:21:52] CMS\CMS\App_Data\Templates\ECommerceSite
+[2020-04-10 13:21:52] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\App_Data\Templates\ECommerceSite\Template.zip
+[2020-04-10 13:21:52] CMS\CMS\App_Data\Templates\IntranetPortal
+[2020-04-10 13:21:52] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\App_Data\Templates\IntranetPortal\Template.zip
+[2020-04-10 13:21:52] CMS\CMS\App_Data\Templates
+[2020-04-10 13:21:52] CMS\CMS\App_Data
+[2020-04-10 13:21:52] CMS\CMS\App_Themes\Default\Bootstrap
+[2020-04-10 13:21:52] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\App_Themes\Default\Bootstrap\alerts.less
+[2020-04-10 13:21:52] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\App_Themes\Default\Bootstrap\forms.less
+[2020-04-10 13:21:52] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\App_Themes\Default\Bootstrap\mixins.less
+[2020-04-10 13:21:52] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\App_Themes\Default\Bootstrap\type.less
+[2020-04-10 13:21:52] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\App_Themes\Default\Bootstrap\variables.less
+[2020-04-10 13:21:52] CMS\CMS\App_Themes\Default\CMSComponents
+[2020-04-10 13:21:52] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\App_Themes\Default\CMSComponents\advanced-inputs.less
+[2020-04-10 13:21:52] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\App_Themes\Default\CMSComponents\form-builder.less
+[2020-04-10 13:21:52] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\App_Themes\Default\CMSComponents\header-actions.less
+[2020-04-10 13:21:52] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\App_Themes\Default\CMSComponents\portal-engine.less
+[2020-04-10 13:21:52] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\App_Themes\Default\CMSComponents\uni-flat-selector.less
+[2020-04-10 13:21:52] CMS\CMS\App_Themes\Default\CMSModules\cms.abtests
+[2020-04-10 13:21:52] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\App_Themes\Default\CMSModules\cms.abtests\cms.abtests.conversiondesigner.less
+[2020-04-10 13:21:52] CMS\CMS\App_Themes\Default\CMSModules\cms.content
+[2020-04-10 13:21:52] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\App_Themes\Default\CMSModules\cms.content\cms.content.alternativeurls.less
+[2020-04-10 13:21:52] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\App_Themes\Default\CMSModules\cms.content\cms.content.pagebuilder.less
+[2020-04-10 13:21:52] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\App_Themes\Default\CMSModules\cms.content\cms.content.pages.less
+[2020-04-10 13:21:52] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\App_Themes\Default\CMSModules\cms.content\cms.content.templateselection.less
+[2020-04-10 13:21:52] CMS\CMS\App_Themes\Default\CMSModules\cms.emailmarketing
+[2020-04-10 13:21:52] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\App_Themes\Default\CMSModules\cms.emailmarketing\cms.emailmarketing.emailbuilder.less
+[2020-04-10 13:21:52] CMS\CMS\App_Themes\Default\CMSModules\cms.onlinemarketing
+[2020-04-10 13:21:52] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\App_Themes\Default\CMSModules\cms.onlinemarketing\cms.onlinemarketing.abtestpopup.less
+[2020-04-10 13:21:52] CMS\CMS\App_Themes\Default\CMSModules
+[2020-04-10 13:21:52] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\App_Themes\Default\CMSModules\cms.abtests.less
+[2020-04-10 13:21:52] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\App_Themes\Default\CMSModules\cms.content.less
+[2020-04-10 13:21:52] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\App_Themes\Default\CMSModules\cms.messages.less
+[2020-04-10 13:21:52] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\App_Themes\Default\CMSModules\cms.onlinemarketing.less
+[2020-04-10 13:21:52] CMS\CMS\App_Themes\Default\Images
+[2020-04-10 13:21:52] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\App_Themes\Default\Images\background.png
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\App_Themes\Default\Images\Images.zip
+[2020-04-10 13:21:53] CMS\CMS\App_Themes\Default
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\App_Themes\Default\bootstrap.css
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\App_Themes\Default\CMSDesk.css
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\App_Themes\Default\DesignMode.css
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\App_Themes\Default\DesignMode.less
+[2020-04-10 13:21:53] CMS\CMS\App_Themes\Design
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\App_Themes\Design\UniGraph.css
+[2020-04-10 13:21:53] CMS\CMS\App_Themes
+[2020-04-10 13:21:53] CMS\CMS\CMSAdminControls\CKeditor\plugins\CMSPlugins
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSAdminControls\CKeditor\plugins\CMSPlugins\plugin.js
+[2020-04-10 13:21:53] CMS\CMS\CMSAdminControls\CKeditor\plugins
+[2020-04-10 13:21:53] CMS\CMS\CMSAdminControls\CKeditor
+[2020-04-10 13:21:53] CMS\CMS\CMSAdminControls\UI\Macros
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSAdminControls\UI\Macros\MacroDesigner.ascx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSAdminControls\UI\Macros\MacroRuleDesigner.ascx.cs
+[2020-04-10 13:21:53] CMS\CMS\CMSAdminControls\UI\UniSelector
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSAdminControls\UI\UniSelector\DialogItemList.xml
+[2020-04-10 13:21:53] CMS\CMS\CMSAdminControls\UI
+[2020-04-10 13:21:53] CMS\CMS\CMSAdminControls
+[2020-04-10 13:21:53] CMS\CMS\CMSFormControls\Macros
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSFormControls\Macros\ConditionBuilder.ascx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSFormControls\Macros\ConditionBuilder.aspx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSFormControls\Macros\MacroEditor.ascx.cs
+[2020-04-10 13:21:53] CMS\CMS\CMSFormControls\System
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSFormControls\System\OptionsSelector.ascx.cs
+[2020-04-10 13:21:53] CMS\CMS\CMSFormControls
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Activities\Controls\UI\ActivityDetails\BizFormDetails.aspx
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Activities\Controls\UI\ActivityDetails\BizFormDetails.aspx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Activities\Controls\UI\ActivityDetails\BizFormDetails.aspx.designer.cs
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Activities\Controls\UI
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Activities\Controls
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Activities
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\AdminControls\Controls\Class\FieldEditor\ControlSettings.ascx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\AdminControls\Controls\Class\FieldEditor\DatabaseConfiguration.ascx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\AdminControls\Controls\Class\FormBuilder\FormBuilder.ascx
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\AdminControls\Controls\Class\FormBuilder\FormBuilder.js
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\AdminControls\Controls\Class
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\AdminControls\Controls\Class\ClassSites.ascx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\AdminControls\Controls\Class\NewClassWizard.ascx.cs
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\AdminControls\Controls\UIControls
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\AdminControls\Controls\UIControls\GeneralSelector.ascx.cs
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\AdminControls\Controls
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\AdminControls
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\BizForms\FormControls
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\BizForms\FormControls\FormFieldSelector.ascx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\BizForms\FormControls\SelectBizForm.ascx
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\BizForms\FormControls\SelectBizForm.ascx.cs
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\BizForms\Tools
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\BizForms\Tools\BizForm_Edit_EditRecordMVC.aspx
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\BizForms\Tools\BizForm_Edit_EditRecordMVC.aspx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\BizForms\Tools\BizForm_Edit_EditRecordMVC.aspx.designer.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\BizForms\Tools\BizForm_Edit_FormBuilder.aspx
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\BizForms\Tools\BizForm_Edit_FormBuilderMVC.aspx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\BizForms\Tools\BizForm_Edit_General.aspx
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\BizForms\Tools\BizForm_Edit_General.aspx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\BizForms\Tools\BizForm_Edit_General.aspx.designer.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\BizForms\Tools\BizForm_Edit_NotificationEmail.aspx
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\BizForms\Tools\BizForm_Edit_NotificationEmail.aspx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\BizForms\Tools\BizForm_Edit_NotificationEmail.aspx.designer.cs
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\BizForms
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\ContactManagement\Controls\UI\Account\Edit.ascx
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\ContactManagement\Controls\UI\ContactGroup\Contacts.ascx.cs
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\ContactManagement\Controls\UI
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\ContactManagement\Controls
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\ContactManagement
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Content\CMSDesk\Edit
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\CMSDesk\Edit\Edit.aspx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\CMSDesk\MVC\Properties\AlternativeUrls.aspx
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\CMSDesk\MVC\Properties\AlternativeUrls.aspx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\CMSDesk\MVC\Properties\AlternativeUrls.aspx.designer.cs
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Content\CMSDesk\MVC
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\CMSDesk\MVC\Edit.aspx
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\CMSDesk\MVC\Edit.aspx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\CMSDesk\MVC\Edit.aspx.designer.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\CMSDesk\MVC\TemplateSelection.aspx
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\CMSDesk\MVC\TemplateSelection.aspx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\CMSDesk\MVC\TemplateSelection.aspx.designer.cs
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Content\CMSDesk\Properties
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\CMSDesk\Properties\Alias_List.aspx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\CMSDesk\Properties\Attachments.aspx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\CMSDesk\Properties\Categories.aspx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\CMSDesk\Properties\General.aspx
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\CMSDesk\Properties\General.aspx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\CMSDesk\Properties\General.aspx.designer.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\CMSDesk\Properties\Languages.aspx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\CMSDesk\Properties\LinkedDocs.aspx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\CMSDesk\Properties\Menu.aspx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\CMSDesk\Properties\MetaData.aspx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\CMSDesk\Properties\Relateddocs_List.aspx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\CMSDesk\Properties\Security.aspx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\CMSDesk\Properties\Template.aspx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\CMSDesk\Properties\Versions.aspx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\CMSDesk\Properties\Workflow.aspx
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\CMSDesk\Properties\Workflow.aspx.cs
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Content\CMSDesk\Validation
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\CMSDesk\Validation\Accessibility.aspx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\CMSDesk\Validation\CSS.aspx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\CMSDesk\Validation\HTML.aspx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\CMSDesk\Validation\Links.aspx.cs
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Content\CMSDesk\View
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\CMSDesk\View\View.aspx
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\CMSDesk\View\View.aspx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\CMSDesk\View\View.aspx.designer.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\CMSDesk\View\ViewTabs.js
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Content\CMSDesk
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\CMSDesk\Content.js
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\CMSDesk\Delete.aspx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\CMSDesk\EditTabs.js
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\CMSDesk\TemplateSelection.aspx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\Controls\Dialogs\Properties\URLProperties.ascx
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\Controls\Dialogs\Properties\URLProperties.ascx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\Controls\Dialogs\Properties\URLProperties.ascx.designer.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\Controls\Dialogs\Selectors\FileSystemSelector\FileSystemSelector.ascx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\Controls\Dialogs\Selectors\LinkMediaSelector\InnerMediaView.ascx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\Controls\Dialogs\Selectors\LinkMediaSelector\LinkMediaSelector.ascx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\Controls\Dialogs\Selectors\LinkMediaSelector\Menu.ascx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\Controls\Dialogs\Selectors\LinkMediaSelector\NewFile.ascx.cs
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Content\Controls\Dialogs
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Content\Controls\Filters
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\Controls\Filters\ObjectsRecycleBinFilter.ascx
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\Controls\Filters\ObjectsRecycleBinFilter.ascx.cs
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Content\Controls\Relationships
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\Controls\Relationships\AddRelatedDocument.ascx.cs
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Content\Controls\UserContributions
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\Controls\UserContributions\EditForm.ascx.cs
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Content\Controls
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\Controls\DocTypeSelection.ascx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\Controls\EditMenu.ascx
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\Controls\EditMenu.ascx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\Controls\EditMenu.ascx.designer.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\Controls\MasterPage.ascx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\Controls\NewCultureVersion.ascx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\Controls\TreeActionsPanel.ascx
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\Controls\TreeActionsPanel.ascx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\Controls\TreeContextMenu.ascx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\Controls\ViewVersion.ascx
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\Controls\ViewVersion.ascx.cs
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Content\FormControls\Documents
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\FormControls\Documents\SelectPath.ascx.cs
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Content\FormControls\Relationships
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Content\FormControls\Relationships\RelatedDocuments.ascx.cs
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Content\FormControls
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Content
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\CustomTables
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\CustomTables\CustomTable_List.aspx.cs
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\DataProtection\Pages
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\DataProtection\Pages\PersonalDataManagement.aspx.cs
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\DataProtection
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Ecommerce\CMSPages
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Ecommerce\CMSPages\GetInvoice.aspx.cs
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Ecommerce\FormControls
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Ecommerce\FormControls\SelectProductImage.ascx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Ecommerce\FormControls\SKUSelector.ascx.cs
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Ecommerce
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\EmailQueue
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\EmailQueue\EmailQueue_Details.aspx
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\EmailQueue\EmailQueue_Details.aspx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\EmailQueue\EmailQueue_Details.aspx.designer.cs
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Groups\FormControls
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Groups\FormControls\CommunityGroupSelector.ascx.cs
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Groups
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\ImportExport\Controls\Import
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\ImportExport\Controls\Import\ma_automationaction.ascx
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\ImportExport\Controls\Import\ma_automationaction.ascx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\ImportExport\Controls\Import\ma_automationaction.ascx.designer.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\ImportExport\Controls\Import\__objects__.ascx
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\ImportExport\Controls\Import\__objects__.ascx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\ImportExport\Controls\Import\__objects__.ascx.designer.cs
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\ImportExport\Controls
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\ImportExport
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Integration\Controls\UI\IntegrationTask\List.ascx.cs
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Integration\Controls\UI
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Integration\Controls
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Integration
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\MediaLibrary\Controls\Dialogs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\MediaLibrary\Controls\Dialogs\LinkMediaSelector.ascx.cs
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\MediaLibrary\Controls\MediaLibrary
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\MediaLibrary\Controls\MediaLibrary\MediaFileMetaDataEditor.ascx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\MediaLibrary\Controls\MediaLibrary\MediaLibrary.ascx.cs
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\MediaLibrary\Controls
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\MediaLibrary
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Membership\Pages\LinkedIn
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Membership\Pages\LinkedIn\LinkedInAccessTokenPage.aspx.cs
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Membership\Pages\Users
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Membership\Pages\Users\User_Edit_CustomFields.aspx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Membership\Pages\Users\User_Edit_General.aspx.cs
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Membership\Pages
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Membership
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Newsletters\Controls
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Newsletters\Controls\MySubscriptions.ascx.cs
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Newsletters\EmailBuilder
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Newsletters\EmailBuilder\Email_Builder.aspx
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Newsletters\Tools\Newsletters
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Newsletters\Tools\Newsletters\Newsletter_Subscribers.aspx.cs
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Newsletters\Tools
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Newsletters
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Objects\FormControls
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Objects\FormControls\BinObjectTypeSelector.ascx.cs
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Objects
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\OnlineMarketing\Controls\UI\ABTest\ConversionEditor.ascx
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\OnlineMarketing\Controls\UI\ABTest\ConversionEditor.ascx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\OnlineMarketing\Controls\UI\ABTest\ConversionEditor.ascx.designer.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\OnlineMarketing\Controls\UI\ABTest\Edit.ascx
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\OnlineMarketing\Controls\UI\ABTest\Edit.ascx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\OnlineMarketing\Controls\UI\ABTest\List.ascx
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\OnlineMarketing\Controls\UI\ABTest\List.ascx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\OnlineMarketing\Controls\UI\Grids\MacroRule.xml
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\OnlineMarketing\Controls\UI
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\OnlineMarketing\Controls
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\OnlineMarketing\Pages\Content\ABTesting\ABTest\FinishABTest.aspx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\OnlineMarketing\Pages\Content\ABTesting\ABTest\List.aspx
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\OnlineMarketing\Pages\Content\ABTesting\ABTest\List.aspx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\OnlineMarketing\Pages\Content\ABTesting\ABTest\Overview.aspx
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\OnlineMarketing\Pages\Content\ABTesting\ABTest\Overview.aspx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\OnlineMarketing\Pages\Content\ABTesting\ABTest\Overview.aspx.designer.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\OnlineMarketing\Pages\Content\ABTesting\ABTest\OverviewMVC.aspx
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\OnlineMarketing\Pages\Content\ABTesting\ABTest\OverviewMVC.aspx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\OnlineMarketing\Pages\Content\ABTesting\ABTest\OverviewMVC.aspx.designer.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\OnlineMarketing\Pages\Content\ABTesting\ABTest\StartABTest.aspx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\OnlineMarketing\Pages\Content\ABTesting\ABTest\Tab_General.aspx
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\OnlineMarketing\Pages\Content\ABTesting\ABTest\Tab_General.aspx.cs
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\OnlineMarketing\Pages\Content\ContentPersonalizationVariant\List.aspx.cs
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\OnlineMarketing\Pages\Content
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\OnlineMarketing\Pages
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\OnlineMarketing
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\PortalEngine\UI\PageLayouts
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\PortalEngine\UI\PageLayouts\PageLayout_Templates.aspx.cs
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\PortalEngine\UI
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\PortalEngine
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Reporting\Controls
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Reporting\Controls\DisplayReport.ascx.cs
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Reporting
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Scoring\Controls\UI\Rule\List.ascx.cs
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Scoring\Controls\UI
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Scoring\Controls
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Scoring
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\SocialMarketing\Pages
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\SocialMarketing\Pages\LinkedInCompanyAccessTokenDialog.aspx.cs
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\SocialMarketing
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Staging\Tools\AllTasks
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Staging\Tools\AllTasks\Tasks.aspx.cs
+[2020-04-10 13:21:53] CMS\CMS\CMSModules\Staging\Tools\Data
+[2020-04-10 13:21:53] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Staging\Tools\Data\Tasks.aspx.cs
+[2020-04-10 13:21:54] CMS\CMS\CMSModules\Staging\Tools\Objects
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Staging\Tools\Objects\Tasks.aspx.cs
+[2020-04-10 13:21:54] CMS\CMS\CMSModules\Staging\Tools\TaskGroup
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Staging\Tools\TaskGroup\TaskGroup.aspx.cs
+[2020-04-10 13:21:54] CMS\CMS\CMSModules\Staging\Tools\Tasks
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Staging\Tools\Tasks\Tasks.aspx.cs
+[2020-04-10 13:21:54] CMS\CMS\CMSModules\Staging\Tools
+[2020-04-10 13:21:54] CMS\CMS\CMSModules\Staging
+[2020-04-10 13:21:54] CMS\CMS\CMSModules\System\Controls
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\System\Controls\System.ascx
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\System\Controls\System.ascx.cs
+[2020-04-10 13:21:54] CMS\CMS\CMSModules\System\Macros
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\System\Macros\System_Macros.aspx
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\System\Macros\System_Macros.aspx.cs
+[2020-04-10 13:21:54] CMS\CMS\CMSModules\System
+[2020-04-10 13:21:54] CMS\CMS\CMSModules\Translations\Pages
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Translations\Pages\TranslateDocuments.aspx.cs
+[2020-04-10 13:21:54] CMS\CMS\CMSModules\Translations
+[2020-04-10 13:21:54] CMS\CMS\CMSModules\Widgets\Controls
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Widgets\Controls\WidgetProperties.ascx.cs
+[2020-04-10 13:21:54] CMS\CMS\CMSModules\Widgets\LiveDialogs
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Widgets\LiveDialogs\WidgetProperties.aspx.cs
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Widgets\LiveDialogs\WidgetProperties_Properties.aspx.cs
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Widgets\LiveDialogs\WidgetSelector.aspx.cs
+[2020-04-10 13:21:54] CMS\CMS\CMSModules\Widgets
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Workflows\Controls\UI\WorkflowStep\Security.ascx
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Workflows\Controls\UI\WorkflowStep\Security.ascx.cs
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Workflows\Controls\UI\WorkflowStep\Security.ascx.designer.cs
+[2020-04-10 13:21:54] CMS\CMS\CMSModules\Workflows\Controls\UI
+[2020-04-10 13:21:54] CMS\CMS\CMSModules\Workflows\Controls
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Workflows\Pages\WorkflowStep\SourcePoint\Security.aspx.cs
+[2020-04-10 13:21:54] CMS\CMS\CMSModules\Workflows\Pages\WorkflowStep
+[2020-04-10 13:21:54] CMS\CMS\CMSModules\Workflows\Pages
+[2020-04-10 13:21:54] CMS\CMS\CMSModules\Workflows
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSModules\Workflows\Workflow_Step_Security.aspx.cs
+[2020-04-10 13:21:54] CMS\CMS\CMSModules
+[2020-04-10 13:21:54] CMS\CMS\CMSPages
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSPages\logon.aspx.cs
+[2020-04-10 13:21:54] CMS\CMS\CMSResources
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSResources\Hotfix.resx
+[2020-04-10 13:21:54] CMS\CMS\CMSScripts\CMSModules\CMS
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\CMSModules\CMS\AdvancedPopupHandler.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\CMSModules\CMS\CookiePolicyDetection.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\CMSModules\CMS\CurrentUrlHelper.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\CMSModules\CMS\MessageService.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\CMSModules\CMS\UITabs.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\CMSModules\CMS\UrlHelper.js
+[2020-04-10 13:21:54] CMS\CMS\CMSScripts\CMSModules\CMS.Builder\FormBuilder
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\CMSModules\CMS.Builder\FormBuilder\Messaging.js
+[2020-04-10 13:21:54] CMS\CMS\CMSScripts\CMSModules\CMS.Builder\PageBuilder
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\CMSModules\CMS.Builder\PageBuilder\Messaging.js
+[2020-04-10 13:21:54] CMS\CMS\CMSScripts\CMSModules\CMS.Builder
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\CMSModules\CMS.Builder\Constants.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\CMSModules\CMS.Builder\FrameSrcAttributeModifier.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\CMSModules\CMS.Builder\MessageTypes.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\CMSModules\CMS.Builder\ModalDialogService.js
+[2020-04-10 13:21:54] CMS\CMS\CMSScripts\CMSModules\CMS.Newsletter
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\CMSModules\CMS.Newsletter\MessageService.js
+[2020-04-10 13:21:54] CMS\CMS\CMSScripts\CMSModules\CMS.OnlineMarketing
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\CMSModules\CMS.OnlineMarketing\ABTestOverview.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\CMSModules\CMS.OnlineMarketing\ABVariantSelector.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\CMSModules\CMS.OnlineMarketing\PopUpWindow.js
+[2020-04-10 13:21:54] CMS\CMS\CMSScripts\CMSModules\CMS.PageTemplates
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\CMSModules\CMS.PageTemplates\TemplateSelector.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\CMSModules\CMS.PageTemplates\TemplateSelector.localization.json
+[2020-04-10 13:21:54] CMS\CMS\CMSScripts\CMSModules
+[2020-04-10 13:21:54] CMS\CMS\CMSScripts\Controls
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\Controls\MessagesPlaceHolder.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\Controls\uniselector.js
+[2020-04-10 13:21:54] CMS\CMS\CMSScripts\DesignMode
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\DesignMode\PortalManager.js
+[2020-04-10 13:21:54] CMS\CMS\CMSScripts\Dialogs
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\Dialogs\modaldialog.js
+[2020-04-10 13:21:54] CMS\CMS\CMSScripts\WebComponents\components
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\chunk-12ee72ee.es5.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\chunk-3cefcc8d.es5.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\chunk-3fd38db9.es5.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\chunk-4e6b1b49.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\chunk-5dc1aa56.es5.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\chunk-a93dedfa.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\chunk-be87adfa.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\chunk-e0b8e497.es5.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\chunk-ee323282.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\chunk-f91cccde.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\components.core.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\components.core.pf.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\components.global.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-abtest-variant-listing.es5.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-abtest-variant-listing.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-abtest-variant-listing.sc.es5.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-abtest-variant-listing.sc.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-add-component-button.es5.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-add-component-button.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-alert-box.es5.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-alert-box.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-alert-box.sc.es5.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-alert-box.sc.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-dialog-header.es5.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-dialog-header.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-dialog-header.sc.es5.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-dialog-header.sc.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-drop-marker.es5.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-drop-marker.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-drop-marker.sc.es5.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-drop-marker.sc.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-form-modal-dialog.es5.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-form-modal-dialog.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-header-button.es5.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-header-button.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-header-button.sc.es5.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-header-button.sc.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-loader.es5.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-loader.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-loader.sc.es5.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-loader.sc.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-media-files-form-component.es5.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-media-files-form-component.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-media-files-grid.es5.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-media-files-grid.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-media-files-grid.sc.es5.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-media-files-grid.sc.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-media-files.es5.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-media-files.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-media-files.sc.es5.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-media-files.sc.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-miller-column.es5.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-miller-column.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-modal-dialog.es5.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-modal-dialog.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-modal-dialog.sc.es5.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-modal-dialog.sc.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-page-selector-form-component.es5.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-page-selector-form-component.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-page-selector.es5.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-page-selector.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-page-selector.sc.es5.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-page-selector.sc.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-personalization-button.es5.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-personalization-button.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-pop-up-container.es5.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-pop-up-container.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-section-header.es5.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-section-header.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-submit-button.es5.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-submit-button.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-submit-button.sc.es5.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-submit-button.sc.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-widget-header.es5.js
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components\kentico-widget-header.js
+[2020-04-10 13:21:54] CMS\CMS\CMSScripts\WebComponents
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\WebComponents\components.js
+[2020-04-10 13:21:54] CMS\CMS\CMSScripts
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSScripts\cmsedit.js
+[2020-04-10 13:21:54] CMS\CMS\CMSWebParts\Ecommerce\Checkout\Forms
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSWebParts\Ecommerce\Checkout\Forms\CustomerDetail.ascx.cs
+[2020-04-10 13:21:54] CMS\CMS\CMSWebParts\Ecommerce\Checkout
+[2020-04-10 13:21:54] CMS\CMS\CMSWebParts\Ecommerce
+[2020-04-10 13:21:54] CMS\CMS\CMSWebParts\Filters
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSWebParts\Filters\Filter.ascx.cs
+[2020-04-10 13:21:54] CMS\CMS\CMSWebParts\General
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSWebParts\General\CookieLaw.ascx.cs
+[2020-04-10 13:21:54] CMS\CMS\CMSWebParts\Layouts
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSWebParts\Layouts\CollapsiblePanel.ascx.cs
+[2020-04-10 13:21:54] CMS\CMS\CMSWebParts\Membership\FacebookConnect
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSWebParts\Membership\FacebookConnect\FacebookConnectLogon.ascx.cs
+[2020-04-10 13:21:54] CMS\CMS\CMSWebParts\Membership\LinkedIn
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSWebParts\Membership\LinkedIn\LinkedInLogon.ascx.cs
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSWebParts\Membership\LinkedIn\LinkedInUsersRequiredData.ascx.cs
+[2020-04-10 13:21:54] CMS\CMS\CMSWebParts\Membership\Logon
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSWebParts\Membership\Logon\LogonForm.ascx.cs
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSWebParts\Membership\Logon\LogonMiniForm.ascx.cs
+[2020-04-10 13:21:54] CMS\CMS\CMSWebParts\Membership\Registration
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSWebParts\Membership\Registration\CustomRegistrationForm.ascx.cs
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSWebParts\Membership\Registration\RegistrationForm.ascx.cs
+[2020-04-10 13:21:54] CMS\CMS\CMSWebParts\Membership
+[2020-04-10 13:21:54] CMS\CMS\CMSWebParts\Newsletters
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSWebParts\Newsletters\CustomSubscriptionForm.ascx.cs
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSWebParts\Newsletters\NewsletterSubscriptionWebPart.ascx.cs
+[2020-04-10 13:21:54] CMS\CMS\CMSWebParts\Widgets
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSWebParts\Widgets\WidgetActions.ascx.cs
+[2020-04-10 13:21:54] CMS\CMS\CMSWebParts
+[2020-04-10 13:21:54] CMS\CMS\Old_App_Code\CMS
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\Old_App_Code\CMS\UpgradeProcedure.cs
+[2020-04-10 13:21:54] CMS\CMS\Old_App_Code\CMSModules\EmailTemplates
+[2020-04-10 13:21:54] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\Old_App_Code\CMSModules\EmailTemplates\EmailTemplateEditExtender.cs
+[2020-04-10 13:21:54] CMS\CMS\Old_App_Code\CMSModules
+[2020-04-10 13:21:54] CMS\CMS\Old_App_Code
+[2020-04-10 13:21:54] CMS\CMS
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSApp.csproj
+[2020-04-10 13:22:01] CMS
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\GlobalAssemblyInfo.cs
+[2020-04-10 13:22:01] DLLs\Net461
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Activities.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Activities.Loggers.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Activities.Loggers.xml
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Activities.Web.UI.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Activities.Web.UI.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Activities.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.AmazonStorage.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.AmazonStorage.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.ApplicationDashboard.Web.UI.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.ApplicationDashboard.Web.UI.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.AspNet.Platform.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.AspNet.Platform.xml
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Automation.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Automation.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.AzureStorage.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.AzureStorage.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.BannerManagement.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.BannerManagement.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Base.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Base.Web.UI.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Base.Web.UI.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Base.xml
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.ContactManagement.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.ContactManagement.Web.UI.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.ContactManagement.Web.UI.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.ContactManagement.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.ContinuousIntegration.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.ContinuousIntegration.xml
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Core.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Core.xml
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.CustomTables.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.CustomTables.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.DataEngine.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.DataEngine.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.DataProtection.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.DataProtection.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.DeviceProfiles.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.DeviceProfiles.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.DocumentEngine.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.DocumentEngine.Web.UI.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.DocumentEngine.Web.UI.xml
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.DocumentEngine.Web.UI.XmlSerializers.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.DocumentEngine.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.DocumentWebServices.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.DocumentWebServices.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.EmailEngine.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.EmailEngine.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.EventLog.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.EventLog.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.ExternalAuthentication.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.ExternalAuthentication.Web.UI.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.ExternalAuthentication.Web.UI.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.ExternalAuthentication.xml
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.FormEngine.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.FormEngine.Web.UI.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.FormEngine.Web.UI.xml
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.FormEngine.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Globalization.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Globalization.Web.UI.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Globalization.Web.UI.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Globalization.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.HealthMonitoring.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.HealthMonitoring.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Helpers.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Helpers.xml
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.ImportExport.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.ImportExport.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.IO.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.IO.xml
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.LicenseProvider.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.LicenseProvider.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.LicenseProvider.XmlSerializers.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.MacroEngine.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.MacroEngine.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Membership.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Membership.Web.UI.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Membership.Web.UI.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Membership.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.MembershipProvider.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.MembershipProvider.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Modules.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Modules.Web.UI.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Modules.Web.UI.xml
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Modules.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.ModuleUsageTracking.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.ModuleUsageTracking.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.OnlineForms.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.OnlineForms.Web.UI.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.OnlineForms.Web.UI.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.OnlineForms.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.OutputFilter.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.OutputFilter.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.PortalEngine.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.PortalEngine.Web.UI.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.PortalEngine.Web.UI.xml
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.PortalEngine.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Protection.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Protection.Web.UI.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Protection.Web.UI.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Protection.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Relationships.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Relationships.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.ResponsiveImages.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.ResponsiveImages.xml
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Routing.Web.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Routing.Web.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Scheduler.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Scheduler.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Search.Azure.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Search.Azure.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Search.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Search.Lucene3.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Search.Lucene3.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Search.TextExtractors.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Search.TextExtractors.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Search.Web.UI.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Search.Web.UI.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Search.xml
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.SiteProvider.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.SiteProvider.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Synchronization.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Synchronization.Web.UI.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Synchronization.Web.UI.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Synchronization.WSE3.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Synchronization.WSE3.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Synchronization.xml
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.SynchronizationEngine.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.SynchronizationEngine.xml
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Taxonomy.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Taxonomy.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.TranslationServices.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.TranslationServices.Web.UI.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.TranslationServices.Web.UI.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.TranslationServices.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.UIControls.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.UIControls.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.URLRewritingEngine.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.URLRewritingEngine.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.VirtualPathProvider.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.VirtualPathProvider.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.WebAnalytics.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.WebAnalytics.Web.UI.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.WebAnalytics.Web.UI.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.WebAnalytics.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.WebApi.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.WebApi.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.WebFarmSync.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.WebFarmSync.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.WebServices.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.WebServices.xml
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.WorkflowEngine.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.WorkflowEngine.Web.UI.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.WorkflowEngine.Web.UI.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.WorkflowEngine.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\ContinuousIntegration.exe
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\Lucene.Net.v3.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\Lucene.Net.WordNet.SynExpand.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\PDFClown.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\ThoughtWorks.QRCode.dll
+[2020-04-10 13:22:01] DLLs\Net461
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Activities.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Activities.Loggers.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Activities.Loggers.xml
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Activities.Web.UI.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Activities.Web.UI.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Activities.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.AmazonStorage.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.AmazonStorage.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.ApplicationDashboard.Web.UI.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.ApplicationDashboard.Web.UI.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.AspNet.Platform.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.AspNet.Platform.xml
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Automation.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Automation.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.AzureStorage.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.AzureStorage.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.BannerManagement.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.BannerManagement.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Base.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Base.Web.UI.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Base.Web.UI.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Base.xml
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.ContactManagement.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.ContactManagement.Web.UI.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.ContactManagement.Web.UI.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.ContactManagement.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.ContinuousIntegration.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.ContinuousIntegration.xml
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Core.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Core.xml
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.CustomTables.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.CustomTables.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.DataEngine.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.DataEngine.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.DataProtection.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.DataProtection.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.DeviceProfiles.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.DeviceProfiles.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.DocumentEngine.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.DocumentEngine.Web.UI.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.DocumentEngine.Web.UI.xml
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.DocumentEngine.Web.UI.XmlSerializers.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.DocumentEngine.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.DocumentWebServices.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.DocumentWebServices.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.EmailEngine.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.EmailEngine.XML
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.EventLog.dll
+[2020-04-10 13:22:01] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.EventLog.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.ExternalAuthentication.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.ExternalAuthentication.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.ExternalAuthentication.Web.UI.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.ExternalAuthentication.xml
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.FormEngine.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.FormEngine.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.FormEngine.Web.UI.xml
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.FormEngine.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Globalization.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Globalization.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Globalization.Web.UI.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Globalization.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.HealthMonitoring.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.HealthMonitoring.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Helpers.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Helpers.xml
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.ImportExport.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.ImportExport.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.IO.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.IO.xml
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.LicenseProvider.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.LicenseProvider.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.LicenseProvider.XmlSerializers.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.MacroEngine.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.MacroEngine.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Membership.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Membership.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Membership.Web.UI.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Membership.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.MembershipProvider.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.MembershipProvider.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Modules.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Modules.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Modules.Web.UI.xml
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Modules.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.ModuleUsageTracking.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.ModuleUsageTracking.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.OnlineForms.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.OnlineForms.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.OnlineForms.Web.UI.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.OnlineForms.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.OutputFilter.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.OutputFilter.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.PortalEngine.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.PortalEngine.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.PortalEngine.Web.UI.xml
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.PortalEngine.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Protection.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Protection.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Protection.Web.UI.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Protection.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Relationships.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Relationships.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.ResponsiveImages.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.ResponsiveImages.xml
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Routing.Web.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Routing.Web.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Scheduler.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Scheduler.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Search.Azure.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Search.Azure.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Search.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Search.Lucene3.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Search.Lucene3.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Search.TextExtractors.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Search.TextExtractors.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Search.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Search.Web.UI.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Search.xml
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.SiteProvider.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.SiteProvider.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Synchronization.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Synchronization.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Synchronization.Web.UI.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Synchronization.WSE3.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Synchronization.WSE3.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Synchronization.xml
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.SynchronizationEngine.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.SynchronizationEngine.xml
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Taxonomy.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Taxonomy.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.TranslationServices.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.TranslationServices.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.TranslationServices.Web.UI.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.TranslationServices.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.UIControls.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.UIControls.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.URLRewritingEngine.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.URLRewritingEngine.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.VirtualPathProvider.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.VirtualPathProvider.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.WebAnalytics.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.WebAnalytics.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.WebAnalytics.Web.UI.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.WebAnalytics.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.WebApi.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.WebApi.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.WebFarmSync.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.WebFarmSync.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.WebServices.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.WebServices.xml
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.WorkflowEngine.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.WorkflowEngine.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.WorkflowEngine.Web.UI.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.WorkflowEngine.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\ContinuousIntegration.exe
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\Lucene.Net.v3.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\Lucene.Net.WordNet.SynExpand.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\PDFClown.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\ThoughtWorks.QRCode.dll
+[2020-04-10 13:22:02] DLLs\Modules\Blogs\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Blogs.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Blogs.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Blogs.Web.UI.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Blogs.XML
+[2020-04-10 13:22:02] DLLs\Modules\Blogs\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Blogs.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Blogs.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Blogs.Web.UI.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Blogs.XML
+[2020-04-10 13:22:02] DLLs\Modules\Chat\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Chat.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Chat.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Chat.Web.UI.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Chat.XML
+[2020-04-10 13:22:02] DLLs\Modules\Chat\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Chat.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Chat.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Chat.Web.UI.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Chat.XML
+[2020-04-10 13:22:02] DLLs\Modules\Community\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Community.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Community.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Community.Web.UI.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Community.XML
+[2020-04-10 13:22:02] DLLs\Modules\Community\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Community.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Community.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Community.Web.UI.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Community.XML
+[2020-04-10 13:22:02] DLLs\Modules\DancingGoat.Samples\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.DancingGoat.Samples.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.DancingGoat.Samples.xml
+[2020-04-10 13:22:02] DLLs\Modules\DancingGoat.Samples\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.DancingGoat.Samples.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.DancingGoat.Samples.xml
+[2020-04-10 13:22:02] DLLs\Modules\Ecommerce\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Ecommerce.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Ecommerce.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Ecommerce.Web.UI.xml
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Ecommerce.XML
+[2020-04-10 13:22:02] DLLs\Modules\Ecommerce\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Ecommerce.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Ecommerce.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Ecommerce.Web.UI.xml
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Ecommerce.XML
+[2020-04-10 13:22:02] DLLs\Modules\EventManager\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.EventManager.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.EventManager.XML
+[2020-04-10 13:22:02] DLLs\Modules\EventManager\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.EventManager.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.EventManager.XML
+[2020-04-10 13:22:02] DLLs\Modules\Forums\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Forums.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Forums.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Forums.Web.UI.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Forums.XML
+[2020-04-10 13:22:02] DLLs\Modules\Forums\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Forums.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Forums.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Forums.Web.UI.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Forums.XML
+[2020-04-10 13:22:02] DLLs\Modules\MediaLibrary\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.MediaLibrary.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.MediaLibrary.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.MediaLibrary.Web.UI.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.MediaLibrary.XML
+[2020-04-10 13:22:02] DLLs\Modules\MediaLibrary\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.MediaLibrary.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.MediaLibrary.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.MediaLibrary.Web.UI.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.MediaLibrary.XML
+[2020-04-10 13:22:02] DLLs\Modules\MessageBoards\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.MessageBoards.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.MessageBoards.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.MessageBoards.Web.UI.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.MessageBoards.xml
+[2020-04-10 13:22:02] DLLs\Modules\MessageBoards\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.MessageBoards.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.MessageBoards.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.MessageBoards.Web.UI.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.MessageBoards.xml
+[2020-04-10 13:22:02] DLLs\Modules\Newsletters\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Newsletters.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Newsletters.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Newsletters.Web.UI.xml
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Newsletters.xml
+[2020-04-10 13:22:02] DLLs\Modules\Newsletters\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Newsletters.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Newsletters.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Newsletters.Web.UI.xml
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Newsletters.xml
+[2020-04-10 13:22:02] DLLs\Modules\Notifications\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Notifications.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Notifications.Web.UI.xml
+[2020-04-10 13:22:02] DLLs\Modules\Notifications\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Notifications.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Notifications.Web.UI.xml
+[2020-04-10 13:22:02] DLLs\Modules\OnlineMarketing\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.OnlineMarketing.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.OnlineMarketing.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.OnlineMarketing.Web.UI.xml
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.OnlineMarketing.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.SalesForce.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.SalesForce.XML
+[2020-04-10 13:22:02] DLLs\Modules\OnlineMarketing\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.OnlineMarketing.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.OnlineMarketing.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.OnlineMarketing.Web.UI.xml
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.OnlineMarketing.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.SalesForce.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.SalesForce.XML
+[2020-04-10 13:22:02] DLLs\Modules\Personas\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Personas.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Personas.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Personas.Web.UI.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Personas.XML
+[2020-04-10 13:22:02] DLLs\Modules\Personas\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Personas.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Personas.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Personas.Web.UI.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Personas.XML
+[2020-04-10 13:22:02] DLLs\Modules\Polls\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Polls.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Polls.XML
+[2020-04-10 13:22:02] DLLs\Modules\Polls\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Polls.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Polls.XML
+[2020-04-10 13:22:02] DLLs\Modules\Reporting\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Reporting.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Reporting.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Reporting.Web.UI.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.Reporting.XML
+[2020-04-10 13:22:02] DLLs\Modules\Reporting\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Reporting.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Reporting.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Reporting.Web.UI.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.Reporting.XML
+[2020-04-10 13:22:02] DLLs\Modules\Sharepoint\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.SharePoint.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.SharePoint.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.SharePoint.Web.UI.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.SharePoint.XML
+[2020-04-10 13:22:02] DLLs\Modules\Sharepoint\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.SharePoint.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.SharePoint.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.SharePoint.Web.UI.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.SharePoint.XML
+[2020-04-10 13:22:02] DLLs\Modules\SocialMarketing\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.SocialMarketing.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.SocialMarketing.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.SocialMarketing.Web.UI.xml
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.SocialMarketing.xml
+[2020-04-10 13:22:02] DLLs\Modules\SocialMarketing\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.SocialMarketing.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.SocialMarketing.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.SocialMarketing.Web.UI.xml
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.SocialMarketing.xml
+[2020-04-10 13:22:02] DLLs\Modules\Staging\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\Microsoft.Web.Services3.dll
+[2020-04-10 13:22:02] DLLs\Modules\Staging\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\Microsoft.Web.Services3.dll
+[2020-04-10 13:22:02] DLLs\Modules\StrandsRecommender\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.StrandsRecommender.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.StrandsRecommender.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.StrandsRecommender.Web.UI.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.StrandsRecommender.XML
+[2020-04-10 13:22:02] DLLs\Modules\StrandsRecommender\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.StrandsRecommender.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.StrandsRecommender.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.StrandsRecommender.Web.UI.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.StrandsRecommender.XML
+[2020-04-10 13:22:02] DLLs\Modules\WebDAV\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.WebDAV.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.WebDAV.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.WebDAV.Web.UI.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.WebDAV.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\ITHit.WebDAV.Server.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\ITHit.WebDAV.Server.xml
+[2020-04-10 13:22:02] DLLs\Modules\WebDAV\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.WebDAV.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.WebDAV.Web.UI.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.WebDAV.Web.UI.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.WebDAV.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\ITHit.WebDAV.Server.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\ITHit.WebDAV.Server.xml
+[2020-04-10 13:22:02] DLLs\Modules\WIFIntegration\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.WIFIntegration.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.WIFIntegration.XML
+[2020-04-10 13:22:02] DLLs\Modules\WIFIntegration\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.WIFIntegration.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.WIFIntegration.XML
+[2020-04-10 13:22:02] DLLs\Modules\WindowsServices\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.WinServiceEngine.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMS.WinServiceEngine.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\HealthMonitoringService.exe
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\SchedulerService.exe
+[2020-04-10 13:22:02] DLLs\Modules\WindowsServices\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.WinServiceEngine.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\CMS.WinServiceEngine.XML
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\HealthMonitoringService.exe
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\SchedulerService.exe
+[2020-04-10 13:22:02] DLLs\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\ITHit.WebDAV.Server.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\ITHit.WebDAV.Server.xml
+[2020-04-10 13:22:02] DLLs\Net461\Lib
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\ITHit.WebDAV.Server.dll
+[2020-04-10 13:22:02] D:\Websites\Kentico 12 Boilerplate\CMS\Lib\ITHit.WebDAV.Server.xml
+[2020-04-10 13:22:02] DLLs\Net461\App
+[2020-04-10 13:22:03] D:\Websites\Kentico 12 Boilerplate\CMS\CMS\bin\CMSApp.dll
+[2020-04-10 13:22:03] Upgrading nuget packages in: D:\Websites\Kentico 12 Boilerplate\CMS\CMS\CMSApp.csproj
+[2020-04-10 13:22:03] Creating binding redirect for nuget package: Microsoft.CSharp (4.4.1)
+[2020-04-10 13:22:03] Creating binding redirect for nuget package: Rx-Main (2.2.5)
+[2020-04-10 13:22:03] Creating binding redirect for nuget package: System.Runtime.Numerics (4.3.0)
+[2020-04-10 13:22:03] Creating binding redirect for nuget package: AjaxControlToolkit (17.1.1.0)
+[2020-04-10 13:22:03] Creating binding redirect for nuget package: AjaxMin (5.14.5506.26202)
+[2020-04-10 13:22:03] Creating binding redirect for nuget package: AngleSharp (0.9.9)
+[2020-04-10 13:22:03] Creating binding redirect for nuget package: AWSSDK.Core (3.1.11.0)
+[2020-04-10 13:22:03] Creating binding redirect for nuget package: AWSSDK.S3 (3.1.9.0)
+[2020-04-10 13:22:03] Creating binding redirect for nuget package: Castle.Core (4.2.0)
+[2020-04-10 13:22:03] Creating binding redirect for nuget package: Castle.Windsor (4.1.0)
+[2020-04-10 13:22:03] Creating binding redirect for nuget package: DocumentFormat.OpenXml (2.7.2)
+[2020-04-10 13:22:03] Creating binding redirect for nuget package: Facebook (6.4.2)
+[2020-04-10 13:22:03] Creating binding redirect for nuget package: GlobalLink.Connect (4.18.3.1)
+[2020-04-10 13:22:03] Creating binding redirect for nuget package: Rx-Interfaces (2.2.5)
+[2020-04-10 13:22:03] Creating binding redirect for nuget package: Rx-Core (2.2.5)
+[2020-04-10 13:22:03] Creating binding redirect for nuget package: Rx-Linq (2.2.5)
+[2020-04-10 13:22:03] Creating binding redirect for nuget package: linqtotwitter (4.0.0)
+[2020-04-10 13:22:03] Creating binding redirect for nuget package: MaxMind.Db (2.4.0)
+[2020-04-10 13:22:03] Creating binding redirect for nuget package: Newtonsoft.Json (11.0.2)
+[2020-04-10 13:22:03] Creating binding redirect for nuget package: MaxMind.GeoIP2 (3.0.0)
+[2020-04-10 13:22:03] Creating binding redirect for nuget package: Microsoft.Azure.KeyVault.Core (1.0.0)
+[2020-04-10 13:22:03] Creating binding redirect for nuget package: Microsoft.Rest.ClientRuntime (2.3.17)
+[2020-04-10 13:22:03] Creating binding redirect for nuget package: Microsoft.Rest.ClientRuntime.Azure (3.3.18)
+[2020-04-10 13:22:03] Creating binding redirect for nuget package: Microsoft.Azure.Search.Common (5.0.3)
+[2020-04-10 13:22:03] Creating binding redirect for nuget package: Microsoft.Spatial (7.2.0)
+[2020-04-10 13:22:03] Creating binding redirect for nuget package: Microsoft.Azure.Search.Data (5.0.3)
+[2020-04-10 13:22:03] Creating binding redirect for nuget package: Microsoft.Azure.Search.Service (5.0.3)
+[2020-04-10 13:22:03] Creating binding redirect for nuget package: Microsoft.Azure.Search (5.0.3)
+[2020-04-10 13:22:03] Creating binding redirect for nuget package: Microsoft.Data.Edm (5.6.4)
+[2020-04-10 13:22:04] Creating binding redirect for nuget package: System.Spatial (5.6.4)
+[2020-04-10 13:22:04] Creating binding redirect for nuget package: Microsoft.Data.OData (5.6.4)
+[2020-04-10 13:22:04] Creating binding redirect for nuget package: Microsoft.Data.Services.Client (5.6.4)
+[2020-04-10 13:22:04] Creating binding redirect for nuget package: Microsoft.SharePointOnline.CSOM (16.1.6621.1200)
+[2020-04-10 13:22:04] Creating binding redirect for nuget package: Microsoft.Web.Xdt (2.1.1)
+[2020-04-10 13:22:04] Creating binding redirect for nuget package: Microsoft.WindowsAzure.ConfigurationManager (2.0.2.0)
+[2020-04-10 13:22:04] Creating binding redirect for nuget package: WindowsAzure.Storage (7.2.0)
+[2020-04-10 13:22:04] Creating binding redirect for nuget package: Mono.Cecil (0.10.0)
+[2020-04-10 13:22:04] Creating binding redirect for nuget package: NuGet.Core (2.14.0)
+[2020-04-10 13:22:04] Creating binding redirect for nuget package: OpenPop.NET (2.0.4.369)
+[2020-04-10 13:22:04] Creating binding redirect for nuget package: PayPal (1.8.0)
+[2020-04-10 13:22:04] Creating binding redirect for nuget package: System.Data.HashFunction.Interfaces (2.0.0)
+[2020-04-10 13:22:04] Creating binding redirect for nuget package: System.Data.HashFunction.Core (2.0.0)
+[2020-04-10 13:22:05] Creating binding redirect for nuget package: System.ValueTuple (4.4.0)
+[2020-04-10 13:22:05] Creating binding redirect for nuget package: System.Data.HashFunction.CRC (2.0.0)
+[2020-04-10 13:22:05] Creating binding redirect for nuget package: System.IO.FileSystem.Primitives (4.0.1)
+[2020-04-10 13:22:05] Creating binding redirect for nuget package: System.IO.Packaging (4.0.0)
+[2020-04-10 13:22:05] Creating binding redirect for nuget package: Microsoft.AspNet.WebApi.Client (5.2.3)
+[2020-04-10 13:22:05] Creating binding redirect for nuget package: Rx-PlatformServices (2.2.5)
+[2020-04-10 13:22:05] Creating binding redirect for nuget package: Microsoft.AspNet.WebApi.Core (5.2.3)
+[2020-04-10 13:22:05] Creating binding redirect for nuget package: Microsoft.AspNet.WebApi.WebHost (5.2.3)
+[2020-04-10 13:22:05] Running SQL script (Hotfix_separated.sql)
+[2020-04-10 13:22:05] SQL script applied.
+[2020-04-10 13:22:05] Running SQL script (Hotfix_default.sql)
+[2020-04-10 13:22:07] SQL script applied.
+[2020-04-10 13:22:07] All operations have been successfully finished.
