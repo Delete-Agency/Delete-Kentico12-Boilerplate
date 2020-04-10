@@ -32,5 +32,16 @@ namespace DeleteBoilerplate.Domain
         {
             public static int RepositoryCacheItemDuration => SiteSettingsHelper.GetSettingIntValue("DeleteBoilerplate_Cache_RepositoryCacheItemDuration");
         }
+
+        public static class Navigation
+        {
+            public static string HeaderNavigationPath => SiteSettingsHelper.GetSettingValue("DeleteBoilerplate_Content_Navigation_HeaderNavigationPath");
+
+            public static string FooterNavigationPath => SiteSettingsHelper.GetSettingValue("DeleteBoilerplate_Content_Navigation_FooterNavigationPath");
+
+            public static string CompanyLogoImageUrl => SiteSettingsHelper.GetSettingValue("DeleteBoilerplate_Content_Navigation_CompanyLogoImageUrl");
+
+            public static string CompanyLogoLink => SiteSettingsHelper.GetSettingValue("DeleteBoilerplate_Content_Navigation_CompanyLogoLink");
+        }
     }
 }

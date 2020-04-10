@@ -6,7 +6,6 @@ using CMS.Localization;
 using CMS.SiteProvider;
 using DeleteBoilerplate.Common.Extensions;
 using DeleteBoilerplate.Domain;
-using DeleteBoilerplate.GenericComponents.Models.Footer;
 using DeleteBoilerplate.Infrastructure.Enums;
 using DeleteBoilerplate.Infrastructure.Extensions;
 using DeleteBoilerplate.Metadata.Models;
@@ -34,26 +33,6 @@ namespace DeleteBoilerplate.Metadata
                 .ForPath(dst => dst.OpenGraphMetadata.Url, opt => opt.MapFrom(src => src.GetAbsoluteUrl()))
                 .ForPath(dst => dst.OpenGraphMetadata.Title, opt => opt.MapFrom(src => src.DocumentPageTitle))
                 .ForPath(dst => dst.OpenGraphMetadata.Description, opt => opt.MapFrom(src => src.DocumentPageDescription));
-
-            CreateMap<NavigationLink, NavigationLinkViewModel>()
-                .ForMember(dst => dst.Title, opt => opt.MapFrom(src => src.Title))
-                .ForMember(dst => dst.Url, opt => opt.MapFrom(src => URLHelper.ResolveUrl(src.Url, false)))
-                .ForMember(dst => dst.HideOnMobile, opt => opt.MapFrom(src => src.HideOnMobile))
-                .ForMember(dst => dst.Target, opt => opt.MapFrom(src => src.Target))
-                .ForMember(dst => dst.ChildLinks, opt => opt.MapFrom(src => src.ChildLinks))
-                .ForMember(dst => dst.AssociatedPage, opt => opt.MapFrom(src => src.AssociatedPage))
-                .ForMember(dst => dst.AssociatedPagePath, opt => opt.MapFrom(src => src.AssociatedPagePath))
-                .AfterMap((src, dst) =>
-                {
-                    foreach (var childLink in dst.ChildLinks)
-                    {
-                        childLink.ParentLink = dst;
-                    }
-                })
-                .ForAllOtherMembers(opt => opt.Ignore());
-
-            CreateMap<SocialIcon, SocialLinkViewModel>()
-                .ForMember(dst => dst.Name, opt => opt.MapFrom(src => src.NodeAlias));
         }
     }
 }

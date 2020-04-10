@@ -1,15 +1,13 @@
-﻿@using CMS.Helpers
-@model DeleteBoilerplate.GenericComponents.Models.Header.HeaderViewModel
-
+﻿@model DeleteBoilerplate.WebApp.Models.Global.Header.HeaderViewModel
 @{
     Layout = null;
 }
 
 <header class="header">
-    @if (Model.NavLinks.Count > 0)
+    @if (Model.HeaderNavigationLinks.Count > 0)
     {
         <ul>
-            @foreach (var navigationLink in Model.NavLinks)
+            @foreach (var navigationLink in Model.HeaderNavigationLinks)
             {
                 <li style="display: inline-block;@(navigationLink.IsActive ? "background:#ade66c;" : string.Empty)">
                     <a href="@navigationLink.Url">@navigationLink.Title</a>

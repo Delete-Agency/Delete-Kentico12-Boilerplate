@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
-namespace DeleteBoilerplate.GenericComponents.Models.Footer
+namespace DeleteBoilerplate.WebApp.Models.Global.Header
 {
     public class NavigationLinkViewModel
     {

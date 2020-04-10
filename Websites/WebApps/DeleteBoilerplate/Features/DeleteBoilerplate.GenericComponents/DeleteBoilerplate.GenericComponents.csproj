@@ -844,14 +844,9 @@
   <ItemGroup>
     <Compile Include="Automap\GenericComponentsAutoMap.cs" />
     <Compile Include="Controllers\FormComponents\TaxonomySelectorController.cs" />
-    <Compile Include="Controllers\Global\GlobalController.cs" />
     <Compile Include="Controllers\Sections\OneFullWidthColumnSectionController.cs" />
     <Compile Include="Controllers\Widgets\StaticHtmlWidgetController.cs" />
-    <Compile Include="Models\Footer\FooterViewModel.cs" />
-    <Compile Include="Models\Footer\NavigationLinkViewModel.cs" />
-    <Compile Include="Models\Footer\SocialLinkViewModel.cs" />
     <Compile Include="Models\FormComponents\FormComponentsIdentifiers.cs" />
-    <Compile Include="Models\Header\HeaderViewModel.cs" />
     <Compile Include="Models\Widgets\ImageViewModel.cs" />
     <Compile Include="Models\Widgets\IListingWidgetProperties.cs" />
     <Compile Include="Models\FormComponents\TaxonomySelector\TaxonomySelectorProperties.cs" />
@@ -887,8 +882,6 @@
     <Content Include="Views\Shared\InlineEditors\_ImageSelector.cshtml" />
     <Content Include="Views\Shared\Widgets\_Hero.cshtml" />
     <Content Include="Views\Shared\FormComponents\_TaxonomySelectorComponent.cshtml" />
-    <Content Include="Views\Global\Footer.cshtml" />
-    <Content Include="Views\Global\Header.cshtml" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\Widgets\_StaticHtml.cshtml" />
     <None Include="Web.Debug.config">
