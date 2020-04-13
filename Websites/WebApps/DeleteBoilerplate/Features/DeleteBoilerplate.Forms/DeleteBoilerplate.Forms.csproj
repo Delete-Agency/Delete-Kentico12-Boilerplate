@@ -514,6 +514,9 @@
     <Reference Include="PreMailer.Net, Version=1.5.5.0, Culture=neutral, PublicKeyToken=834b12a258f213f9, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\..\packages\Kentico.Libraries.12.0.65\lib\net461\PreMailer.Net.dll</HintPath>
     </Reference>
+    <Reference Include="RestSharp, Version=106.0.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\RestSharp.106.10.1\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data.HashFunction.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=80c9288e394c1322, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\..\packages\System.Data.HashFunction.Core.2.0.0\lib\net45\System.Data.HashFunction.Core.dll</HintPath>
       <Private>True</Private>
@@ -650,7 +653,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Automap\FormsAutoMap.cs" />
     <Compile Include="DI\CompositionRoot.cs" />
+    <Compile Include="Models\CaptchaValidationResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CaptchaVerificationService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

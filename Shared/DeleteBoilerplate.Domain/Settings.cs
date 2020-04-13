@@ -48,5 +48,13 @@ namespace DeleteBoilerplate.Domain
         {
             public static string NotFoundPagePath => SiteSettingsHelper.GetSettingValue("DeleteBoilerplate_Content_Pages_NotFoundPagePath");
         }
+
+        public static class Integrations
+        {
+            public static class Google
+            {
+                public static string GoogleReCaptchaSecretKey => SiteSettingsHelper.GetSettingValue("DeleteBoilerplate_Integrations_Google_GoogleReCaptchaSecretKey");
+            }
+        }
     }
 }
