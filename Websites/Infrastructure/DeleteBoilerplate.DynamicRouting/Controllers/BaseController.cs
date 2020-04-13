@@ -10,6 +10,7 @@ using System.Web.Mvc;
 using DeleteBoilerplate.Domain.Repositories;
 using DeleteBoilerplate.Infrastructure;
 using IRequestContext = DeleteBoilerplate.DynamicRouting.Contexts.IRequestContext;
+using AutoMapper;
 
 namespace DeleteBoilerplate.DynamicRouting.Controllers
 {
@@ -20,6 +21,9 @@ namespace DeleteBoilerplate.DynamicRouting.Controllers
 
         [Inject]
         protected IOutputCacheDependencies OutputCacheDependencies { get; set; }
+
+        [Inject]
+        public IMapper Mapper { get; set; }
 
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {

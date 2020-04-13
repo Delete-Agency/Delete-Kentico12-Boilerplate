@@ -1,15 +1,14 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Web.Mvc;
-using AutoMapper;
+﻿using CMS.DocumentEngine.Types.DeleteBoilerplate;
 using DeleteBoilerplate.Domain.Repositories;
-using DeleteBoilerplate.Projects.Models;
-using LightInject;
-using CMS.DocumentEngine.Types.DeleteBoilerplate;
 using DeleteBoilerplate.Domain.Services;
 using DeleteBoilerplate.DynamicRouting.Attributes;
 using DeleteBoilerplate.DynamicRouting.Controllers;
 using DeleteBoilerplate.OutputCache;
+using DeleteBoilerplate.Projects.Models;
+using LightInject;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web.Mvc;
 
 namespace DeleteBoilerplate.Projects.Controllers
 {
@@ -18,9 +17,6 @@ namespace DeleteBoilerplate.Projects.Controllers
     {
         [Inject]
         public IProjectRepository ProjectRepository { get; set; }
-
-        [Inject]
-        public IMapper Mapper { get; set; }
 
         [Inject]
         public ITaxonomySearch<Project> TaxonomySearch { get; set; }

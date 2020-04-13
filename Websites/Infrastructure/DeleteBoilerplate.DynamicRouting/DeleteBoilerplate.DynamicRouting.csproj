@@ -50,6 +50,9 @@
       <HintPath>..\..\..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="AutoMapper, Version=8.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\AutoMapper.8.1.1\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="AWSSDK.Core, Version=3.1.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\AWSSDK.Core.3.1.11.0\lib\net45\AWSSDK.Core.dll</HintPath>
     </Reference>
