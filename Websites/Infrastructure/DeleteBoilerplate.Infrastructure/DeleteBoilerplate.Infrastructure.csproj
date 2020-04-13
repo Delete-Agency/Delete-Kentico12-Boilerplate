@@ -640,9 +640,12 @@
     <Compile Include="Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Extensions\HtmlHelperExtensions.Manifest.cs" />
     <Compile Include="Extensions\MediaFilesSelectorItemExtensions.cs" />
+    <Compile Include="Extensions\NameValueCollectionExtensions.cs" />
+    <Compile Include="Extensions\ObjectExtensions.cs" />
     <Compile Include="Extensions\RouteDataExtensions.cs" />
     <Compile Include="Extensions\TreeNodeExtensions.cs" />
     <Compile Include="Helpers\AreaRestrictionHelper.cs" />
+    <Compile Include="Helpers\PropertyInfoHelper.cs" />
     <Compile Include="Models\BaseInlineEditorViewModel.cs" />
     <Compile Include="Models\BaseWidgetViewModel.cs" />
     <Compile Include="Models\StaticAsset.cs" />

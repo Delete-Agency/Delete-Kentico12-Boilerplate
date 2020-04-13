@@ -8,6 +8,17 @@ namespace DeleteBoilerplate.Common.Extensions
 {
     public static class StringExtensions
     {
+        public static string Append(this string value, string valueToAppend, string separator = "")
+        {
+            if (string.IsNullOrEmpty(value))
+                return valueToAppend;
+
+            if (string.IsNullOrEmpty(valueToAppend))
+                return value;
+
+            return value + separator + valueToAppend;
+        }
+
         public static bool IsEmpty(this string value)
         {
             return string.IsNullOrEmpty(value);
