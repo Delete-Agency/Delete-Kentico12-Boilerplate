@@ -1,5 +1,5 @@
 ﻿using System;
-using DeleteBoilerplate.GenericComponents.Models.Widgets;
+using DeleteBoilerplate.Common.Models.Media;
 
 namespace DeleteBoilerplate.Projects.Models
 {

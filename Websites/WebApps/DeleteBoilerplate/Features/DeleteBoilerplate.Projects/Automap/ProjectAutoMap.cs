@@ -1,8 +1,8 @@
 ﻿using CMS.DocumentEngine;
 using CMS.DocumentEngine.Types.DeleteBoilerplate;
 using CMS.Helpers;
-using DeleteBoilerplate.GenericComponents.Models.Widgets;
-using DeleteBoilerplate.Infrastructure.Extensions;
+using DeleteBoilerplate.Common.Extensions;
+using DeleteBoilerplate.Common.Models.Media;
 using DeleteBoilerplate.Metadata.Models;
 using DeleteBoilerplate.Projects.Models;
 using DeleteBoilerplate.Projects.Services;

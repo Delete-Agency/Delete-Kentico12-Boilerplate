@@ -1,14 +1,10 @@
 ﻿using System.Linq;
-using CMS.DocumentEngine.Types.DeleteBoilerplate;
-using CMS.Localization;
-using CMS.SiteProvider;
-using DeleteBoilerplate.GenericComponents.Models.Widgets;
+using DeleteBoilerplate.Common.Models.Media;
 using DeleteBoilerplate.GenericComponents.Models.Widgets.ContentBlockWidget;
 using DeleteBoilerplate.GenericComponents.Models.Widgets.HeroWidget;
 using DeleteBoilerplate.GenericComponents.Models.Widgets.ImageWidget;
 using DeleteBoilerplate.GenericComponents.Models.Widgets.StaticHtmlWidget;
 using DeleteBoilerplate.Infrastructure.Extensions;
-using DeleteBoilerplate.Infrastructure.Models.Media;
 
 namespace DeleteBoilerplate.GenericComponents
 {
@@ -16,8 +12,6 @@ namespace DeleteBoilerplate.GenericComponents
     {
         public GenericComponentsAutoMap()
         {
-            CreateMap<ImageModel, ImageViewModel>();
-
             CreateMap<ContentBlockWidgetProperties, ContentBlockWidgetViewModel>();
             CreateMap<HeroWidgetProperties, HeroWidgetViewModel>();
 

@@ -699,7 +699,7 @@
       <Name>DeleteBoilerplate.OutputCache</Name>
     </ProjectReference>
     <ProjectReference Include="..\DeleteBoilerplate.GenericComponents\DeleteBoilerplate.GenericComponents.csproj">
-      <Project>{A4435C07-D74E-4883-B31B-7466D08DDD07}</Project>
+      <Project>{a4435c07-d74e-4883-b31b-7466d08ddd07}</Project>
       <Name>DeleteBoilerplate.GenericComponents</Name>
     </ProjectReference>
   </ItemGroup>

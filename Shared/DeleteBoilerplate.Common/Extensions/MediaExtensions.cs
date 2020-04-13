@@ -3,25 +3,16 @@ using System.Text.RegularExpressions;
 using CMS.EventLog;
 using CMS.MediaLibrary;
 using CMS.SiteProvider;
-using DeleteBoilerplate.Common.Extensions;
-using DeleteBoilerplate.Infrastructure.Models.Media;
-using Kentico.Components.Web.Mvc.FormComponents;
+using DeleteBoilerplate.Common.Models.Media;
 
-namespace DeleteBoilerplate.Infrastructure.Extensions
+namespace DeleteBoilerplate.Common.Extensions
 {
     public static class MediaExtensions
     {
-        public static string GetMediaFilesSelectorItemUrl(this MediaFilesSelectorItem mediaFilesSelectorItem)
+        public static ImageModel GetImageModel(Guid id)
         {
-            var mediaFile = MediaFileInfoProvider.GetMediaFileInfo(mediaFilesSelectorItem.FileGuid, SiteContext.CurrentSiteName);
-            return MediaLibraryHelper.GetDirectUrl(mediaFile);
-        }
+            if (id == Guid.Empty) return null;
 
-        public static ImageModel GetImageModel(this MediaFilesSelectorItem mediaFilesSelectorItem) =>
-            GetImageModel(mediaFilesSelectorItem.FileGuid);
-
-        private static ImageModel GetImageModel(Guid id)
-        {
             try
             {
                 var mediaFile = MediaFileInfoProvider.GetMediaFileInfo(id, SiteContext.CurrentSiteName);

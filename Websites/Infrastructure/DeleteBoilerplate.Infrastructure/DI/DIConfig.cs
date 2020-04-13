@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
-using DeleteBoilerplate.Infrastructure.Helpers;
+using DeleteBoilerplate.Common;
+using DeleteBoilerplate.Common.Helpers;
 using LightInject;
 using LightInject.ServiceLocation;
 

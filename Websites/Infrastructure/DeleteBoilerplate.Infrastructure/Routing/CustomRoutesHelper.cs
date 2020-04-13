@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
-using DeleteBoilerplate.Infrastructure.Helpers;
+using DeleteBoilerplate.Common.Helpers;
 using Kentico.Web.Mvc;
 
 namespace DeleteBoilerplate.Infrastructure.Routing

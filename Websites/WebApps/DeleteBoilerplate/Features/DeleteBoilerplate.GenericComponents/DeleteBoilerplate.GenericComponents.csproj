@@ -847,7 +847,6 @@
     <Compile Include="Controllers\Sections\OneFullWidthColumnSectionController.cs" />
     <Compile Include="Controllers\Widgets\StaticHtmlWidgetController.cs" />
     <Compile Include="Models\FormComponents\FormComponentsIdentifiers.cs" />
-    <Compile Include="Models\Widgets\ImageViewModel.cs" />
     <Compile Include="Models\Widgets\IListingWidgetProperties.cs" />
     <Compile Include="Models\FormComponents\TaxonomySelector\TaxonomySelectorProperties.cs" />
     <Compile Include="Models\FormComponents\TaxonomySelector\TaxonomySelectorComponent.cs" />
