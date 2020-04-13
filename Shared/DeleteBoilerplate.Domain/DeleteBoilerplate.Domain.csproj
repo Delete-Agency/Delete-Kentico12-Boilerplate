@@ -540,8 +540,13 @@
     <Compile Include="Constants.cs" />
     <Compile Include="DI\CompositionRoot.cs" />
     <Compile Include="Extensions\DocumentQueryExtensions.cs" />
+    <Compile Include="Helpers\CustomFileHelper.cs" />
     <Compile Include="Helpers\RoutingQueryHelper.cs" />
     <Compile Include="Helpers\SiteSettingsHelper.cs" />
+    <Compile Include="Models\CmsClasses\SitemapRule\SitemapRuleInfo.cs" />
+    <Compile Include="Models\CmsClasses\SitemapRule\SitemapRuleInfo.generated.cs" />
+    <Compile Include="Models\CmsClasses\SitemapRule\SitemapRuleInfoProvider.generated.cs" />
+    <Compile Include="Models\CmsClasses\SitemapRule\SitemapRuleType.cs" />
     <Compile Include="Models\PageTypes\BasePage\BasePage.cs" />
     <Compile Include="Models\PageTypes\BasePage\BasePage.generated.cs" />
     <Compile Include="Models\PageTypes\BasePage\BasePageProvider.generated.cs" />
@@ -572,6 +577,7 @@
     <Compile Include="Models\PageTypes\TaxonomyType\TaxonomyType.cs" />
     <Compile Include="Models\PageTypes\TaxonomyType\TaxonomyTypeProvider.generated.cs" />
     <Compile Include="Models\PageTypes\TaxonomyType\TaxonomyType.generated.cs" />
+    <Compile Include="Modules\DeleteBoilerplateModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\NavigationRepository.cs" />
@@ -595,6 +601,7 @@
     <Compile Include="Services\TaxonomyService.cs" />
     <Compile Include="Services\TaxonomySearch.cs" />
     <Compile Include="Settings.cs" />
+    <Compile Include="WebFarmTasks\CustomFileSyncWebFarmTask.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

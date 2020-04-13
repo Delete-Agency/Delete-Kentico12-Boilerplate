@@ -22303,6 +22303,10 @@
       <Project>{fe669204-182e-4dec-a75c-d91780a15d32}</Project>
       <Name>DeleteBoilerplate.Modules</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DeleteBoilerplate.XmlSitemap\DeleteBoilerplate.XmlSitemap.csproj">
+      <Project>{2429c227-1a28-4a2a-bd01-a920de0f4030}</Project>
+      <Name>DeleteBoilerplate.XmlSitemap</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>

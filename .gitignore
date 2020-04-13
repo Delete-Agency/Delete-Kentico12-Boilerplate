@@ -65,3 +65,4 @@ connectionStrings.config
 /CMS/CMS/App_Data/**/*.dat
 /CMS/CMS/CMSSiteUtils/Import/*
 /CMS/CMS/App_Data/CMSModules/SmartSearch/*
+/CMS/CMS/sitemap/

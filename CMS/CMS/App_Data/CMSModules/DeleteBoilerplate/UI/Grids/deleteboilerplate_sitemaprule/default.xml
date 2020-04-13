@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<grid>
+  <objecttype name="deleteboilerplate.sitemaprule" />
+  <actions parameters="SitemapRuleID">
+    <action name="edit" caption="$General.Edit$" fonticonclass="icon-edit" fonticonstyle="allow" />
+    <action name="delete" externalsourcename="delete" caption="$General.Delete$" fonticonclass="icon-bin" fonticonstyle="critical" confirmation="$general.confirmdelete$" />
+  </actions>
+  <columns>
+    <column source="SitemapRuleID" visible="false" />
+    <column source="SitemapRuleID" wrap="false" />
+    <column source="FileName" wrap="false" caption="File name" />
+    <column source="RuleType" wrap="false" caption="Rule type" />
+    <column source="ContainerPage" wrap="false" caption="Container page" />
+    <column source="CustomClass" wrap="false" caption="Custom class" />
+    <column cssclass="filling-column" />
+  </columns>
+  <options>
+    <key name="DisplayFilter" value="true" />
+    <key name="FilterPath" value="~/CMSModules/Modules/Controls/Class/Filter.ascx" />
+  </options>
+</grid>
+
