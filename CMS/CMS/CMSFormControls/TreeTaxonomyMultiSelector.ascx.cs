@@ -15,9 +15,9 @@ public partial class CMSFormControls_TreeTaxonomyMultiSelector : FormEngineUserC
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        ScriptHelper.RegisterScriptFile(Page, "~/CMSScripts/Laureus/jquery/jquery-3.3.1.min.js");
-        ScriptHelper.RegisterScriptFile(Page, "~/CMSScripts/Laureus/jsTree/jstree.min.js");
-        CssRegistration.RegisterCssLink(Page, "~/CMSScripts/Laureus/jsTree/themes/default/style.min.css");
+        ScriptHelper.RegisterScriptFile(Page, "~/CMSScripts/DeleteBoilerplate/jquery/jquery-3.3.1.min.js");
+        ScriptHelper.RegisterScriptFile(Page, "~/CMSScripts/DeleteBoilerplate/jsTree/jstree.min.js");
+        CssRegistration.RegisterCssLink(Page, "~/CMSScripts/DeleteBoilerplate/jsTree/themes/default/style.min.css");
 
         var taxonomyService = new TaxonomyService(new TaxonomyRepository());
         TaxonomyTree = JsonConvert.SerializeObject(taxonomyService.GetTaxonomyTree(TargetTaxonomyTypes));

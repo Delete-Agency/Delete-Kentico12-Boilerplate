@@ -22,10 +22,10 @@ public partial class CMSFormControls_DropdownChosen : FormEngineUserControl
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        ScriptHelper.RegisterScriptFile(Page, "~/CMSScripts/Laureus/jquery/jquery-3.3.1.min.js");
-        ScriptHelper.RegisterScriptFile(Page, "~/CMSScripts/Laureus/chosen/chosen.jquery.js");
-        ScriptHelper.RegisterScriptFile(Page, "~/CMSScripts/Laureus/chosen/chosen.order.jquery.js");
-        CssRegistration.RegisterCssLink(Page, "~/CMSScripts/Laureus/chosen/chosen.css");
+        ScriptHelper.RegisterScriptFile(Page, "~/CMSScripts/DeleteBoilerplate/jquery/jquery-3.3.1.min.js");
+        ScriptHelper.RegisterScriptFile(Page, "~/CMSScripts/DeleteBoilerplate/chosen/chosen.jquery.js");
+        ScriptHelper.RegisterScriptFile(Page, "~/CMSScripts/DeleteBoilerplate/chosen/chosen.order.jquery.js");
+        CssRegistration.RegisterCssLink(Page, "~/CMSScripts/DeleteBoilerplate/chosen/chosen.css");
 
         LoadAndSelectList(DependsOnAnotherField);
         DataBind();
