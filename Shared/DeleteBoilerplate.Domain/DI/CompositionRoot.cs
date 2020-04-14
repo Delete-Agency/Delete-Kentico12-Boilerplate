@@ -19,7 +19,9 @@ namespace DeleteBoilerplate.Domain
             serviceRegistry.RegisterScoped<ISocialLinksRepository, SocialLinksRepository>();
             serviceRegistry.RegisterScoped<INavigationRepository, NavigationRepository>();
             serviceRegistry.RegisterScoped<IStaticHtmlChunkRepository, StaticHtmlChunkRepository>();
-           
+
+            serviceRegistry.RegisterSingleton<IUrlSelectorService, UrlSelectorService>();
+
             serviceRegistry.RegisterSingleton<IContentItemMetadataProvider, ContentItemMetadataProvider>();
             serviceRegistry.RegisterSingleton<IDependencyCacheKey, DependencyCacheKey>();
             serviceRegistry.RegisterScoped<ICachingRepositoryInterceptor, CachingRepositoryInterceptor>();

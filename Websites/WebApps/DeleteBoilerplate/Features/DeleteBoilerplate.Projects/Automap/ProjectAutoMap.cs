@@ -1,10 +1,13 @@
-﻿using CMS.DocumentEngine;
+﻿using AutoMapper;
+using CMS.DocumentEngine;
 using CMS.DocumentEngine.Types.DeleteBoilerplate;
 using CMS.Helpers;
 using DeleteBoilerplate.Common.Extensions;
 using DeleteBoilerplate.Common.Models.Media;
+using DeleteBoilerplate.Domain.Services;
 using DeleteBoilerplate.Metadata.Models;
 using DeleteBoilerplate.Projects.Models;
+using DeleteBoilerplate.Projects.Models.Widgets.ProjectsListing;
 using DeleteBoilerplate.Projects.Services;
 using LightInject;
 
@@ -13,7 +16,10 @@ namespace DeleteBoilerplate.Projects
     public class ProjectAutoMap : AutoMapper.Profile
     {
         [Inject]
-        public IProjectDescriber ProjectDescriber { get; set; }
+        protected IProjectDescriber ProjectDescriber { get; set; }
+
+        [Inject]
+        protected IUrlSelectorService UrlSelectorService { get; set; }
 
         public ProjectAutoMap()
         {
@@ -37,6 +43,10 @@ namespace DeleteBoilerplate.Projects
 
             CreateMap<Project, IMetadata>()
                 .IncludeBase<TreeNode, IMetadata>();
+
+            CreateMap<ProjectsListingWidgetProperties, ProjectsListingWidgetViewModel>(MemberList.None)
+                .ForMember(dst => dst.Link, opt => opt.MapFrom(src => UrlSelectorService.GetLink(src.Link)))
+                .ForMember(dst => dst.Projects, opt => opt.Ignore());
         }
     }
 }

@@ -468,9 +468,11 @@
     <Compile Include="Extensions\MediaExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Helpers\AssemblyHelper.cs" />
+    <Compile Include="Models\LinkViewModel.cs" />
     <Compile Include="Models\Media\ImageModel.cs" />
     <Compile Include="Models\Media\ImageViewModel.cs" />
     <Compile Include="Models\ParseResult.cs" />
+    <Compile Include="Models\UrlSelectorItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Serializers\NewtonsoftJsonSerializer.cs" />
   </ItemGroup>

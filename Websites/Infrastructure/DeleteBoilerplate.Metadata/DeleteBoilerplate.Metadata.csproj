@@ -585,6 +585,7 @@
   <ItemGroup>
     <Content Include="Views\Shared\_Meta.cshtml" />
     <None Include="packages.config" />
+    <Content Include="Views\web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

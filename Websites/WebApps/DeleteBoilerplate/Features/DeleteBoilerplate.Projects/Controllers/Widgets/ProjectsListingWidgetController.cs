@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using AutoMapper;
-using CMS.DocumentEngine;
 using CMS.DocumentEngine.Types.DeleteBoilerplate;
 using DeleteBoilerplate.Domain.Services;
 using DeleteBoilerplate.DynamicRouting.Controllers;
@@ -42,8 +41,9 @@ namespace DeleteBoilerplate.Projects.Controllers.Widgets
 
             var projects = TaxonomySearch.GetItems(taxonomiesList, out _, 0, 10, searchRootAliasPath: rootAliasPath);
 
-            var model = Mapper.Map<List<ProjectViewModel>>(projects);
-
+            var model = this.Mapper.Map<ProjectsListingWidgetViewModel>(properties);
+            model.Projects = this.Mapper.Map<List<ProjectViewModel>>(projects);
+            
             return PartialView("Widgets/_ProjectsListing", model);
         }
     }

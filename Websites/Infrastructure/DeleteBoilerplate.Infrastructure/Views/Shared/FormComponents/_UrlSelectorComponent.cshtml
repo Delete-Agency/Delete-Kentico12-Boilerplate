@@ -1,0 +1,150 @@
+@model DeleteBoilerplate.Infrastructure.Models.FormComponents.UrlSelectorComponent
+@using System.Web.Mvc.Html
+@using Kentico.Forms.Web.Mvc
+
+@{
+    var rootElementId = $"{Model.GlobalId}_RootElement";
+    var hiddenNodeGuidInputId = $"{Model.GlobalId}_NodeGuid";
+    var hiddenNodeAliasInputId = $"{Model.GlobalId}_NodeAlias";
+    var selectButtonId = $"{Model.GlobalId}_Select";
+    var clearButtonId = $"{Model.GlobalId}_Clear";
+
+    var urlInputId = $"{Model.GlobalId}_Url";
+    var urlInputAttributes = ViewData.GetEditorHtmlAttributes();
+    urlInputAttributes.Add("id", urlInputId);
+    if (!Model.UseExternalUrl)
+    {
+        urlInputAttributes.Add("disabled", "disabled");
+    }
+}
+<div class="url-selector" id="@rootElementId">
+    <div class="ktc-page-selector-form-component-wrapper">
+        <div class="ktc-page-selector-form-component url-selector__form">
+            @Html.TextBoxFor(m => m.ExternalUrl, urlInputAttributes)
+            <div class="ktc-page-selector-buttons url-selector__buttons">
+                <button type="button" class="ktc-btn ktc-btn-default select-button" id="@selectButtonId">Select</button>
+                <button type="button" class="ktc-btn ktc-btn-default select-button" id="@clearButtonId">Clear</button>
+            </div>
+        </div>
+        @Html.HiddenFor(m => m.NodeGuid, new { id = hiddenNodeGuidInputId })
+        @Html.HiddenFor(m => m.NodeAliasPath, new { id = hiddenNodeAliasInputId })
+        <div class="url-selector__checkbox-list">
+            <div class="url-selector__checkbox-item js-url-selector__external">
+                @Html.CheckBoxFor(m => m.UseExternalUrl)
+                @Html.LabelFor(m => m.UseExternalUrl)
+            </div>
+            <div class="url-selector__checkbox-item">
+                @Html.CheckBoxFor(m => m.IsOpenInNewTab)
+                @Html.LabelFor(m => m.IsOpenInNewTab)
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var $rootElement = $("#@(rootElementId)");
+        var $externalCheckbox = $rootElement.find('.js-url-selector__external input[type=checkbox]');
+        var $selectButton =  $("#@(selectButtonId)");
+        var $clearButton =  $("#@(clearButtonId)");
+        var $hiddenNodeGuidInput = $("#@hiddenNodeGuidInputId");
+        var $hiddenNodeAliasInput = $("#@hiddenNodeAliasInputId");
+        var $urlInput = $("#@urlInputId");
+        switchInputMod();
+
+        $selectButton.click(function () {
+            var dialogOptions = {
+                identifierMode: "guid",
+                @if (Model.NodeGuid !=null) {
+                    <text>
+                selectedValues: [{ identifier: '@Model.NodeGuid' }],
+                    </text>
+                }
+                rootPath: "@Model.RootPath",
+                applyCallback: function (pages) {
+                    var selectedPage = pages[0];
+                    if (!selectedPage) {
+                        return { closeDialog: true };
+                    }
+                    $hiddenNodeGuidInput.val(selectedPage.nodeGuid);
+                    $hiddenNodeAliasInput.val(selectedPage.nodeAliasPath);
+                    $urlInput.val(selectedPage.nodeAliasPath);
+                    return { closeDialog: true };
+                }
+            };
+            console.log(dialogOptions);
+            window.kentico.modalDialog.pageSelector.open(dialogOptions);
+        });
+
+        $clearButton.click(function () {
+            clearInput();
+        });
+
+        $externalCheckbox.on('change', function() {
+            clearInput();
+            switchInputMod();
+            if (!$urlInput[0].disabled) {
+                $urlInput.focus();
+            }
+        });
+
+        function switchInputMod() {
+            if ($externalCheckbox[0].checked) {
+                switchToFreeInput();
+            } else {
+                switchToSelector();
+            }
+        }
+
+        function clearInput() {
+            $hiddenNodeGuidInput.val("");
+            $hiddenNodeAliasInput.val("");
+            $urlInput.val("");
+        }
+
+        function switchToFreeInput() {
+            $urlInput.removeAttr('disabled');
+            $selectButton.attr('disabled','disabled');
+        }
+
+        function switchToSelector() {
+            $selectButton.removeAttr('disabled');
+            $urlInput.attr('disabled', 'disabled');
+            console.log($hiddenNodeAliasInput.val())
+            $urlInput.val($hiddenNodeAliasInput.val());
+        }
+    });
+</script>
+<style>
+    .url-selector .url-selector__form {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 320px;
+    }
+
+    .url-selector .url-selector__buttons {
+        display: flex;
+        flex: 0 0 auto;
+    }
+
+    .url-selector .url-selector__checkbox-list {
+        display: flex;
+        align-items: center;
+        margin-top: 15px;
+    }
+
+    .url-selector .url-selector__checkbox-item {
+        display: flex;
+        align-items: center;
+        margin-right: 15px;
+    }
+
+        .url-selector .url-selector__checkbox-item:last-child {
+            margin-right: 0;
+        }
+
+        .url-selector .url-selector__checkbox-item label {
+            padding-left: 5px;
+        }
+</style>

@@ -883,6 +883,7 @@
     <Content Include="Views\Shared\FormComponents\_TaxonomySelectorComponent.cshtml" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\Widgets\_StaticHtml.cshtml" />
+    <Content Include="Views\web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

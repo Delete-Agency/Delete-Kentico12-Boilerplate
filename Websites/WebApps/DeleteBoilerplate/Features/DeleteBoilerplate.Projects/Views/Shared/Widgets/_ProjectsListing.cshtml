@@ -1,32 +1,39 @@
 ﻿@using DeleteBoilerplate.Infrastructure.Extensions
-@model IEnumerable<DeleteBoilerplate.Projects.Models.ProjectViewModel>
+@model DeleteBoilerplate.Projects.Models.Widgets.ProjectsListing.ProjectsListingWidgetViewModel
 
-<div class="projects-listing">
-    <table>
-        <thead>
-            <tr>
-                <td colspan="3">Our projects</td>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var project in Model)
-            {
+@if (Model != null && Model.Projects?.Any() == true)
+{
+    <div class="projects-listing">
+        <table>
+            <thead>
                 <tr>
-                    <td>
-                        @if (project.Image != null)
-                        {
-                            <img srcset="@Html.GetResizedSrcSet(project.Image.Url)" alt="@project.Image.Title" width="150" height="100"/>
-                        }
-                        <br/>
-                        <a href="@project.Url">Learn more...</a>
-                    </td>
-                    <td>@project.Description</td>
-                    <td>@project.Year</td>
+                    <td colspan="3">Our projects</td>
                 </tr>
-            }
-        </tbody>
-    </table>
-</div>
+            </thead>
+            <tbody>
+                @foreach (var project in Model.Projects)
+                {
+                    <tr>
+                        <td>
+                            @if (project.Image != null)
+                            {
+                                <img srcset="@Html.GetResizedSrcSet(project.Image.Url)" alt="@project.Image.Title" width="150" height="100" />
+                            }
+                            <br />
+                            <a href="@project.Url">Learn more...</a>
+                        </td>
+                        <td>@project.Description</td>
+                        <td>@project.Year</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        @if (Model.Link != null)
+        {
+            <a href="@Model.Link.Url" target="@Model.Link.Target">Test Url Selector Link</a>
+        }
+    </div>
+}
 
 <style>
     .projects-listing table {
@@ -34,8 +41,8 @@
         text-align: center;
     }
 
-    .projects-listing table td {
-        border: solid black 1px;
-        text-align: center;
-    }
+        .projects-listing table td {
+            border: solid black 1px;
+            text-align: center;
+        }
 </style>

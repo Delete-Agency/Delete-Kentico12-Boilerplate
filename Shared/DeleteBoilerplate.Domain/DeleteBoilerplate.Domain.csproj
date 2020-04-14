@@ -585,6 +585,7 @@
     <Compile Include="Repositories\StaticHtmlChunkRepository.cs" />
     <Compile Include="Repositories\TaxonomyRepository.cs" />
     <Compile Include="Repositories\ProjectRepository.cs" />
+    <Compile Include="Repositories\TreeNodeRepository.cs" />
     <Compile Include="RepositoryCaching\Attributes\CacheDependencyAttribute.cs" />
     <Compile Include="RepositoryCaching\Attributes\PagesCacheDependencyAttribute.cs" />
     <Compile Include="RepositoryCaching\Attributes\RepositoryCachingAttribute.cs" />
@@ -600,6 +601,7 @@
     <Compile Include="Services\TaxonomyExtractBuilder.cs" />
     <Compile Include="Services\TaxonomyService.cs" />
     <Compile Include="Services\TaxonomySearch.cs" />
+    <Compile Include="Services\UrlSelectorService.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="WebFarmTasks\CustomFileSyncWebFarmTask.cs" />
   </ItemGroup>

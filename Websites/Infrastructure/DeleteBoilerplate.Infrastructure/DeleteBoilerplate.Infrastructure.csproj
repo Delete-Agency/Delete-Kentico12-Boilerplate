@@ -516,6 +516,7 @@
       <HintPath>..\..\..\packages\Kentico.Libraries.12.0.65\lib\net461\PreMailer.Net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.HashFunction.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=80c9288e394c1322, processorArchitecture=MSIL">
@@ -661,12 +662,16 @@
     <Compile Include="Helpers\PropertyInfoHelper.cs" />
     <Compile Include="Models\BaseInlineEditorViewModel.cs" />
     <Compile Include="Models\BaseWidgetViewModel.cs" />
+    <Compile Include="Models\FormComponents\UrlSelectorComponent.cs" />
+    <Compile Include="Models\FormComponents\UrlSelectorProperties.cs" />
     <Compile Include="Models\StaticAsset.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Routing\CustomRoutesHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="Views\Shared\FormComponents\_UrlSelectorComponent.cshtml" />
+    <Content Include="Views\web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -684,9 +689,7 @@
       <Name>DeleteBoilerplate.Domain</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

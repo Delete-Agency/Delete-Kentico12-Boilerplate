@@ -62,9 +62,10 @@ namespace DeleteBoilerplate.DynamicRouting.Controllers
             {
                 T contextItem;
 
+                // TODO think about ITreeNodeRepository
                 var repository = DIConfig.DefaultServiceLocator
                     .GetAllInstances<IRepository<T>>()
-                    .FirstOrDefault();
+                    .FirstOrDefault(x => !(x is ITreeNodeRepository));
 
                 if (repository != null)
                     contextItem = repository.GetById(this.RequestContext.ContextItemId.Value);
