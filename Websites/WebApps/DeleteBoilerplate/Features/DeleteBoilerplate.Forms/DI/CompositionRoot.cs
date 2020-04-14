@@ -1,4 +1,7 @@
-﻿using LightInject;
+﻿using CMS.Core;
+using DeleteBoilerplate.Forms.Services;
+using Kentico.Forms.Web.Mvc;
+using LightInject;
 
 namespace DeleteBoilerplate.Forms.DI
 {
@@ -6,6 +9,8 @@ namespace DeleteBoilerplate.Forms.DI
     {
         public void Compose(IServiceRegistry serviceRegistry)
         {
+            serviceRegistry.Register(factory => Service.Resolve<IFormProvider>());
+            serviceRegistry.Register<ICaptchaVerificationService, CaptchaVerificationService>(new PerRequestLifeTime());
         }
     }
 }

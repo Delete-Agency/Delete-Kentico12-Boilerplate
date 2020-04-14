@@ -2,17 +2,23 @@
 using DeleteBoilerplate.Domain;
 using DeleteBoilerplate.Forms.Models;
 using RestSharp;
+using System.Collections.Specialized;
+using System.Linq;
 
 namespace DeleteBoilerplate.Forms.Services
 {
     public interface ICaptchaVerificationService
     {
-        CaptchaValidationResponse Verify(string captchaResponse);
+        string CaptchaHeader { get; }
+
+        bool VerifyCaptcha(NameValueCollection requestForm);
     }
 
     public class CaptchaVerificationService : ICaptchaVerificationService
     {
         protected const string CaptchaApiUrl = "https://www.google.com/recaptcha/api/siteverify";
+
+        public string CaptchaHeader { get; } = "g-recaptcha-response";
 
         private string SecretKey { get; }
 
@@ -21,9 +27,23 @@ namespace DeleteBoilerplate.Forms.Services
             this.SecretKey = Settings.Integrations.Google.GoogleReCaptchaSecretKey;
         }
 
-        public CaptchaValidationResponse Verify(string captchaResponse)
+        public bool VerifyCaptcha(NameValueCollection requestForm)
         {
-            var request = this.MakeRestRequest(captchaResponse);
+            if (Settings.Integrations.Google.IsGoogleReCaptchaEnabled == false) 
+                return true;
+
+            if (requestForm.AllKeys.Contains(CaptchaHeader) == false)
+                return false;
+
+            var captchaUserResponse = requestForm[CaptchaHeader];
+            var verificationResult = this.GetVerificationResponse(captchaUserResponse);
+
+            return verificationResult?.Success ?? false;
+        }
+
+        private CaptchaValidationResponse GetVerificationResponse(string captchaUserResponse)
+        {
+            var request = this.MakeRestRequest(captchaUserResponse);
             var client = this.CreateRestClient();
 
             var response = client.Execute<CaptchaValidationResponse>(request);
@@ -39,11 +59,11 @@ namespace DeleteBoilerplate.Forms.Services
             return client;
         }
 
-        protected RestRequest MakeRestRequest(string captchaResponse)
+        protected RestRequest MakeRestRequest(string captchaUserResponse)
         {
             var request = new RestRequest(CaptchaApiUrl);
 
-            request.AddParameter("response", captchaResponse);
+            request.AddParameter("response", captchaUserResponse);
             request.AddParameter("secret", this.SecretKey);
 
             return request;

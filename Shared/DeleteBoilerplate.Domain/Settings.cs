@@ -53,7 +53,11 @@ namespace DeleteBoilerplate.Domain
         {
             public static class Google
             {
+                public static string GoogleReCaptchaSiteKey => SiteSettingsHelper.GetSettingValue("DeleteBoilerplate_Integrations_Google_GoogleReCaptchaSiteKey");
+
                 public static string GoogleReCaptchaSecretKey => SiteSettingsHelper.GetSettingValue("DeleteBoilerplate_Integrations_Google_GoogleReCaptchaSecretKey");
+
+                public static bool IsGoogleReCaptchaEnabled => SiteSettingsHelper.GetSettingBoolValue("DeleteBoilerplate_Integrations_Google_IsGoogleReCaptchaEnabled");
             }
         }
     }

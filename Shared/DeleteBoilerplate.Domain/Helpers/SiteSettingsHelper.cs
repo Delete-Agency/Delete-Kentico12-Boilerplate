@@ -20,5 +20,14 @@ namespace DeleteBoilerplate.Domain.Helpers
 
             return SettingsKeyInfoProvider.GetIntValue($"{SiteContext.CurrentSiteName}.{settingKey}");
         }
+
+        public static bool GetSettingBoolValue(string settingKey)
+        {
+            if (string.IsNullOrWhiteSpace(settingKey))
+                return false;
+
+            var value = SettingsKeyInfoProvider.GetBoolValue($"{SiteContext.CurrentSiteName}.{settingKey}");
+            return value;
+        }
     }
 }
