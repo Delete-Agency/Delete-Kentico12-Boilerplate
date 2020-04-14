@@ -26,7 +26,6 @@ namespace DeleteBoilerplate
         /// <summary>
         /// Type information.
         /// </summary>
-#warning "You will need to configure the type info."
         public static readonly ObjectTypeInfo TYPEINFO = new ObjectTypeInfo(typeof(SitemapRuleInfoProvider), OBJECT_TYPE, "DeleteBoilerplate.SitemapRule", "SitemapRuleID", "SitemapRuleLastModified", "SitemapRuleGuid", "FileName", null, null, null, null, null)
         {
             ModuleName = "DeleteBoilerplate",
