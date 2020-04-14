@@ -652,8 +652,11 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Automap\FormsAutoMap.cs" />
+    <Compile Include="Controllers\BaseFormController.cs" />
     <Compile Include="DI\CompositionRoot.cs" />
     <Compile Include="Models\CaptchaValidationResponse.cs" />
+    <Compile Include="Models\FormResponseModel.cs" />
+    <Compile Include="Models\IFormData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CaptchaVerificationService.cs" />
   </ItemGroup>
