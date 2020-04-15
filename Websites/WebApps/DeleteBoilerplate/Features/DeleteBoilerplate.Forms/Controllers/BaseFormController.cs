@@ -6,6 +6,7 @@ using DeleteBoilerplate.Infrastructure.Extensions;
 using LightInject;
 using System.Text;
 using System.Web.Mvc;
+using CMS.OnlineForms;
 
 namespace DeleteBoilerplate.Forms.Controllers
 {
@@ -48,6 +49,12 @@ namespace DeleteBoilerplate.Forms.Controllers
         {
             this.Response.StatusCode = 422;
             return this.Json(FormResponseModel.BuildValidationErrorResponse(this.ModelState));
+        }
+
+        protected virtual void SaveFormData<TFormItem>(TFormData formData) where TFormItem : BizFormItem
+        {
+            var form = this.Mapper.Map<TFormItem>(formData);
+            form.SubmitChanges(false);
         }
 
         protected override JsonResult Json(object data, string contentType, Encoding contentEncoding, JsonRequestBehavior behavior)

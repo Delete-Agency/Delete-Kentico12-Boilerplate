@@ -19,16 +19,17 @@ namespace DeleteBoilerplate.Forms.Controllers
         {
             try
             {
-                var form = Mapper.Map<ContactItem>(formData);
-                form.SubmitChanges(false);
+                this.SaveFormData<ContactItem>(formData);
 
-                string message = ResHelper.GetString("DeleteBoilerplate.Forms.Contact.Success");
-                return Json(new { Result = true, Message = message }, JsonRequestBehavior.AllowGet);
+                string successMessage = ResHelper.GetString("DeleteBoilerplate.Forms.Contact.Success");
+                return Json(new { Result = true, Message = successMessage }, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)
             {
-                EventLogProvider.LogException("Contact form submit", ex.ToString(), null);
-                return Json(new { Result = false, ex.Message }, JsonRequestBehavior.AllowGet);
+                EventLogProvider.LogException("ContactForm Submit", ex.ToString(), null);
+
+                string errorMessage = ResHelper.GetString("DeleteBoilerplate.Forms.Contact.Error");
+                return Json(new { Result = false, errorMessage }, JsonRequestBehavior.AllowGet);
             }
         }
     }

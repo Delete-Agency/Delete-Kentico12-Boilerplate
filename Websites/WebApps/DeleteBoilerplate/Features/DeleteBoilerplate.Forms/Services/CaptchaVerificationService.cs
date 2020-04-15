@@ -43,7 +43,7 @@ namespace DeleteBoilerplate.Forms.Services
 
         private CaptchaValidationResponse GetVerificationResponse(string captchaUserResponse)
         {
-            var request = this.MakeRestRequest(captchaUserResponse);
+            var request = this.BuildRestRequest(captchaUserResponse);
             var client = this.CreateRestClient();
 
             var response = client.Execute<CaptchaValidationResponse>(request);
@@ -59,7 +59,7 @@ namespace DeleteBoilerplate.Forms.Services
             return client;
         }
 
-        protected RestRequest MakeRestRequest(string captchaUserResponse)
+        protected RestRequest BuildRestRequest(string captchaUserResponse)
         {
             var request = new RestRequest(CaptchaApiUrl);
 
