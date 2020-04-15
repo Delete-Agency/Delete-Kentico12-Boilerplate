@@ -55,5 +55,10 @@ namespace DeleteBoilerplate.Domain
             public static string AppCookieName => $".{AppName}.ApplicationCookie";
             public static string AppTokenName => $"{AppName}TokenName";
         }
+
+        public static class EmailTemplates
+        {
+            public static string ContactForUser => "DeleteBoilerplate.EmailTemplates.ContactForUser";
+        }
     }
 }

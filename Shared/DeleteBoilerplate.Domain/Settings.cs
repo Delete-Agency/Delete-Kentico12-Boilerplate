@@ -60,5 +60,13 @@ namespace DeleteBoilerplate.Domain
                 public static bool IsGoogleReCaptchaEnabled => SiteSettingsHelper.GetSettingBoolValue("DeleteBoilerplate_Integrations_Google_IsGoogleReCaptchaEnabled");
             }
         }
+
+        public static class Notifications
+        {
+            public static class Forms
+            {
+                public static bool IsSendEmailInContactForm => SiteSettingsHelper.GetSettingBoolValue("DeleteBoilerplate_Notifications_Forms_IsSendEmailInContactForm");
+            }
+        }
     }
 }
