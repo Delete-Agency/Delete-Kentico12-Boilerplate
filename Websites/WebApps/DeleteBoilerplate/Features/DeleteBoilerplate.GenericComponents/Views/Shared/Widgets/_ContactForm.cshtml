@@ -1,0 +1,57 @@
+﻿@using DeleteBoilerplate.Common.Extensions
+@using DeleteBoilerplate.Domain
+@model DeleteBoilerplate.GenericComponents.Models.Widgets.ContactFormWidget.ContactFormWidgetViewModel
+
+@if (Model == null)
+{
+    return;
+}
+
+<div>
+    <h1>@Model.Title</h1>
+    @if (Model.Description.IsNullOrEmpty() == false)
+    {
+        <p>@Model.Description</p>
+    }
+
+    <form action="ContactForm/Submit" method="post">
+        <div>
+            <label>First name</label>
+            <input type="text" name="firstName" required>
+        </div>
+        <div>
+            <label>Last name</label>
+            <input type="text" name="lastName" required>
+        </div>
+        <div>
+            <label>Email</label>
+            <input type="text" name="email" required>
+        </div>
+        <div>
+            <label>Telephone</label>
+            <input type="text" name="telephone" required>
+        </div>
+        <div>
+            <label>Message</label>
+            <input type="text" name="message" required>
+        </div>
+        <div>
+            <label>IsConsented</label>
+            <input type="checkbox" name="isConsented" value="true" required>
+        </div>
+
+        <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response" />
+
+        <button type="submit">submit</button>
+    </form>
+
+    <script src="https://www.google.com/recaptcha/api.js?render=@Settings.Integrations.Google.GoogleReCaptchaSiteKey"></script>
+    <script>
+        grecaptcha.ready(function() {
+            grecaptcha.execute('@Settings.Integrations.Google.GoogleReCaptchaSiteKey', {action: 'homepage'}).then(function(token) {
+                console.log("recaptcha token:", token);
+                document.getElementById('g-recaptcha-response').value=token;
+            });
+        });
+    </script>
+</div>

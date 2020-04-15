@@ -845,8 +845,11 @@
     <Compile Include="Automap\GenericComponentsAutoMap.cs" />
     <Compile Include="Controllers\FormComponents\TaxonomySelectorController.cs" />
     <Compile Include="Controllers\Sections\OneFullWidthColumnSectionController.cs" />
+    <Compile Include="Controllers\Widgets\ContactFormWidgetController.cs" />
     <Compile Include="Controllers\Widgets\StaticHtmlWidgetController.cs" />
     <Compile Include="Models\FormComponents\FormComponentsIdentifiers.cs" />
+    <Compile Include="Models\Widgets\ContactFormWidget\ContactFormProperties.cs" />
+    <Compile Include="Models\Widgets\ContactFormWidget\ContactFormWidgetViewModel.cs" />
     <Compile Include="Models\Widgets\IListingWidgetProperties.cs" />
     <Compile Include="Models\FormComponents\TaxonomySelector\TaxonomySelectorProperties.cs" />
     <Compile Include="Models\FormComponents\TaxonomySelector\TaxonomySelectorComponent.cs" />
@@ -884,6 +887,7 @@
     <None Include="packages.config" />
     <Content Include="Views\Shared\Widgets\_StaticHtml.cshtml" />
     <Content Include="Views\web.config" />
+    <Content Include="Views\Shared\Widgets\_ContactForm.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
