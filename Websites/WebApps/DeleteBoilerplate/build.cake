@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 const string solution = "./DeleteBoilerplate.sln";
 const string webProject = "DeleteBoilerplate.WebApp";
 const string projectPrefix = "DeleteBoilerplate";
-
+const string precompiledPackage = "obj/Release/Package/PackageTmp";
 var target = Argument("target", "Build");
 var role = Argument("Role", "");
 
@@ -26,7 +26,7 @@ void CopyFast(string source, string destination, bool recursive = true, string f
             .Append('"'+ source + '"')
             .Append('"'+ destination + '"')
             .Append(fileNames)
-            .Append(excludes)
+            .Append($"/xf {excludes}")
         }
     );
     if (returnCode > 7) {
@@ -35,11 +35,11 @@ void CopyFast(string source, string destination, bool recursive = true, string f
 }
 
 
-Action<DirectoryPath, bool> CopyProjectFiles = (projectDir, skipWebConfig) => 
+Action<DirectoryPath, bool> CopyProjectFiles = (projectDir, skipWebConfig) =>
 {
     Information(projectDir);
     var folders = new [] {"Views", "bin", "App_Data", "CMSResources", "Content", "Kentico"};
-    Parallel.ForEach(folders, (folder) => 
+    Parallel.ForEach(folders, (folder) =>
     {
         Information(projectDir.Combine(folder));
         var sourceDir = projectDir.Combine(folder);
@@ -52,14 +52,110 @@ Action<DirectoryPath, bool> CopyProjectFiles = (projectDir, skipWebConfig) =>
     });
 };
 
-Task("MakePackage")	
+IList<SolutionProject> GetProjectsWithinSln(string sln = solution, string projectPrefix = projectPrefix) =>
+    ParseSolution(sln)
+        .Projects
+        .Where(it => it.Path.ToString().EndsWith(".csproj"))
+        .Where(it => it.Path.ToString().Contains(projectPrefix))
+        .ToList();
+
+void CopyPrecompiledAppConfig(SolutionProject project, string dest)
+{
+	var	projectDir = project.Path.GetDirectory();
+	var	releaseDir = projectDir.Combine(precompiledPackage);
+    CopyFast(releaseDir.ToString(), dest, false, "PrecompiledApp.config");
+}
+
+Task("ShowListOfProjects")
+    .Does(() =>
+    {
+        var projects = GetProjectsWithinSln();
+        for (var i = 0; i < projects.Count; i++)
+        {
+            Information($"{i + 1}) {projects[i].Path.ToString()}");
+        }
+    });
+
+Task("ClearBinObjArtifacts")
+   .Does(() => {
+       var projects = GetProjectsWithinSln();
+       Parallel.ForEach(projects, (SolutionProject project) =>
+       {
+           var projectDir = project.Path.GetDirectory();
+           if (!DirectoryExists(projectDir)) return;
+
+           var folders = new [] { "bin", "obj" };
+           foreach (var folder in folders)
+           {
+               var dir = projectDir.Combine(folder).ToString();
+               if (!DirectoryExists(dir)) continue;
+               CleanDirectory(dir);
+           }
+       });
+   });
+
+Task("MakeReleasePackage")
+    .IsDependentOn("ClearPackage")
+    .Does(() => {
+        var projects = GetProjectsWithinSln();
+        foreach (var project in projects)
+        {
+            var projectDir = project.Path.GetDirectory();
+            var releaseDir = projectDir.Combine(precompiledPackage);
+            CopyProjectFiles(releaseDir, !project.Path.ToString().Contains($"/{webProject}"));
+        }
+        CopyPrecompiledAppConfig(projects.FirstOrDefault(), packageDir.ToString());
+
+        var web = baseDir.Combine(webProject);
+        var folders = new [] {"dist"};
+        foreach(var f in folders)
+        {
+            if (DirectoryExists(web.Combine(f).ToString())) {
+                CopyFast(web.Combine(f).ToString(), packageDir.Combine(f).ToString());
+            }
+	    };
+        CopyFast(MakeAbsolute(Directory($"./{webProject}")).ToString(), packageDir.ToString(),
+            false, $"Web.config Web.{configuration}.config connectionStrings.config inboundRewrite.config rewriteMaps.config");
+    });
+
+Task("PublishRelease")
+	.IsDependentOn("ClearLocalSite")
+    .IsDependentOn("ClearBinObjArtifacts")
+    .IsDependentOn("BuildAssets")
+    .IsDependentOn("Release")
+    .IsDependentOn("MakeReleasePackage")
+    .IsDependentOn("ConfigPackage")
+    .IsDependentOn("CopyPackageToLocalSite");
+
+Task("Release")
+    .Does(() =>
+{
+    NuGetRestore(solution);
+
+    MSBuild(solution,
+          new MSBuildSettings {
+              Verbosity = Verbosity.Quiet,
+              Configuration = "Release",
+              PlatformTarget = PlatformTarget.MSIL,
+              MaxCpuCount = 8,
+              NodeReuse = true
+          }
+          .WithRestore()
+          // Precompiled views options
+          .WithProperty("DeployOnBuild", "true")
+          .WithProperty("PrecompileBeforePublish", "true")
+          .WithProperty("EnableUpdateable", "false")
+          .WithProperty("DeleteAppCodeCompiledFiles", "true")
+          .WithProperty("DeleteExistingFiles", "true")
+          .WithProperty("UseFixedNames", "true"));
+});
+
+Task("MakePackage")
 	.IsDependentOn("ClearPackage")
 	.Does(() =>
 	{
-		var parsedSolution = ParseSolution(solution);
-		foreach(var project in parsedSolution.Projects
-			.Where(project => project.Path.ToString().EndsWith(".csproj"))
-            .Where(project => project.Path.ToString().Contains(projectPrefix)))
+		var projects = GetProjectsWithinSln();
+		foreach(var project in projects)
 		{
 			CopyProjectFiles(project.Path.GetDirectory(), !project.Path.ToString().Contains($"/{webProject}"));
 		}
@@ -81,7 +177,7 @@ Task("ConfigPackage")
         var name = file.GetFilenameWithoutExtension();
         var ext = file.GetExtension();
 
-		var transforms = new List<string>(); 
+		var transforms = new List<string>();
         if (configuration != "")                { transforms.Add(configuration); }
         if (role != "")                         { transforms.Add(role); }
         if (configuration != "" && role != "")  { transforms.Add($"{configuration}.{role}"); }
@@ -116,7 +212,7 @@ Task("ClearLocalSite")
 
 
 Task("BuildAssets")
-    .Does(() => 
+    .Does(() =>
     {
 		var batName = "build-" + (isDevelopment ? "dev" : "prod") + ".bat";
 		var batPath = MakeAbsolute(Directory($"./{webProject}")).Combine(batName).ToString();
@@ -135,8 +231,8 @@ Task("Build")
     .Does(() =>
 {
     NuGetRestore(solution);
-  
-    MSBuild(solution, 
+
+    MSBuild(solution,
           new MSBuildSettings {
               Verbosity = Verbosity.Quiet,
               Configuration = configuration,
@@ -176,22 +272,28 @@ Task("PublishLocalSiteFull")
 {
 });
 
+Task("PublishLocalSiteAndWatch")
+    .IsDependentOn("PublishLocalSite")
+    .IsDependentOn("Watch")
+    .Does(() =>
+{
+});
 
 Task("Watch")
-    .Does(() => 
+    .Does(() =>
 {
     var destRoot = publishDir.Combine("views").ToString();
 
     Watch(
-        new WatchSettings 
+        new WatchSettings
         {
             Recursive = true,
-            Path = "./",
+            Path = "../.././",
             Pattern = "*.cshtml"
-        }, 
-        (changes) => 
+        },
+        (changes) =>
         {
-            changes.ToList().ForEach(change => 
+            changes.ToList().ForEach(change =>
             {
                 if (change.FullPath.EndsWith(".TMP")) return;
                 if (!FileExists(change.FullPath)) return;
