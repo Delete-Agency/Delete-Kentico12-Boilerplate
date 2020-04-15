@@ -3,6 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.29025.244
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteBoilerplate.WebApp", "DeleteBoilerplate.WebApp\DeleteBoilerplate.WebApp.csproj", "{4D3A8C4D-17FF-46FB-88C6-FAD59D6C2099}"
+	ProjectSection(ProjectDependencies) = postProject
+		{652754E8-3436-47B6-92EE-5D3B6018F72D} = {652754E8-3436-47B6-92EE-5D3B6018F72D}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Features", "Features", "{60D6784B-12CB-4ACD-B26B-545FC97DC901}"
 EndProject
@@ -38,6 +41,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteBoilerplate.Account", "Features\DeleteBoilerplate.Account\DeleteBoilerplate.Account.csproj", "{1466452D-F867-4E9B-93DD-09BE1D2B1E2D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteBoilerplate.Forms", "Features\DeleteBoilerplate.Forms\DeleteBoilerplate.Forms.csproj", "{17D70B1D-97CA-4DBA-960C-B7E87A8657E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteBoilerplate.AzureSearch", "..\..\..\Shared\DeleteBoilerplate.AzureSearch\DeleteBoilerplate.AzureSearch.csproj", "{652754E8-3436-47B6-92EE-5D3B6018F72D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -89,6 +94,10 @@ Global
 		{17D70B1D-97CA-4DBA-960C-B7E87A8657E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17D70B1D-97CA-4DBA-960C-B7E87A8657E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17D70B1D-97CA-4DBA-960C-B7E87A8657E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{652754E8-3436-47B6-92EE-5D3B6018F72D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{652754E8-3436-47B6-92EE-5D3B6018F72D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{652754E8-3436-47B6-92EE-5D3B6018F72D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{652754E8-3436-47B6-92EE-5D3B6018F72D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -104,6 +113,7 @@ Global
 		{25458D83-C877-4A3A-973F-E8A42254447D} = {2971F724-2145-4CB1-9464-1A379C67E410}
 		{1466452D-F867-4E9B-93DD-09BE1D2B1E2D} = {60D6784B-12CB-4ACD-B26B-545FC97DC901}
 		{17D70B1D-97CA-4DBA-960C-B7E87A8657E2} = {60D6784B-12CB-4ACD-B26B-545FC97DC901}
+		{652754E8-3436-47B6-92EE-5D3B6018F72D} = {2971F724-2145-4CB1-9464-1A379C67E410}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C6500213-6CF9-462C-B95D-DCF91FC64889}

@@ -12,7 +12,7 @@ namespace DeleteBoilerplate.Modules
 {
     public class TaxonomyModule : Module
     {
-        public TaxonomyModule() : base("DeleteBoilerplate.Taxonomy")
+        public TaxonomyModule() : base("DeleteBoilerplate.Modules.Taxonomy")
         {
         }
 

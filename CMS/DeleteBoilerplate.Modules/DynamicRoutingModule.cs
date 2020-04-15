@@ -16,7 +16,7 @@ namespace DeleteBoilerplate.Modules
     {
         protected ISeoUrlService SeoUrlService = new SeoUrlService();
 
-        public DynamicRoutingModule() : base("DeleteBoilerplate.DynamicRouting")
+        public DynamicRoutingModule() : base("DeleteBoilerplate.Modules.DynamicRouting")
         {
         }
 

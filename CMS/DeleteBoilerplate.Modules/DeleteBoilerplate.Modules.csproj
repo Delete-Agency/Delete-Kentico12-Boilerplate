@@ -448,6 +448,7 @@
     <Compile Include="DynamicRoutingModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TaxonomyModule.cs" />
+    <Compile Include="AzureSearchIndexFieldTypesModule.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

@@ -543,6 +543,8 @@
     <Compile Include="Helpers\CustomFileHelper.cs" />
     <Compile Include="Helpers\RoutingQueryHelper.cs" />
     <Compile Include="Helpers\SiteSettingsHelper.cs" />
+    <Compile Include="Models\CmsClasses\CompanyMember\CompanyMemberInfo.cs" />
+    <Compile Include="Models\CmsClasses\CompanyMember\CompanyMemberInfoProvider.cs" />
     <Compile Include="Models\CmsClasses\SitemapRule\SitemapRuleInfo.cs" />
     <Compile Include="Models\CmsClasses\SitemapRule\SitemapRuleInfo.generated.cs" />
     <Compile Include="Models\CmsClasses\SitemapRule\SitemapRuleInfoProvider.generated.cs" />
