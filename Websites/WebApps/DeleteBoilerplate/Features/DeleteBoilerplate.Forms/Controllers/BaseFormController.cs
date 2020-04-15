@@ -1,12 +1,13 @@
 ﻿using AutoMapper;
 using CMS.Helpers;
+using CMS.OnlineForms;
 using DeleteBoilerplate.Forms.Models;
 using DeleteBoilerplate.Forms.Services;
 using DeleteBoilerplate.Infrastructure.Extensions;
 using LightInject;
+using System.IO;
 using System.Text;
 using System.Web.Mvc;
-using CMS.OnlineForms;
 
 namespace DeleteBoilerplate.Forms.Controllers
 {
@@ -25,7 +26,7 @@ namespace DeleteBoilerplate.Forms.Controllers
                 var serverErrorResult = new FormResponseModel
                 {
                     Type = FormResponseType.ServerError,
-                    Message = ResHelper.GetStringFormat("DeleteBoilerplate.Forms.Data.Error")
+                    Message = this.RenderPartialToString("_ServerErrorResult", null)
                 };
 
                 return this.Json(serverErrorResult);
@@ -66,6 +67,27 @@ namespace DeleteBoilerplate.Forms.Controllers
                 ContentEncoding = contentEncoding,
                 JsonRequestBehavior = behavior
             };
+        }
+
+        /// <summary>
+        /// For Ajax usage only
+        /// </summary>
+        /// <param name="viewName">Partial view name</param>
+        /// <param name="model">View model</param>
+        /// <returns>Html content of view as string</returns>
+        public string RenderPartialToString(string viewName, object model)
+        {
+            ViewData.Model = model;
+            using (var sw = new StringWriter())
+            {
+                var viewResult = ViewEngines.Engines.FindPartialView(ControllerContext, viewName);
+                var viewContext = new ViewContext(ControllerContext, viewResult.View, ViewData, TempData, sw);
+
+                viewResult.View.Render(viewContext, sw);
+                viewResult.ViewEngine.ReleaseView(ControllerContext, viewResult.View);
+
+                return sw.GetStringBuilder().ToString();
+            }
         }
     }
 }

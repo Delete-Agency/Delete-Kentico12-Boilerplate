@@ -13,8 +13,8 @@
     {
         <p>@Model.Description</p>
     }
-
-    <form action="ContactForm/Submit" method="post">
+    
+    <form method="post" action="@Url.RouteUrl("Default", new { action = "Submit", controller = "ContactForm" })">
         <div>
             <label>First name</label>
             <input type="text" name="firstName" required>
