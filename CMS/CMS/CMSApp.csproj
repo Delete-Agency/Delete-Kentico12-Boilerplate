@@ -825,6 +825,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\CMSModules\DeleteBoilerplate\UI\Grids\deleteboilerplate_companymember\default.xml" />
+    <Content Include="App_Data\CMSModules\DeleteBoilerplate\UI\Grids\deleteboilerplate_sitemaprule\default.xml" />
     <Content Include="CMSFormControls\DropdownChosen.ascx" />
     <Content Include="CMSFormControls\SeoUrlSelector.ascx" />
     <Content Include="CMSFormControls\TreeTaxonomyMultiSelector.ascx" />

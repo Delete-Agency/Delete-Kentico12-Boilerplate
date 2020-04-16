@@ -637,6 +637,7 @@
   <ItemGroup>
     <Compile Include="App_Start\DynamicRouteConfig.cs" />
     <Compile Include="Attributes\PageTypeRoutingAttribute.cs" />
+    <Compile Include="Controllers\BaseCustomObjectController.cs" />
     <Compile Include="Helpers\EnvironmentHelper.cs" />
     <Compile Include="Helpers\PageTypeRoutingHelper.cs" />
     <Compile Include="Contexts\Implementation\RequestContext.cs" />

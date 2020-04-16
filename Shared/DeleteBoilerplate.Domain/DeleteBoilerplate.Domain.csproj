@@ -583,6 +583,7 @@
     <Compile Include="Models\PageTypes\TaxonomyType\TaxonomyType.generated.cs" />
     <Compile Include="Modules\DeleteBoilerplateModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\CompanyMemberRepository.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\NavigationRepository.cs" />
     <Compile Include="Repositories\SocialLinksRepository.cs" />

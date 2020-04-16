@@ -44,6 +44,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteBoilerplate.Forms", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteBoilerplate.AzureSearch", "..\..\..\Shared\DeleteBoilerplate.AzureSearch\DeleteBoilerplate.AzureSearch.csproj", "{652754E8-3436-47B6-92EE-5D3B6018F72D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteBoilerplate.CompanyMembers", "Features\DeleteBoilerplate.CompanyMembers\DeleteBoilerplate.CompanyMembers.csproj", "{73AB81A6-A354-4278-95CE-79515BF10896}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -98,6 +100,10 @@ Global
 		{652754E8-3436-47B6-92EE-5D3B6018F72D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{652754E8-3436-47B6-92EE-5D3B6018F72D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{652754E8-3436-47B6-92EE-5D3B6018F72D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73AB81A6-A354-4278-95CE-79515BF10896}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73AB81A6-A354-4278-95CE-79515BF10896}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73AB81A6-A354-4278-95CE-79515BF10896}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73AB81A6-A354-4278-95CE-79515BF10896}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -114,6 +120,7 @@ Global
 		{1466452D-F867-4E9B-93DD-09BE1D2B1E2D} = {60D6784B-12CB-4ACD-B26B-545FC97DC901}
 		{17D70B1D-97CA-4DBA-960C-B7E87A8657E2} = {60D6784B-12CB-4ACD-B26B-545FC97DC901}
 		{652754E8-3436-47B6-92EE-5D3B6018F72D} = {2971F724-2145-4CB1-9464-1A379C67E410}
+		{73AB81A6-A354-4278-95CE-79515BF10896} = {60D6784B-12CB-4ACD-B26B-545FC97DC901}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C6500213-6CF9-462C-B95D-DCF91FC64889}

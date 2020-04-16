@@ -26,7 +26,7 @@ namespace DeleteBoilerplate
         /// <summary>
         /// Type information.
         /// </summary>
-        public static readonly ObjectTypeInfo TYPEINFO = new ObjectTypeInfo(typeof(CompanyMemberInfoProvider), OBJECT_TYPE, "DeleteBoilerplate.CompanyMember", "CompanyMemberID", "CompanyMemberLastModified", "CompanyMemberGuid", "FullName", null, null, null, null, null)
+        public static readonly ObjectTypeInfo TYPEINFO = new ObjectTypeInfo(typeof(CompanyMemberInfoProvider), OBJECT_TYPE, "DeleteBoilerplate.CompanyMember", "CompanyMemberID", "CompanyMemberLastModified", "CompanyMemberGuid", "PersonalIdentifier", null, null, null, null, null)
         {
             ModuleName = "DeleteBoilerplate",
             TouchCacheDependencies = true,
@@ -63,6 +63,23 @@ namespace DeleteBoilerplate
             set
             {
                 SetValue("FullName", value);
+            }
+        }
+
+
+        /// <summary>
+        /// Personal identifier.
+        /// </summary>
+        [DatabaseField]
+        public virtual string PersonalIdentifier
+        {
+            get
+            {
+                return ValidationHelper.GetString(GetValue("PersonalIdentifier"), String.Empty);
+            }
+            set
+            {
+                SetValue("PersonalIdentifier", value);
             }
         }
 

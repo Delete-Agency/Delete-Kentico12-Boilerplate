@@ -47,6 +47,7 @@ namespace DeleteBoilerplate.Domain
         public static class SearchIndexes
         {
             public const string SearchIndex = "SearchIndex";
+            public const string CompanyMember = "CompanyMember";
         }
 
         public static class Identity

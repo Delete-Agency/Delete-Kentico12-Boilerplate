@@ -1,0 +1,9 @@
+﻿@model IList<DeleteBoilerplate.CompanyMembers.Models.CompanyMemberViewModel>
+    
+@if (Model != null)
+{
+    foreach (var companyMember in Model)
+    {
+        <div>@companyMember.FullName - @companyMember.Team</div>
+    }
+}

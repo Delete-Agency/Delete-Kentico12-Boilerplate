@@ -454,6 +454,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DI\CompositionRoot.cs" />
     <Compile Include="Models\Base\BaseAzureSearchArgs.cs" />
     <Compile Include="Models\Base\AzureSearchResult.cs" />
     <Compile Include="Models\Base\IAzureSearchResultItem.cs" />
