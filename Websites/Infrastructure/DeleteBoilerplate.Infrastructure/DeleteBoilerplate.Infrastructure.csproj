@@ -647,6 +647,8 @@
     <Compile Include="Attributes\StringValueAttribute.cs" />
     <Compile Include="Automap\InfrastructureAutomap.cs" />
     <Compile Include="Cache\CacheExpirationCallbacks.cs" />
+    <Compile Include="Configuration\KenticoFormBuilderStaticMarkupConfiguration.cs" />
+    <Compile Include="Configuration\KenticoFormMarkupInjection.cs" />
     <Compile Include="DI\CompositionRoot.cs" />
     <Compile Include="DI\DIConfig.cs" />
     <Compile Include="Enums\OpenGraphType.cs" />

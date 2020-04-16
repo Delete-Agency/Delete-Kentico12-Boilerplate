@@ -4,6 +4,7 @@ using System.Web.Routing;
 using DeleteBoilerplate.DynamicRouting;
 using DeleteBoilerplate.DynamicRouting.Helpers;
 using DeleteBoilerplate.Infrastructure;
+using DeleteBoilerplate.Infrastructure.Configuration;
 using DeleteBoilerplate.Infrastructure.Routing;
 using DeleteBoilerplate.OutputCache;
 using Kentico.OnlineMarketing.Web.Mvc;
@@ -25,6 +26,14 @@ namespace DeleteBoilerplate.WebApp
 
             // Register dynamic routes at the end
             DynamicRouteConfig.RegisterDynamicRoutes(RouteTable.Routes);
+
+            CustomizationKenticoForm();
+        }
+
+        private static void CustomizationKenticoForm()
+        {
+            KenticoFormMarkupInjection.RegisterEventHandlers();
+            KenticoFormBuilderStaticMarkupConfiguration.SetGlobalRenderingConfigurations();
         }
 
         public override string GetVaryByCustomString(HttpContext context, string arg)
