@@ -9,15 +9,38 @@ namespace DeleteBoilerplate.XmlSitemap.Helpers
 {
     public static class CustomClassHelper
     {
-        // (skip, take) => lambda
+        // Key = Custom Class CLASSNAME
+        // Value - Func returning query from Provider where (skip, take) => lambda
         private static readonly Dictionary<string, Func<int, int, IQueryable<BaseInfo>>> QueryDictionary
             = new Dictionary<string, Func<int, int, IQueryable<BaseInfo>>>
             {
+                {
+                    CompanyMemberInfo.TYPEINFO.ObjectClassName,
+                    (skip, take) => CompanyMemberInfoProvider
+                        .GetCompanyMembers()
+                        .OrderBy(x => x.CompanyMemberID)
+                        .Skip(skip)
+                        .Take(take)
+                }
             };
 
+        // Key - Custom Class C# Type
+        // Value - Collection of string URLs (starts with '/', without trailing '/')
         private static readonly Dictionary<Type, IList<Func<BaseInfo, string>>> UrlDictionary
             = new Dictionary<Type, IList<Func<BaseInfo, string>>>
             {
+                {
+                    typeof(CompanyMemberInfo),
+                    new List<Func<BaseInfo, string>>
+                    {
+                        info =>
+                        {
+                            var companyMemberInfo = (CompanyMemberInfo)info;
+
+                            return $"/team/{companyMemberInfo.Team}/{companyMemberInfo.PersonalIdentifier}";
+                        }
+                    }
+                }
             };
 
         public static IQueryable<BaseInfo> GetQuery(string className, int skip, int take)
