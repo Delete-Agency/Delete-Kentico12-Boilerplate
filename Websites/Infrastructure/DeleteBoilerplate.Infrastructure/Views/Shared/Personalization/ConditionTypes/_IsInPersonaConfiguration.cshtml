@@ -1,0 +1,35 @@
+﻿@using DeleteBoilerplate.Infrastructure.Extensions
+@model DeleteBoilerplate.Infrastructure.Models.Personalization.ConditionTypes.IsInPersona.IsInPersonaViewModel
+
+<link rel="stylesheet" type="text/css" href="~/Content/Personalization/ConditionTypes/IsInPersona.css">
+@using (Html.BeginForm("Validate", "IsInPersona"))
+{
+    if (Model.AllPersonas.Count == 0)
+    {
+        <span class="persona-selector-dialog no-personas">@Html.GetUIString("DeleteBoilerplate.ConditionType.IsInPersona.NoPersonas")</span>
+    }
+    else
+    {
+        <ul class="persona-selector-dialog">
+            @for (var index = 0; index < Model.AllPersonas.Count; index++)
+            {
+                var persona = Model.AllPersonas[index];
+                <li>
+                    <label for="@Html.IdFor(x => x.AllPersonas[index])" class="line-wrapper">
+                        <span class="ktc-radio">
+                            <input id="@Html.IdFor(x => x.AllPersonas[index])"
+                                   type="radio"
+                                   name="@Html.NameFor(x => x.PersonaCodeName)"
+                                   @(persona.Selected ? "checked" : String.Empty)
+                                   value="@persona.CodeName">
+                            <label for="@Html.IdFor(x => x.AllPersonas[index])"></label>
+                        </span>
+                        <span class="persona-details">
+                            @*@Html.Image(persona.ImagePath, persona.DisplayName)*@ @persona.DisplayName
+                        </span>
+                    </label>
+                </li>
+            }
+        </ul>
+    }
+}

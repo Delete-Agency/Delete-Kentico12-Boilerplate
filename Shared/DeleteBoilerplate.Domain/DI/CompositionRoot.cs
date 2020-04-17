@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using CMS.Personas;
 using DeleteBoilerplate.Domain.Repositories;
 using DeleteBoilerplate.Domain.RepositoryCaching;
 using DeleteBoilerplate.Domain.RepositoryCaching.Keys;
@@ -22,6 +23,8 @@ namespace DeleteBoilerplate.Domain
 
             serviceRegistry.RegisterSingleton<IUrlSelectorService, UrlSelectorService>();
 
+            serviceRegistry.RegisterSingleton<IPersonaPictureUrlCreator, PersonaPictureUrlCreator>();
+            
             serviceRegistry.RegisterSingleton<IContentItemMetadataProvider, ContentItemMetadataProvider>();
             serviceRegistry.RegisterSingleton<IDependencyCacheKey, DependencyCacheKey>();
             serviceRegistry.RegisterScoped<ICachingRepositoryInterceptor, CachingRepositoryInterceptor>();

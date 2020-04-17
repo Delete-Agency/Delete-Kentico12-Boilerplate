@@ -640,6 +640,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Personalization\ConditionTypes\IsInPersona.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -669,7 +670,12 @@
     <Compile Include="Models\BaseWidgetViewModel.cs" />
     <Compile Include="Models\FormComponents\UrlSelectorComponent.cs" />
     <Compile Include="Models\FormComponents\UrlSelectorProperties.cs" />
+    <Compile Include="Models\Personalization\ConditionTypes\IsInPersona\IsInPersonaListItemViewModel.cs" />
+    <Compile Include="Models\Personalization\ConditionTypes\IsInPersona\IsInPersonaViewModel.cs" />
     <Compile Include="Models\StaticAsset.cs" />
+    <Compile Include="Controllers\Personalization\ConditionTypes\IsInPersonaController.cs" />
+    <Compile Include="Personalization\ConditionTypes\IsInContactGroupConditionType.cs" />
+    <Compile Include="Personalization\ConditionTypes\IsInPersonaConditionType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Routing\CustomRoutesHelper.cs" />
   </ItemGroup>
@@ -677,6 +683,7 @@
     <None Include="packages.config" />
     <Content Include="Views\Shared\FormComponents\_UrlSelectorComponent.cshtml" />
     <Content Include="Views\web.config" />
+    <Content Include="Views\Shared\Personalization\ConditionTypes\_IsInPersonaConfiguration.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

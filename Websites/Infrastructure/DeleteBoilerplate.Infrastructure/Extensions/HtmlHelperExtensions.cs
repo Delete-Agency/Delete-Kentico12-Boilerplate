@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using CMS.EventLog;
 using CMS.Helpers;
+using CMS.Membership;
 using CMS.SiteProvider;
 using DeleteBoilerplate.Common.Extensions;
 using DeleteBoilerplate.Common.Models.Media;
@@ -119,5 +120,15 @@ namespace DeleteBoilerplate.Infrastructure.Extensions
             }
         }
 
+        /// <summary>
+        /// Returns localization for given resource string key in a preferred UI culture of current user.
+        /// </summary>
+        /// <param name="htmlHelper">HTML helper.</param>
+        /// <param name="key">Resource string key.</param>
+        /// <remarks>Returned string is not HTML encoded.</remarks>
+        public static IHtmlString GetUIString(this HtmlHelper htmlHelper, string key)
+        {
+            return htmlHelper.Raw(ResHelper.GetString(key, MembershipContext.AuthenticatedUser.PreferredUICultureCode));
+        }
     }
 }
