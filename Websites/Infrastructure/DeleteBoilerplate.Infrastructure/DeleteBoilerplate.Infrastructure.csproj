@@ -901,6 +901,7 @@
     <Content Include="Views\Shared\InlineEditors\_ImageSelector.cshtml" />
     <Content Include="Views\Shared\InlineEditors\_RichTextEditor.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\RichTextEditorTemplate.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\ImageSelectionEditorTemplate.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

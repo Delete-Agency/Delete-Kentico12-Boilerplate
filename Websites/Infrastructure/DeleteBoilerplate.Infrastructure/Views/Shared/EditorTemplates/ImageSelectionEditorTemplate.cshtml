@@ -1,0 +1,11 @@
+﻿@using DeleteBoilerplate.Infrastructure.Models.InlineEditors
+@using Kentico.PageBuilder.Web.Mvc
+@using Kentico.Web.Mvc
+
+@if (Context.Kentico().PageBuilder().EditMode)
+{
+    Html.RenderPartial("InlineEditors/_ImageSelector", new ImageSelectorViewModel
+    {
+        PropertyName = ViewData["PropertyName"] as string
+    });
+}

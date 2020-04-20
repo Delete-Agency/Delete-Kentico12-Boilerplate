@@ -9,7 +9,7 @@
     {
         PropertyName = ViewData.ModelMetadata.PropertyName,
         Text = Model,
-        PlaceholderText = ViewData["PlaceholderText"] as string
+        PlaceholderText = ViewData[nameof(RichTextEditorViewModel.PlaceholderText)] as string
     });
 }
 else

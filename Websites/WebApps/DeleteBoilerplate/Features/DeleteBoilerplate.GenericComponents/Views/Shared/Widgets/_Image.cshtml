@@ -1,9 +1,6 @@
 ﻿@using System.Web.Mvc.Html
-@using DeleteBoilerplate.Infrastructure.Models.InlineEditors
 @using DeleteBoilerplate.GenericComponents.Models.Widgets.ImageWidget
 @using DeleteBoilerplate.Infrastructure.Extensions
-@using Kentico.PageBuilder.Web.Mvc
-@using Kentico.Web.Mvc
 
 @model DeleteBoilerplate.GenericComponents.Models.Widgets.ImageWidget.ImageWidgetViewModel
 
@@ -11,13 +8,9 @@
 {
     <section class="component" aria-label="section with image">
         <div class="image">
-            @if (Context.Kentico().PageBuilder().EditMode)
-            {
-                Html.RenderPartial("InlineEditors/_ImageSelector", new ImageSelectorViewModel
-                {
-                    PropertyName = nameof(ImageWidgetProperties.Images),
-                });
-            }
+
+            @Html.Editor("", "ImageSelectionEditorTemplate",
+                new { PropertyName = nameof(ImageWidgetProperties.Images) })
 
             @if (Model.Images != null && Model.Images.Any())
             {
