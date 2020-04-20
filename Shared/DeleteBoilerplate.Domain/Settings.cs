@@ -23,6 +23,11 @@ namespace DeleteBoilerplate.Domain
             public static string DefaultImageAlt => SiteSettingsHelper.GetSettingValue("DeleteBoilerplate_DefaultImageAlt") ?? string.Empty;
         }
 
+        public static class System
+        {
+            public static string IpHeaderKey => SiteSettingsHelper.GetSettingValue("DeleteBoilerplate_System_Environment_IpHeaderKey");
+        }
+
         public static class Taxonomy
         {
             public static string SearchIndex => SiteSettingsHelper.GetSettingValue("DeleteBoilerplate_SearchIndex") ?? string.Empty;

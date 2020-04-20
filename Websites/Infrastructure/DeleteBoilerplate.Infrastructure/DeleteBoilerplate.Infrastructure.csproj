@@ -880,6 +880,7 @@
     <Compile Include="Models\Personalization\ConditionTypes\IsInPersona\IsInPersonaViewModel.cs" />
     <Compile Include="Models\StaticAsset.cs" />
     <Compile Include="Controllers\Personalization\ConditionTypes\IsInPersonaController.cs" />
+    <Compile Include="Modules\UserIpFromHeaderModule.cs" />
     <Compile Include="Personalization\ConditionTypes\IsAuthenticatedUserConditionType.cs" />
     <Compile Include="Personalization\ConditionTypes\IsInContactGroupConditionType.cs" />
     <Compile Include="Personalization\ConditionTypes\IsInPersonaConditionType.cs" />
