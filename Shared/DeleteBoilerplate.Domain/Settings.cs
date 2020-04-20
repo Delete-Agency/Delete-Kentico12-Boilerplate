@@ -68,5 +68,16 @@ namespace DeleteBoilerplate.Domain
                 public static bool IsSendEmailInContactForm => SiteSettingsHelper.GetSettingBoolValue("DeleteBoilerplate_Notifications_Forms_IsSendEmailInContactForm");
             }
         }
+
+        public static class Cookies
+        {
+            public static string CookiePolicy => SiteSettingsHelper.GetSettingValue("DeleteBoilerplate_Content_Cookie_CookiePolicy");
+
+            public static string FunctionalCookieDescription => SiteSettingsHelper.GetSettingValue("DeleteBoilerplate_Content_Cookie_FunctionalCookieDescription");
+
+            public static string PerformanceCookieDescription => SiteSettingsHelper.GetSettingValue("DeleteBoilerplate_Content_Cookie_PerformanceCookieDescription");
+
+            public static string TrackingCookieDescription => SiteSettingsHelper.GetSettingValue("DeleteBoilerplate_Content_Cookie_TrackingCookieDescription");
+        }
     }
 }

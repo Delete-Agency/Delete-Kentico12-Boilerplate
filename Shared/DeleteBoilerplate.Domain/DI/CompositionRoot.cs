@@ -1,4 +1,6 @@
 ﻿using System.Linq;
+using CMS.Core;
+using CMS.Helpers;
 using CMS.Personas;
 using DeleteBoilerplate.Domain.Repositories;
 using DeleteBoilerplate.Domain.RepositoryCaching;
@@ -29,6 +31,8 @@ namespace DeleteBoilerplate.Domain
             serviceRegistry.RegisterSingleton<IDependencyCacheKey, DependencyCacheKey>();
             serviceRegistry.RegisterScoped<ICachingRepositoryInterceptor, CachingRepositoryInterceptor>();
             RegisterRepositories(serviceRegistry);
+
+            serviceRegistry.Register(factory => Service.Resolve<ICurrentCookieLevelProvider>());
 
             serviceRegistry.RegisterSingleton<IMailService, MailService>();
         }

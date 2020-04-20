@@ -677,7 +677,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Automap\WebAppAutoMap.cs" />
+    <Compile Include="Constants\CookiesConstants.cs" />
     <Compile Include="Controllers\ContextPageController.cs" />
+    <Compile Include="Controllers\Global\CookiesController.cs" />
     <Compile Include="Controllers\Global\GlobalController.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">
@@ -839,6 +841,7 @@
   <ItemGroup>
     <Compile Include="App_Start\ApplicationConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Models\Global\Cookies\CookiesViewModel.cs" />
     <Compile Include="Models\Global\Footer\FooterViewModel.cs" />
     <Compile Include="Models\Global\Header\NavigationLinkViewModel.cs" />
     <Compile Include="Models\Global\Footer\SocialLinkViewModel.cs" />
@@ -878,6 +881,7 @@
     <None Include="packages.config" />
     <Content Include="Views\Global\Footer.cshtml" />
     <Content Include="Views\Global\Header.cshtml" />
+    <Content Include="Views\Global\Cookies.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

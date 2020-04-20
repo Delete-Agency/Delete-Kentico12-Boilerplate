@@ -22,6 +22,8 @@
         @RenderBody()
 
         @{ Html.RenderAction("Footer", "Global"); }
+        
+        @{ Html.RenderAction("Cookies", "Cookies"); }
     </div>
     
     @RenderSection("scripts", required: false)
