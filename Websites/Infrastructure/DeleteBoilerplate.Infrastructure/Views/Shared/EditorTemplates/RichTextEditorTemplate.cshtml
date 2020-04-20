@@ -1,0 +1,18 @@
+﻿@using DeleteBoilerplate.Infrastructure.Models.InlineEditors
+@using Kentico.PageBuilder.Web.Mvc
+@using Kentico.Web.Mvc
+@model string
+
+@if (Context.Kentico().PageBuilder().EditMode)
+{
+    Html.RenderPartial("InlineEditors/_RichTextEditor", new RichTextEditorViewModel
+    {
+        PropertyName = ViewData.ModelMetadata.PropertyName,
+        Text = Model,
+        PlaceholderText = ViewData["PlaceholderText"] as string
+    });
+}
+else
+{
+    @Html.Raw(Model)
+}

@@ -900,6 +900,7 @@
     <Content Include="Views\Shared\FormComponents\_ContactGroupSelector.cshtml" />
     <Content Include="Views\Shared\InlineEditors\_ImageSelector.cshtml" />
     <Content Include="Views\Shared\InlineEditors\_RichTextEditor.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\RichTextEditorTemplate.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

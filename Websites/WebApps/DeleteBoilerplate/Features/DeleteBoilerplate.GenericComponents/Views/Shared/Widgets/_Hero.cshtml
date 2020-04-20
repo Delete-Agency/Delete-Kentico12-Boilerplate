@@ -23,19 +23,8 @@
                 <img src="@Model.Images[0].GetMediaFilesSelectorItemUrl()" />
             }
 
-            @if (Context.Kentico().PageBuilder().EditMode)
-            {
-                Html.RenderPartial("InlineEditors/_RichTextEditor", new RichTextEditorViewModel
-                {
-                    PropertyName = nameof(HeroWidgetProperties.Text),
-                    Text = Model.Text,
-                    PlaceholderText = Model.GetPlaceholder("Content")
-                });
-            }
-            else
-            {
-                @Html.Raw(Model.Text)
-            }
+            @Html.EditorFor(it => it.Text, "RichTextEditorTemplate",
+                new { PlaceholderText = Model.GetPlaceholder("Content") })
         </div>
     </section>
 }

@@ -1,8 +1,4 @@
 ﻿@using System.Web.Mvc.Html
-@using DeleteBoilerplate.Infrastructure.Models.InlineEditors
-@using DeleteBoilerplate.GenericComponents.Models.Widgets.ContentBlockWidget
-@using Kentico.PageBuilder.Web.Mvc
-@using Kentico.Web.Mvc
 @model DeleteBoilerplate.GenericComponents.Models.Widgets.ContentBlockWidget.ContentBlockWidgetViewModel
 
 @*@Html.RegisterStyleEntryPoint("content-block.css")*@
@@ -11,19 +7,8 @@
 {
     <section class="component" aria-label="section with text information">
         <div class="content-block">
-            @if (Context.Kentico().PageBuilder().EditMode)
-            {
-                Html.RenderPartial("InlineEditors/_RichTextEditor", new RichTextEditorViewModel
-                {
-                    PropertyName = nameof(ContentBlockWidgetProperties.Text),
-                    Text = Model.Text,
-                    PlaceholderText = Model.GetPlaceholder("Content")
-                });
-            }
-            else
-            {
-                @Html.Raw(Model.Text)
-            }
+            @Html.EditorFor(it => it.Text, "RichTextEditorTemplate",
+                new { PlaceholderText = Model.GetPlaceholder("Content") })
         </div>
     </section>
 }
