@@ -1,0 +1,25 @@
+﻿@model DeleteBoilerplate.Infrastructure.Models.FormComponents.ContactGroupSelector.ContactGroupSelectorComponent
+@using DeleteBoilerplate.Infrastructure.Extensions
+
+@if (Model.Items.Count == 0)
+{
+    <span class="contact-group-selector no-contact-groups">@Html.GetUIString("DeleteBoilerplate.ConditionType.IsInContactGroup.NoContactGroups")</span>
+}
+
+@for (var index = 0; index < Model.Items.Count; index++)
+{
+    var item = Model.Items[index];
+
+    <span class="contact-group-selector ktc-checkbox">
+        <input type="checkbox"
+               id="@Html.IdFor(x => Model.Items[index].Checked)"
+               name="@Html.NameFor(x => Model.Items[index].Checked)"
+               @(Model.Items[index].Checked ? "checked" : string.Empty)
+               value="true" />
+        <label for="@Html.IdFor(x =>  Model.Items[index].Checked)">@item.DisplayName</label>
+        <input name="@Html.NameFor(x => Model.Items[index].Checked)" type="hidden" value="false" />
+    </span>
+    @Html.HiddenFor(x => x.Items[index].CodeName)
+    @Html.HiddenFor(x => x.Items[index].DisplayName)
+
+}

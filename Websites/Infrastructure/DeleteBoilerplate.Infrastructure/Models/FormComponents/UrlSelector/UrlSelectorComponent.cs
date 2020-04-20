@@ -1,13 +1,13 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using DeleteBoilerplate.Common.Models;
-using DeleteBoilerplate.Infrastructure.Models.FormComponents;
+using DeleteBoilerplate.Infrastructure.Models.FormComponents.UrlSelector;
 using Kentico.Forms.Web.Mvc;
 
 [assembly: RegisterFormComponent(UrlSelectorComponent.Identifier, typeof(UrlSelectorComponent), "URL selector",
         IsAvailableInFormBuilderEditor = false, ViewName = "FormComponents/_UrlSelectorComponent", IconClass = "icon-chain")]
 
-namespace DeleteBoilerplate.Infrastructure.Models.FormComponents
+namespace DeleteBoilerplate.Infrastructure.Models.FormComponents.UrlSelector
 {
     public class UrlSelectorComponent : FormComponent<UrlSelectorProperties, UrlSelectorItem>
     {

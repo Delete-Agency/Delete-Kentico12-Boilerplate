@@ -1,7 +1,7 @@
 ﻿using DeleteBoilerplate.Common.Models;
 using Kentico.Forms.Web.Mvc;
 
-namespace DeleteBoilerplate.Infrastructure.Models.FormComponents
+namespace DeleteBoilerplate.Infrastructure.Models.FormComponents.UrlSelector
 {
     public class UrlSelectorProperties : FormComponentProperties<UrlSelectorItem>
     {

@@ -1,0 +1,17 @@
+﻿.contact-group-selector.no-contact-groups {
+    margin: 0 8px 8px 8px;
+    display: inline-block;
+    color: red;
+}
+
+.contact-group-selector.ktc-checkbox {
+    padding: 8px 8px;
+}
+
+.contact-group-selector.ktc-checkbox:last-of-type {
+    margin-bottom: 8px;
+}
+
+.contact-group-selector.ktc-checkbox:hover {
+    background-color: #d0e8ed;
+}

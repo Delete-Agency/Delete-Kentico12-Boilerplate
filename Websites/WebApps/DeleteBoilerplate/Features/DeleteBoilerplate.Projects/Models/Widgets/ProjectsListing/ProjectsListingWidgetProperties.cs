@@ -5,6 +5,7 @@ using DeleteBoilerplate.GenericComponents.Models.FormComponents;
 using DeleteBoilerplate.GenericComponents.Models.Widgets;
 using DeleteBoilerplate.Infrastructure.Models;
 using DeleteBoilerplate.Infrastructure.Models.FormComponents;
+using DeleteBoilerplate.Infrastructure.Models.FormComponents.UrlSelector;
 using Kentico.Components.Web.Mvc.FormComponents;
 using Kentico.Forms.Web.Mvc;
 using Kentico.PageBuilder.Web.Mvc;

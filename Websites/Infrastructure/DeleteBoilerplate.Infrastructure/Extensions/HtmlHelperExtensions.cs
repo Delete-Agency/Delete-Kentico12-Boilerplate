@@ -10,6 +10,8 @@ using CMS.Membership;
 using CMS.SiteProvider;
 using DeleteBoilerplate.Common.Extensions;
 using DeleteBoilerplate.Common.Models.Media;
+using Kentico.Content.Web.Mvc;
+using Kentico.Web.Mvc;
 
 namespace DeleteBoilerplate.Infrastructure.Extensions
 {
@@ -129,6 +131,31 @@ namespace DeleteBoilerplate.Infrastructure.Extensions
         public static IHtmlString GetUIString(this HtmlHelper htmlHelper, string key)
         {
             return htmlHelper.Raw(ResHelper.GetString(key, MembershipContext.AuthenticatedUser.PreferredUICultureCode));
+        }
+
+        /// <summary>
+        /// Generates an IMG tag for an image file.
+        /// </summary>
+        /// <param name="htmlHelper">HTML helper.</param>
+        /// <param name="path">The virtual path of the image.</param>
+        /// <param name="title">Title.</param>
+        /// <param name="cssClassName">CSS class.</param>
+        /// <param name="constraint">Size constraint.</param>
+        public static MvcHtmlString Image(this HtmlHelper htmlHelper, string path, string title = "", string cssClassName = "", SizeConstraint? constraint = null)
+        {
+            if (string.IsNullOrEmpty(path))
+            {
+                return MvcHtmlString.Empty;
+            }
+
+            var urlHelper = new UrlHelper(htmlHelper.ViewContext.RequestContext);
+            var image = new TagBuilder("img");
+            image.MergeAttribute("src", urlHelper.Kentico().ImageUrl(path, constraint.GetValueOrDefault(SizeConstraint.Empty)));
+            image.AddCssClass(cssClassName);
+            image.MergeAttribute("alt", title);
+            image.MergeAttribute("title", title);
+
+            return MvcHtmlString.Create(image.ToString(TagRenderMode.SelfClosing));
         }
     }
 }
