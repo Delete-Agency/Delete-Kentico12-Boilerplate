@@ -1,7 +1,6 @@
-﻿using DeleteBoilerplate.Infrastructure.Models;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
-namespace DeleteBoilerplate.GenericComponents.Models.InlineEditors
+namespace DeleteBoilerplate.Infrastructure.Models.InlineEditors
 {
     public class RichTextEditorViewModel : BaseInlineEditorViewModel
     {
