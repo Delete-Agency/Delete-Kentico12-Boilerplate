@@ -1,0 +1,23 @@
+﻿@using Kentico.Forms.Web.Mvc
+@using Kentico.Web.Mvc
+@model DeleteBoilerplate.GenericComponents.Models.Widgets.KenticoFormWidget.BizFormWidgetViewModel
+
+@if (Model == null)
+{
+    return;
+}
+
+<div id="@Model.ElementId" style="position: relative">
+    <form method="post" action="@Url.RouteUrl("Default", new { action = "Submit", controller = "BizForm" })">
+
+        @Html.AntiForgeryToken()
+        @Html.Hidden("FormName", Model.FormName)
+        @Html.Hidden("ElementId", Model.ElementId)
+
+        @Html.Kentico().FormFields(Model.FormComponents, Model.FormConfiguration)
+
+        <div class="contact-form__button-wrapper">
+            <button class="btn btn--full-width" type="submit">Submit</button>
+        </div>
+    </form>
+</div>

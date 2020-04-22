@@ -27,7 +27,8 @@ namespace DeleteBoilerplate.WebApp
             // Register dynamic routes at the end
             DynamicRouteConfig.RegisterDynamicRoutes(RouteTable.Routes);
 
-            CustomizationKenticoForm();
+            //DoTo: Customization of Kentico forms is turned off
+            //CustomizationKenticoForm();
         }
 
         private static void CustomizationKenticoForm()

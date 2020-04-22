@@ -1,4 +1,7 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
+using System.Reflection;
+using System.Web.Mvc;
 using CMS.Core;
 using CMS.Helpers;
 using CMS.Personas;
@@ -7,6 +10,7 @@ using DeleteBoilerplate.Domain.RepositoryCaching;
 using DeleteBoilerplate.Domain.RepositoryCaching.Keys;
 using DeleteBoilerplate.Domain.RepositoryCaching.Providers;
 using DeleteBoilerplate.Domain.Services;
+using Kentico.Forms.Web.Mvc;
 using LightInject;
 
 namespace DeleteBoilerplate.Domain
@@ -35,6 +39,10 @@ namespace DeleteBoilerplate.Domain
             serviceRegistry.Register(factory => Service.Resolve<ICurrentCookieLevelProvider>());
 
             serviceRegistry.RegisterSingleton<IMailService, MailService>();
+
+            serviceRegistry.RegisterSingleton<IFormProvider, FormProvider>();
+            serviceRegistry.RegisterSingleton<IFormComponentVisibilityEvaluator, FormComponentVisibilityEvaluator>();
+            serviceRegistry.Register(factory => Service.Resolve<IFormComponentModelBinder>());
         }
 
         private static void RegisterRepositories(IServiceRegistry serviceRegistry)

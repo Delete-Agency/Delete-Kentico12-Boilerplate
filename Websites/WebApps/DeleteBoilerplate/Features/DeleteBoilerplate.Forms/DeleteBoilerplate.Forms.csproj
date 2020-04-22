@@ -654,9 +654,11 @@
     <Compile Include="Automap\FormsAutoMap.cs" />
     <Compile Include="Controllers\BaseFormController.cs" />
     <Compile Include="Controllers\ContactFormController.cs" />
+    <Compile Include="Controllers\BizFormController.cs" />
     <Compile Include="DI\CompositionRoot.cs" />
     <Compile Include="Models\CaptchaValidationResponse.cs" />
     <Compile Include="Models\ContactFormData.cs" />
+    <Compile Include="Models\BizFormData.cs" />
     <Compile Include="Models\FormResponseModel.cs" />
     <Compile Include="Models\IFormData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
