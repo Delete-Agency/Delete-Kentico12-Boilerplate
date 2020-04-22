@@ -39,10 +39,6 @@ namespace DeleteBoilerplate.Domain
             serviceRegistry.Register(factory => Service.Resolve<ICurrentCookieLevelProvider>());
 
             serviceRegistry.RegisterSingleton<IMailService, MailService>();
-
-            serviceRegistry.RegisterSingleton<IFormProvider, FormProvider>();
-            serviceRegistry.RegisterSingleton<IFormComponentVisibilityEvaluator, FormComponentVisibilityEvaluator>();
-            serviceRegistry.Register(factory => Service.Resolve<IFormComponentModelBinder>());
         }
 
         private static void RegisterRepositories(IServiceRegistry serviceRegistry)

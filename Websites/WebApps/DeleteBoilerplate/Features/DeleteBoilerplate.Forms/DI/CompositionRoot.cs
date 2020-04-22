@@ -10,6 +10,9 @@ namespace DeleteBoilerplate.Forms.DI
         public void Compose(IServiceRegistry serviceRegistry)
         {
             serviceRegistry.Register(factory => Service.Resolve<IFormProvider>());
+            serviceRegistry.Register(factory => Service.Resolve<IFormComponentVisibilityEvaluator>());
+            serviceRegistry.Register(factory => Service.Resolve<IFormComponentModelBinder>());
+
             serviceRegistry.Register<ICaptchaVerificationService, CaptchaVerificationService>(new PerRequestLifeTime());
         }
     }
