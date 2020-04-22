@@ -1,7 +1,7 @@
-﻿using System;
-using AutoMapper;
+﻿using AutoMapper;
 using CMS.ContactManagement;
 using CMS.DataEngine;
+using CMS.EventLog;
 using CMS.OnlineForms;
 using CMS.SiteProvider;
 using DeleteBoilerplate.DynamicRouting.Controllers;
@@ -13,9 +13,9 @@ using Kentico.PageBuilder.Web.Mvc;
 using LightInject;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
-using CMS.EventLog;
 
 [assembly:
     RegisterWidget("DeleteBoilerplate.GenericComponents.BizFormWidget", typeof(BizFormWidgetController),
@@ -73,12 +73,12 @@ namespace DeleteBoilerplate.GenericComponents.Controllers.Widgets
         {
             string className = DataClassInfoProvider.GetClassName(formInfo.FormClassID);
 
-            var items = BizFormItemProvider.GetItems(className);
-            var existingBizFormItem = items?.GetExistingItemForContact(formInfo, ContactManagementContext.CurrentContact?.ContactGUID);
+            var formItems = BizFormItemProvider.GetItems(className);
+            var existingFormItem = formItems?.GetExistingItemForContact(formInfo, ContactManagementContext.CurrentContact?.ContactGUID);
 
             var formComponents = FormProvider
                 .GetFormComponents(formInfo)
-                .GetDisplayedComponents(ContactManagementContext.CurrentContact, formInfo, existingBizFormItem, this.FormComponentVisibilityEvaluator);
+                .GetDisplayedComponents(ContactManagementContext.CurrentContact, formInfo, existingFormItem, this.FormComponentVisibilityEvaluator);
 
             IList<FormComponent> validFormComponents = new List<FormComponent>();
             foreach (var formComponent in formComponents)
