@@ -4,9 +4,11 @@
 @using Kentico.OnlineMarketing.Web.Mvc
 @using HtmlHelperExtensions = DeleteBoilerplate.Infrastructure.Extensions.HtmlHelperExtensions
 
-@Html.RegisterStyle("app.css")
-@Html.RegisterScript("app.js")
-@Html.RegisterSvg("app.svg")
+@Html.RegisterScript("corejs.js", AssetRendering.FrontendAndAdmin)
+@Html.RegisterScript("runtime.js", AssetRendering.FrontendAndAdmin)
+@Html.RegisterScript("commons.js", AssetRendering.FrontendAndAdmin)
+@Html.RegisterScript("vendors.app.js", AssetRendering.FrontendAndAdmin)
+@Html.RegisterScript("app.js", AssetRendering.FrontendAndAdmin)
 
 <!DOCTYPE html>
 <html>
@@ -14,18 +16,22 @@
     @{ Html.RenderAction("RenderMeta", "Metadata"); }
     @RenderSection("styles", required: false)
     @Html.Kentico().ABTestLoggerScript()
+    @Html.RegisterStyle("commons.css")
+    @Html.RegisterStyle("vendors.app.css")
+    @Html.RegisterStyle("app.css")
 </head>
 <body>
+    @Html.RegisterSvg("app.svg")
     <div class="container body-content">
         @{ Html.RenderAction("Header", "Global"); }
 
         @RenderBody()
 
         @{ Html.RenderAction("Footer", "Global"); }
-        
+
         @{ Html.RenderAction("Cookies", "Cookies"); }
     </div>
-    
+
     @RenderSection("scripts", required: false)
     @Html.Kentico().ActivityLoggingScript()
     @Html.RenderRegisteredScripts()

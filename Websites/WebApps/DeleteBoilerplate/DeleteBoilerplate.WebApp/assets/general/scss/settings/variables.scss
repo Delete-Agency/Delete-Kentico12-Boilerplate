@@ -1,0 +1,22 @@
+// $defaultTransitionDuration is loaded via sass-vars-loader
+$transition-default: (($defaultTransitionDuration - 1) + 1ms) ease-out;
+$outline-default: 2px solid $color-focus-outline;
+
+$default-mobile-side-padding: 20px;
+$default-tablet-side-padding: 40px;
+$default-desktop-side-padding: 50px;
+
+$stacked-content-margin-mobile: 25px;
+$stacked-content-margin-tablet: 40px;
+$stacked-content-margin-desktop: 50px;
+
+// $containerMaxWidth is loaded via sass-vars-loader
+$container-max-width: ($containerMaxWidth - 1) + 1px;
+$narrow-container-max-width: 780px;
+
+$layer-element-spinner: 300;
+$layer-overlay: 300;
+$layer-modal: 500;
+$layer-page-spinner: 600;
+$layer-cookie-banner: 700;
+

@@ -1,0 +1,27 @@
+{
+    "extends": "stylelint-config-standard",
+    "plugins": [
+        "stylelint-scss"
+    ],
+    "rules": {
+        "indentation": 4,
+        "at-rule-no-unknown": null,
+        "scss/at-rule-no-unknown": true,
+        "color-hex-case": "upper",
+        "color-hex-length": "long",
+        "comment-empty-line-before": null,
+        "selector-attribute-quotes": "always",
+        "font-family-name-quotes": "always-where-recommended",
+        "function-name-case": null,
+        "rule-empty-line-before": [
+            "always-multi-line",
+            {
+                "ignore": [
+                    "after-comment",
+                    "first-nested"
+                ]
+            }
+        ],
+        "no-descending-specificity": null
+    }
+}

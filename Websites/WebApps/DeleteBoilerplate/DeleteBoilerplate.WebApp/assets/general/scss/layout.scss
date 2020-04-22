@@ -1,0 +1,53 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.html {
+    position: relative;
+    font-size: 100%;
+}
+
+.body {
+    @include roboto-regular();
+
+    font-size: 100%;
+    height: 100vh;
+    color: $color-dark-grey;
+}
+
+.container {
+    @include container();
+
+    &--narrow {
+        max-width: $narrow-container-max-width;
+    }
+}
+
+.section {
+    @include default-side-paddings();
+}
+
+.visually-hidden {
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    -webkit-clip-path: inset(100%);
+}
+
+*:focus {
+    outline: $outline-default;
+}
+
+[data-whatintent='mouse'] *:focus,
+[data-whatintent='touch'] *:focus {
+    outline: none;
+}

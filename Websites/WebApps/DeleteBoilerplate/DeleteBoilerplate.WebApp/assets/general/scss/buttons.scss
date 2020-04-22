@@ -1,0 +1,61 @@
+.btn,
+.btn-secondary {
+    @include reset-button();
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color $transition-default, color $transition-default, border-color $transition-default;
+
+    // for spinners inside buttons and supporting isFaded option
+    overflow: hidden;
+
+    &.is-disabled,
+    &:disabled {
+        background-color: $color-disabled-background;
+        border-color: $color-disabled-border;
+        color: $color-disabled-text;
+        cursor: not-allowed;
+
+        .can-hover &:hover,
+        .can-hover &:focus,
+        .can-hover &:active {
+            background-color: $color-disabled-background;
+            border-color: $color-disabled-border;
+            color: $color-disabled-text;
+        }
+    }
+
+    .icon {
+        flex-shrink: 0;
+    }
+}
+
+.btn-secondary {
+    @include button-min-width();
+    @include button-round();
+
+    //35px without border
+    padding: 8px 30px;
+
+    @include tablet {
+        //50px without border
+        padding: 13px 30px;
+    }
+
+    &--green {
+        @include button-green();
+    }
+}
+
+.button-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.link {
+    @include link();
+    @include link-arrow-right();
+}

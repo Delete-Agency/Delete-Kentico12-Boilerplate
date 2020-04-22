@@ -1,0 +1,267 @@
+@mixin text-link {
+    @include roboto-bold();
+
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.1;
+
+    @include tablet {
+        font-size: 16px;
+        line-height: 20px;
+    }
+}
+
+@mixin reset-list() {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin reset-button() {
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+    user-select: none;
+    font-family: inherit;
+    color: inherit;
+    letter-spacing: inherit;
+    font-size: inherit;
+}
+
+@mixin button-green() {
+    background-color: lightgreen;
+
+    .can-hover &:hover {
+        background-color: green;
+    }
+}
+
+@mixin button-min-width() {
+    min-width: 150px;
+
+    @include tablet {
+        min-width: 200px;
+    }
+}
+
+@mixin button-round {
+    border-radius: 30px;
+}
+
+@mixin link-green() {
+    color: green;
+
+    svg {
+        fill: currentColor;
+    }
+
+    .can-hover &:hover {
+        color: darkgreen;
+
+        svg {
+            fill: currentColor;
+        }
+    }
+}
+
+@mixin link-arrow-right {
+    display: inline-flex;
+    align-items: center;
+
+    svg {
+        margin-left: 10px;
+    }
+}
+
+@mixin link-arrow-left {
+    display: inline-flex;
+    align-items: center;
+
+    svg {
+        margin-right: 10px;
+    }
+}
+
+@mixin link-reset() {
+    text-decoration: none;
+    color: inherit;
+}
+
+@mixin link() {
+    @include link-reset();
+    @include text-link();
+    @include link-green();
+
+    @include hover {
+        cursor: pointer;
+    }
+}
+
+@mixin object-fit-image-parent($fit: cover) {
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: $fit;
+
+        @content;
+    }
+}
+
+@mixin side-paddings($mobile: null, $tablet: null, $desktop: null) {
+    @if $mobile != null {
+        padding-left: $mobile;
+        padding-right: $mobile;
+    }
+
+    @if $tablet != null {
+        @include tablet {
+            padding-left: $tablet;
+            padding-right: $tablet;
+        }
+    }
+
+    @if $desktop != null {
+        @include desktop {
+            padding-left: $desktop;
+            padding-right: $desktop;
+        }
+    }
+}
+
+@mixin expand($mobile: null, $tablet: null, $desktop: null) {
+    @if $mobile != null {
+        margin-left: -$mobile;
+        margin-right: -$mobile;
+    }
+
+    @if $tablet != null {
+        @include tablet {
+            margin-left: -$tablet;
+            margin-right: -$tablet;
+        }
+    }
+
+    @if $desktop != null {
+        @include desktop {
+            margin-left: -$desktop;
+            margin-right: -$desktop;
+        }
+    }
+}
+
+@mixin reset-expand() {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+@mixin default-side-paddings() {
+    @include side-paddings(
+        $default-mobile-side-padding,
+        $default-tablet-side-padding,
+        $default-desktop-side-padding
+    );
+}
+
+@mixin expand-on-mobile($value) {
+    @include mobile-only() {
+        margin-left: -$value;
+        margin-right: -$value;
+    }
+}
+
+@mixin reset-expand-on-mobile {
+    @include expand-on-mobile(0);
+}
+
+@mixin expand-on-tablet($value) {
+    @include tablet-only() {
+        margin-left: -$value;
+        margin-right: -$value;
+    }
+}
+
+@mixin reset-expand-on-tablet {
+    @include expand-on-tablet(0);
+}
+
+@mixin expand-on-desktop($value) {
+    @include desktop-only() {
+        margin-left: -$value;
+        margin-right: -$value;
+    }
+}
+
+@mixin reset-expand-on-desktop {
+    @include expand-on-desktop(0);
+}
+
+@mixin expand-on-desktop-wide($value) {
+    @include desktop-wide() {
+        margin-left: -$value;
+        margin-right: -$value;
+    }
+}
+
+@mixin reset-expand-on-desktop-wide {
+    @include expand-on-desktop-wide(0);
+}
+
+@mixin mobile-expanded() {
+    @include expand-on-mobile($default-mobile-side-padding);
+}
+
+@mixin tablet-expanded() {
+    @include expand-on-mobile($default-mobile-side-padding);
+    @include expand-on-tablet($default-tablet-side-padding);
+}
+
+@mixin container() {
+    max-width: $container-max-width;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin first-in-row($value) {
+    @include desktop {
+        padding-left: $value;
+    }
+}
+
+@mixin last-in-row($value) {
+    @include desktop {
+        padding-right: $value;
+    }
+}
+
+@mixin hover() {
+    .can-hover &:hover {
+        @content;
+    }
+}
+
+@mixin keyboard-focus {
+    [data-whatintent='keyboard'] & {
+        outline: $outline-default;
+    }
+}
+
+@mixin visually-hidden() {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+}
+
+@mixin richtext() {
+    .richtext {
+        @content;
+    }
+}

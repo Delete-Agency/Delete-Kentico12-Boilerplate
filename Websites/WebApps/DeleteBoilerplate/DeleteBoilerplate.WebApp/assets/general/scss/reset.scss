@@ -1,0 +1,19 @@
+input,
+textarea,
+select,
+button,
+option {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+// https://github.com/necolas/normalize.css/issues/664
+body {
+    margin: 0;
+}

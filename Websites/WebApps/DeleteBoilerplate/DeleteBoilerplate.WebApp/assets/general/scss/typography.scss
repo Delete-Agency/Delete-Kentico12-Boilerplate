@@ -1,0 +1,18 @@
+/*  reset default styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+ul {
+    @include reset-list();
+}
+
+img {
+    vertical-align: top;
+}

@@ -1,0 +1,69 @@
+{
+    "env": {
+        "es6": true,
+        "browser": true
+    },
+    "extends": [
+        "airbnb-base",
+        "plugin:react/recommended"
+    ],
+    "parserOptions": {
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "rules": {
+        "linebreak-style": ["error", "windows"],
+        "operator-linebreak": ["error", "after"],
+        "indent": [
+            "error",
+            4,
+            {
+                "SwitchCase": 1,
+                "VariableDeclarator": 1,
+                "outerIIFEBody": 1,
+                "FunctionDeclaration": {
+                    "parameters": 1,
+                    "body": 1
+                },
+                "FunctionExpression": {
+                    "parameters": 1,
+                    "body": 1
+                }
+            }
+        ],
+        "comma-dangle": "off",
+        "no-plusplus": "off",
+        "quotes": ["error", "single"],
+        "vars-on-top": ["off"],
+        "prefer-destructuring": "off",
+        "no-use-before-define": "off",
+        "class-methods-use-this": "off",
+        "func-names": ["off"],
+        "prefer-template": ["off"],
+
+        "no-underscore-dangle": ["off"],
+        "no-param-reassign": ["off"],
+        "global-require": ["off"],
+
+        "import/extensions": "off",
+        "import/first": "off",
+        "import/no-unresolved": "off",
+        "import/no-extraneous-dependencies": "off",
+        "implicit-arrow-linebreak": "off",
+
+        "no-void": ["warn"],
+        "max-len": ["warn"],
+        "no-mixed-operators": ["warn"],
+        "react/jsx-uses-vars": "warn",
+        "react/react-in-jsx-scope": "off"
+    },
+    "globals": {
+        "google": true,
+        "Expo": true,
+        "Linear": true,
+        "ga": true,
+        "YT": true
+    }
+}
