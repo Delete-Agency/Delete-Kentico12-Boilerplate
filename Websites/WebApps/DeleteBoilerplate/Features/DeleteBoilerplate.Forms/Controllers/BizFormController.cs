@@ -56,6 +56,7 @@ namespace DeleteBoilerplate.Forms.Controllers
                 return Json(new { Result = false, errorMessage }, JsonRequestBehavior.AllowGet);
             }
         }
+
         private BizFormItem GetBizFormItem(BizFormInfo formInfo, string elementId)
         {
             var formComponents = this.BindFormComponents(formInfo, elementId);

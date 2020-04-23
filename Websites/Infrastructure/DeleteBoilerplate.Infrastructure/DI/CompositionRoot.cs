@@ -24,6 +24,8 @@ namespace DeleteBoilerplate.Infrastructure
             serviceRegistry.RegisterScoped<IProjectRepository, ProjectRepository>();
             serviceRegistry.RegisterScoped<ISocialLinksRepository, SocialLinksRepository>();
             serviceRegistry.RegisterScoped<INavigationRepository, NavigationRepository>();
+            serviceRegistry.RegisterScoped<IBizFormRepository, BizFormRepository>();
+
         }
     }
 }

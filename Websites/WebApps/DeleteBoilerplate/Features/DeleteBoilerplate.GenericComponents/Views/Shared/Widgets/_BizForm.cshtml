@@ -1,23 +1,43 @@
 ﻿@using Kentico.Forms.Web.Mvc
+@using Kentico.PageBuilder.Web.Mvc
 @using Kentico.Web.Mvc
-@model DeleteBoilerplate.GenericComponents.Models.Widgets.KenticoFormWidget.BizFormWidgetViewModel
+@using System.Web.Mvc.Html
+@using DeleteBoilerplate.Common.Extensions
+@using DeleteBoilerplate.GenericComponents.Models.InlineEditors
+@using DeleteBoilerplate.GenericComponents.Models.Widgets.BizFormWidget
+@model BizFormWidgetViewModel
 
 @if (Model == null)
 {
     return;
 }
 
-<div id="@Model.ElementId" style="position: relative">
-    <form method="post" action="@Url.RouteUrl("Default", new { action = "Submit", controller = "BizForm" })">
 
-        @Html.AntiForgeryToken()
-        @Html.Hidden("FormName", Model.FormName)
-        @Html.Hidden("ElementId", Model.ElementId)
+@if (Context.Kentico().PageBuilder().EditMode)
+{
+    Html.RenderPartial("InlineEditors/_SelectEditor", new SelectEditorViewModel
+    {
+        PropertyName = nameof(BizFormProperties.FormName),
+        SelectedValue = Model.FormName,
+        Options = Model.FormNameOptions
+    });
+}
 
-        @Html.Kentico().FormFields(Model.FormComponents, Model.FormConfiguration)
 
-        <div class="contact-form__button-wrapper">
-            <button class="btn btn--full-width" type="submit">Submit</button>
-        </div>
-    </form>
-</div>
+@if (Model.FormName.IsNullOrEmpty() == false)
+{
+    <div id="@Model.ElementId" style="position: relative">
+        <form method="post" action="@Url.RouteUrl("Default", new { action = "Submit", controller = "BizForm" })">
+
+            @Html.AntiForgeryToken()
+            @Html.Hidden("FormName", Model.FormName)
+            @Html.Hidden("ElementId", Model.ElementId)
+
+            @Html.Kentico().FormFields(Model.FormComponents, Model.FormConfiguration)
+
+            <div class="contact-form__button-wrapper">
+                <button class="btn btn--full-width" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+}

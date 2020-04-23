@@ -642,6 +642,9 @@
     <Content Include="Content\FormComponents\TaxonomySelectorComponent\jsTree\themes\default\throbber.gif" />
     <Content Include="Content\FormComponents\TaxonomySelectorComponent\taxonomy-editor.css" />
     <Content Include="Content\FormComponents\TaxonomySelectorComponent\taxonomy-editor.js" />
+    <None Include="Views\Shared\InlineEditors\_SelectEditor.cshtml" />
+    <Content Include="Content\InlineEditors\SelectEditor\select-editor.css" />
+    <Content Include="Content\InlineEditors\SelectEditor\select-editor.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -652,6 +655,7 @@
     <Compile Include="Controllers\Widgets\BizFormWidgetController.cs" />
     <Compile Include="Controllers\Widgets\StaticHtmlWidgetController.cs" />
     <Compile Include="Models\FormComponents\FormComponentsIdentifiers.cs" />
+    <Compile Include="Models\InlineEditors\SelectEditorViewModel.cs" />
     <Compile Include="Models\Widgets\BizFormWidget\BizFormProperties.cs" />
     <Compile Include="Models\Widgets\BizFormWidget\BizFormWidgetViewModel.cs" />
     <Compile Include="Models\Widgets\ContactFormWidget\ContactFormProperties.cs" />

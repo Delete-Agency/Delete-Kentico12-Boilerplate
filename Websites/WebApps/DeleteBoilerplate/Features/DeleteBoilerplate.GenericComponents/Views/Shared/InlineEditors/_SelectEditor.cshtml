@@ -1,0 +1,23 @@
+﻿@using Kentico.PageBuilder.Web.Mvc
+@using Kentico.Web.Mvc
+@model DeleteBoilerplate.GenericComponents.Models.InlineEditors.SelectEditorViewModel
+
+@using (Html.Kentico().BeginInlineEditor("select-editor", Model.PropertyName))
+{
+    <div class="select-option__div">
+        <select >
+            <option value="">Please select an option</option>
+            @foreach (var item in Model.Options)
+            {
+                if (Model.SelectedValue?.Equals(item.Value) == true)
+                {
+                    <option selected value="@item.Value">@item.Name</option>
+                }
+                else
+                {
+                    <option value="@item.Value">@item.Name</option>
+                }
+            }
+        </select>
+    </div>
+}
