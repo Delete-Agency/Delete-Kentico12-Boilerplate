@@ -22,8 +22,10 @@
         "@babel/plugin-proposal-object-rest-spread": "7.0.0",
         "@babel/plugin-syntax-dynamic-import": "7.0.0",
         "@babel/plugin-transform-object-assign": "7.0.0",
+        "@babel/polyfill": "7.0.0",
         "@babel/preset-env": "7.0.0",
         "@babel/preset-react": "7.0.0",
+        "@epegzz/sass-vars-loader": "3.4.0",
         "autoprefixer": "9.1.3",
         "babel-loader": "8.0.0",
         "babel-plugin-transform-react-remove-prop-types": "0.4.15",
@@ -41,7 +43,7 @@
         "imports-loader": "0.8.0",
         "json-loader": "0.5.7",
         "mini-css-extract-plugin": "0.4.2",
-        "node-sass": "4.9.3",
+        "node-sass": "4.14.0",
         "optimize-css-assets-webpack-plugin": "5.0.1",
         "postcss-flexbugs-fixes": "4.1.0",
         "postcss-inline-svg": "3.1.1",
@@ -61,9 +63,7 @@
         "webpack-bundle-analyzer": "2.13.1",
         "webpack-cli": "3.1.0",
         "webpack-manifest-plugin": "2.0.3",
-        "webpack-merge": "4.1.4",
-        "@babel/polyfill": "7.0.0",
-        "@epegzz/sass-vars-loader": "3.4.0"
+        "webpack-merge": "4.1.4"
     },
     "dependencies": {
         "@deleteagency/dc": "2.0.1",
