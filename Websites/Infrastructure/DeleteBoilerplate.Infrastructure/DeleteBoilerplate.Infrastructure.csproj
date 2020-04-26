@@ -894,6 +894,10 @@
     <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\wsc\LICENSE.md" />
     <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\wsc\README.md" />
     <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\skins\moono-lisa\readme.md" />
+    <AdditionalFiles Include="..\..\DeleteBoilerplate.DependencyValidation\DependencyValidation1.layerdiagram">
+      <Link>DependencyValidation1.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
     <None Include="packages.config" />
     <Content Include="Views\Shared\FormComponents\_UrlSelectorComponent.cshtml" />
     <Content Include="Views\web.config" />
@@ -920,7 +924,10 @@
       <Name>DeleteBoilerplate.Domain</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Analyzer Include="..\..\..\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\cs\Microsoft.DependencyValidation.Analyzers.resources.dll" />
+    <Analyzer Include="..\..\..\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\Microsoft.DependencyValidation.Analyzers.dll" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

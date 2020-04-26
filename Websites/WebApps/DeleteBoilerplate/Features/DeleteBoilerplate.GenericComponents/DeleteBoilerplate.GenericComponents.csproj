@@ -642,6 +642,10 @@
     <Content Include="Content\FormComponents\TaxonomySelectorComponent\jsTree\themes\default\throbber.gif" />
     <Content Include="Content\FormComponents\TaxonomySelectorComponent\taxonomy-editor.css" />
     <Content Include="Content\FormComponents\TaxonomySelectorComponent\taxonomy-editor.js" />
+    <AdditionalFiles Include="..\..\..\..\DeleteBoilerplate.DependencyValidation\DependencyValidation1.layerdiagram">
+      <Link>DependencyValidation1.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
     <None Include="Views\Shared\InlineEditors\_SelectEditor.cshtml" />
     <Content Include="Content\InlineEditors\SelectEditor\select-editor.css" />
     <Content Include="Content\InlineEditors\SelectEditor\select-editor.js" />
@@ -696,7 +700,10 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Analyzer Include="..\..\..\..\..\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\cs\Microsoft.DependencyValidation.Analyzers.resources.dll" />
+    <Analyzer Include="..\..\..\..\..\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\Microsoft.DependencyValidation.Analyzers.dll" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\..\Shared\DeleteBoilerplate.Domain\DeleteBoilerplate.Domain.csproj">
       <Project>{2A0E9BD2-90F5-466A-A742-D27C9302B1CA}</Project>

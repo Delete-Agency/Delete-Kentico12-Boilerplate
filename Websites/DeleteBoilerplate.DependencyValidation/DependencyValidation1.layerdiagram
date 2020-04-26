@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="e24bd271-8ed4-4bf6-be0c-814c82e74c9c" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="173c62f2-7705-4a0c-8c41-4763d2fce95f" name="Project">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="d8b0e344-b448-4c48-ba09-11a0437c45a8" direction="Forward">
+          <layerMoniker Id="6f1418ab-7e2d-467f-8ba5-a88491f7851a" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="19e1aac3-bc12-424e-b924-ac1747354425" direction="Forward">
+          <layerMoniker Id="19c9d4ce-1c2b-47c4-a750-f23dae31f39f" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="32648f6c-ba90-4656-893c-58a27427ec95" name="DeleteBoilerplate.WebApp">
+          <references>
+            <reference Id="0e49aeeb-1774-44f2-a5ee-a66444b52d76" name="DeleteBoilerplate.WebApp">
+              <ArtifactNode Label="DeleteBoilerplate.WebApp" Category="CodeSchema_Project" Id="(Assembly=../WebApps/DeleteBoilerplate/DeleteBoilerplate.WebApp/DeleteBoilerplate.WebApp.csproj)">
+                <Category Ref="File" />
+              </ArtifactNode>
+              <ExpandedNode Id="(Assembly=DeleteBoilerplate.WebApp)" Label="DeleteBoilerplate.WebApp.dll" Category="CodeSchema_Assembly">
+                <Category Ref="FileSystem.Category.FileOfType.dll" />
+                <LinkCategory Ref="Produces" />
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+      </childLayers>
+    </layer>
+    <layer Id="6f1418ab-7e2d-467f-8ba5-a88491f7851a" name="Feature">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="1b5421c0-2e0f-4282-b797-2408de21b92b" direction="Forward">
+          <layerMoniker Id="19c9d4ce-1c2b-47c4-a750-f23dae31f39f" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="26ae16dd-e874-4108-a176-8772cdaacd40" name="DeleteBoilerplate.Account">
+          <references>
+            <reference Id="572c6a7c-2aa0-4335-bc90-300cb2b7fc3b" name="DeleteBoilerplate.Account">
+              <ArtifactNode Label="DeleteBoilerplate.Account" Category="CodeSchema_Project" Id="(Assembly=../WebApps/DeleteBoilerplate/Features/DeleteBoilerplate.Account/DeleteBoilerplate.Account.csproj)">
+                <Category Ref="File" />
+              </ArtifactNode>
+              <ExpandedNode Id="(Assembly=DeleteBoilerplate.Account)" Label="DeleteBoilerplate.Account.dll" Category="CodeSchema_Assembly">
+                <Category Ref="FileSystem.Category.FileOfType.dll" />
+                <LinkCategory Ref="Produces" />
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+        <layer Id="d6ddb14a-373a-40af-a327-dd03797da74e" name="DeleteBoilerplate.CompanyMembers">
+          <references>
+            <reference Id="431bb29e-c1b4-4a37-b016-a2f0eb717131" name="DeleteBoilerplate.CompanyMembers">
+              <ArtifactNode Label="DeleteBoilerplate.CompanyMembers" Category="CodeSchema_Project" Id="(Assembly=../WebApps/DeleteBoilerplate/Features/DeleteBoilerplate.CompanyMembers/DeleteBoilerplate.CompanyMembers.csproj)">
+                <Category Ref="File" />
+              </ArtifactNode>
+              <ExpandedNode Id="(Assembly=DeleteBoilerplate.CompanyMembers)" Label="DeleteBoilerplate.CompanyMembers.dll" Category="CodeSchema_Assembly">
+                <Category Ref="FileSystem.Category.FileOfType.dll" />
+                <LinkCategory Ref="Produces" />
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+        <layer Id="74c3f448-5acf-474a-b1f8-d4cb744b261b" name="DeleteBoilerplate.Forms">
+          <references>
+            <reference Id="9de9324a-62e3-4ee6-8a3f-88297513ed69" name="DeleteBoilerplate.Forms">
+              <ArtifactNode Label="DeleteBoilerplate.Forms" Category="CodeSchema_Project" Id="(Assembly=../WebApps/DeleteBoilerplate/Features/DeleteBoilerplate.Forms/DeleteBoilerplate.Forms.csproj)">
+                <Category Ref="File" />
+              </ArtifactNode>
+              <ExpandedNode Id="(Assembly=DeleteBoilerplate.Forms)" Label="DeleteBoilerplate.Forms.dll" Category="CodeSchema_Assembly">
+                <Category Ref="FileSystem.Category.FileOfType.dll" />
+                <LinkCategory Ref="Produces" />
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+        <layer Id="7537e0da-58d3-4821-93c3-eee174fbea27" name="DeleteBoilerplate.GenericComponents">
+          <references>
+            <reference Id="389d0f21-195b-45c8-af88-915fc8b0b068" name="DeleteBoilerplate.GenericComponents">
+              <ArtifactNode Label="DeleteBoilerplate.GenericComponents" Category="CodeSchema_Project" Id="(Assembly=../WebApps/DeleteBoilerplate/Features/DeleteBoilerplate.GenericComponents/DeleteBoilerplate.GenericComponents.csproj)">
+                <Category Ref="File" />
+              </ArtifactNode>
+              <ExpandedNode Id="(Assembly=DeleteBoilerplate.GenericComponents)" Label="DeleteBoilerplate.GenericComponents.dll" Category="CodeSchema_Assembly">
+                <Category Ref="FileSystem.Category.FileOfType.dll" />
+                <LinkCategory Ref="Produces" />
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+        <layer Id="c336fc41-a9d3-4d07-ab8b-2a07242988ee" name="DeleteBoilerplate.Projects">
+          <references>
+            <reference Id="f1af0db9-6cda-4dff-95a0-ac2d9e7c73b5" name="DeleteBoilerplate.Projects">
+              <ArtifactNode Label="DeleteBoilerplate.Projects" Category="CodeSchema_Project" Id="(Assembly=../WebApps/DeleteBoilerplate/Features/DeleteBoilerplate.Projects/DeleteBoilerplate.Projects.csproj)">
+                <Category Ref="File" />
+              </ArtifactNode>
+              <ExpandedNode Id="(Assembly=DeleteBoilerplate.Projects)" Label="DeleteBoilerplate.Projects.dll" Category="CodeSchema_Assembly">
+                <Category Ref="FileSystem.Category.FileOfType.dll" />
+                <LinkCategory Ref="Produces" />
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+      </childLayers>
+    </layer>
+    <layer Id="19c9d4ce-1c2b-47c4-a750-f23dae31f39f" name="Foundation">
+      <childLayers>
+        <layer Id="2d43ea15-f378-4cfe-83c1-ef79e799dbab" name="Infrastructure">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="add5ce99-5ade-4b17-9bb0-e243a2494d5c" direction="Bidirectional">
+              <layerMoniker Id="c31e7d4d-c2c0-4eb3-ad9a-af8d481d9327" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+          <references>
+            <reference Id="d8bcae81-a5b3-49d8-8b70-6b044981e3ba" name="Infrastructure">
+              <ArtifactNode Label="Infrastructure" Category="CodeSchema_Project" Id="(Assembly=../WebApps/DeleteBoilerplate/Infrastructure)">
+                <Category Ref="CodeMap_SolutionFolder" />
+              </ArtifactNode>
+              <ExpandedNode Id="(Assembly=DeleteBoilerplate.DynamicRouting)" Label="DeleteBoilerplate.DynamicRouting.dll" Category="CodeSchema_Assembly">
+                <Category Ref="FileSystem.Category.FileOfType.dll" />
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+              <ExpandedNode Id="(Assembly=DeleteBoilerplate.Infrastructure)" Label="DeleteBoilerplate.Infrastructure.dll" Category="CodeSchema_Assembly">
+                <Category Ref="FileSystem.Category.FileOfType.dll" />
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+              <ExpandedNode Id="(Assembly=DeleteBoilerplate.Metadata)" Label="DeleteBoilerplate.Metadata.dll" Category="CodeSchema_Assembly">
+                <Category Ref="FileSystem.Category.FileOfType.dll" />
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+              <ExpandedNode Id="(Assembly=DeleteBoilerplate.OutputCache)" Label="DeleteBoilerplate.OutputCache.dll" Category="CodeSchema_Assembly">
+                <Category Ref="FileSystem.Category.FileOfType.dll" />
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+        <layer Id="c31e7d4d-c2c0-4eb3-ad9a-af8d481d9327" name="Shared">
+          <references>
+            <reference Id="56e732e2-9178-4957-8962-86d3bc9cc336" name="Shared">
+              <ArtifactNode Label="Shared" Category="CodeSchema_Project" Id="(Assembly=../WebApps/DeleteBoilerplate/Shared)">
+                <Category Ref="CodeMap_SolutionFolder" />
+              </ArtifactNode>
+              <ExpandedNode Id="(Assembly=DeleteBoilerplate.Domain)" Label="DeleteBoilerplate.Domain.dll" Category="CodeSchema_Assembly">
+                <Category Ref="FileSystem.Category.FileOfType.dll" />
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+              <ExpandedNode Id="(Assembly=DeleteBoilerplate.Common)" Label="DeleteBoilerplate.Common.dll" Category="CodeSchema_Assembly">
+                <Category Ref="FileSystem.Category.FileOfType.dll" />
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+              <ExpandedNode Id="(Assembly=DeleteBoilerplate.AzureSearch)" Label="DeleteBoilerplate.AzureSearch.dll" Category="CodeSchema_Assembly">
+                <Category Ref="FileSystem.Category.FileOfType.dll" />
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+      </childLayers>
+    </layer>
+  </layers>
+</layerModel>

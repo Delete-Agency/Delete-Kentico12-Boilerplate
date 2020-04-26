@@ -46,6 +46,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteBoilerplate.AzureSear
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteBoilerplate.CompanyMembers", "Features\DeleteBoilerplate.CompanyMembers\DeleteBoilerplate.CompanyMembers.csproj", "{73AB81A6-A354-4278-95CE-79515BF10896}"
 EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "DeleteBoilerplate.DependencyValidation", "..\..\DeleteBoilerplate.DependencyValidation\DeleteBoilerplate.DependencyValidation.modelproj", "{B75EE2D3-DC9E-4677-BCA0-A9866D510766}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -104,6 +106,10 @@ Global
 		{73AB81A6-A354-4278-95CE-79515BF10896}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73AB81A6-A354-4278-95CE-79515BF10896}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73AB81A6-A354-4278-95CE-79515BF10896}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B75EE2D3-DC9E-4677-BCA0-A9866D510766}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B75EE2D3-DC9E-4677-BCA0-A9866D510766}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B75EE2D3-DC9E-4677-BCA0-A9866D510766}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B75EE2D3-DC9E-4677-BCA0-A9866D510766}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
