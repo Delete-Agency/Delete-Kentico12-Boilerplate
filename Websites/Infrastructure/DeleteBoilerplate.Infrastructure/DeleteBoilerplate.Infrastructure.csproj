@@ -851,6 +851,7 @@
     <Compile Include="Cache\CacheExpirationCallbacks.cs" />
     <Compile Include="Configuration\KenticoFormBuilderStaticMarkupConfiguration.cs" />
     <Compile Include="Configuration\KenticoFormMarkupInjection.cs" />
+    <Compile Include="Controllers\FormComponents\TaxonomySelectorController.cs" />
     <Compile Include="DI\CompositionRoot.cs" />
     <Compile Include="DI\DIConfig.cs" />
     <Compile Include="Enums\OpenGraphType.cs" />
@@ -865,6 +866,7 @@
     <Compile Include="Extensions\ObjectExtensions.cs" />
     <Compile Include="Extensions\RouteDataExtensions.cs" />
     <Compile Include="Extensions\TreeNodeExtensions.cs" />
+    <Compile Include="Extensions\WidgetPropertiesExtensions.cs" />
     <Compile Include="Helpers\AreaRestrictionHelper.cs" />
     <Compile Include="Helpers\PropertyInfoHelper.cs" />
     <Compile Include="Models\BaseInlineEditorViewModel.cs" />
@@ -872,6 +874,8 @@
     <Compile Include="Models\FormComponents\ContactGroupSelector\ContactGroupSelectorComponent.cs" />
     <Compile Include="Models\FormComponents\ContactGroupSelector\ContactGroupSelectorListItem.cs" />
     <Compile Include="Models\FormComponents\ContactGroupSelector\ContactGroupSelectorProperties.cs" />
+    <Compile Include="Models\FormComponents\TaxonomySelector\TaxonomySelectorComponent.cs" />
+    <Compile Include="Models\FormComponents\TaxonomySelector\TaxonomySelectorProperties.cs" />
     <Compile Include="Models\FormComponents\UrlSelector\UrlSelectorComponent.cs" />
     <Compile Include="Models\FormComponents\UrlSelector\UrlSelectorProperties.cs" />
     <Compile Include="Models\InlineEditors\ImageSelectorViewModel.cs" />
@@ -881,6 +885,8 @@
     <Compile Include="Models\StaticAsset.cs" />
     <Compile Include="Controllers\Personalization\ConditionTypes\IsInPersonaController.cs" />
     <Compile Include="Modules\UserIpFromHeaderModule.cs" />
+    <Compile Include="Models\Widgets\IListingWidgetProperties.cs" />
+    <Compile Include="Models\Widgets\ITaxonomyWidgetProperties.cs" />
     <Compile Include="Personalization\ConditionTypes\IsAuthenticatedUserConditionType.cs" />
     <Compile Include="Personalization\ConditionTypes\IsInContactGroupConditionType.cs" />
     <Compile Include="Personalization\ConditionTypes\IsInPersonaConditionType.cs" />
@@ -894,6 +900,10 @@
     <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\wsc\LICENSE.md" />
     <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\wsc\README.md" />
     <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\skins\moono-lisa\readme.md" />
+    <AdditionalFiles Include="..\..\DeleteBoilerplate.DependencyValidation\DependencyValidation1.layerdiagram">
+      <Link>DependencyValidation1.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
     <None Include="packages.config" />
     <Content Include="Views\Shared\FormComponents\_UrlSelectorComponent.cshtml" />
     <Content Include="Views\web.config" />
@@ -903,6 +913,7 @@
     <Content Include="Views\Shared\InlineEditors\_RichTextEditor.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\RichTextEditorTemplate.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\ImageSelectionEditorTemplate.cshtml" />
+    <Content Include="Views\Shared\FormComponents\_TaxonomySelectorComponent.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -919,6 +930,10 @@
       <Project>{2A0E9BD2-90F5-466A-A742-D27C9302B1CA}</Project>
       <Name>DeleteBoilerplate.Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\..\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\cs\Microsoft.DependencyValidation.Analyzers.resources.dll" />
+    <Analyzer Include="..\..\..\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\Microsoft.DependencyValidation.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

@@ -663,6 +663,10 @@
     <Content Include="Views\Projects\Index.cshtml" />
     <Content Include="Views\Projects\Search.cshtml" />
     <Content Include="Views\Shared\Widgets\_ProjectsListing.cshtml" />
+    <AdditionalFiles Include="..\..\..\..\DeleteBoilerplate.DependencyValidation\DependencyValidation1.layerdiagram">
+      <Link>DependencyValidation1.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
     <None Include="packages.config" />
     <Content Include="Views\web.config" />
     <None Include="Web.Debug.config">
@@ -700,16 +704,16 @@
       <Project>{7042e8da-1c9a-413c-9154-cfa7f30d3c68}</Project>
       <Name>DeleteBoilerplate.OutputCache</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DeleteBoilerplate.GenericComponents\DeleteBoilerplate.GenericComponents.csproj">
-      <Project>{a4435c07-d74e-4883-b31b-7466d08ddd07}</Project>
-      <Name>DeleteBoilerplate.GenericComponents</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="CMSResources\CMS.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="CMSResources\Hotfix.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\..\..\..\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\cs\Microsoft.DependencyValidation.Analyzers.resources.dll" />
+    <Analyzer Include="..\..\..\..\..\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\Microsoft.DependencyValidation.Analyzers.dll" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

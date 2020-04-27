@@ -584,6 +584,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\_Meta.cshtml" />
+    <AdditionalFiles Include="..\..\DeleteBoilerplate.DependencyValidation\DependencyValidation1.layerdiagram">
+      <Link>DependencyValidation1.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
     <None Include="packages.config" />
     <Content Include="Views\web.config" />
     <None Include="Web.Debug.config">
@@ -614,6 +618,10 @@
       <Project>{a7b10389-141e-41d6-84fb-50d2282b1f4c}</Project>
       <Name>DeleteBoilerplate.Infrastructure</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\..\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\cs\Microsoft.DependencyValidation.Analyzers.resources.dll" />
+    <Analyzer Include="..\..\..\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\Microsoft.DependencyValidation.Analyzers.dll" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

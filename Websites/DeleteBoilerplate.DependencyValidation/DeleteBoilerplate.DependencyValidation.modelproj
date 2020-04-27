@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{b75ee2d3-dc9e-4677-bca0-a9866d510766}</ProjectGuid>
+    <ArchitectureToolsVersion>2.0.0.0</ArchitectureToolsVersion>
+    <Name>DeleteBoilerplate.DependencyValidation</Name>
+    <RootNamespace>DeleteBoilerplate.DependencyValidation</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Validate Include="DependencyValidation1.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="DependencyValidation1.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>DependencyValidation1.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="DependencyValidation1.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>DependencyValidation1.layerdiagram</DependentUpon>
+    </Validate>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\DeleteBoilerplate.AzureSearch\DeleteBoilerplate.AzureSearch.csproj">
+      <Name>DeleteBoilerplate.AzureSearch</Name>
+      <Project>{652754e8-3436-47b6-92ee-5d3b6018f72d}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shared\DeleteBoilerplate.Common\DeleteBoilerplate.Common.csproj">
+      <Name>DeleteBoilerplate.Common</Name>
+      <Project>{25458d83-c877-4a3a-973f-e8a42254447d}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shared\DeleteBoilerplate.Domain\DeleteBoilerplate.Domain.csproj">
+      <Name>DeleteBoilerplate.Domain</Name>
+      <Project>{2a0e9bd2-90f5-466a-a742-d27c9302b1ca}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure\DeleteBoilerplate.DynamicRouting\DeleteBoilerplate.DynamicRouting.csproj">
+      <Name>DeleteBoilerplate.DynamicRouting</Name>
+      <Project>{a165b815-191b-4831-9491-7010d7bec88f}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure\DeleteBoilerplate.Infrastructure\DeleteBoilerplate.Infrastructure.csproj">
+      <Name>DeleteBoilerplate.Infrastructure</Name>
+      <Project>{a7b10389-141e-41d6-84fb-50d2282b1f4c}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure\DeleteBoilerplate.Metadata\DeleteBoilerplate.Metadata.csproj">
+      <Name>DeleteBoilerplate.Metadata</Name>
+      <Project>{3dc6646a-a5bc-4c2b-9a4c-42cd157406ac}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure\DeleteBoilerplate.OutputCache\DeleteBoilerplate.OutputCache.csproj">
+      <Name>DeleteBoilerplate.OutputCache</Name>
+      <Project>{7042e8da-1c9a-413c-9154-cfa7f30d3c68}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\WebApps\DeleteBoilerplate\DeleteBoilerplate.WebApp\DeleteBoilerplate.WebApp.csproj">
+      <Name>DeleteBoilerplate.WebApp</Name>
+      <Project>{4d3a8c4d-17ff-46fb-88c6-fad59d6c2099}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\WebApps\DeleteBoilerplate\Features\DeleteBoilerplate.Account\DeleteBoilerplate.Account.csproj">
+      <Name>DeleteBoilerplate.Account</Name>
+      <Project>{1466452d-f867-4e9b-93dd-09be1d2b1e2d}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\WebApps\DeleteBoilerplate\Features\DeleteBoilerplate.CompanyMembers\DeleteBoilerplate.CompanyMembers.csproj">
+      <Name>DeleteBoilerplate.CompanyMembers</Name>
+      <Project>{73ab81a6-a354-4278-95ce-79515bf10896}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\WebApps\DeleteBoilerplate\Features\DeleteBoilerplate.Forms\DeleteBoilerplate.Forms.csproj">
+      <Name>DeleteBoilerplate.Forms</Name>
+      <Project>{17d70b1d-97ca-4dba-960c-b7e87a8657e2}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\WebApps\DeleteBoilerplate\Features\DeleteBoilerplate.GenericComponents\DeleteBoilerplate.GenericComponents.csproj">
+      <Name>DeleteBoilerplate.GenericComponents</Name>
+      <Project>{a4435c07-d74e-4883-b31b-7466d08ddd07}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\WebApps\DeleteBoilerplate\Features\DeleteBoilerplate.Projects\DeleteBoilerplate.Projects.csproj">
+      <Name>DeleteBoilerplate.Projects</Name>
+      <Project>{bfbbaf91-2904-4d5c-9ac5-365aeaee98ef}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>

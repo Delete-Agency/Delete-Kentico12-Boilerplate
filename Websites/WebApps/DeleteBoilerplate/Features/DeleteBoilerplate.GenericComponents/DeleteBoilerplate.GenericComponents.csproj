@@ -642,6 +642,10 @@
     <Content Include="Content\FormComponents\TaxonomySelectorComponent\jsTree\themes\default\throbber.gif" />
     <Content Include="Content\FormComponents\TaxonomySelectorComponent\taxonomy-editor.css" />
     <Content Include="Content\FormComponents\TaxonomySelectorComponent\taxonomy-editor.js" />
+    <AdditionalFiles Include="..\..\..\..\DeleteBoilerplate.DependencyValidation\DependencyValidation1.layerdiagram">
+      <Link>DependencyValidation1.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
     <None Include="Views\Shared\InlineEditors\_SelectEditor.cshtml" />
     <Content Include="Content\InlineEditors\SelectEditor\select-editor.css" />
     <Content Include="Content\InlineEditors\SelectEditor\select-editor.js" />
@@ -649,20 +653,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Automap\GenericComponentsAutoMap.cs" />
-    <Compile Include="Controllers\FormComponents\TaxonomySelectorController.cs" />
     <Compile Include="Controllers\Sections\OneFullWidthColumnSectionController.cs" />
     <Compile Include="Controllers\Widgets\ContactFormWidgetController.cs" />
     <Compile Include="Controllers\Widgets\BizFormWidgetController.cs" />
     <Compile Include="Controllers\Widgets\StaticHtmlWidgetController.cs" />
-    <Compile Include="Models\FormComponents\FormComponentsIdentifiers.cs" />
     <Compile Include="Models\InlineEditors\SelectEditorViewModel.cs" />
     <Compile Include="Models\Widgets\BizFormWidget\BizFormProperties.cs" />
     <Compile Include="Models\Widgets\BizFormWidget\BizFormWidgetViewModel.cs" />
     <Compile Include="Models\Widgets\ContactFormWidget\ContactFormProperties.cs" />
     <Compile Include="Models\Widgets\ContactFormWidget\ContactFormWidgetViewModel.cs" />
-    <Compile Include="Models\Widgets\IListingWidgetProperties.cs" />
-    <Compile Include="Models\FormComponents\TaxonomySelector\TaxonomySelectorProperties.cs" />
-    <Compile Include="Models\FormComponents\TaxonomySelector\TaxonomySelectorComponent.cs" />
     <Compile Include="Controllers\Widgets\ContentBlockWidgetController.cs" />
     <Compile Include="Controllers\Widgets\HeroWidgetController.cs" />
     <Compile Include="Controllers\Widgets\ImageWidgetController.cs" />
@@ -672,8 +671,6 @@
     <Compile Include="Models\Widgets\HeroWidget\HeroWidgetProperties.cs" />
     <Compile Include="Models\Widgets\ImageWidget\ImageWidgetProperties.cs" />
     <Compile Include="Models\Widgets\ImageWidget\ImageWidgetViewModel.cs" />
-    <Compile Include="Extensions\WidgetPropertiesExtensions.cs" />
-    <Compile Include="Models\Widgets\ITaxonomyWidgetProperties.cs" />
     <Compile Include="Models\Widgets\StaticHtmlWidget\StaticHtmlWidgetProperties.cs" />
     <Compile Include="Models\Widgets\StaticHtmlWidget\StaticHtmlWidgetViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -683,7 +680,6 @@
     <Content Include="Views\Shared\Sections\_OneFullWidthColumnSection.cshtml" />
     <Content Include="Views\Shared\Widgets\_Image.cshtml" />
     <Content Include="Views\Shared\Widgets\_Hero.cshtml" />
-    <Content Include="Views\Shared\FormComponents\_TaxonomySelectorComponent.cshtml" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\Widgets\_StaticHtml.cshtml" />
     <Content Include="Views\web.config" />
@@ -696,7 +692,10 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Analyzer Include="..\..\..\..\..\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\cs\Microsoft.DependencyValidation.Analyzers.resources.dll" />
+    <Analyzer Include="..\..\..\..\..\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\Microsoft.DependencyValidation.Analyzers.dll" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\..\Shared\DeleteBoilerplate.Domain\DeleteBoilerplate.Domain.csproj">
       <Project>{2A0E9BD2-90F5-466A-A742-D27C9302B1CA}</Project>
