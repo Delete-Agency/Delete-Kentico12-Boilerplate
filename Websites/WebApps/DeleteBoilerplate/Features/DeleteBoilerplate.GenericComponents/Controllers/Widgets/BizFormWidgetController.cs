@@ -16,6 +16,7 @@ using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
+using WebGrease.Css.Extensions;
 
 [assembly:
     RegisterWidget("DeleteBoilerplate.GenericComponents.BizFormWidget", typeof(BizFormWidgetController),
@@ -80,23 +81,18 @@ namespace DeleteBoilerplate.GenericComponents.Controllers.Widgets
 
         private IList<FormComponent> GetFormComponents(BizFormInfo formInfo)
         {
-            string className = DataClassInfoProvider.GetClassName(formInfo.FormClassID);
+            var currentContact = ContactManagementContext.CurrentContact;
 
-            var formItems = BizFormItemProvider.GetItems(className);
-            var existingFormItem = formItems?.GetExistingItemForContact(formInfo, ContactManagementContext.CurrentContact?.ContactGUID);
+            var displayedFormComponents = this.BizFormRepository.GetDisplayedFormComponents(formInfo, currentContact);
 
-            var formComponents = FormProvider
-                .GetFormComponents(formInfo)
-                .GetDisplayedComponents(ContactManagementContext.CurrentContact, formInfo, existingFormItem, this.FormComponentVisibilityEvaluator);
+            var elementId = formInfo.FormID;
 
-            IList<FormComponent> validFormComponents = new List<FormComponent>();
-            foreach (var formComponent in formComponents)
+            displayedFormComponents.ForEach(x =>
             {
-                formComponent.Name = $"{formInfo.FormID}.{formComponent.Name}";
-                validFormComponents.Add(formComponent);
-            }
+                x.Name = $"{elementId}.{x.Name}";
+            });
 
-            return validFormComponents;
+            return displayedFormComponents;
         }
 
         private FormBuilderConfiguration GetFormBuilderConfiguration(string formBuilderLayout)

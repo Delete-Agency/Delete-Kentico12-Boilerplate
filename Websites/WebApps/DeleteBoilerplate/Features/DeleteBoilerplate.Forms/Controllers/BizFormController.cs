@@ -1,15 +1,15 @@
 ﻿using CMS.ContactManagement;
-using CMS.DataEngine;
 using CMS.EventLog;
 using CMS.Helpers;
 using CMS.OnlineForms;
-using CMS.SiteProvider;
 using DeleteBoilerplate.Common.Extensions;
+using DeleteBoilerplate.Domain.Repositories;
 using DeleteBoilerplate.Forms.Models;
 using Kentico.Forms.Web.Mvc;
 using LightInject;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace DeleteBoilerplate.Forms.Controllers
@@ -19,23 +19,24 @@ namespace DeleteBoilerplate.Forms.Controllers
         private const string BizFormName = "BizForm";
 
         [Inject]
+        protected IBizFormRepository BizFormRepository { get; set; }
+
+        [Inject]
         protected IFormProvider FormProvider { get; set; }
-
-        [Inject]
-        protected IFormComponentVisibilityEvaluator FormComponentVisibilityEvaluator { get; set; }
-
-        [Inject]
-        protected IFormComponentModelBinder FormComponentModelBinder { get; set; }
 
         [HttpPost]
         public ActionResult Submit(BizFormData formData)
         {
             try
             {
-                var formInfo = BizFormInfoProvider.GetBizFormInfo(formData.FormName, SiteContext.CurrentSiteID);
-                var formComponents = this.BindFormComponents(formInfo, formData.ElementId);
+                var currentContact = ContactManagementContext.CurrentContact;
 
-                bool isValidModel = this.IsValidAndUpdateModelState(formComponents, formData.ElementId);
+                var formInfo = this.BizFormRepository.GetFormInfo(formData.FormName);
+                var formComponents = this.BizFormRepository
+                    .GetFormComponentsMappedToContact(formInfo, this.ControllerContext, currentContact, formData.ElementId)
+                    .ToList();
+
+                bool isValidModel = this.ValidationAndUpdateModelState(formComponents, formData.ElementId);
                 if (isValidModel == false)
                 {
                     return this.ValidationErrorResult();
@@ -58,37 +59,22 @@ namespace DeleteBoilerplate.Forms.Controllers
 
         private BizFormItem GetBizFormItem(BizFormInfo formInfo, List<FormComponent> formComponents, string elementId)
         {
-             BizFormItem formItem;
+            BizFormItem formItem;
 
-            var isExistBizFormItem = BizFormItemProvider.GetItems(DataClassInfoProvider.GetClassName(formInfo.FormClassID))
-                .HasExistingItemForContact(formInfo, ContactManagementContext.CurrentContact?.ContactGUID, out formItem);
+            var queryFormItems = this.BizFormRepository.GetQueryFormItem(formInfo.FormClassID);
 
-            formItem = isExistBizFormItem
-                ? FormProvider.UpdateFormData(formInfo, formItem.ItemID, formComponents, ContactManagementContext.CurrentContact?.ContactGUID)
-                : FormProvider.SetFormData(formInfo, formComponents, ContactManagementContext.CurrentContact?.ContactGUID);
+            var currentContactGuid = ContactManagementContext.CurrentContact?.ContactGUID;
+
+            var isExistFormItemContact = queryFormItems.HasExistingItemForContact(formInfo, currentContactGuid, out formItem);
+
+            formItem = isExistFormItemContact
+                ? this.FormProvider.UpdateFormData(formInfo, formItem.ItemID, formComponents, currentContactGuid)
+                : this.FormProvider.SetFormData(formInfo, formComponents, currentContactGuid);
 
             return formItem;
         }
 
-        private List<FormComponent> BindFormComponents(BizFormInfo formInfo, string elementId)
-        {
-            var className = DataClassInfoProvider.GetClassName(formInfo.FormClassID);
-
-            var formItems = BizFormItemProvider.GetItems(className);
-            var existingFormItem = formItems?.GetExistingItemForContact(formInfo, ContactManagementContext.CurrentContact?.ContactGUID);
-
-            var modelBinder = new FormBuilderModelBinder(formInfo, FormProvider, FormComponentModelBinder, FormComponentVisibilityEvaluator, elementId);
-            var modelBindingContext = new FormBuilderModelBindingContext()
-            {
-                Contact = ContactManagementContext.CurrentContact,
-                ExistingItem = existingFormItem
-            };
-
-            var formComponents = modelBinder.BindModel(ControllerContext, modelBindingContext) as List<FormComponent>;
-            return formComponents;
-        }
-        
-        private bool IsValidAndUpdateModelState(List<FormComponent> formComponents, string elementId)
+        private bool ValidationAndUpdateModelState(IList<FormComponent> formComponents, string elementId)
         {
             this.ModelState.Clear();
 
@@ -99,7 +85,7 @@ namespace DeleteBoilerplate.Forms.Controllers
                 this.AddRuleErrors(item, elementId);
             }
 
-            bool isValidModel = this.ModelState.Count <= 0 ;
+            bool isValidModel = this.ModelState.Count <= 0;
             return isValidModel;
         }
 
