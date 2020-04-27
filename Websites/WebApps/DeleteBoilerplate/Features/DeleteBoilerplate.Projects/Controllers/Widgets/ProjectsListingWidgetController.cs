@@ -6,7 +6,7 @@ using AutoMapper;
 using CMS.DocumentEngine.Types.DeleteBoilerplate;
 using DeleteBoilerplate.Domain.Services;
 using DeleteBoilerplate.DynamicRouting.Controllers;
-using DeleteBoilerplate.GenericComponents.Extensions;
+using DeleteBoilerplate.Infrastructure.Extensions;
 using DeleteBoilerplate.Projects.Controllers.Widgets;
 using DeleteBoilerplate.Projects.Models;
 using DeleteBoilerplate.Projects.Models.Widgets.ProjectsListing;

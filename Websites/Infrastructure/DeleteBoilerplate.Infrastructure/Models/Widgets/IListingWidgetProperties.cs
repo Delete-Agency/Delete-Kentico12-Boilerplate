@@ -2,7 +2,7 @@
 using CMS.DocumentEngine;
 using Kentico.Components.Web.Mvc.FormComponents;
 
-namespace DeleteBoilerplate.GenericComponents.Models.Widgets
+namespace DeleteBoilerplate.Infrastructure.Models.Widgets
 {
     public interface IListingWidgetProperties<TTreeNode> where TTreeNode : TreeNode
     {

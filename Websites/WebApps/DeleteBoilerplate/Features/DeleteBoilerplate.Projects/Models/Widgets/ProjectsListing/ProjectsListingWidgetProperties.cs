@@ -1,11 +1,10 @@
 ﻿using System.Collections.Generic;
 using CMS.DocumentEngine.Types.DeleteBoilerplate;
 using DeleteBoilerplate.Common.Models;
-using DeleteBoilerplate.GenericComponents.Models.FormComponents;
-using DeleteBoilerplate.GenericComponents.Models.Widgets;
 using DeleteBoilerplate.Infrastructure.Models;
-using DeleteBoilerplate.Infrastructure.Models.FormComponents;
 using DeleteBoilerplate.Infrastructure.Models.FormComponents.UrlSelector;
+using DeleteBoilerplate.Infrastructure.Models.FormComponents.TaxonomySelector;
+using DeleteBoilerplate.Infrastructure.Models.Widgets;
 using Kentico.Components.Web.Mvc.FormComponents;
 using Kentico.Forms.Web.Mvc;
 using Kentico.PageBuilder.Web.Mvc;
@@ -19,7 +18,7 @@ namespace DeleteBoilerplate.Projects.Models.Widgets.ProjectsListing
         [EditingComponentProperty(nameof(PathSelectorProperties.Label), "Projects Container Page")]
         public List<PathSelectorItem> Items { get; set; }
 
-        [EditingComponent(FormComponentsIdentifiers.TaxonomySelector, Order = 0, Label = "Area")]
+        [EditingComponent(TaxonomySelectorComponent.Identifier, Order = 0, Label = "Area")]
         [EditingComponentProperty("TargetTaxonomyTypes", "Area;Country")]
         public string Type { get; set; }
 

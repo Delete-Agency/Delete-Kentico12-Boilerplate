@@ -1,0 +1,35 @@
+﻿using DeleteBoilerplate.Infrastructure.Models.FormComponents.TaxonomySelector;
+using Kentico.Forms.Web.Mvc;
+
+[assembly:
+    RegisterFormComponent(TaxonomySelectorComponent.Identifier, typeof(TaxonomySelectorComponent), "Taxonomy selector",
+        IsAvailableInFormBuilderEditor = false, ViewName = "FormComponents/_TaxonomySelectorComponent")]
+
+namespace DeleteBoilerplate.Infrastructure.Models.FormComponents.TaxonomySelector
+{
+    public class TaxonomySelectorComponent : FormComponent<TaxonomySelectorProperties, string>
+    {
+        public const string Identifier = "DeleteBoilerplate.TaxonomySelector";
+
+        [BindableProperty]
+        public string SelectedTaxonomies { get; set; }
+
+        public string TargetTaxonomyTypes { get; set; }
+
+        public override string GetValue()
+        {
+            return SelectedTaxonomies;
+        }
+
+        public override void SetValue(string value)
+        {
+            SelectedTaxonomies = value;
+        }
+
+        public override void LoadProperties(FormComponentProperties properties)
+        {
+            base.LoadProperties(properties);
+            TargetTaxonomyTypes = (properties as TaxonomySelectorProperties)?.TargetTaxonomyTypes;
+        }
+    }
+}
