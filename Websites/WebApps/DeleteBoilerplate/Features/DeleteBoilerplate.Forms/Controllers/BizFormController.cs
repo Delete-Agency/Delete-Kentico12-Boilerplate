@@ -5,6 +5,7 @@ using CMS.OnlineForms;
 using DeleteBoilerplate.Common.Extensions;
 using DeleteBoilerplate.Domain.Repositories;
 using DeleteBoilerplate.Forms.Models;
+using DeleteBoilerplate.Infrastructure.Services;
 using Kentico.Forms.Web.Mvc;
 using LightInject;
 using System;
@@ -22,6 +23,9 @@ namespace DeleteBoilerplate.Forms.Controllers
         protected IBizFormRepository BizFormRepository { get; set; }
 
         [Inject]
+        protected IBizFormService BizFormService { get; set; }
+
+        [Inject]
         protected IFormProvider FormProvider { get; set; }
 
         [HttpPost]
@@ -32,7 +36,7 @@ namespace DeleteBoilerplate.Forms.Controllers
                 var currentContact = ContactManagementContext.CurrentContact;
 
                 var formInfo = this.BizFormRepository.GetFormInfo(formData.FormName);
-                var formComponents = this.BizFormRepository
+                var formComponents = this.BizFormService
                     .GetFormComponentsMappedToContact(formInfo, this.ControllerContext, currentContact, formData.ElementId)
                     .ToList();
 

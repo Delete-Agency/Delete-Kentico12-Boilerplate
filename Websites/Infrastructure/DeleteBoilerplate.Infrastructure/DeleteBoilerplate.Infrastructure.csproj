@@ -892,6 +892,7 @@
     <Compile Include="Personalization\ConditionTypes\IsInPersonaConditionType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Routing\CustomRoutesHelper.cs" />
+    <Compile Include="Services\BizFormService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\InlineEditors\RichTextEditor\CKEditor\plugins\scayt\CHANGELOG.md" />

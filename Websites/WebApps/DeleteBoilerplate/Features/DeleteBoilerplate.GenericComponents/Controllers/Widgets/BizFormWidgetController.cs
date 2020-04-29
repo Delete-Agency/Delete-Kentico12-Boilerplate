@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using CMS.ContactManagement;
-using CMS.DataEngine;
 using CMS.EventLog;
 using CMS.OnlineForms;
 using CMS.SiteProvider;
@@ -8,6 +7,7 @@ using DeleteBoilerplate.Domain.Repositories;
 using DeleteBoilerplate.DynamicRouting.Controllers;
 using DeleteBoilerplate.GenericComponents.Controllers.Widgets;
 using DeleteBoilerplate.GenericComponents.Models.Widgets.BizFormWidget;
+using DeleteBoilerplate.Infrastructure.Services;
 using Kentico.Forms.Web.Mvc;
 using Kentico.PageBuilder.Web.Mvc;
 using LightInject;
@@ -33,13 +33,10 @@ namespace DeleteBoilerplate.GenericComponents.Controllers.Widgets
         protected IMapper Mapper { get; set; }
 
         [Inject]
-        protected IFormProvider FormProvider { get; set; }
-
-        [Inject]
-        protected IFormComponentVisibilityEvaluator FormComponentVisibilityEvaluator { get; set; }
-
-        [Inject]
         protected IBizFormRepository BizFormRepository { get; set; }
+
+        [Inject]
+        protected IBizFormService BizFormService { get; set; }
 
         public ActionResult Index()
         {
@@ -83,7 +80,7 @@ namespace DeleteBoilerplate.GenericComponents.Controllers.Widgets
         {
             var currentContact = ContactManagementContext.CurrentContact;
 
-            var displayedFormComponents = this.BizFormRepository.GetDisplayedFormComponents(formInfo, currentContact);
+            var displayedFormComponents = this.BizFormService.GetDisplayedFormComponents(formInfo, currentContact);
 
             var elementId = formInfo.FormID;
 

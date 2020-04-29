@@ -26,6 +26,7 @@ namespace DeleteBoilerplate.Domain
             serviceRegistry.RegisterScoped<ISocialLinksRepository, SocialLinksRepository>();
             serviceRegistry.RegisterScoped<INavigationRepository, NavigationRepository>();
             serviceRegistry.RegisterScoped<IStaticHtmlChunkRepository, StaticHtmlChunkRepository>();
+            serviceRegistry.RegisterScoped<IBizFormRepository, BizFormRepository>();
 
             serviceRegistry.RegisterSingleton<IUrlSelectorService, UrlSelectorService>();
 
@@ -34,6 +35,7 @@ namespace DeleteBoilerplate.Domain
             serviceRegistry.RegisterSingleton<IContentItemMetadataProvider, ContentItemMetadataProvider>();
             serviceRegistry.RegisterSingleton<IDependencyCacheKey, DependencyCacheKey>();
             serviceRegistry.RegisterScoped<ICachingRepositoryInterceptor, CachingRepositoryInterceptor>();
+            
             RegisterRepositories(serviceRegistry);
 
             serviceRegistry.Register(factory => Service.Resolve<ICurrentCookieLevelProvider>());

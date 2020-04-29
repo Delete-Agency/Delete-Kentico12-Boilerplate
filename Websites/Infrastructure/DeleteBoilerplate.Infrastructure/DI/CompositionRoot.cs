@@ -1,6 +1,9 @@
 ﻿using System.Web;
 using System.Web.Hosting;
+using CMS.Core;
 using DeleteBoilerplate.Domain.Repositories;
+using DeleteBoilerplate.Infrastructure.Services;
+using Kentico.Forms.Web.Mvc;
 using LightInject;
 
 namespace DeleteBoilerplate.Infrastructure
@@ -24,8 +27,12 @@ namespace DeleteBoilerplate.Infrastructure
             serviceRegistry.RegisterScoped<IProjectRepository, ProjectRepository>();
             serviceRegistry.RegisterScoped<ISocialLinksRepository, SocialLinksRepository>();
             serviceRegistry.RegisterScoped<INavigationRepository, NavigationRepository>();
-            serviceRegistry.RegisterScoped<IBizFormRepository, BizFormRepository>();
 
+            serviceRegistry.Register(factory => Service.Resolve<IFormProvider>());
+            serviceRegistry.Register(factory => Service.Resolve<IFormComponentVisibilityEvaluator>());
+            serviceRegistry.Register(factory => Service.Resolve<IFormComponentModelBinder>());
+
+            serviceRegistry.RegisterScoped<IBizFormService, BizFormService>();
         }
     }
 }
