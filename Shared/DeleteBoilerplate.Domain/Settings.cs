@@ -64,6 +64,15 @@ namespace DeleteBoilerplate.Domain
 
                 public static bool IsGoogleReCaptchaEnabled => SiteSettingsHelper.GetSettingBoolValue("DeleteBoilerplate_Integrations_Google_IsGoogleReCaptchaEnabled");
             }
+
+            public static class Twitter
+            {
+                public static string ConsumerKey => SiteSettingsHelper.GetSettingValue("DeleteBoilerplate_Integrations_Twitter_ConsumerKey");
+
+                public static string ConsumerSecret => SiteSettingsHelper.GetSettingValue("DeleteBoilerplate_Integrations_Twitter_ConsumerSecret");
+
+                public static string ScreenName => SiteSettingsHelper.GetSettingValue("DeleteBoilerplate_Integrations_Twitter_ScreenName");
+            }
         }
 
         public static class Notifications

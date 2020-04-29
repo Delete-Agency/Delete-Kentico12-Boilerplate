@@ -48,6 +48,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteBoilerplate.CompanyMe
 EndProject
 Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "DeleteBoilerplate.DependencyValidation", "..\..\DeleteBoilerplate.DependencyValidation\DeleteBoilerplate.DependencyValidation.modelproj", "{B75EE2D3-DC9E-4677-BCA0-A9866D510766}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteBoilerplate.Twitter", "..\..\Infrastructure\DeleteBoilerplate.Twitter\DeleteBoilerplate.Twitter.csproj", "{EB8AE9A9-2E84-4BCA-A9B0-AD02F7538C16}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -110,6 +112,10 @@ Global
 		{B75EE2D3-DC9E-4677-BCA0-A9866D510766}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B75EE2D3-DC9E-4677-BCA0-A9866D510766}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B75EE2D3-DC9E-4677-BCA0-A9866D510766}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB8AE9A9-2E84-4BCA-A9B0-AD02F7538C16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB8AE9A9-2E84-4BCA-A9B0-AD02F7538C16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB8AE9A9-2E84-4BCA-A9B0-AD02F7538C16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB8AE9A9-2E84-4BCA-A9B0-AD02F7538C16}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -127,6 +133,7 @@ Global
 		{17D70B1D-97CA-4DBA-960C-B7E87A8657E2} = {60D6784B-12CB-4ACD-B26B-545FC97DC901}
 		{652754E8-3436-47B6-92EE-5D3B6018F72D} = {2971F724-2145-4CB1-9464-1A379C67E410}
 		{73AB81A6-A354-4278-95CE-79515BF10896} = {60D6784B-12CB-4ACD-B26B-545FC97DC901}
+		{EB8AE9A9-2E84-4BCA-A9B0-AD02F7538C16} = {25B3DC14-1D18-4110-8416-2372716B7505}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C6500213-6CF9-462C-B95D-DCF91FC64889}
