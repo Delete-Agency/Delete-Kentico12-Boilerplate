@@ -1,6 +1,8 @@
-﻿using AutoMapper;
+﻿using System.Web.Configuration;
+using AutoMapper;
 using DeleteBoilerplate.Common;
 using DeleteBoilerplate.Common.Helpers;
+using DeleteBoilerplate.Infrastructure.Services;
 using LightInject;
 using LightInject.ServiceLocation;
 
@@ -28,6 +30,7 @@ namespace DeleteBoilerplate.Infrastructure
 
                 container.RegisterInstance<MapperConfiguration>(AutoMapperConfig.BuildMapperConfiguration(container));
                 container.Register<IMapper>(c => new Mapper(c.GetInstance<MapperConfiguration>(), c.GetInstance));
+                container.Register<IHashService>(c => new HashService(WebConfigurationManager.AppSettings["CMSHashStringSalt"]));
 
                 DefaultServiceLocator = new LightInjectServiceLocator(container);
                 Container = container;
