@@ -9,7 +9,7 @@ namespace DeleteBoilerplate.Twitter.Extensions
             return $"https://twitter.com/{status.ScreenName}/status/{status.StatusID}";
         }
 
-        public static string GetTwitterLink(string screenName)
+        public static string GetProfileLink(string screenName)
         {
             return $"https://twitter.com/{screenName}";
         }

@@ -1,0 +1,23 @@
+﻿@using DeleteBoilerplate.Infrastructure.Extensions
+@model DeleteBoilerplate.GenericComponents.Models.Widgets.TwitterWidget.TwitterWidgetViewModel
+
+@*
+    @Html.RegisterStyle("twitter-feed.css")
+    @Html.RegisterScript("twitter-feed.js")
+*@
+
+@if (Model == null)
+{
+    return;
+}
+
+<div>
+    <svg class="icon" width="32" height="32" focusable="false">
+        <use xlink:href="#icon-twitter" />
+    </svg>
+    <div>
+        <h2>@Model.Title</h2>
+        <a href="@Model.ProfileLink">Follow Us</a>
+    </div>
+    <ul data-dc-twitter-feed='{"endpoint": "@Model.GetTweetsApi"}'></ul>
+</div>

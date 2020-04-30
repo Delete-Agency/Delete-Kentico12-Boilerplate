@@ -652,11 +652,14 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Automap\GenericComponentsAutoMap.cs" />
+    <Compile Include="Constants\RouteNames.cs" />
     <Compile Include="Controllers\Sections\OneFullWidthColumnSectionController.cs" />
     <Compile Include="Controllers\Widgets\ContactFormWidgetController.cs" />
     <Compile Include="Controllers\Widgets\BizFormWidgetController.cs" />
     <Compile Include="Controllers\Widgets\StaticHtmlWidgetController.cs" />
+    <Compile Include="Controllers\Widgets\TwitterWidgetController.cs" />
     <Compile Include="Models\InlineEditors\SelectEditorViewModel.cs" />
     <Compile Include="Models\Widgets\BizFormWidget\BizFormProperties.cs" />
     <Compile Include="Models\Widgets\BizFormWidget\BizFormWidgetViewModel.cs" />
@@ -673,6 +676,9 @@
     <Compile Include="Models\Widgets\ImageWidget\ImageWidgetViewModel.cs" />
     <Compile Include="Models\Widgets\StaticHtmlWidget\StaticHtmlWidgetProperties.cs" />
     <Compile Include="Models\Widgets\StaticHtmlWidget\StaticHtmlWidgetViewModel.cs" />
+    <Compile Include="Models\Widgets\TwitterWidget\TweetViewModel.cs" />
+    <Compile Include="Models\Widgets\TwitterWidget\TwitterWidgetProperties.cs" />
+    <Compile Include="Models\Widgets\TwitterWidget\TwitterWidgetViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -685,6 +691,7 @@
     <Content Include="Views\web.config" />
     <Content Include="Views\Shared\Widgets\_ContactForm.cshtml" />
     <Content Include="Views\Shared\Widgets\_BizForm.cshtml" />
+    <Content Include="Views\Shared\Widgets\_Twitter.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -712,6 +719,10 @@
     <ProjectReference Include="..\..\..\..\Infrastructure\DeleteBoilerplate.Infrastructure\DeleteBoilerplate.Infrastructure.csproj">
       <Project>{A7B10389-141E-41D6-84FB-50D2282B1F4C}</Project>
       <Name>DeleteBoilerplate.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Infrastructure\DeleteBoilerplate.Twitter\DeleteBoilerplate.Twitter.csproj">
+      <Project>{EB8AE9A9-2E84-4BCA-A9B0-AD02F7538C16}</Project>
+      <Name>DeleteBoilerplate.Twitter</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
