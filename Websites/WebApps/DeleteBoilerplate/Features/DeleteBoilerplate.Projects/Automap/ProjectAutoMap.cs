@@ -23,6 +23,11 @@ namespace DeleteBoilerplate.Projects
 
         public ProjectAutoMap()
         {
+            this.CreateMapProject();
+        }
+
+        private void CreateMapProject()
+        {
             CreateMap<Project, ProjectViewModel>()
                 .ForMember(dst => dst.Id, opt => opt.MapFrom(src => src.NodeGUID))
                 .ForMember(dst => dst.Description, opt => opt.MapFrom(src => ProjectDescriber.GetDescribe(src)))
@@ -47,6 +52,7 @@ namespace DeleteBoilerplate.Projects
             CreateMap<ProjectsListingWidgetProperties, ProjectsListingWidgetViewModel>(MemberList.None)
                 .ForMember(dst => dst.Link, opt => opt.MapFrom(src => UrlSelectorService.GetLink(src.Link)))
                 .ForMember(dst => dst.Projects, opt => opt.Ignore());
+
         }
     }
 }

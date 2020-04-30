@@ -10,6 +10,11 @@ namespace DeleteBoilerplate.WebApp
     {
         public WebAppAutoMap()
         {
+            this.CreateMapGlobal();
+        }
+
+        private void CreateMapGlobal()
+        {
             CreateMap<NavigationLink, NavigationLinkViewModel>(MemberList.None)
                 .ForMember(dst => dst.Title, opt => opt.MapFrom(src => src.Title))
                 .ForMember(dst => dst.Url, opt => opt.MapFrom(src => URLHelper.ResolveUrl(src.Url, false)))

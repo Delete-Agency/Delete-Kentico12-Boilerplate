@@ -1,7 +1,5 @@
 ﻿using AutoMapper;
 using CMS.DocumentEngine;
-using CMS.DocumentEngine.Types.DeleteBoilerplate;
-using CMS.Helpers;
 using CMS.Localization;
 using CMS.SiteProvider;
 using DeleteBoilerplate.Common.Extensions;
@@ -15,6 +13,11 @@ namespace DeleteBoilerplate.Metadata
     public class MetadataAutoMap : AutoMapper.Profile
     {
         public MetadataAutoMap()
+        {   
+            this.CreateMapMetadata();
+        }
+
+        private void CreateMapMetadata()
         {
             CreateMap<TreeNode, IMetadata>(MemberList.None)
                 //Metadata mapping

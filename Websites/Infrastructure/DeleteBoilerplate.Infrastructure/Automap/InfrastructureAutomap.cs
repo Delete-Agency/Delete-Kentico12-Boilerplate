@@ -2,9 +2,9 @@
 
 namespace DeleteBoilerplate.Infrastructure
 {
-    public class InfrastructureAutomap : AutoMapper.Profile
+    public class InfrastructureAutoMap : AutoMapper.Profile
     {
-        public InfrastructureAutomap()
+        public InfrastructureAutoMap()
         {
             CreateMap<ImageModel, ImageViewModel>();
         }

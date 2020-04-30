@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using AutoMapper;
+﻿using AutoMapper;
 using DeleteBoilerplate.Common.Models.Media;
 using DeleteBoilerplate.GenericComponents.Models.Widgets.ContactFormWidget;
 using DeleteBoilerplate.GenericComponents.Models.Widgets.ContentBlockWidget;
@@ -10,6 +9,7 @@ using DeleteBoilerplate.GenericComponents.Models.Widgets.TwitterWidget;
 using DeleteBoilerplate.Infrastructure.Extensions;
 using DeleteBoilerplate.Twitter.Extensions;
 using LinqToTwitter;
+using System.Linq;
 
 namespace DeleteBoilerplate.GenericComponents
 {
@@ -17,16 +17,52 @@ namespace DeleteBoilerplate.GenericComponents
     {
         public GenericComponentsAutoMap()
         {
-            CreateMap<ContentBlockWidgetProperties, ContentBlockWidgetViewModel>();
-            CreateMap<HeroWidgetProperties, HeroWidgetViewModel>();
+            this.CreateMapContentBlockWidget();
 
+            this.CreateMapHeroWidget();
+
+            this.CreateMapStaticHtmlWidget();
+
+            this.CreateMapContactFormWidget();
+
+            this.CreateMapImageWidget();
+
+            this.CreateMapTwitterWidget();
+        }
+
+        private void CreateMapContentBlockWidget()
+        {
+            CreateMap<ContentBlockWidgetProperties, ContentBlockWidgetViewModel>();
+        }
+
+        private void CreateMapHeroWidget()
+        {
+            CreateMap<HeroWidgetProperties, HeroWidgetViewModel>();
+        }
+
+        private void CreateMapStaticHtmlWidget()
+        {
+            CreateMap<StaticHtmlWidgetProperties, StaticHtmlWidgetViewModel>()
+                .ForMember(dst => dst.Html, opt => opt.MapFrom(src => src.Html));
+        }
+
+        private void CreateMapContactFormWidget()
+        {
+            CreateMap<ContactFormProperties, ContactFormWidgetViewModel>(MemberList.None)
+                .ForMember(d => d.Title, opt => opt.MapFrom(src => src.Title))
+                .ForMember(d => d.Description, opt => opt.MapFrom(src => src.Description))
+                .ForMember(d => d.ButtonText, opt => opt.MapFrom(src => src.ButtonText));
+        }
+
+        private void CreateMapImageWidget()
+        {
             CreateMap<ImageWidgetProperties, ImageWidgetViewModel>()
                 .ForMember(src => src.Images, opt => opt.Ignore())
                 .AfterMap((s, d, context) =>
                 {
                     if (s.Images != null)
                     {
-                        d.Images = s.Images.Select(x=>
+                        d.Images = s.Images.Select(x =>
                         {
                             var model = x.GetImageModel();
                             if (model != null)
@@ -34,18 +70,13 @@ namespace DeleteBoilerplate.GenericComponents
                                 return context.Mapper.Map<ImageViewModel>(model);
                             }
                             return null;
-                        }).Where(x=>x!=null).ToList();
+                        }).Where(x => x != null).ToList();
                     }
                 });
+        }
 
-            CreateMap<StaticHtmlWidgetProperties, StaticHtmlWidgetViewModel>()
-                .ForMember(dst => dst.Html, opt => opt.MapFrom(src => src.Html));
-
-            CreateMap<ContactFormProperties, ContactFormWidgetViewModel>(MemberList.None)
-                .ForMember(d => d.Title, opt => opt.MapFrom(src => src.Title))
-                .ForMember(d => d.Description, opt => opt.MapFrom(src => src.Description))
-                .ForMember(d => d.ButtonText, opt => opt.MapFrom(src => src.ButtonText));
-
+        private void CreateMapTwitterWidget()
+        {
             CreateMap<TwitterWidgetProperties, TwitterWidgetViewModel>(MemberList.None)
                 .ForMember(d => d.Title, opt => opt.MapFrom(src => src.Title))
                 .ForMember(d => d.ScreenName, opt => opt.MapFrom(src => src.ScreenName))

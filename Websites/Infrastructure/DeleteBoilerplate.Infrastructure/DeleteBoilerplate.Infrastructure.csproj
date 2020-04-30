@@ -847,7 +847,7 @@
   <ItemGroup>
     <Compile Include="Attributes\NoDirectAccessAttribute.cs" />
     <Compile Include="Attributes\StringValueAttribute.cs" />
-    <Compile Include="Automap\InfrastructureAutomap.cs" />
+    <Compile Include="Automap\InfrastructureAutoMap.cs" />
     <Compile Include="Cache\CacheExpirationCallbacks.cs" />
     <Compile Include="Configuration\KenticoFormBuilderStaticMarkupConfiguration.cs" />
     <Compile Include="Configuration\KenticoFormMarkupInjection.cs" />

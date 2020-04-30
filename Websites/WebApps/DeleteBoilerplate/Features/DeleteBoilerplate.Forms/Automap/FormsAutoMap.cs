@@ -8,6 +8,11 @@ namespace DeleteBoilerplate.Forms
     {
         public FormsAutoMap()
         {
+            this.CreateMapContactForm();
+        }
+
+        private void CreateMapContactForm()
+        {
             CreateMap<ContactFormData, ContactItem>(MemberList.None)
                 .ForMember(dst => dst.FirstName, opt => opt.MapFrom(src => src.FirstName))
                 .ForMember(dst => dst.LastName, opt => opt.MapFrom(src => src.LastName))
@@ -15,6 +20,7 @@ namespace DeleteBoilerplate.Forms
                 .ForMember(dst => dst.Telephone, opt => opt.MapFrom(src => src.Telephone))
                 .ForMember(dst => dst.Message, opt => opt.MapFrom(src => src.Message))
                 .ForMember(dst => dst.IsConsented, opt => opt.MapFrom(src => src.IsConsented));
+
         }
     }
 }

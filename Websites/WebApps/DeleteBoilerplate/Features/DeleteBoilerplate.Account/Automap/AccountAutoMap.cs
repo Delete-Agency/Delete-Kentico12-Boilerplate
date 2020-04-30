@@ -9,6 +9,11 @@ namespace DeleteBoilerplate.Account
     {
         public AccountAutoMap()
         {
+            this.CreateMapAccount();
+        }
+
+        private void CreateMapAccount()
+        {
             CreateMap<AppUser, ContactInfo>(MemberList.None)
                 .ForMember(dst => dst.ContactEmail, opt => opt.MapFrom(src => src.Email))
                 .ForMember(dst => dst.ContactFirstName, opt => opt.MapFrom(src => src.FirstName))
