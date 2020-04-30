@@ -43,7 +43,7 @@ namespace DeleteBoilerplate.GenericComponents.Controllers.Widgets
 
             var model = Mapper.Map<TwitterWidgetViewModel>(properties);
             model.Signet = this.HashService.GetHash(model.ScreenName);
-            model.GetTweetsMainPartApi = Url.RouteUrl(RouteNames.GetTweets);
+            model.GetTweetsMainPartApi = Url.RouteUrl(RouteNames.Twitter.GetTweets);
 
             return PartialView("Widgets/_Twitter", model);
         }

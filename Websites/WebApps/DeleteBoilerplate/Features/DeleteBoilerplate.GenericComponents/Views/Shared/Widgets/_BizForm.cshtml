@@ -3,6 +3,7 @@
 @using Kentico.Web.Mvc
 @using System.Web.Mvc.Html
 @using DeleteBoilerplate.Common.Extensions
+@using DeleteBoilerplate.GenericComponents.Constants
 @using DeleteBoilerplate.GenericComponents.Models.InlineEditors
 @using DeleteBoilerplate.GenericComponents.Models.Widgets.BizFormWidget
 @model BizFormWidgetViewModel
@@ -27,7 +28,7 @@
 @if (Model.FormName.IsNullOrEmpty() == false)
 {
     <div id="@Model.ElementId" style="position: relative">
-        <form method="post" action="@Url.RouteUrl("Default", new { action = "Submit", controller = "BizForm" })">
+        <form method="post" action="@Url.RouteUrl(RouteNames.BizForm.Submit)">
 
             @Html.AntiForgeryToken()
             @Html.Hidden("FormName", Model.FormName)

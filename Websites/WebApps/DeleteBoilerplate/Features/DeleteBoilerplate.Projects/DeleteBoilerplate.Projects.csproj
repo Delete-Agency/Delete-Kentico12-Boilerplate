@@ -649,6 +649,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Automap\ProjectAutoMap.cs" />
+    <Compile Include="Constants\RouteNames.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
     <Compile Include="Controllers\Widgets\ProjectsListingWidgetController.cs" />
     <Compile Include="DI\CompositionRoot.cs" />

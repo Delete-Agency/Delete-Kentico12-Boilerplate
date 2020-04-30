@@ -73,7 +73,7 @@ namespace DeleteBoilerplate.WebApp.Controllers.Global
         /// <param name="isTracking">Cookie level 3 (All/1000)</param>
         /// <returns></returns>
         [HttpPost]
-        public JsonResult SetCookieSettings(Uri pageUrl, bool isPerformance = false, bool isTracking = false)
+        public JsonResult SetCookieLevel(Uri pageUrl, bool isPerformance = false, bool isTracking = false)
         {
             try
             {

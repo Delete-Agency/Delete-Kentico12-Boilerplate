@@ -1,5 +1,6 @@
 ﻿@using DeleteBoilerplate.Common.Extensions
 @using DeleteBoilerplate.Domain
+@using DeleteBoilerplate.GenericComponents.Constants
 @model DeleteBoilerplate.GenericComponents.Models.Widgets.ContactFormWidget.ContactFormWidgetViewModel
 
 @if (Model == null)
@@ -14,7 +15,7 @@
         <p>@Model.Description</p>
     }
     
-    <form method="post" action="@Url.RouteUrl("Default", new { action = "Submit", controller = "ContactForm" })">
+    <form method="post" action="@Url.RouteUrl(RouteNames.ContactForm.Submit)">
         <div>
             <label>First name</label>
             <input type="text" name="firstName" required>

@@ -506,6 +506,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Automap\CompanyMembersAutoMap.cs" />
+    <Compile Include="Constants\RouteNames.cs" />
     <Compile Include="Controllers\CompanyMembersController.cs" />
     <Compile Include="DI\CompositionRoot.cs" />
     <Compile Include="Models\CompanyMemberViewModel.cs" />

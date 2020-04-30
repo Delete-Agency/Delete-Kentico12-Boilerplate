@@ -676,8 +676,10 @@
     <Content Include="Global.asax" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Automap\WebAppAutoMap.cs" />
     <Compile Include="Constants\CookiesConstants.cs" />
+    <Compile Include="Constants\RouteNames.cs" />
     <Compile Include="Controllers\ContextPageController.cs" />
     <Compile Include="Controllers\Global\CookiesController.cs" />
     <Compile Include="Controllers\Global\GlobalController.cs" />
