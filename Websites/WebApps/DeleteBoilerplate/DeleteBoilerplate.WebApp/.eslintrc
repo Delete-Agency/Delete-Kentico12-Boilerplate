@@ -5,14 +5,19 @@
     },
     "extends": [
         "airbnb-base",
-        "plugin:react/recommended"
+        "plugin:react/recommended",
+        "plugin:prettier/recommended",
+        "prettier/react"
     ],
+    "parser": "babel-eslint",
     "parserOptions": {
         "sourceType": "module",
+        "ecmaVersion": 2018,
         "ecmaFeatures": {
             "jsx": true
         }
     },
+    "plugins": ["react", "prettier"],
     "rules": {
         "linebreak-style": ["error", "windows"],
         "operator-linebreak": ["error", "after"],
@@ -57,7 +62,14 @@
         "max-len": ["warn"],
         "no-mixed-operators": ["warn"],
         "react/jsx-uses-vars": "warn",
-        "react/react-in-jsx-scope": "off"
+        "react/react-in-jsx-scope": "off",
+
+        "prettier/prettier": [
+            "error",
+            {
+                "endOfLine": "auto"
+            }
+        ]
     },
     "globals": {
         "google": true,

@@ -10,5 +10,5 @@ function log(message) {
 
 module.exports = {
     isJsonOutput,
-    log
+    log,
 };

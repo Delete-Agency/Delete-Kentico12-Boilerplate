@@ -1,15 +1,19 @@
 module.exports = {
     presets: [
-        ['@babel/preset-env', {
-            useBuiltIns: 'usage'
-        }],
-        '@babel/preset-react'
+        [
+            '@babel/preset-env',
+            {
+                useBuiltIns: 'usage',
+            },
+        ],
+        '@babel/preset-react',
     ],
     plugins: [
         '@babel/plugin-transform-object-assign',
         '@babel/plugin-proposal-class-properties',
         '@babel/plugin-syntax-dynamic-import',
-        '@babel/plugin-proposal-object-rest-spread'
+        '@babel/plugin-proposal-object-rest-spread',
+        '@babel/plugin-proposal-private-methods',
     ],
     env: {
         production: {
@@ -19,12 +23,10 @@ module.exports = {
                     {
                         mode: 'remove',
                         removeImport: true,
-                        ignoreFilenames: [
-                            'node_modules'
-                        ]
-                    }
-                ]
-            ]
-        }
-    }
+                        ignoreFilenames: ['node_modules'],
+                    },
+                ],
+            ],
+        },
+    },
 };

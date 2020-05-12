@@ -8,7 +8,8 @@ import './general/js/what-input';
 
 /* components */
 import './components/lazysizes';
-// import './components/attri-css'; // this is a test component, delete it at the start of a project!!!
+// import './components/attri-css'; // this is a test , remove it!!!
+import './components/twitter-feed';
 
 /* init app */
 import app from './general/js/app';

@@ -1,0 +1,42 @@
+.tweet {
+    padding: 10px;
+
+    a {
+        color: $color-purple;
+        font-weight: $font-weight-bold;
+    }
+
+    p {
+        font-weight: $font-weight-normal;
+    }
+
+    .hashtag {
+        color: $color-purple;
+    }
+
+    &__media {
+        position: relative;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    &__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    &__date {
+        display: block;
+    }
+
+    &__inner {
+        width: 100%;
+        padding: 10px;
+        background: $color-white;
+        border-radius: 4px;
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./",
+        "paths": {
+            "~/*": ["./assets/*"] // resolve any `~/foo/bar` to `<baseUrl>/foo/bar`
+        }
+    }
+}

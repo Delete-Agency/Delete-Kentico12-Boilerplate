@@ -1,0 +1,45 @@
+.twitter-feed {
+    $gap: 10px;
+
+    background-color: $color-twitter-bg;
+    position: relative;
+    overflow: hidden;
+
+    @include media('<=mobile') {
+        display: none;
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    &__title {
+        @include media('<=tablet') {
+            font-size: 21px;
+        }
+    }
+
+    &__icon {
+        fill: $color-mauve;
+    }
+
+    &__inner {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        width: calc(100% + #{$gap * 2});
+        margin: -$gap;
+    }
+
+    &__item {
+        width: 25%;
+        padding: $gap;
+
+        @include media('<=tablet') {
+            width: 50%;
+            font-size: 24px;
+        }
+    }
+}

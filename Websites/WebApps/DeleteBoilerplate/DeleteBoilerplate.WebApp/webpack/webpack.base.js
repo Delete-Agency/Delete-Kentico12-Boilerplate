@@ -14,26 +14,23 @@ module.exports = (isDev, isAnlz) => ({
         app: './assets',
         // todo remove if not needed
         // explicitly put jquery into vendors chunk
-        vendors: [jqueryPath]
+        vendors: [jqueryPath],
     },
     output: {
         path: path.resolve(__dirname, '../dist'),
         publicPath: '/dist/',
         filename: '[name].[chunkhash].js',
-        jsonpFunction: 'webpackJsonpDelete'
+        jsonpFunction: 'webpackJsonpDelete',
     },
     resolve: {
         extensions: ['.js', '.jsx'],
-        modules: [
-            'node_modules',
-            path.resolve(__dirname, '../assets/')
-        ],
+        modules: ['node_modules', path.resolve(__dirname, '../assets/')],
         alias: {
             // use our custom version of jquery
             // check the top of this file to understand what was excluded
             // see also https://github.com/jquery/jquery#modules
-            jquery: jqueryPath
-        }
+            jquery: jqueryPath,
+        },
     },
     module: {
         rules: [
@@ -45,28 +42,28 @@ module.exports = (isDev, isAnlz) => ({
                     // and breaks libraries which depend on it
                     // In order to use local version of jQuery
                     // and avoid that issue we should apply this exclusion
-                    jqueryPath
+                    jqueryPath,
                 ],
-                loader: 'babel-loader'
+                loader: 'babel-loader',
             },
             {
                 test: /\.hbs$/,
-                loader: 'handlebars-loader'
+                loader: 'handlebars-loader',
             },
             {
                 test: /\.(png|svg|jpe?g|gif)$/,
                 exclude: /svg[\/\\]/,
                 loader: 'file-loader',
                 options: {
-                    name: 'images/[name].[ext]'
-                }
+                    name: 'images/[name].[ext]',
+                },
             },
             {
                 test: /\.(woff2?|eot|ttf)$/,
                 loader: 'file-loader',
                 options: {
-                    name: 'fonts/[name].[ext]'
-                }
+                    name: 'fonts/[name].[ext]',
+                },
             },
             {
                 test: /\.svg$/,
@@ -75,8 +72,8 @@ module.exports = (isDev, isAnlz) => ({
                     {
                         loader: 'svg-sprite-loader',
                         options: {
-                            symbolId: 'icon-[name]'
-                        }
+                            symbolId: 'icon-[name]',
+                        },
                     },
                     {
                         loader: 'svgo-loader',
@@ -84,11 +81,11 @@ module.exports = (isDev, isAnlz) => ({
                             plugins: [
                                 { removeNonInheritableGroupAttrs: true },
                                 { collapseGroups: true },
-                                { removeAttrs: { attrs: '(fill|stroke)' } }
-                            ]
-                        }
-                    }
-                ]
+                                { removeAttrs: { attrs: '(fill|stroke)' } },
+                            ],
+                        },
+                    },
+                ],
             },
             {
                 test: /\.css$/,
@@ -98,16 +95,16 @@ module.exports = (isDev, isAnlz) => ({
                         loader: 'css-loader',
                         options: {
                             sourceMap: true,
-                            importLoaders: 1
-                        }
+                            importLoaders: 1,
+                        },
                     },
                     {
                         loader: 'postcss-loader',
                         options: {
-                            sourceMap: true
-                        }
-                    }
-                ]
+                            sourceMap: true,
+                        },
+                    },
+                ],
             },
             {
                 test: /\.scss$/,
@@ -117,32 +114,32 @@ module.exports = (isDev, isAnlz) => ({
                         loader: 'css-loader',
                         options: {
                             sourceMap: true,
-                            importLoaders: 2
-                        }
+                            importLoaders: 2,
+                        },
                     },
                     {
                         loader: 'postcss-loader',
                         options: {
-                            sourceMap: true
-                        }
+                            sourceMap: true,
+                        },
                     },
                     {
                         loader: 'sass-loader',
                         options: {
-                            sourceMap: true
-                        }
+                            sourceMap: true,
+                        },
                     },
                     // Reads Sass vars from files or inlined in the options property
                     {
                         loader: '@epegzz/sass-vars-loader',
                         options: {
                             syntax: 'scss',
-                            vars: config
-                        }
-                    }
-                ]
-            }
-        ]
+                            vars: config,
+                        },
+                    },
+                ],
+            },
+        ],
     },
     optimization: {
         splitChunks: {
@@ -155,7 +152,7 @@ module.exports = (isDev, isAnlz) => ({
                     test: /[\\/]node_modules[\\/](core-js)[\\/]/,
                     name: 'corejs',
                     reuseExistingChunk: true,
-                    priority: 20
+                    priority: 20,
                 },
                 commons: {
                     chunks: 'initial',
@@ -163,16 +160,16 @@ module.exports = (isDev, isAnlz) => ({
                     minChunks: 2,
                     // set minSize to 0 in order to create this chunk even total size of the common modules is small
                     minSize: 0,
-                    priority: 10
-                }
-            }
+                    priority: 10,
+                },
+            },
         },
-        runtimeChunk: 'single'
+        runtimeChunk: 'single',
     },
     plugins: [
         // set correct path to your /dist folder
         new CleanWebpackPlugin(['dist'], {
-            root: path.resolve(__dirname, '..')
+            root: path.resolve(__dirname, '..'),
         }),
 
         new CopyWebpackPlugin([{ from: './assets/favicon', to: '../dist/favicon' }]),
@@ -181,26 +178,26 @@ module.exports = (isDev, isAnlz) => ({
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
-            'window.jQuery': 'jquery'
+            'window.jQuery': 'jquery',
         }),
 
         new ManifestPlugin({
             filter: ({ name }) => !name.endsWith('.map'),
             // https://delete.atlassian.net/browse/MSW-589
             // https://github.com/danethurber/webpack-manifest-plugin/issues/144#issuecomment-382779618
-            seed: {}
+            seed: {},
         }),
         new MiniCssExtractPlugin({
-            filename: '[name].[contenthash].css'
-        })
+            filename: '[name].[contenthash].css',
+        }),
     ].concat(
-        isAnlz ?
-            new BundleAnalyzerPlugin({
-                analyzerPort: 8889
-            }) :
-            []
+        isAnlz
+            ? new BundleAnalyzerPlugin({
+                  analyzerPort: 8889,
+              })
+            : []
     ),
     stats: {
-        children: false
-    }
+        children: false,
+    },
 });

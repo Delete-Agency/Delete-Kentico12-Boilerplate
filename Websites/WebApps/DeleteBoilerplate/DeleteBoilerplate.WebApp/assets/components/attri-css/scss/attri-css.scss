@@ -197,7 +197,6 @@ nav div ul li ul {
 }
 
 @media (min-width: 630px) {
-
     nav div ul li.active,
     nav div ul li[active] {
         border: 1px solid #00C853;
@@ -271,7 +270,7 @@ blockquote p {
 }
 
 blockquote footer::before {
-    content: "\2014 \00A0";
+    content: '\2014 \00A0';
 }
 
 blockquote footer cite {
@@ -353,7 +352,7 @@ form select:focus {
     outline-color: #00C853;
 }
 
-form input[type="submit"] {
+form input[type='submit'] {
     padding: 10px;
     background-color: #00C853;
     color: #000000;
@@ -362,27 +361,27 @@ form input[type="submit"] {
     cursor: pointer;
 }
 
-form input[type="submit"]:active,
-form input[type="submit"]:focus {
+form input[type='submit']:active,
+form input[type='submit']:focus {
     outline: none;
 }
 
-form input[type="submit"]:active {
+form input[type='submit']:active {
     background-color: #212121;
     color: #00C853;
 }
 
-form input[type="submit"]:disabled {
+form input[type='submit']:disabled {
     background: #BDBDBD;
     cursor: not-allowed;
 }
 
-form input[type="submit"][secondary] {
+form input[type='submit'][secondary] {
     background-color: #212121;
     color: #00C853;
 }
 
-form input[type="submit"][secondary]:active {
+form input[type='submit'][secondary]:active {
     background-color: #00C853;
     color: initial;
 }
