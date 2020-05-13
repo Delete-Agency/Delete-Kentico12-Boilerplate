@@ -470,6 +470,7 @@
     <Compile Include="Extensions\MediaExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Helpers\AssemblyHelper.cs" />
+    <Compile Include="Helpers\LogHelper.cs" />
     <Compile Include="Models\LinkViewModel.cs" />
     <Compile Include="Models\Media\ImageModel.cs" />
     <Compile Include="Models\Media\ImageViewModel.cs" />

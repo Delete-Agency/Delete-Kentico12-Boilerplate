@@ -1,8 +1,7 @@
 ﻿using CMS.ContactManagement;
-using CMS.EventLog;
 using CMS.Helpers;
 using CMS.OnlineForms;
-using DeleteBoilerplate.Common.Extensions;
+using DeleteBoilerplate.Common.Helpers;
 using DeleteBoilerplate.Domain.Repositories;
 using DeleteBoilerplate.Forms.Models;
 using DeleteBoilerplate.Infrastructure.Services;
@@ -55,7 +54,7 @@ namespace DeleteBoilerplate.Forms.Controllers
             }
             catch (Exception ex)
             {
-                EventLogProvider.LogException($"{BizFormName} Submit", ex.ToString(), null);
+                LogHelper.LogException(ex);
 
                 return this.ServerErrorResult();
             }

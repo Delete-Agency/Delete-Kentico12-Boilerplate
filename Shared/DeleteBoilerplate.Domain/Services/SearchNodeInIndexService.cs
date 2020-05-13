@@ -1,6 +1,6 @@
 ﻿using CMS.DocumentEngine;
-using CMS.EventLog;
 using CMS.Search;
+using DeleteBoilerplate.Common.Helpers;
 using System;
 using System.Linq;
 
@@ -52,7 +52,8 @@ namespace DeleteBoilerplate.Domain.Services
             }
             catch (Exception exception)
             {
-                EventLogProvider.LogException(nameof(SearchNodeInIndexService), "SearchBySeoUrl", exception);
+                LogHelper.LogException(exception);
+                
                 return SearchNodeInIndexResult.Fail();
             }
         }

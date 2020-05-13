@@ -1,17 +1,15 @@
-﻿using System;
+﻿using CMS.Helpers;
+using DeleteBoilerplate.Common.Extensions;
+using DeleteBoilerplate.Common.Helpers;
+using DeleteBoilerplate.Domain;
+using DeleteBoilerplate.Infrastructure.Models;
+using System;
 using System.Collections.Generic;
-using CMS.Helpers;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
-using DeleteBoilerplate.Infrastructure.Models;
 using System.Web.Mvc;
-using CMS.EventLog;
-using DeleteBoilerplate.Common.Extensions;
-using DeleteBoilerplate.Domain;
-using Kentico.Content.Web.Mvc;
-using Kentico.Web.Mvc;
 
 namespace DeleteBoilerplate.Infrastructure.Extensions
 {
@@ -94,14 +92,18 @@ namespace DeleteBoilerplate.Infrastructure.Extensions
             var dictionary = GetAssetDict(contentType);
             lock (dictionary)
             {
-                if (dictionary.ContainsKey(fileName)) return string.Empty;
+                if (dictionary.ContainsKey(fileName)) 
+                    return string.Empty;
+
                 var staticAsset = CreateStaticAsset(fileName, order);
                 if (string.IsNullOrWhiteSpace(staticAsset.Path))
                 {
-                    EventLogProvider.LogException("Frontend", "ASSETNOTFOUND", new Exception($"Entry point \"{fileName}\" not found!"));
+                    LogHelper.LogError("FRONTEND", "ASSET_NOT_FOUND", $"Entry point \"{fileName}\" not found!");
                     return string.Empty;
                 }
+
                 dictionary.Add(fileName, staticAsset);
+
                 if (contentType == ContentType.CSS)
                 {
                     assetLink = IsSameAssetsCacheCookie() ? string.Format(CssPatternRegular,staticAsset.Path) : InlineCSS(fileName);

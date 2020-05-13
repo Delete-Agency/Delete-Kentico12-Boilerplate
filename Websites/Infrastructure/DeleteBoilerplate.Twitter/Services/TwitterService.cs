@@ -1,8 +1,9 @@
-﻿using CMS.EventLog;
+﻿using DeleteBoilerplate.Common.Helpers;
 using LinqToTwitter;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+
 namespace DeleteBoilerplate.Twitter.Services
 {
     public interface ITwitterService
@@ -35,9 +36,10 @@ namespace DeleteBoilerplate.Twitter.Services
 
                 return tweetStatusList.GetAwaiter().GetResult(); ;
             }
-            catch (Exception e) 
+            catch (Exception ex) 
             {
-                EventLogProvider.LogException("TwitterService", "TWITTER_ERRORS", e);
+                LogHelper.LogException(ex);
+
                 return new List<Status>();
             }
         }

@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text.RegularExpressions;
-using CMS.EventLog;
-using CMS.Helpers;
+﻿using CMS.Helpers;
 using CMS.MediaLibrary;
 using CMS.SiteProvider;
+using DeleteBoilerplate.Common.Helpers;
 using DeleteBoilerplate.Common.Models.Media;
+using System;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace DeleteBoilerplate.Common.Extensions
 {
@@ -56,7 +56,7 @@ namespace DeleteBoilerplate.Common.Extensions
             }
             catch (Exception ex)
             {
-                EventLogProvider.LogException("MediaExtensions", "EXCEPTION", ex);
+                LogHelper.LogException(ex);
                 return null;
             }
         }

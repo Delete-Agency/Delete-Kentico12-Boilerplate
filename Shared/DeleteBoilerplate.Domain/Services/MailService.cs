@@ -4,6 +4,7 @@ using CMS.EmailEngine;
 using CMS.EventLog;
 using CMS.MacroEngine;
 using CMS.SiteProvider;
+using DeleteBoilerplate.Common.Helpers;
 using Kentico.Membership;
 
 
@@ -30,8 +31,8 @@ namespace DeleteBoilerplate.Domain.Services
 
             if (emailTemplateInfo is null)
             {
-                EventLogProvider.LogEvent(EventType.ERROR, "Email Sender", "Send Failed", eventDescription:
-                    $"No email template found with name.: {templateName}");
+                LogHelper.LogError(this.GetType().Name, "SEND_FAILED", $"No email template found with name.: {templateName}");
+
                 return false;
             }
             var msg = new EmailMessage
@@ -50,11 +51,12 @@ namespace DeleteBoilerplate.Domain.Services
             try
             {
                 EmailSender.SendEmailWithTemplateText(SiteContext.CurrentSiteName, msg, emailTemplateInfo, macro,
-        SettingsKeyInfoProvider.GetBoolValue("CMSEmailQueueEnabled"));
+                    SettingsKeyInfoProvider.GetBoolValue("CMSEmailQueueEnabled"));
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                EventLogProvider.LogException("Email Sender", "Send failed", e);
+                LogHelper.LogException(ex);
+
                 return false;
             }
 

@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using CMS.EventLog;
-using CMS.Search;
+﻿using CMS.Search;
 using CMS.Search.Azure;
 using DeleteBoilerplate.AzureSearch.Models.Base;
 using DeleteBoilerplate.Common.Extensions;
+using DeleteBoilerplate.Common.Helpers;
 using DeleteBoilerplate.Domain.Repositories;
 using LightInject;
 using Microsoft.Azure.Search;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using SearchParameters = Microsoft.Azure.Search.Models.SearchParameters;
 
 namespace DeleteBoilerplate.AzureSearch.Services.Base
@@ -57,7 +57,8 @@ namespace DeleteBoilerplate.AzureSearch.Services.Base
             }
             catch (Exception exception)
             {
-                EventLogProvider.LogException(this.GetType().Name, "SEARCH_ERROR", exception);
+                LogHelper.LogException("SEARCH_ERROR", exception);
+
                 result.IsSuccess = false;
             }
 

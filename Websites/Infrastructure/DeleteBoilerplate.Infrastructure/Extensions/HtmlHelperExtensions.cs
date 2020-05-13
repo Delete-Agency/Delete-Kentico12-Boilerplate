@@ -1,17 +1,17 @@
-﻿using System;
+﻿using CMS.Helpers;
+using CMS.Membership;
+using CMS.SiteProvider;
+using DeleteBoilerplate.Common.Extensions;
+using DeleteBoilerplate.Common.Helpers;
+using DeleteBoilerplate.Common.Models.Media;
+using Kentico.Content.Web.Mvc;
+using Kentico.Web.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
-using CMS.EventLog;
-using CMS.Helpers;
-using CMS.Membership;
-using CMS.SiteProvider;
-using DeleteBoilerplate.Common.Extensions;
-using DeleteBoilerplate.Common.Models.Media;
-using Kentico.Content.Web.Mvc;
-using Kentico.Web.Mvc;
 
 namespace DeleteBoilerplate.Infrastructure.Extensions
 {
@@ -83,9 +83,8 @@ namespace DeleteBoilerplate.Infrastructure.Extensions
         {
             if (string.IsNullOrWhiteSpace(mediaUrl))
             {
-                EventLogProvider.LogWarning("HtmlHelperExtensions", "RENDERIMAGE",
-                    new ArgumentNullException(nameof(mediaUrl), "Empty media URL"), SiteContext.CurrentSiteID,
-                    String.Empty);
+                LogHelper.LogError(nameof(HtmlHelperExtensions), "RENDER_IMAGE", "Empty media URL", SiteContext.CurrentSiteID);
+
                 return mediaUrl;
             }
 
@@ -117,7 +116,7 @@ namespace DeleteBoilerplate.Infrastructure.Extensions
             }
             catch (Exception exception)
             {
-                EventLogProvider.LogException("HtmlHelperExtensions", "RENDERIMAGE", exception);
+                LogHelper.LogException("RENDER_IMAGE", exception);
                 return mediaUrl;
             }
         }

@@ -1,10 +1,10 @@
-﻿using System;
-using CMS.Core;
-using CMS.EventLog;
+﻿using CMS.Core;
 using CMS.Helpers;
 using CMS.IO;
 using CMS.SiteProvider;
+using DeleteBoilerplate.Common.Helpers;
 using DeleteBoilerplate.Domain.Helpers;
+using System;
 
 namespace DeleteBoilerplate.Domain.WebFarmTasks
 {
@@ -24,9 +24,9 @@ namespace DeleteBoilerplate.Domain.WebFarmTasks
                     file.Close();
                 }
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                EventLogProvider.LogException(nameof(CustomFileSyncWebFarmTask), "FILE_SYNC_ERROR", e, SiteContext.CurrentSiteID);
+                LogHelper.LogException("FILE_SYNC_ERROR", ex, SiteContext.CurrentSiteID);
             }
         }
     }

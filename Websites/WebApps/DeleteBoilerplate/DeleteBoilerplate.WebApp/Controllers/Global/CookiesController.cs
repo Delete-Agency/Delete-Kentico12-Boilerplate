@@ -1,5 +1,8 @@
-﻿using CMS.EventLog;
+﻿using CMS.Core;
 using CMS.Helpers;
+using CMS.SiteProvider;
+using CMS.WebAnalytics;
+using DeleteBoilerplate.Common.Helpers;
 using DeleteBoilerplate.Domain;
 using DeleteBoilerplate.WebApp.Constants;
 using DeleteBoilerplate.WebApp.Models.Global.Cookies;
@@ -8,9 +11,6 @@ using System;
 using System.Net.Http;
 using System.Web;
 using System.Web.Mvc;
-using CMS.Core;
-using CMS.SiteProvider;
-using CMS.WebAnalytics;
 
 namespace DeleteBoilerplate.WebApp.Controllers.Global
 {
@@ -60,7 +60,7 @@ namespace DeleteBoilerplate.WebApp.Controllers.Global
             }
             catch (Exception ex)
             {
-                EventLogProvider.LogException(CookiesName, ex.Message, ex);
+                LogHelper.LogException(this.Request, ex);
                 return Json(new { Result = false }, JsonRequestBehavior.AllowGet);
             }
         }
@@ -98,7 +98,7 @@ namespace DeleteBoilerplate.WebApp.Controllers.Global
             }
             catch (Exception ex)
             {
-                EventLogProvider.LogException(CookiesName, ex.Message, ex);
+                LogHelper.LogException(this.Request, ex);
                 return Json(new { Result = false }, JsonRequestBehavior.AllowGet);
             }
 

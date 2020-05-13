@@ -1,8 +1,8 @@
 ﻿using CMS.EmailEngine;
-using CMS.EventLog;
 using CMS.Helpers;
 using CMS.MacroEngine;
 using CMS.OnlineForms.Types;
+using DeleteBoilerplate.Common.Helpers;
 using DeleteBoilerplate.Domain;
 using DeleteBoilerplate.Domain.Services;
 using DeleteBoilerplate.Forms.Models;
@@ -37,7 +37,7 @@ namespace DeleteBoilerplate.Forms.Controllers
             }
             catch (Exception ex)
             {
-                EventLogProvider.LogException("ContactForm Submit", ex.ToString(), null);
+                LogHelper.LogException(ex);
 
                 string errorMessage = ResHelper.GetString("DeleteBoilerplate.Forms.Contact.Error");
                 return Json(new { Result = false, errorMessage }, JsonRequestBehavior.AllowGet);

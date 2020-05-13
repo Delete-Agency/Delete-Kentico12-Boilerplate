@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using CMS.ContactManagement;
-using CMS.EventLog;
 using CMS.OnlineForms;
 using CMS.SiteProvider;
+using DeleteBoilerplate.Common.Helpers;
 using DeleteBoilerplate.Domain.Repositories;
 using DeleteBoilerplate.DynamicRouting.Controllers;
 using DeleteBoilerplate.GenericComponents.Controllers.Widgets;
@@ -71,7 +71,7 @@ namespace DeleteBoilerplate.GenericComponents.Controllers.Widgets
             }
             catch (Exception ex)
             {
-                EventLogProvider.LogException($"{BizFormName} Index", ex.ToString(), null);
+                LogHelper.LogException(ex);
                 return null;
             }
         }

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Castle.Core.Internal;
-using CMS.EventLog;
+using DeleteBoilerplate.Common.Helpers;
 using DeleteBoilerplate.DynamicRouting.Controllers;
 using DeleteBoilerplate.GenericComponents.Constants;
 using DeleteBoilerplate.GenericComponents.Controllers.Widgets;
@@ -70,7 +70,7 @@ namespace DeleteBoilerplate.GenericComponents.Controllers.Widgets
             }
             catch (Exception ex)
             {
-                EventLogProvider.LogException($"{ControllerName} GetTweets", ex.ToString(), null);
+                LogHelper.LogException(ex);
 
                 return Json(new { ErrorMessage = ex.ToString(), Result = false }, JsonRequestBehavior.AllowGet);
             }

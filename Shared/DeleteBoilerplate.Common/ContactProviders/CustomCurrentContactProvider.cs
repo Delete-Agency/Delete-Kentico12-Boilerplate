@@ -1,11 +1,11 @@
-﻿using System;
-using System.Web;
-using CMS;
+﻿using CMS;
 using CMS.Base;
 using CMS.ContactManagement;
-using CMS.EventLog;
 using DeleteBoilerplate.Common.ContactProviders;
 using DeleteBoilerplate.Common.Extensions;
+using DeleteBoilerplate.Common.Helpers;
+using System;
+using System.Web;
 
 [assembly: RegisterImplementation(typeof(ICurrentContactProvider), typeof(CustomCurrentContactProvider))]
 namespace DeleteBoilerplate.Common.ContactProviders
@@ -131,7 +131,7 @@ namespace DeleteBoilerplate.Common.ContactProviders
             }
             catch (Exception exception)
             {
-                EventLogProvider.LogException(nameof(CustomCurrentContactProvider), "RESOLVE", exception);
+                LogHelper.LogException("RESOLVE", exception);
                 return contact;
             }
         }
