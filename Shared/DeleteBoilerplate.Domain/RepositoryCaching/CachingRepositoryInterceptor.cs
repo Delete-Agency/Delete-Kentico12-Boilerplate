@@ -25,14 +25,14 @@ namespace DeleteBoilerplate.Domain.RepositoryCaching
         public object Invoke(IInvocationInfo invocation)
         {
             if (IsCacheEnabled() && invocation.TargetMethod.GetCustomAttributes<RepositoryCachingAttribute>().Any())
-                return this.GetCachedResultAndCreateCacheResult(invocation);
+                return this.GetOrCreateCachedResult(invocation);
 
             return invocation.Proceed();
         }
 
-        private object GetCachedResultAndCreateCacheResult(IInvocationInfo invocation)
+        private object GetOrCreateCachedResult(IInvocationInfo invocation)
         {
-            var cacheKey = CacheKeyHelper.GetCacheItemKey(new CacheKeyParams()
+            var cacheKey = CacheKeyHelper.GetCacheItemKey(new CacheKeyParams
             {
                 Type = invocation.Proxy.Target.GetType().FullName,
                 Method = invocation.Method.Name,
