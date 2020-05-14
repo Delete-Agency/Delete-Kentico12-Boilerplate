@@ -1,6 +1,7 @@
 ﻿using CMS.ContactManagement;
 using CMS.Helpers;
 using CMS.OnlineForms;
+using DeleteBoilerplate.Common.Extensions;
 using DeleteBoilerplate.Common.Helpers;
 using DeleteBoilerplate.Domain.Repositories;
 using DeleteBoilerplate.Forms.Models;

@@ -52,8 +52,8 @@ namespace DeleteBoilerplate.Common.Helpers
 
         private static string GetControllerAndActionName(HttpRequestBase request, out string actionName)
         {
-            var controllerName = request.RequestContext.RouteData.Values["controller"]?.ToString() ?? String.Empty;
-            actionName = request.RequestContext.RouteData.Values["action"]?.ToString() ?? String.Empty;
+            var controllerName = request.RequestContext.RouteData.Values["controller"]?.ToString() ?? string.Empty;
+            actionName = request.RequestContext.RouteData.Values["action"]?.ToString() ?? string.Empty;
             
             return controllerName;
         }
