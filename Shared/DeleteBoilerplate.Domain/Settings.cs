@@ -2,6 +2,8 @@
 using CMS.Base;
 using CMS.Helpers;
 using DeleteBoilerplate.Domain.Helpers;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace DeleteBoilerplate.Domain
 {
@@ -15,6 +17,14 @@ namespace DeleteBoilerplate.Domain
         public static bool PreviewEnabled => 
             string.Equals(SettingsHelper.AppSettings["ApplicationType"], "MVC", StringComparison.OrdinalIgnoreCase)
             && VirtualContext.IsPreviewLinkInitialized;
+
+        public static JsonSerializerSettings DefaultJsonSerializerSettings => new JsonSerializerSettings
+        {
+            Formatting = Formatting.Indented,
+            NullValueHandling = NullValueHandling.Include,
+            DateFormatString = "yyyy-MM-ddTHH:mm:ss",
+            ContractResolver = new CamelCasePropertyNamesContractResolver()
+        };
 
         public static class Global
         {

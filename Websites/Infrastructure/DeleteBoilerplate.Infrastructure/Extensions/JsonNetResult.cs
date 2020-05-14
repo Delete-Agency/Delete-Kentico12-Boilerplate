@@ -4,8 +4,25 @@ using Newtonsoft.Json;
 
 namespace DeleteBoilerplate.Infrastructure.Extensions
 {
+    public enum JsonStatus
+    {
+        Success,
+        Error
+    }
+
+    public class JsonData
+    {
+        public JsonStatus Status { get; set; }
+
+        public string Message { get; set; }
+
+         public object Data { get; set; }
+    }
+
     public class JsonNetResult : JsonResult
     {
+        public JsonSerializerSettings JsonSerializerSettings { get; set; }
+
         public override void ExecuteResult(ControllerContext context)
         {
             if (context == null)
@@ -13,15 +30,17 @@ namespace DeleteBoilerplate.Infrastructure.Extensions
 
             var response = context.HttpContext.Response;
 
-            response.ContentType = !String.IsNullOrEmpty(ContentType)
+            response.ContentType = !string.IsNullOrEmpty(ContentType)
                 ? ContentType
                 : "application/json";
 
             if (ContentEncoding != null)
                 response.ContentEncoding = ContentEncoding;
 
-            // If you need special handling, you can call another form of SerializeObject below
-            var serializedObject = JsonConvert.SerializeObject(Data, Formatting.Indented);
+            var serializedObject = this.JsonSerializerSettings == null
+                ? JsonConvert.SerializeObject(this.Data)
+                : JsonConvert.SerializeObject(this.Data, this.JsonSerializerSettings);
+
             response.Write(serializedObject);
         }
     }
