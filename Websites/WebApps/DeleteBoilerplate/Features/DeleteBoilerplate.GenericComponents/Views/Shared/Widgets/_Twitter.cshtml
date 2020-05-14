@@ -11,13 +11,15 @@
     return;
 }
 
-<div>
-    <svg class="icon" width="32" height="32" focusable="false">
-        <use xlink:href="#icon-twitter" />
-    </svg>
+<div class="twitter-feed">
     <div>
-        <h2>@Model.Title</h2>
-        <a href="@Model.ProfileLink">Follow Us</a>
+        <svg class="twitter-feed__icon icon" width="32" height="32" focusable="false">
+            <use xlink:href="#icon-twitter" />
+        </svg>
+        <div class="twitter-feed__row">
+            <h2 class="twitter-feed__title">@Model.Title</h2>
+            <a href="@Model.ProfileLink">Follow us on Twitter</a>
+        </div>
+        <ul class="twitter-feed__inner" data-dc-twitter-feed='{"endpoint": "@Model.GetTweetsApi"}'></ul>
     </div>
-    <ul data-dc-twitter-feed='{"endpoint": "@Model.GetTweetsApi"}'></ul>
 </div>

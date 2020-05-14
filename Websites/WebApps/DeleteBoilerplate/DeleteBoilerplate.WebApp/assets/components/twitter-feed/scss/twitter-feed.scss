@@ -5,10 +5,6 @@
     position: relative;
     overflow: hidden;
 
-    @include media('<=mobile') {
-        display: none;
-    }
-
     &__row {
         display: flex;
         justify-content: space-between;
@@ -16,7 +12,7 @@
     }
 
     &__title {
-        @include media('<=tablet') {
+        @include tablet() {
             font-size: 21px;
         }
     }
@@ -37,7 +33,7 @@
         width: 25%;
         padding: $gap;
 
-        @include media('<=tablet') {
+        @include tablet() {
             width: 50%;
             font-size: 24px;
         }

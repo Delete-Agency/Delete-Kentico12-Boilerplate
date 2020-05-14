@@ -1,6 +1,6 @@
 import { dcFactory } from '@deleteagency/dc';
 import { deviceObserver } from '@deleteagency/device-observer';
-import { viewports } from '~/config';
+import { viewports } from 'config';
 
 const DEVICE_MAX = 'max';
 export const DEVICE_TABLET = 'tablet';

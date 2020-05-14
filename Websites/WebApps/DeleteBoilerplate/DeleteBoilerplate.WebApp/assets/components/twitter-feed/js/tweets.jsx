@@ -1,8 +1,8 @@
 import React from 'preact/compat';
 import PropTypes from 'prop-types';
 import { deviceObserver } from '@deleteagency/device-observer';
-import nanoid from 'nanoid';
-import { DEVICE_TABLET } from '~/general/js/app';
+import { nanoid } from 'nanoid';
+import { DEVICE_TABLET } from 'general/js/app';
 
 class Tweets extends React.PureComponent {
     constructor(props) {

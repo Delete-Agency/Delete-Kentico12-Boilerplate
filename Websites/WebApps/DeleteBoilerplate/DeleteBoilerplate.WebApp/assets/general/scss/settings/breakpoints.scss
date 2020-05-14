@@ -1,21 +1,20 @@
 // get numbers from map that was loaded via sass-vars-loader
 $breakpoints: (
-    'mobile-wide': #{map_get($viewports, mobile-wide)}px,
+    'mobile': #{map_get($viewports, mobile)}px,
     'tablet': #{map_get($viewports, tablet)}px,
     'desktop': #{map_get($viewports, desktop)}px,
-    'desktop-wide': #{map_get($viewports, desktop-wide)}px
 );
 
 @each $size, $value in $breakpoints {
-    @custom-media --#{$size} (width >= #{$value});
+    @custom-media --#{$size} (width <= #{$value});
 }
 
-@custom-media --only-mobile (width < #{map-get($breakpoints, tablet)});
-@custom-media --only-tablet (width >= #{map-get($breakpoints, tablet)}) and (width < #{map-get($breakpoints, desktop)});
-@custom-media --only-desktop (width >= #{map-get($breakpoints, desktop)}) and (width < #{map-get($breakpoints, desktop-wide)});
+@custom-media --only-mobile (width <= #{map-get($breakpoints, mobile)});
+@custom-media --only-tablet (width > #{map-get($breakpoints, mobile)}) and (width <= #{map-get($breakpoints, tablet)});
+@custom-media --only-desktop (width >= #{map-get($breakpoints, desktop)});
 
-@mixin mobile-wide {
-    @media (--mobile-wide) {
+@mixin mobile {
+    @media (--mobile) {
         @content;
     }
 }
@@ -46,12 +45,6 @@ $breakpoints: (
 
 @mixin desktop-only {
     @media (--only-desktop) {
-        @content;
-    }
-}
-
-@mixin desktop-wide {
-    @media (--desktop-wide) {
         @content;
     }
 }
