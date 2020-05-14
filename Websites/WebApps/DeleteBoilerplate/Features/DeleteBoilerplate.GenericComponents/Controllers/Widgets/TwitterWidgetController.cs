@@ -62,17 +62,17 @@ namespace DeleteBoilerplate.GenericComponents.Controllers.Widgets
 
                     if (tweets?.Any() == true)
                     {
-                        return Json(new { Result = true, Tweets = tweets }, JsonRequestBehavior.AllowGet);
+                        return JsonSuccess(tweets);
                     }
                 }
 
-                return Json(new { Result = false }, JsonRequestBehavior.AllowGet);
+                return JsonError("Invalid request.");
             }
             catch (Exception ex)
             {
                 LogHelper.LogException(ex);
 
-                return Json(new { ErrorMessage = ex.ToString(), Result = false }, JsonRequestBehavior.AllowGet);
+                return JsonError(ex.ToString());
             }
         }
     }

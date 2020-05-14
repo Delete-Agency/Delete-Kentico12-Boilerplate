@@ -40,7 +40,7 @@ namespace DeleteBoilerplate.Twitter.Services
             {
                 LogHelper.LogException(ex);
 
-                return new List<Status>();
+                throw new Exception("Bad Authentication data.");
             }
         }
     }
