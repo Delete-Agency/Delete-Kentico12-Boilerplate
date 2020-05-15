@@ -9,6 +9,7 @@ using System.IO;
 using System.Text;
 using System.Web.Mvc;
 using DeleteBoilerplate.Domain;
+using DeleteBoilerplate.Infrastructure.Models.FormComponents.ValidationError;
 
 namespace DeleteBoilerplate.Forms.Controllers
 {
@@ -24,13 +25,7 @@ namespace DeleteBoilerplate.Forms.Controllers
         {
             if (formData == null)
             {
-                var serverErrorResult = new FormResponseModel
-                {
-                    Type = FormResponseType.ServerError,
-                    Message = this.RenderPartialToString("_ServerErrorResult", null)
-                };
-
-                return this.Json(serverErrorResult);
+                return JsonError(this.RenderPartialToString("_ServerErrorResult", null));
             }
 
             var isVerified = this.CaptchaVerificationService.VerifyCaptcha(this.Request.Form);
@@ -50,7 +45,8 @@ namespace DeleteBoilerplate.Forms.Controllers
         protected virtual ActionResult ValidationErrorResult()
         {
             this.Response.StatusCode = 422;
-            return this.Json(FormResponseModel.BuildValidationErrorResponse(this.ModelState));
+            var validationErrors = ValidationErrorModel.Build(this.ModelState);
+            return JsonError(data: validationErrors);
         }
 
         protected virtual void SaveFormData<TFormItem>(TFormData formData) where TFormItem : BizFormItem

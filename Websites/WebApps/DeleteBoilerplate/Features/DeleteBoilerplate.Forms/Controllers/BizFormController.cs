@@ -13,6 +13,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using DeleteBoilerplate.Infrastructure.Models.FormComponents.ValidationError;
 
 namespace DeleteBoilerplate.Forms.Controllers
 {
@@ -161,7 +162,7 @@ namespace DeleteBoilerplate.Forms.Controllers
         {
             this.Response.StatusCode = 422;
 
-            var validationErrors = FormResponseModel.BuildValidationErrorResponse(this.ModelState);
+            var validationErrors = ValidationErrorModel.Build(this.ModelState);
             return JsonError(data: validationErrors);
 
         }

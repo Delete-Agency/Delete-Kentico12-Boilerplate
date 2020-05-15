@@ -1,15 +1,20 @@
-﻿using System.Threading.Tasks;
-using System.Web.Mvc;
-using AutoMapper;
+﻿using AutoMapper;
+using CMS.Helpers;
 using DeleteBoilerplate.Account.Infrastructure;
 using DeleteBoilerplate.Account.Models;
 using DeleteBoilerplate.Account.Services;
+using DeleteBoilerplate.Common.Helpers;
+using DeleteBoilerplate.DynamicRouting.Controllers;
+using DeleteBoilerplate.Infrastructure.Models.FormComponents.ValidationError;
 using LightInject;
 using Microsoft.AspNet.Identity.Owin;
+using System;
+using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace DeleteBoilerplate.Account.Controllers
 {
-    public class AccountController : Controller
+    public class AccountController : BaseApiController
     {
         [Inject]
         protected IAuthService AuthService { get; set; }
@@ -17,6 +22,11 @@ namespace DeleteBoilerplate.Account.Controllers
         [Inject]
         protected IMapper Mapper { get; set; }
 
+        [HttpGet]
+        public ActionResult Login()
+        {
+            return View("~/Views/Account/Login.cshtml");
+        }
 
         [HttpGet]
         public ActionResult Register()
@@ -25,45 +35,85 @@ namespace DeleteBoilerplate.Account.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Register(RegisterViewModel model)
+        public async Task<JsonResult> Login(LoginViewModel model)
         {
-            if (!ModelState.IsValid)
-                return View("~/Views/Account/Register.cshtml");
-            var user = Mapper.Map<AppUser>(model);
-            var identityResult = await AuthService.RegisterAsync(user, model.Password);
-            var result = identityResult.Succeeded ? "Ok" : string.Join(",", identityResult.Errors);
-            return Content(result, "application/json");
-        }
+            try
+            {
+                if (ModelState.IsValid == false)
+                {
+                    var validationErrors = ValidationErrorModel.Build(this.ModelState);
+                    return JsonError(data: validationErrors);
+                }
 
-        [HttpGet]
-        public ActionResult SignOut()
-        {
-            AuthService.SignOut();
-            return Content("Sign out successful", "application/json");
-        }
+                var signInStatus = await this.AuthService.LoginAsync(model.Email, model.Password, true, false);
 
-        [HttpGet]
-        public ActionResult Login()
-        {
-            return View("~/Views/Account/Login.cshtml");
+                return signInStatus == SignInStatus.Success
+                    ? JsonSuccess()
+                    : JsonError(ResHelper.GetString("DeleteBoilerplate.Account.Login.Error"));
+            }
+            catch (Exception ex)
+            {
+                LogHelper.LogException(ex);
+                return JsonError();
+            }
         }
 
         [HttpPost]
-        public async Task<ActionResult> Login(LoginViewModel model)
+        public async Task<JsonResult> Register(RegisterViewModel model)
         {
-            if (!ModelState.IsValid)
-                return View("~/Views/Account/Login.cshtml");
-            var signInStatus = await AuthService.LoginAsync(model.Email, model.Password, true, false);
-            var result = signInStatus == SignInStatus.Failure ? "Error" : "Ok";
-            return Content(result, "application/json");
+            try
+            {
+                if (this.ModelState.IsValid == false)
+                {
+                    var validationErrors = ValidationErrorModel.Build(this.ModelState);
+                    return JsonError(data: validationErrors);
+                }
+
+                var user = this.Mapper.Map<AppUser>(model);
+                var identityResult = await this.AuthService.RegisterAsync(user, model.Password);
+
+                return identityResult.Succeeded
+                    ? JsonSuccess()
+                    : JsonError(ResHelper.GetString("DeleteBoilerplate.Account.Register.Error"));
+            }
+            catch (Exception ex)
+            {
+                LogHelper.LogException(ex);
+                return JsonError();
+            }
         }
 
-        [HttpGet]
-        public async Task<ActionResult> ConfirmResetPassword(int? userId, string token)
+        [HttpPut]
+        public async Task<JsonResult> ResetPassword(int? userId, string token)
         {
-            var validationResult = await AuthService.ValidatePasswordResetTokenAsync(userId, token);
-            var result = validationResult.Succeeded ? "Ok" : string.Join(",", validationResult.Errors);
-            return Content(result, "");
+            try
+            {
+                var validationResult = await this.AuthService.ValidatePasswordResetTokenAsync(userId, token);
+
+                return validationResult.Succeeded
+                    ? JsonSuccess()
+                    : JsonError(ResHelper.GetString("DeleteBoilerplate.Account.ResetPassword.Error"));
+            }
+            catch (Exception ex)
+            {
+                LogHelper.LogException(ex);
+                return JsonError();
+            }
+        }
+
+        [HttpDelete]
+        public ActionResult Logout()
+        {
+            try
+            {
+                this.AuthService.SignOut();
+                return JsonSuccess();
+            }
+            catch (Exception ex)
+            {
+                LogHelper.LogException(ex);
+                return JsonError();
+            }
         }
     }
 }

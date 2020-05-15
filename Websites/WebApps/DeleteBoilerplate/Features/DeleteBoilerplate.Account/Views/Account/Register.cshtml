@@ -1,11 +1,12 @@
-﻿@model DeleteBoilerplate.Account.Models.RegisterViewModel
+﻿@using DeleteBoilerplate.Account.Constants
+@model DeleteBoilerplate.Account.Models.RegisterViewModel
 
 @{
     Layout = null;
 }
 
-@using (Html.BeginRouteForm("Default", new { action = "Register", controller = "Account" }, FormMethod.Post))
-{
+<form method="post" action="@Url.RouteUrl(RouteNames.Account.Register)">
+
     @Html.ValidationSummary();
 
     <div>
@@ -31,4 +32,5 @@
     <div>
         <button type="submit">Sign up</button>
     </div>
-}
+</form>
+

@@ -878,6 +878,7 @@
     <Compile Include="Models\FormComponents\TaxonomySelector\TaxonomySelectorProperties.cs" />
     <Compile Include="Models\FormComponents\UrlSelector\UrlSelectorComponent.cs" />
     <Compile Include="Models\FormComponents\UrlSelector\UrlSelectorProperties.cs" />
+    <Compile Include="Models\FormComponents\ValidationError\ValidationErrorModel.cs" />
     <Compile Include="Models\InlineEditors\ImageSelectorViewModel.cs" />
     <Compile Include="Models\InlineEditors\RichTextEditorViewModel.cs" />
     <Compile Include="Models\Personalization\ConditionTypes\IsInPersona\IsInPersonaListItemViewModel.cs" />

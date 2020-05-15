@@ -1,13 +1,13 @@
-﻿@model DeleteBoilerplate.Account.Models.LoginViewModel
-
+﻿@using DeleteBoilerplate.Account.Constants
+@model DeleteBoilerplate.Account.Models.LoginViewModel
 @{
     Layout = null;
 }
 
 
-@using (Html.BeginRouteForm("Default", new { action = "Login", controller = "Account" }, FormMethod.Post))
-{
-    @Html.ValidationSummary();
+<form method="post" action="@Url.RouteUrl(RouteNames.Account.Login)">
+
+    @Html.ValidationSummary()
 
     <div>
         @Html.TextBoxFor(it => it.Email,
@@ -20,4 +20,4 @@
     <div>
         <button type="submit">Sign in</button>
     </div>
-}
+</form>
