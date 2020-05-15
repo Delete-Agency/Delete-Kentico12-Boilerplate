@@ -33,14 +33,14 @@ namespace DeleteBoilerplate.Forms.Controllers
                     this.SendEmail(formData);
 
                 string successMessage = ResHelper.GetString("DeleteBoilerplate.Forms.Contact.Success");
-                return Json(new { Result = true, Message = successMessage }, JsonRequestBehavior.AllowGet);
+                return JsonSuccess(message: successMessage);
             }
             catch (Exception ex)
             {
                 LogHelper.LogException(ex);
 
                 string errorMessage = ResHelper.GetString("DeleteBoilerplate.Forms.Contact.Error");
-                return Json(new { Result = false, errorMessage }, JsonRequestBehavior.AllowGet);
+                return JsonError(errorMessage);
             }
         }
 

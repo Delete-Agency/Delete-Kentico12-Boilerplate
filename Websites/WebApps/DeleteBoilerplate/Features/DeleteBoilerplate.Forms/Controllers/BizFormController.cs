@@ -4,6 +4,7 @@ using CMS.OnlineForms;
 using DeleteBoilerplate.Common.Extensions;
 using DeleteBoilerplate.Common.Helpers;
 using DeleteBoilerplate.Domain.Repositories;
+using DeleteBoilerplate.DynamicRouting.Controllers;
 using DeleteBoilerplate.Forms.Models;
 using DeleteBoilerplate.Infrastructure.Services;
 using Kentico.Forms.Web.Mvc;
@@ -15,10 +16,8 @@ using System.Web.Mvc;
 
 namespace DeleteBoilerplate.Forms.Controllers
 {
-    public class BizFormController : Controller
+    public class BizFormController : BaseApiController
     {
-        private const string BizFormName = "BizForm";
-
         [Inject]
         protected IBizFormRepository BizFormRepository { get; set; }
 
@@ -155,13 +154,16 @@ namespace DeleteBoilerplate.Forms.Controllers
             string redirect = formInfo.FormRedirectToUrl ?? string.Empty;
             string displayText = formInfo.FormDisplayText ?? string.Empty;
 
-            return Json(new { Result = true, Redirect = redirect, DisplayText = displayText }, JsonRequestBehavior.AllowGet);
+            return JsonSuccess(new { Redirect = redirect, DisplayText = displayText });
         }
 
         protected virtual ActionResult ValidationErrorResult()
         {
             this.Response.StatusCode = 422;
-            return this.Json(FormResponseModel.BuildValidationErrorResponse(this.ModelState));
+
+            var validationErrors = FormResponseModel.BuildValidationErrorResponse(this.ModelState);
+            return JsonError(data: validationErrors);
+
         }
 
         protected virtual ActionResult ServerErrorResult()
@@ -169,7 +171,7 @@ namespace DeleteBoilerplate.Forms.Controllers
             this.Response.StatusCode = 500;
 
             string errorMessage = ResHelper.GetString("DeleteBoilerplate.Forms.BizFormName.Error");
-            return Json(new { Result = false, errorMessage }, JsonRequestBehavior.AllowGet);
+            return JsonError(errorMessage);
         }
     }
 }

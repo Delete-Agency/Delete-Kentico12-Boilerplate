@@ -11,10 +11,11 @@ using System;
 using System.Net.Http;
 using System.Web;
 using System.Web.Mvc;
+using DeleteBoilerplate.DynamicRouting.Controllers;
 
 namespace DeleteBoilerplate.WebApp.Controllers.Global
 {
-    public class CookiesController : Controller
+    public class CookiesController : BaseApiController
     {
         private const string CookiesName = "Cookies";
 
@@ -56,12 +57,12 @@ namespace DeleteBoilerplate.WebApp.Controllers.Global
 
                 this.AssignCampaignIfExist(pageUrl);
 
-                return Json(new { Result = true }, JsonRequestBehavior.AllowGet);
+                return JsonSuccess();
             }
             catch (Exception ex)
             {
                 LogHelper.LogException(this.Request, ex);
-                return Json(new { Result = false }, JsonRequestBehavior.AllowGet);
+                return JsonError();
             }
         }
 
@@ -94,12 +95,12 @@ namespace DeleteBoilerplate.WebApp.Controllers.Global
                 if (cookieLevel >= CookieLevel.Visitor)
                     this.AssignCampaignIfExist(pageUrl);
 
-                return Json(new { Result = true }, JsonRequestBehavior.AllowGet);
+                return JsonSuccess();
             }
             catch (Exception ex)
             {
                 LogHelper.LogException(this.Request, ex);
-                return Json(new { Result = false }, JsonRequestBehavior.AllowGet);
+                return JsonError();
             }
 
         }

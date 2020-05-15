@@ -8,6 +8,7 @@ using LightInject;
 using System.IO;
 using System.Text;
 using System.Web.Mvc;
+using DeleteBoilerplate.Domain;
 
 namespace DeleteBoilerplate.Forms.Controllers
 {
@@ -58,6 +59,30 @@ namespace DeleteBoilerplate.Forms.Controllers
             form.SubmitChanges(false);
         }
 
+        protected JsonResult JsonSuccess(object data = null, string message = null, string contentType = null, Encoding contentEncoding = null, JsonRequestBehavior behavior = JsonRequestBehavior.DenyGet)
+        {
+            var jsonData = new JsonData
+            {
+                Status = JsonStatus.Success,
+                Message = message,
+                Data = data
+            };
+
+            return this.Json(jsonData, contentType, contentEncoding, behavior);
+        }
+
+        protected JsonResult JsonError(string message = null, object data = null, string contentType = null, Encoding contentEncoding = null, JsonRequestBehavior behavior = JsonRequestBehavior.DenyGet)
+        {
+            var jsonData = new JsonData
+            {
+                Status = JsonStatus.Error,
+                Message = message,
+                Data = data
+            };
+
+            return this.Json(jsonData, contentType, contentEncoding, behavior);
+        }
+
         protected override JsonResult Json(object data, string contentType, Encoding contentEncoding, JsonRequestBehavior behavior)
         {
             return new JsonNetResult
@@ -65,7 +90,8 @@ namespace DeleteBoilerplate.Forms.Controllers
                 Data = data,
                 ContentType = contentType,
                 ContentEncoding = contentEncoding,
-                JsonRequestBehavior = behavior
+                JsonRequestBehavior = behavior,
+                JsonSerializerSettings = Settings.DefaultJsonSerializerSettings
             };
         }
 
