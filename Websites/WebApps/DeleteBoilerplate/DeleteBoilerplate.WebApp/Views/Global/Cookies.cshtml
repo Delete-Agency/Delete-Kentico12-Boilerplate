@@ -7,12 +7,12 @@
     return;
 }
 
-<button id="toggle-cookies-form" class="btn">Show cookie</button>
+<button id="toggle-cookies-div" class="btn">Show cookie</button>
 
-<div id="cookie-form" style="display: none">
+<div id="cookie-div" style="display: none">
     @* Cookie Banner *@
     <div>
-        <form method="post" action="@Url.RouteUrl(RouteNames.Cookies.AcceptAllCookies)">
+        <form id="cookie-form" method="post" action="@Url.RouteUrl(RouteNames.Cookies.AcceptAllCookies)">
             <h2>@ResHelper.GetString("DeleteBoilerplate.Cookies.Title")</h2>
             <div>
                 <p>@Html.Raw(Model.CookiePolicy)</p>
@@ -21,7 +21,7 @@
             <input type="hidden" id="cookies-all-page-url" name="pageUrl" />
 
             <div>
-                <button type="button" id="toggle-cookie-settings-form" class="btn">
+                <button type="button" id="toggle-cookie-settings-div" class="btn">
                     Cookie Settings
                 </button>
                 <button type="submit" class="btn">
@@ -32,11 +32,11 @@
     </div>
 
     @* Cookie Settings Form *@
-    <div id="cookie-settings-form" style="display: none">
+    <div id="cookie-settings-div" style="display: none">
         <div>
             <h2>@ResHelper.GetString("DeleteBoilerplate.Cookies.SettingsTitle")</h2>
         </div>
-        <form method="post" action="@Url.RouteUrl(RouteNames.Cookies.SetCookieLevel)">
+        <form id="cookie-settings-form" method="post" action="@Url.RouteUrl(RouteNames.Cookies.SetCookieLevel)">
             <div>
                 <input type="checkbox" name="" value="true" checked disabled>
                 <label>@ResHelper.GetString("DeleteBoilerplate.Cookies.Label.Functional")</label>
@@ -45,14 +45,14 @@
                 </div>
             </div>
             <div>
-                <input type="checkbox" name="isPerformance" value="true" checked="@Model.IsPerformance">
+                <input type="checkbox" id ="isPerformance" name="isPerformance" value="true" checked="@Model.IsPerformance">
                 <label>@ResHelper.GetString("DeleteBoilerplate.Cookies.Label.Performance")</label>
                 <div>
                     <p>@Html.Raw(Model.PerformanceCookies)</p>
                 </div>
             </div>
             <div>
-                <input type="checkbox" name="isTracking" value="true" checked="@Model.IsTracking">
+                <input type="checkbox" id="isTracking" name="isTracking" value="true" checked="@Model.IsTracking">
                 <label>@ResHelper.GetString("DeleteBoilerplate.Cookies.Label.Tracking")</label>
                 <div>
                     <p>@Html.Raw(Model.TrackingCookies)</p>
@@ -77,12 +77,38 @@
         }
     }
 
+    ToggleDisplayElements('toggle-cookies-div', 'cookie-div');
+    ToggleDisplayElements('toggle-cookie-settings-div', 'cookie-settings-div');
+
+    const cookieForm = document.getElementById('cookie-form');
+
+    cookieForm.addEventListener("submit",
+        function (evt) {
+            document.cookie = 'CMSCookieLevel=@(CookieLevel.All)';
+        }
+    );
+
+    const cookieSettingsForm = document.getElementById('cookie-settings-form');
+    const isPerformance = document.getElementById('isPerformance');
+    const isTracking = document.getElementById('isTracking');
+
+    cookieSettingsForm.addEventListener("submit",
+        function(evt) {
+            var cookieLevel = @CookieLevel.System;
+
+            if (isTracking.checked) {
+                cookieLevel = @CookieLevel.All;
+            } else if (isPerformance.checked) {
+                cookieLevel = @CookieLevel.Essential;
+            }
+
+            document.cookie = 'isTracking=' + isTracking.checked;
+            document.cookie = 'isPerformance=' + isPerformance.checked;
+
+            document.cookie = 'CMSCookieLevel=' + cookieLevel;
+        }
+    );
+
     document.getElementById('cookies-page-url').value = document.URL;
     document.getElementById('cookies-all-page-url').value = document.URL;
-
-    // In Kentico this cookie is secure, but we need value to resolve anonymous contact on backend on 1st request
-    document.cookie = 'CMSCookieLevel=@(CookieLevel.Visitor)';
-
-    ToggleDisplayElements('toggle-cookies-form', 'cookie-form');
-    ToggleDisplayElements('toggle-cookie-settings-form', 'cookie-settings-form');
 </script>
