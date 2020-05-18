@@ -6,8 +6,9 @@ namespace DeleteBoilerplate.Infrastructure.Extensions
 {
     public enum JsonStatus
     {
-        Success,
-        Error
+        Success = 100,
+        ValidationError = 400,
+        Error = 500
     }
 
     public class JsonData
@@ -16,7 +17,7 @@ namespace DeleteBoilerplate.Infrastructure.Extensions
 
         public string Message { get; set; }
 
-         public object Data { get; set; }
+        public object Data { get; set; }
     }
 
     public class JsonNetResult : JsonResult

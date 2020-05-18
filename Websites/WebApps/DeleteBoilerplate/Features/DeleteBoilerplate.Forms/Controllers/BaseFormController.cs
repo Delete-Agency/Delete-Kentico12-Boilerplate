@@ -1,19 +1,16 @@
 ﻿using AutoMapper;
 using CMS.Helpers;
 using CMS.OnlineForms;
+using DeleteBoilerplate.DynamicRouting.Controllers;
 using DeleteBoilerplate.Forms.Models;
 using DeleteBoilerplate.Forms.Services;
-using DeleteBoilerplate.Infrastructure.Extensions;
 using LightInject;
 using System.IO;
-using System.Text;
 using System.Web.Mvc;
-using DeleteBoilerplate.Domain;
-using DeleteBoilerplate.Infrastructure.Models.FormComponents.ValidationError;
 
 namespace DeleteBoilerplate.Forms.Controllers
 {
-    public abstract class BaseFormController<TFormData> : Controller where TFormData : IFormData
+    public abstract class BaseFormController<TFormData> : BaseApiController where TFormData : IFormData
     {
         [Inject]
         protected IMapper Mapper { get; set; }
@@ -25,70 +22,26 @@ namespace DeleteBoilerplate.Forms.Controllers
         {
             if (formData == null)
             {
-                return JsonError(this.RenderPartialToString("_ServerErrorResult", null));
+                return JsonError(data: this.RenderPartialToString("_ServerErrorResult", null));
             }
 
             var isVerified = this.CaptchaVerificationService.VerifyCaptcha(this.Request.Form);
             if (isVerified == false)
             {
-                
                 this.ModelState.AddModelError(this.CaptchaVerificationService.CaptchaHeader, ResHelper.GetStringFormat("DeleteBoilerplate.Forms.CaptchaVerification.Error"));
             }
 
             return this.ModelState.IsValid
                 ? this.ProcessFormInternal(formData)
-                : this.ValidationErrorResult();
+                : JsonValidationError(this.ModelState);
         }
 
         protected abstract ActionResult ProcessFormInternal(TFormData formData);
-
-        protected virtual ActionResult ValidationErrorResult()
-        {
-            this.Response.StatusCode = 422;
-            var validationErrors = ValidationErrorModel.Build(this.ModelState);
-            return JsonError(data: validationErrors);
-        }
 
         protected virtual void SaveFormData<TFormItem>(TFormData formData) where TFormItem : BizFormItem
         {
             var form = this.Mapper.Map<TFormItem>(formData);
             form.SubmitChanges(false);
-        }
-
-        protected JsonResult JsonSuccess(object data = null, string message = null, string contentType = null, Encoding contentEncoding = null, JsonRequestBehavior behavior = JsonRequestBehavior.DenyGet)
-        {
-            var jsonData = new JsonData
-            {
-                Status = JsonStatus.Success,
-                Message = message,
-                Data = data
-            };
-
-            return this.Json(jsonData, contentType, contentEncoding, behavior);
-        }
-
-        protected JsonResult JsonError(string message = null, object data = null, string contentType = null, Encoding contentEncoding = null, JsonRequestBehavior behavior = JsonRequestBehavior.DenyGet)
-        {
-            var jsonData = new JsonData
-            {
-                Status = JsonStatus.Error,
-                Message = message,
-                Data = data
-            };
-
-            return this.Json(jsonData, contentType, contentEncoding, behavior);
-        }
-
-        protected override JsonResult Json(object data, string contentType, Encoding contentEncoding, JsonRequestBehavior behavior)
-        {
-            return new JsonNetResult
-            {
-                Data = data,
-                ContentType = contentType,
-                ContentEncoding = contentEncoding,
-                JsonRequestBehavior = behavior,
-                JsonSerializerSettings = Settings.DefaultJsonSerializerSettings
-            };
         }
 
         /// <summary>

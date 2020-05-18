@@ -43,7 +43,7 @@ namespace DeleteBoilerplate.Forms.Controllers
                 bool isValidModel = this.ValidationAndUpdateModelState(formComponents, formData.ElementId);
                 if (isValidModel == false)
                 {
-                    return this.ValidationErrorResult();
+                    return JsonValidationError(this.ModelState);
                 }
 
                 var formItem = this.GetBizFormItem(formInfo, formComponents, formData.ElementId);
@@ -57,7 +57,8 @@ namespace DeleteBoilerplate.Forms.Controllers
             {
                 LogHelper.LogException(ex);
 
-                return this.ServerErrorResult();
+               return JsonError(ResHelper.GetString("DeleteBoilerplate.Forms.BizFormName.Error"));
+
             }
         }
 
@@ -156,23 +157,6 @@ namespace DeleteBoilerplate.Forms.Controllers
             string displayText = formInfo.FormDisplayText ?? string.Empty;
 
             return JsonSuccess(new { Redirect = redirect, DisplayText = displayText });
-        }
-
-        protected virtual ActionResult ValidationErrorResult()
-        {
-            this.Response.StatusCode = 422;
-
-            var validationErrors = ValidationErrorModel.Build(this.ModelState);
-            return JsonError(data: validationErrors);
-
-        }
-
-        protected virtual ActionResult ServerErrorResult()
-        {
-            this.Response.StatusCode = 500;
-
-            string errorMessage = ResHelper.GetString("DeleteBoilerplate.Forms.BizFormName.Error");
-            return JsonError(errorMessage);
         }
     }
 }

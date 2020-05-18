@@ -32,15 +32,13 @@ namespace DeleteBoilerplate.Forms.Controllers
                 if (Settings.Notifications.Forms.IsSendEmailInContactForm)
                     this.SendEmail(formData);
 
-                string successMessage = ResHelper.GetString("DeleteBoilerplate.Forms.Contact.Success");
-                return JsonSuccess(message: successMessage);
+                return JsonSuccess(message: ResHelper.GetString("DeleteBoilerplate.Forms.Contact.Success"));
             }
             catch (Exception ex)
             {
                 LogHelper.LogException(ex);
 
-                string errorMessage = ResHelper.GetString("DeleteBoilerplate.Forms.Contact.Error");
-                return JsonError(errorMessage);
+                return JsonError(ResHelper.GetString("DeleteBoilerplate.Forms.Contact.Error"));
             }
         }
 
