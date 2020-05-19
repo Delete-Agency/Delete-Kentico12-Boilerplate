@@ -4,6 +4,7 @@ using System.Data;
 using CMS.Base;
 using CMS.DataEngine;
 using CMS.Helpers;
+using CMS.SiteProvider;
 
 namespace DeleteBoilerplate
 {
@@ -44,9 +45,10 @@ namespace DeleteBoilerplate
         /// Returns <see cref="SitemapRuleInfo"/> with specified name.
         /// </summary>
         /// <param name="name"><see cref="SitemapRuleInfo"/> name.</param>
-        public static SitemapRuleInfo GetSitemapRuleInfo(string name)
+        /// <param name="siteName">Site name.</param>
+        public static SitemapRuleInfo GetSitemapRuleInfo(string name, string siteName)
         {
-            return ProviderObject.GetInfoByCodeName(name);
+            return ProviderObject.GetInfoByCodeName(name, SiteInfoProvider.GetSiteID(siteName));
         }
 
 

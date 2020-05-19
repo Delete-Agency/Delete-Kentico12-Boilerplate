@@ -26,7 +26,7 @@ namespace DeleteBoilerplate
         /// <summary>
         /// Type information.
         /// </summary>
-        public static readonly ObjectTypeInfo TYPEINFO = new ObjectTypeInfo(typeof(SitemapRuleInfoProvider), OBJECT_TYPE, "DeleteBoilerplate.SitemapRule", "SitemapRuleID", "SitemapRuleLastModified", "SitemapRuleGuid", "FileName", null, null, null, null, null)
+        public static readonly ObjectTypeInfo TYPEINFO = new ObjectTypeInfo(typeof(SitemapRuleInfoProvider), OBJECT_TYPE, "DeleteBoilerplate.SitemapRule", "SitemapRuleID", "SitemapRuleLastModified", "SitemapRuleGuid", "FileName", null, null, "SiteID", null, null)
         {
             ModuleName = "DeleteBoilerplate",
             TouchCacheDependencies = true,
@@ -63,6 +63,23 @@ namespace DeleteBoilerplate
             set
             {
                 SetValue("FileName", value, String.Empty);
+            }
+        }
+
+
+        /// <summary>
+        /// Site ID.
+        /// </summary>
+        [DatabaseField]
+        public virtual int SiteID
+        {
+            get
+            {
+                return ValidationHelper.GetInteger(GetValue("SiteID"), 0);
+            }
+            set
+            {
+                SetValue("SiteID", value, 0);
             }
         }
 

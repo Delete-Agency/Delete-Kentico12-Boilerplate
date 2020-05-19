@@ -11,6 +11,9 @@
     <column source="FileName" wrap="false" caption="File name" >
     <filter type="text" />
     </column>
+    <column source="SiteID" wrap="false" caption="SiteID" externalsourcename="#siteid" >
+      <filter type="text" />
+    </column>
     <column source="RuleType" wrap="false" caption="Rule type" externalsourcename="#sitemapruletype">
       <filter type="text" />
     </column>
@@ -18,9 +21,6 @@
       <filter type="text" />
     </column>
     <column source="CustomClass" wrap="false" caption="Custom class" />
-    <column source="SiteID" wrap="false" caption="SiteID" externalsourcename="#siteid" >
-      <filter type="text" />
-    </column>
     <column cssclass="filling-column" />
   </columns>
   <options>

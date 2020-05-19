@@ -5,6 +5,7 @@ using CMS.DataEngine;
 using CMS.DocumentEngine;
 using CMS.EventLog;
 using CMS.Scheduler;
+using CMS.SiteProvider;
 using DeleteBoilerplate.Common.Extensions;
 using DeleteBoilerplate.Domain.Extensions;
 using DeleteBoilerplate.Domain.Helpers;
@@ -133,6 +134,7 @@ namespace DeleteBoilerplate.XmlSitemap.ScheduledTasks
         {
             var sitemapRules = SitemapRuleInfoProvider
                 .GetSitemapRules()
+                .OnSite(SiteContext.CurrentSiteID)
                 .ToList();
 
             foreach (var sitemapRule in sitemapRules)

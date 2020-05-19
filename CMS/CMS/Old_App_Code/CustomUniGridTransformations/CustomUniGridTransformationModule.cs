@@ -50,7 +50,7 @@ namespace CMSApp.Old_App_Code.CustomUniGridTransformations
                 return siteName;
             }
 
-            return string.Empty;
+            return "(none)";
         }
     }
 }
