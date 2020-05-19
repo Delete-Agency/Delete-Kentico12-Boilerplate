@@ -22275,6 +22275,7 @@
     <Compile Include="Old_App_Code\CMSModules\Widgets\WidgetTreeControlExtender.cs" />
     <Compile Include="Old_App_Code\CMS\Functions.cs" />
     <Compile Include="Old_App_Code\CMS\UpgradeProcedure.cs" />
+    <Compile Include="Old_App_Code\CustomUniGridTransformations\CustomUniGridTransformationModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

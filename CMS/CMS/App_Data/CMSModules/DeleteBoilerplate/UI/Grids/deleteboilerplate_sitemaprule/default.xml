@@ -8,15 +8,24 @@
   <columns>
     <column source="SitemapRuleID" visible="false" />
     <column source="SitemapRuleID" wrap="false" />
-    <column source="FileName" wrap="false" caption="File name" />
-    <column source="RuleType" wrap="false" caption="Rule type" />
-    <column source="ContainerPage" wrap="false" caption="Container page" />
+    <column source="FileName" wrap="false" caption="File name" >
+    <filter type="text" />
+    </column>
+    <column source="RuleType" wrap="false" caption="Rule type" externalsourcename="#sitemapruletype">
+      <filter type="text" />
+    </column>
+    <column source="ContainerPage" wrap="false" caption="Container page" >
+      <filter type="text" />
+    </column>
     <column source="CustomClass" wrap="false" caption="Custom class" />
+    <column source="SiteID" wrap="false" caption="SiteID" externalsourcename="#siteid" >
+      <filter type="text" />
+    </column>
     <column cssclass="filling-column" />
   </columns>
   <options>
     <key name="DisplayFilter" value="true" />
-    <key name="FilterPath" value="~/CMSModules/Modules/Controls/Class/Filter.ascx" />
+    <key name="FilterLimit" value="5" />
   </options>
 </grid>
 
