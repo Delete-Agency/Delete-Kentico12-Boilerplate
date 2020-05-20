@@ -481,6 +481,9 @@
     <Compile Include="Models\UrlSelectorItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Serializers\NewtonsoftJsonSerializer.cs" />
+    <Compile Include="Tasks\LockableTask.cs" />
+    <Compile Include="Tasks\ParameterizedTask.cs" />
+    <Compile Include="Tasks\TaskParameters.cs" />
   </ItemGroup>
   <ItemGroup>
     <AdditionalFiles Include="..\..\Websites\DeleteBoilerplate.DependencyValidation\DependencyValidation1.layerdiagram">
