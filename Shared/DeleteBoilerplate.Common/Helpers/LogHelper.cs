@@ -54,8 +54,14 @@ namespace DeleteBoilerplate.Common.Helpers
 
         private static void AddLogException(string source, string evenCode, Exception ex, int siteId = 0)
         {
-            var validSource = new string(source.Take(SymbolsLimitInDB).ToArray());
-            var validEventCode = new string(evenCode.Take(SymbolsLimitInDB).ToArray());
+
+            var validSource = source.Length > SymbolsLimitInDB
+                ? new string(source.Take(SymbolsLimitInDB).ToArray())
+                : source;
+
+            var validEventCode = evenCode.Length > SymbolsLimitInDB
+                ? new string(evenCode.Take(SymbolsLimitInDB).ToArray())
+                : evenCode;
         
             EventLogProvider.LogException(validSource, validEventCode, ex, siteId);
         }
