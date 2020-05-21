@@ -3,6 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMSApp", "CMS\CMSApp.csproj", "{BB8817AE-48DF-4672-A1CB-CFB7441B88DA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B50BF9EE-F1E4-46A6-8071-5888E899F2CD} = {B50BF9EE-F1E4-46A6-8071-5888E899F2CD}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteBoilerplate.Domain", "..\Shared\DeleteBoilerplate.Domain\DeleteBoilerplate.Domain.csproj", "{2A0E9BD2-90F5-466A-A742-D27C9302B1CA}"
 EndProject
@@ -11,6 +14,13 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteBoilerplate.Common", "..\Shared\DeleteBoilerplate.Common\DeleteBoilerplate.Common.csproj", "{25458D83-C877-4A3A-973F-E8A42254447D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteBoilerplate.XmlSitemap", "DeleteBoilerplate.XmlSitemap\DeleteBoilerplate.XmlSitemap.csproj", "{2429C227-1A28-4A2A-BD01-A920DE0F4030}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tasks", "Tasks", "{05477A5A-13CC-4B7F-8821-3F6D87EBA194}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteBoilerplate.Tasks", "Tasks\DeleteBoilerplate.CalculatorCustomerDataTask\DeleteBoilerplate.Tasks.csproj", "{B50BF9EE-F1E4-46A6-8071-5888E899F2CD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2A0E9BD2-90F5-466A-A742-D27C9302B1CA} = {2A0E9BD2-90F5-466A-A742-D27C9302B1CA}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,9 +48,17 @@ Global
 		{2429C227-1A28-4A2A-BD01-A920DE0F4030}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2429C227-1A28-4A2A-BD01-A920DE0F4030}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2429C227-1A28-4A2A-BD01-A920DE0F4030}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B50BF9EE-F1E4-46A6-8071-5888E899F2CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B50BF9EE-F1E4-46A6-8071-5888E899F2CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B50BF9EE-F1E4-46A6-8071-5888E899F2CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B50BF9EE-F1E4-46A6-8071-5888E899F2CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2429C227-1A28-4A2A-BD01-A920DE0F4030} = {05477A5A-13CC-4B7F-8821-3F6D87EBA194}
+		{B50BF9EE-F1E4-46A6-8071-5888E899F2CD} = {05477A5A-13CC-4B7F-8821-3F6D87EBA194}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ECFEC643-0A08-4BE4-8980-4191FD49F6A9}

@@ -22309,6 +22309,10 @@
       <Project>{2429c227-1a28-4a2a-bd01-a920de0f4030}</Project>
       <Name>DeleteBoilerplate.XmlSitemap</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Tasks\DeleteBoilerplate.CalculatorCustomerDataTask\DeleteBoilerplate.Tasks.csproj">
+      <Project>{b50bf9ee-f1e4-46a6-8071-5888e899f2cd}</Project>
+      <Name>DeleteBoilerplate.Tasks</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
