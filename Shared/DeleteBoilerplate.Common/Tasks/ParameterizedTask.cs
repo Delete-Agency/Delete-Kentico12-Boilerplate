@@ -1,6 +1,6 @@
-﻿using CMS.EventLog;
-using CMS.Scheduler;
+﻿using CMS.Scheduler;
 using DeleteBoilerplate.Common.Extensions;
+using DeleteBoilerplate.Common.Helpers;
 using System;
 
 namespace DeleteBoilerplate.Common.Tasks
@@ -15,10 +15,11 @@ namespace DeleteBoilerplate.Common.Tasks
             {
                 Parameters = ParseTaskParameters(task);
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
                 var message = $"Unable to parse '{task.TaskName}' task parameters. Please check what is in the task's Data field";
-                EventLogProvider.LogException(task.TaskName, nameof(Execute), e, task.TaskSiteID, message);
+                LogHelper.LogException(task.TaskName, "INVALID_PARAMETERS", ex, message);
+
                 return message;
             }
 
@@ -27,7 +28,7 @@ namespace DeleteBoilerplate.Common.Tasks
 
         protected override void LogTaskStartEvent(TaskInfo task)
         {
-            EventLogProvider.LogInformation(task.TaskName, nameof(Execute), $"The task '{task.TaskName}' was started [SiteID: {task.TaskSiteID}; Parameters: {task.TaskData}]");
+            LogHelper.LogInformation(task.TaskName, "TASK_EXECUTION", $"The task '{task.TaskName}' was started.", $"Parameters: {task.TaskData}");
         }
 
         protected virtual TParams ParseTaskParameters(TaskInfo task)

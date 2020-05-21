@@ -1,5 +1,5 @@
-﻿using CMS.EventLog;
-using CMS.Scheduler;
+﻿using CMS.Scheduler;
+using DeleteBoilerplate.Common.Helpers;
 using System.Diagnostics;
 using System.Threading;
 
@@ -29,7 +29,7 @@ namespace DeleteBoilerplate.Common.Tasks
                 else
                 {
                     // The lock was not acquired.
-                    EventLogProvider.LogInformation(task.TaskName, nameof(Execute), $"The lock was not acquired for the task '{task.TaskName}'");
+                    LogHelper.LogInformation(task.TaskName, "LOCK_NOT_ACQUIRED", $"The lock was not acquired for the task '{task.TaskName}'.");
                 }
             }
             finally
@@ -40,7 +40,6 @@ namespace DeleteBoilerplate.Common.Tasks
                     LogTaskFinishEvent(task, stopwatch);
                     Monitor.Exit(LockObj);
                 }
-
             }
 
             return result;
@@ -48,12 +47,12 @@ namespace DeleteBoilerplate.Common.Tasks
 
         protected virtual void LogTaskFinishEvent(TaskInfo task, Stopwatch stopwatch)
         {
-            EventLogProvider.LogInformation(task.TaskName, nameof(Execute), $"The task '{task.TaskName}' was finished [SiteID: {task.TaskSiteID}, Elapsed time: {stopwatch.Elapsed:c}]");
+            LogHelper.LogInformation(task.TaskName, "TASK_FINISH", $"The task '{task.TaskName}' was finished.", $"Elapsed time: {stopwatch.Elapsed:c}]", task.TaskSiteID);
         }
 
         protected virtual void LogTaskStartEvent(TaskInfo task)
         {
-            EventLogProvider.LogInformation(task.TaskName, nameof(Execute), $"The task '{task.TaskName}' was started [SiteID: {task.TaskSiteID}]");
+            LogHelper.LogInformation(task.TaskName, "TASK_START", $"The task '{task.TaskName}' was started.", siteId: task.TaskSiteID);
         }
     }
 }
