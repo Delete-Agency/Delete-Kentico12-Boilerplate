@@ -2,18 +2,21 @@
 using DeleteBoilerplate.Common.Extensions;
 using DeleteBoilerplate.Common.Helpers;
 using System;
+using System.Diagnostics;
 
 namespace DeleteBoilerplate.Common.Tasks
 {
-    public abstract class ParameterizedTask<TParams> : LockableTask where TParams : new()
+    public abstract class ParameterizedTask<TParams> : ITask where TParams : new()
     {
+        public abstract string ExecuteCriticalCode(TaskInfo task);
+
         protected TParams Parameters { get; private set; }
 
-        public override string Execute(TaskInfo task)
+        public virtual string Execute(TaskInfo task)
         {
             try
             {
-                Parameters = ParseTaskParameters(task);
+                Parameters = this.ParseTaskParameters(task);
             }
             catch (Exception ex)
             {
@@ -23,12 +26,21 @@ namespace DeleteBoilerplate.Common.Tasks
                 return message;
             }
 
-            return base.Execute(task);
-        }
+            var stopwatch = new Stopwatch();
+            string result;
+            try
+            {
+                stopwatch.Start();
+                this.LogTaskStartEvent(task);
 
-        protected override void LogTaskStartEvent(TaskInfo task)
-        {
-            LogHelper.LogInformation(task.TaskName, "TASK_EXECUTION", $"The task '{task.TaskName}' was started.", $"Parameters: {task.TaskData}");
+                result = this.ExecuteCriticalCode(task);
+            }
+            finally
+            {
+                this.LogTaskFinishEvent(task, stopwatch);
+            }
+
+            return result;
         }
 
         protected virtual TParams ParseTaskParameters(TaskInfo task)
@@ -45,6 +57,16 @@ namespace DeleteBoilerplate.Common.Tasks
             }
 
             return parameters;
+        }
+
+        protected virtual void LogTaskStartEvent(TaskInfo task)
+        {
+            LogHelper.LogInformation(task.TaskName, "TASK_START", $"The task '{task.TaskName}' was started.", $"Parameters: {task.TaskData}");
+        }
+
+        protected virtual void LogTaskFinishEvent(TaskInfo task, Stopwatch stopwatch)
+        {
+            LogHelper.LogInformation(task.TaskName, "TASK_FINISH", $"The task '{task.TaskName}' was finished.", $"Elapsed time: {stopwatch.Elapsed:c}]", task.TaskSiteID);
         }
     }
 }
