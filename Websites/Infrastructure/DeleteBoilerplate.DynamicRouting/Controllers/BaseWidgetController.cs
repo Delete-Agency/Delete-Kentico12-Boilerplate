@@ -1,4 +1,4 @@
-﻿using DeleteBoilerplate.Domain;
+﻿using DeleteBoilerplate.Common.Extensions;
 using DeleteBoilerplate.Infrastructure.Extensions;
 using Kentico.PageBuilder.Web.Mvc;
 using System.Text;
@@ -40,7 +40,7 @@ namespace DeleteBoilerplate.DynamicRouting.Controllers
                 ContentType = contentType,
                 ContentEncoding = contentEncoding,
                 JsonRequestBehavior = behavior,
-                JsonSerializerSettings = Settings.DefaultJsonSerializerSettings
+                JsonSerializerSettings = JsonExtensions.DefaultJsonSerializerSettings
             };
         }
     }
