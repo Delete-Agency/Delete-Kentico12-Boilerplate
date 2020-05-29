@@ -1,0 +1,8 @@
+<#@ template hostspecific="false" debug="true" language="C#" compilerOptions="/langversion:7.3"#>
+<#@ output extension="cs" #>
+<#@ include file="WidgetGenerator.tt" #>
+
+<#
+	WidgetGenerator generator = new WidgetGenerator();
+	generator.Run();
+#>

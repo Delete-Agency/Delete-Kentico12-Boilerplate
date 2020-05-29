@@ -646,10 +646,37 @@
       <Link>DependencyValidation1.layerdiagram</Link>
       <Visible>False</Visible>
     </AdditionalFiles>
+    <None Include="WidgetGeneration\WidgetGenerator.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>WidgetGenerator.cs</LastGenOutput>
+      <LastOutputs>.\WidgetGenerator.cs</LastOutputs>
+    </None>
+    <None Include="WidgetGeneration\WidgetScript.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>WidgetScript.cs</LastGenOutput>
+      <LastOutputs>
+..\Automap\ContactFormMapper.cs
+..\Controllers\Widgets\ContactFormWidgetController.cs
+..\Models\Widgets\ContactFormWidget\ContactFormProperties.cs
+..\Models\Widgets\ContactFormWidget\ContactFormWidgetViewModel.cs
+..\View\Widgets\_ContactForm.cshtml
+.\WidgetScript.cs
+</LastOutputs>
+    </None>
+    <None Include="WidgetGeneration\WidgetSetting.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>WidgetSetting.cs</LastGenOutput>
+    </None>
+    <None Include="WidgetGeneration\WidgetTemplate.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>WidgetTemplate.cs</LastGenOutput>
+      <LastOutputs>.\WidgetTemplate.cs</LastOutputs>
+    </None>
     <None Include="Views\Shared\InlineEditors\_SelectEditor.cshtml" />
     <Content Include="Content\InlineEditors\SelectEditor\select-editor.css" />
     <Content Include="Content\InlineEditors\SelectEditor\select-editor.js" />
     <Content Include="Web.config" />
+    <None Include="WidgetGeneration\WidgetSetting.json" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -725,6 +752,10 @@
       <Name>DeleteBoilerplate.Twitter</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

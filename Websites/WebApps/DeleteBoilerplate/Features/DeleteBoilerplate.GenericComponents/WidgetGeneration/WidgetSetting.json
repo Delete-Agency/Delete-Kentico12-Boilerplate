@@ -1,0 +1,27 @@
+{
+  "Name": "ContactForm",
+  "NameSpace": "DeleteBoilerplate.GenericComponents",
+  "Properties": [
+    {
+      "Name": "Title",
+      "Type": "string",
+      "FormComponent": "TextInputComponent",
+      "Label": "Title",
+      "DefaultValue": "Contact"
+    },
+    {
+      "Name": "Description",
+      "Type": "string",
+      "FormComponent": "TextInputComponent",
+      "Label": "Description",
+      "DefaultValue": ""
+    },
+    {
+      "Name": "ButtonText",
+      "Type": "string",
+      "FormComponent": "TextInputComponent",
+      "Label": "ButtonText",
+      "DefaultValue": "Get in touch"
+    }
+  ]
+}

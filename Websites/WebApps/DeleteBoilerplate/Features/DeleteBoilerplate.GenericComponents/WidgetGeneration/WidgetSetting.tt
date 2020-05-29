@@ -1,0 +1,25 @@
+﻿<#@ import namespace="System.Collections.Generic" #>
+
+<#+
+	public class WidgetSetting
+	{
+		public string Name { get; set; }
+
+		public string NameSpace { get; set; }
+
+		public List<WidgetProperty> Properties { get; set; } 
+	}
+
+	public class WidgetProperty
+	{
+		public string Name { get; set; }
+
+		public string Type { get; set; }
+
+		public string FormComponent { get; set; }
+
+		public string Label { get; set; }
+
+		public string DefaultValue { get; set; }
+	}
+#>

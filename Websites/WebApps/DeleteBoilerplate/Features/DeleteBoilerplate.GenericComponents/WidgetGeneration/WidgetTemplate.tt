@@ -1,0 +1,177 @@
+﻿<#@ import namespace="System" #>
+<#@ import namespace="System.Text" #>
+<#@ include file="T4Toolbox.tt" #>
+<#@ include file="WidgetSetting.tt" #>
+
+<#+
+//--------------------------- BaseTemplate ---------------------------
+
+public class BaseTemplate : CSharpTemplate
+{
+	public WidgetSetting Setting { get; set; }
+}
+#>
+
+<#+
+//--------------------------- WidgetControllerTemplate ---------------------------
+
+public class WidgetControllerTemplate : BaseTemplate
+{
+	public override string TransformText()
+	{
+		base.TransformText();
+
+#>
+using AutoMapper;
+using DeleteBoilerplate.DynamicRouting.Controllers;
+using <#= Setting.NameSpace #>.Controllers.Widgets;
+using <#= Setting.NameSpace #>.Models.Widgets.<#= Setting.Name #>Widget;
+using Kentico.PageBuilder.Web.Mvc;
+using System.Web.Mvc;
+
+[assembly:
+    RegisterWidget("<#= Setting.NameSpace #>.<#= Setting.Name #>Widget", typeof(<#= Setting.Name #>WidgetController),
+    "{$<#= Setting.NameSpace #>.<#= Setting.Name #>Widget.Name$}", Description = "{$<#= Setting.NameSpace #>.<#= Setting.Name #>Widget.Description$}",
+    IconClass = "icon")]
+
+namespace <#= Setting.NameSpace #>.Controllers.Widgets
+{
+    public class <#= Setting.Name #>WidgetController : BaseWidgetController<<#= Setting.Name #>Properties>
+    {
+        public ActionResult Index()
+        {
+            var properties = GetProperties();
+            var model = this.Mapper.Map<<#= Setting.Name #>WidgetViewModel>(properties);
+
+            return PartialView("Widgets/_<#= Setting.Name #>", model);
+        }
+    }
+}
+<#+
+        return this.GenerationEnvironment.ToString();
+	}
+}
+#>
+
+
+<#+
+//--------------------------- WidgetPropertiesTemplate ---------------------------
+
+public class WidgetPropertiesTemplate : BaseTemplate
+{
+	public override string TransformText()
+	{
+		base.TransformText();
+
+#>
+using DeleteBoilerplate.Infrastructure.Models;
+using Kentico.Forms.Web.Mvc;
+using Kentico.PageBuilder.Web.Mvc;
+
+namespace <#= Setting.NameSpace #>.Models.Widgets.<#= Setting.Name #>Widget
+{
+    public class <#= Setting.Name #>Properties : BaseWidgetViewModel, IWidgetProperties
+    {
+    <#+
+    int order = 0;
+    foreach(WidgetProperty property in Setting.Properties) 
+    {
+        order += 100;#>
+
+        [EditingComponent(<#= property.FormComponent #>.IDENTIFIER, Label = "<#= property.Label #>", Order = <#= order #>, DefaultValue = "<#= property.DefaultValue #>")]
+        public <#= property.Type #> <#= property.Name #> { get; set; }
+    <#+}#>
+            
+    }
+}
+
+<#+
+        return this.GenerationEnvironment.ToString();
+	}
+}
+#>
+
+
+<#+
+//--------------------------- WidgetViewModelTemplate ---------------------------
+
+public class WidgetViewModelTemplate : BaseTemplate
+{
+	public override string TransformText()
+	{
+		base.TransformText();
+
+#>
+using DeleteBoilerplate.Infrastructure.Models;
+
+namespace <#= Setting.NameSpace #>.Models.Widgets.<#= Setting.Name #>Widget
+{
+    public class <#= Setting.Name #>WidgetViewModel : BaseWidgetViewModel
+    {
+        <#+foreach(WidgetProperty property in Setting.Properties) 
+        {#>
+            public <#= property.Type #> <#= property.Name #> { get; set; }
+
+        <#+}#>
+    }
+}
+<#+
+        return this.GenerationEnvironment.ToString();
+	}
+}
+
+#>
+
+<#+
+//--------------------------- WidgetMapperTemplate ---------------------------
+
+public class WidgetMapperTemplate : BaseTemplate
+{
+	public override string TransformText()
+	{
+		base.TransformText();
+
+#>
+    this.CreateMap<#= Setting.Name #>Widget();
+
+    private void CreateMap<#= Setting.Name #>Widget()
+    {
+        CreateMap<<#= Setting.Name #>Properties, <#= Setting.Name #>WidgetViewModel>(MemberList.None)
+        <#+foreach(WidgetProperty property in Setting.Properties) 
+        {#>
+            .ForMember(d => d.<#= property.Name #>, opt => opt.MapFrom(src => src.<#= property.Name #>))
+        <#+}#>;
+    }
+
+<#+
+        return this.GenerationEnvironment.ToString();
+	}
+}
+#>
+
+<#+
+//--------------------------- WidgetViewTemplate ---------------------------
+
+public class WidgetViewTemplate : BaseTemplate
+{
+	public override string TransformText()
+	{
+		base.TransformText();
+
+#>
+@using System.Web.Mvc.Html
+@using DeleteBoilerplate.Common.Extensions
+@using DeleteBoilerplate.Infrastructure.Extensions
+
+@model <#= Setting.NameSpace #>.Models.Widgets.<#= Setting.Name #>Widget.<#= Setting.Name #>WidgetViewModel
+
+@if (Model == null)
+{
+    return;
+}
+
+<#+
+        return this.GenerationEnvironment.ToString();
+	}
+}
+#>
