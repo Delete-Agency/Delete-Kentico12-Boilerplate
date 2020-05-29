@@ -1,6 +1,8 @@
-﻿using DeleteBoilerplate.Common.Extensions;
+﻿using AutoMapper;
+using DeleteBoilerplate.Common.Extensions;
 using DeleteBoilerplate.Infrastructure.Extensions;
 using Kentico.PageBuilder.Web.Mvc;
+using LightInject;
 using System.Text;
 using System.Web.Mvc;
 
@@ -8,6 +10,9 @@ namespace DeleteBoilerplate.DynamicRouting.Controllers
 {
     public abstract class BaseWidgetController<TPropertiesType> : WidgetController<TPropertiesType> where TPropertiesType : class, IWidgetProperties, new()
     {
+        [Inject]
+        protected IMapper Mapper { get; set; }
+
         protected JsonResult JsonSuccess(object data = null, string message = null, string contentType = null, Encoding contentEncoding = null, JsonRequestBehavior behavior = JsonRequestBehavior.DenyGet)
         {
             var jsonData = new JsonData

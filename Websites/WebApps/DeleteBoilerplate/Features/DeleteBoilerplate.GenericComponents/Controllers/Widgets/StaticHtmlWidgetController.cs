@@ -1,12 +1,11 @@
-﻿using System.Linq;
-using System.Web.Mvc;
-using AutoMapper;
-using DeleteBoilerplate.Domain.Repositories;
+﻿using DeleteBoilerplate.Domain.Repositories;
 using DeleteBoilerplate.DynamicRouting.Controllers;
 using DeleteBoilerplate.GenericComponents.Controllers.Widgets;
 using DeleteBoilerplate.GenericComponents.Models.Widgets.StaticHtmlWidget;
 using Kentico.PageBuilder.Web.Mvc;
 using LightInject;
+using System.Linq;
+using System.Web.Mvc;
 
 [assembly:
     RegisterWidget("DeleteBoilerplate.GenericComponents.StaticHtmlWidget", typeof(StaticHtmlWidgetController),
@@ -16,9 +15,6 @@ namespace DeleteBoilerplate.GenericComponents.Controllers.Widgets
 {
     public class StaticHtmlWidgetController : BaseWidgetController<StaticHtmlWidgetProperties>
     {
-        [Inject]
-        public IMapper Mapper { get; set; }
-
         [Inject]
         protected IStaticHtmlChunkRepository StaticHtmlChunkRepository { get; set; }
 

@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using CMS.ContactManagement;
+﻿using CMS.ContactManagement;
 using CMS.OnlineForms;
 using CMS.SiteProvider;
 using DeleteBoilerplate.Common.Helpers;
@@ -27,11 +26,6 @@ namespace DeleteBoilerplate.GenericComponents.Controllers.Widgets
 {
     public class BizFormWidgetController : BaseWidgetController<BizFormProperties>
     {
-        private const string BizFormName = "BizForm";
-
-        [Inject]
-        protected IMapper Mapper { get; set; }
-
         [Inject]
         protected IBizFormRepository BizFormRepository { get; set; }
 

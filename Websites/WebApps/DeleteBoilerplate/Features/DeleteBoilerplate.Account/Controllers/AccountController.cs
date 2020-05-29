@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using CMS.Helpers;
+﻿using CMS.Helpers;
 using DeleteBoilerplate.Account.Infrastructure;
 using DeleteBoilerplate.Account.Models;
 using DeleteBoilerplate.Account.Services;
@@ -18,9 +17,6 @@ namespace DeleteBoilerplate.Account.Controllers
     {
         [Inject]
         protected IAuthService AuthService { get; set; }
-
-        [Inject]
-        protected IMapper Mapper { get; set; }
 
         [HttpGet]
         public ActionResult Login()

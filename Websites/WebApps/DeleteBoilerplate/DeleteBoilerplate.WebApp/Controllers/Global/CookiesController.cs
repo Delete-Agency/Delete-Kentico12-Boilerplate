@@ -4,6 +4,7 @@ using CMS.SiteProvider;
 using CMS.WebAnalytics;
 using DeleteBoilerplate.Common.Helpers;
 using DeleteBoilerplate.Domain;
+using DeleteBoilerplate.DynamicRouting.Controllers;
 using DeleteBoilerplate.WebApp.Constants;
 using DeleteBoilerplate.WebApp.Models.Global.Cookies;
 using LightInject;
@@ -11,14 +12,11 @@ using System;
 using System.Net.Http;
 using System.Web;
 using System.Web.Mvc;
-using DeleteBoilerplate.DynamicRouting.Controllers;
 
 namespace DeleteBoilerplate.WebApp.Controllers.Global
 {
     public class CookiesController : BaseApiController
     {
-        private const string CookiesName = "Cookies";
-
         [Inject]
         protected ICurrentCookieLevelProvider CookieLevelProvider { get; set; }
 

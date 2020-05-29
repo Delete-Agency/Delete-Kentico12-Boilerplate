@@ -1,10 +1,8 @@
-﻿using System.Web.Mvc;
-using AutoMapper;
-using DeleteBoilerplate.DynamicRouting.Controllers;
+﻿using DeleteBoilerplate.DynamicRouting.Controllers;
 using DeleteBoilerplate.GenericComponents.Controllers.Widgets;
 using DeleteBoilerplate.GenericComponents.Models.Widgets.ContentBlockWidget;
 using Kentico.PageBuilder.Web.Mvc;
-using LightInject;
+using System.Web.Mvc;
 
 [assembly:
     RegisterWidget("DeleteBoilerplate.GenericComponents.ContentBlockWidget", typeof(ContentBlockWidgetController),
@@ -15,9 +13,6 @@ namespace DeleteBoilerplate.GenericComponents.Controllers.Widgets
 {
     public class ContentBlockWidgetController : BaseWidgetController<ContentBlockWidgetProperties>
     {
-        [Inject]
-        public IMapper Mapper { get; set; }
-
         public ActionResult Index()
         {
             var properties = GetProperties();

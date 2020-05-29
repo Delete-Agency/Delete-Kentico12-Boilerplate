@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Castle.Core.Internal;
+﻿using Castle.Core.Internal;
 using DeleteBoilerplate.Common.Helpers;
 using DeleteBoilerplate.DynamicRouting.Controllers;
 using DeleteBoilerplate.GenericComponents.Constants;
@@ -23,11 +22,6 @@ namespace DeleteBoilerplate.GenericComponents.Controllers.Widgets
 {
     public class TwitterWidgetController : BaseWidgetController<TwitterWidgetProperties>
     {
-        private const string ControllerName = "TwitterWidget";
-
-        [Inject]
-        protected IMapper Mapper { get; set; }
-
         [Inject]
         protected ITwitterService TwitterService { get; set; }
 

@@ -3,11 +3,16 @@ using DeleteBoilerplate.Infrastructure.Extensions;
 using DeleteBoilerplate.Infrastructure.Models.FormComponents.ValidationError;
 using System.Text;
 using System.Web.Mvc;
+using AutoMapper;
+using LightInject;
 
 namespace DeleteBoilerplate.DynamicRouting.Controllers
 {
     public abstract class BaseApiController : Controller
     {
+        [Inject]
+        protected IMapper Mapper { get; set; }
+
         protected JsonResult JsonSuccess(object data = null, string message = null, string contentType = null, Encoding contentEncoding = null, JsonRequestBehavior behavior = JsonRequestBehavior.DenyGet)
         {
             var jsonData = new JsonData

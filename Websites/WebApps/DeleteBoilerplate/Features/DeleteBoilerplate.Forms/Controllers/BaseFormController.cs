@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using CMS.Helpers;
+﻿using CMS.Helpers;
 using CMS.OnlineForms;
 using DeleteBoilerplate.DynamicRouting.Controllers;
 using DeleteBoilerplate.Forms.Models;
@@ -12,9 +11,6 @@ namespace DeleteBoilerplate.Forms.Controllers
 {
     public abstract class BaseFormController<TFormData> : BaseApiController where TFormData : IFormData
     {
-        [Inject]
-        protected IMapper Mapper { get; set; }
-
         [Inject]
         protected ICaptchaVerificationService CaptchaVerificationService { get; set; }
 
